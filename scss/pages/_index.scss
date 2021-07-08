@@ -1,0 +1,24 @@
+.header {
+    height: 400px;
+    background: url(../../public/img/bg2.jpg) center center no-repeat;
+    background-size: cover;
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+}
+.company {
+    margin-top: -90px;
+    .information_card {
+        width: 210px;
+        height: 200px;
+        text-align: center;
+        .title {
+            color: $primary;
+        }
+        .content {
+            color: $secondary;
+            font-family: $fontsEn;
+        }
+    }
+}

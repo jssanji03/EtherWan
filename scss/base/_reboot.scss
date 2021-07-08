@@ -1,0 +1,61 @@
+body {
+    font-family: $fontsNoto;
+    font-size: 15px;
+    background-color: rgb(247, 247, 247);
+}
+
+label {
+    // margin-top: 5px;
+    margin-bottom: 2px;
+}
+// TODO:設定列印
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fontsNoto;
+    font-weight: 500;
+    margin: 0px;
+}
+
+p {
+    font-family: $fontsNoto;
+    color: $text;
+    line-height: 2;
+    font-weight: 400;
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: 0 solid transparent;
+    font-family: $fonts;
+}
+
+ul {
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+%outlineColor {
+    box-shadow: 0 0 0 0.2rem rgba(15, 173, 221, 0.25);
+    outline-style: none;
+}
