@@ -1,14 +1,26 @@
 /* Plugins Master Stylesheet */
 @import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.min.css");
-@import url("../plugins/jOrgChart/jquery.jOrgChart.css");
-@import url("../plugins/fontawesome-free/css/all.min.css");
+// @import url('../plugins/bootstrap/css/bootstrap.css');
+@import url('../plugins/jOrgChart/jquery.jOrgChart.css');
+@import url('../plugins/fontawesome-free/css/all.min.css');
+@import url('../plugins/select2/css/select2.min.css');
+@import url('../plugins/datatables/css/jquery.dataTables.min.css');
+@import url('../plugins/Buttons-1.6.5/css/buttons.dataTables.min.css');
+@import url('../plugins/chart.js/Chart.min.css');
+@import url('../plugins/select2/css/multiple-select.min.css');
+@import url('../plugins/Magicsuggest/css/magicsuggest-min.css');
+@import url('../plugins/daterangepicker-master/daterangepicker.css');
+@import url('../plugins/summernote/summernote-bs4.min.css');
+@import url('../plugins/Responsive-2.2.7/css/responsive.bootstrap.min.css');
+
 
 /* :: 1.0 Import Fonts */
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
 
-@import "base/reset";
+
 // *******************
 //     helpers
 // *******************
@@ -18,16 +30,26 @@
 @import "helpers/spacing";
 
 // *******************
+//     component
+// *******************
+@import "component/button";
+@import "component/datatable";
+@import "component/form";
+@import "component/sidebar";
+@import "component/card";
+
+// *******************
 //     base
 // *******************
 @import "base/reboot";
 
 // *******************
-//     component
-// *******************
-@import "component/card";
-
-// *******************
 //     pages
 // *******************
+@import "pages/calendar";
+@import "pages/colorControl";
+@import "pages/login";
+@import "pages/organization";
+@import "pages/homepage";
 @import "pages/index";
+

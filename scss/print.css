@@ -1,0 +1,39 @@
+.listDataTable{
+  width: 100%;
+}
+.dataTables_scroll>.dataTables_scrollHeadInner{
+  width: 100% !important;
+}
+.dataTables_scroll>.dataTables_scrollHead{
+  overflow:visible !important;
+}
+table.dataTable tbody td{
+    color: $text;
+    padding: 15px 0px;
+    border: none;
+    font-size: 10px;
+}
+table.dataTable{
+  background-color: #fff;
+  border-left: .5px solid rgb(204, 204, 204);
+  border-right: .5px solid rgb(204, 204, 204);
+  text-align: center;
+}
+.assignActive{
+  background-color: $primary;
+  color: $white;
+  display: inline-block;
+  min-width: 90px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  padding: 5px;
+}
+
+.dataTables_length,.dataTables_paginate{
+  display: none;
+}
+.dataTables_filter{
+    display: none;
+}

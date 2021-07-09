@@ -1,0 +1,203 @@
+.card-calendar{
+    border-radius: 5px ;
+    background-color: rgb(255, 255, 255);
+    box-shadow:1px 2px 5px #88888869;
+    width: 100%;
+    height: auto;
+    margin-top: 20px; 
+    padding: 20px;
+   @media (max-width: 900px) {
+        height: auto;
+    }
+    .row{
+        height: 100%;
+        overflow-x: scroll;
+    .member-List{
+        table-layout: fixed;
+        width: 100%;
+        margin-top: 30px;
+        .members{
+            width: 100%;
+            height: 100%;
+            border-radius:3px;
+            padding: 10px;
+            background-color:#f5f5f5 ;
+            margin-top: 20px;
+            box-shadow:1px 2px 2px #8888883b;
+            &:nth-child(odd){
+                border-left: 5px solid $primary;
+            }
+            &:nth-child(even){
+                border-left: 5px solid $secondary;
+            }
+            p{
+                line-height: 30px;
+                margin: 0px;
+            }
+            &:hover{
+                background-color:#e4f3ff ;
+
+            }
+        }
+    }
+    .calendar-List {
+        width: 100%;
+        padding: 3px;
+        overflow-x: scroll;
+        table{
+            table-layout: auto;
+            width: 100%; 
+            height: 100%;
+            margin: 0px;
+        thead{
+        .weekdays{
+            th{
+                position: sticky;
+                top: 0;
+                width: 10%;
+	            background: #8e352e;
+                font-weight: 400;
+                color: $white;
+                border: 1px solid rgb(138, 25, 25);
+                text-align: center;
+                .box{
+                    display: inline-block;
+                    width: 120px;
+                    }
+                }
+        } 
+        }  
+        tbody{
+            tr{
+                height:inherit;
+                td{
+                border: 1px solid #ccc;
+                }
+            }
+        }
+            .event {
+	            clear: both;
+	            display: block;
+	            font-size: 13px;
+	            border-radius: 4px;
+	            padding: 5px;
+	            margin-bottom: 5px;
+	            line-height: 14px;
+	            background: #e4f2f2;
+	            border: 1px solid #b5dbdc;
+	            color: #009aaf;
+	            text-decoration: none;
+            }
+            .event_danger {
+	            clear: both;
+	            display: block;
+	            font-size: 13px;
+	            border-radius: 4px;
+	            padding: 5px;
+	            margin-bottom: 5px;
+	            line-height: 20px;
+	            background: #ffedbd;
+	            border: 1px solid #ffc163;
+	            color: #fa4f00;
+	            text-decoration: none;
+            }
+            .event-time{
+                color: $primary;
+                line-height: 25px;
+            }
+        }
+    }
+    }
+}
+
+
+
+
+
+
+/* ============================
+				Mobile Responsiveness
+   ============================*/
+
+
+@media(max-width: 900px) {
+
+    
+	#calendar {
+        height: 360px;
+        th {
+		height: auto !important;
+		border: 1px solid #ededed;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: -1px;
+	    }
+    }
+    #member{
+        height: 330px;
+        margin-top: 35px;
+    }
+
+}
+
+@media (max-width: 900px) {
+  /*針對tr去做隱藏*/
+  #schedulelist{
+    background-color: transparent;
+    border: none ;
+  .table-rwd{
+    width: 100%;
+    
+  }
+  thead{
+      .tr-only-hide {
+        display: none;
+      }
+  }
+  tbody{
+    background-color: transparent ;
+    /*讓tr變成區塊主要讓他有個區塊*/
+      tr{
+        display: block;
+        font-size: 15px;
+        line-height: 15px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px #ccc;
+        margin-top: 20px;
+        border-radius: 10px;
+        &:nth-child(odd){
+          border-left: 10px solid $text;
+          border-radius: 20px;
+        }
+        &:nth-child(even){
+          border-left: 10px solid $yellow;
+          border-radius: 20px;
+        }
+        .vcheckbox{
+          width: 100% !important;
+          &:before{display: none;}
+        }
+        td {
+          text-align: left;
+          overflow: hidden;
+          width: 100%;
+          display: block;
+          padding: 5px 0px ;
+          border: none !important;
+        &:before {
+        /*最重要的就是這串*/
+        content: attr(data-th) " : ";
+        /*最重要的就是這串*/
+        display: inline-block;
+        text-transform: uppercase;
+        width: 50%;
+        font-weight: 400;
+        margin-right: 10px;
+        text-align:end;
+        color: $primary;
+        }
+  	  }
+    }
+  }
+}
+}

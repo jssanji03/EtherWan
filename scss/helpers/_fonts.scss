@@ -1,5 +1,12 @@
 // Fonts
-$fonts: "Roboto", sans-serif;
-$fontsNoto: "Noto Sans TC", sans-serif;
+$fonts: 'Roboto', sans-serif;
+$fontsNoto: 'Noto Sans TC', sans-serif;
+$fontLogin:'Oswald', sans-serif;
 $fontsEn: "Montserrat", sans-serif;
-// TODO:常用字型
+
+.fontsEn{
+    font-family: $fontsEn;
+}
+.f-500{
+    font-weight: 500;
+}

@@ -1,0 +1,69 @@
+@mixin customColor($background-color:#ccc){
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    margin: 6px;
+    background-color: $background-color;
+}
+
+//Color sidebar Control
+#color-sidebar.toggled  {
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 12vw;
+  height: 95%;
+  overflow: scroll;
+}
+#color-sidebar{
+  background-color: $bg-body;
+  border: none;
+  box-shadow: -1px 2px 5px 0px rgba(139, 139, 139, 0.849);
+  position: fixed;
+  z-index: 999;
+  top: 50px;
+  right: 0;
+  width: 0vw;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-transition: width .25s ease-out;
+  -moz-transition: width .25s ease-out;
+  -o-transition: width .25s ease-out;
+  transition: width .25s ease-in-out;
+  .colorSelect{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    h6{
+      color: $white;
+    }
+    p{
+      color: $lightGray;
+      font-size: 15px;
+      width: 100%;
+    }
+    .dark-yellow{
+        @include customColor($background-color:#fdd835);
+    }
+    .dark-brown{
+        @include customColor($background-color:#a9684c);
+    }
+    .dark-blue{
+        @include customColor($background-color:#0077b6);
+    }
+    .light-red{
+        @include customColor($background-color:#ef233c);
+    }
+    .light-purple{
+        @include customColor($background-color:#8900f2);
+    }
+    .light-green{
+        @include customColor($background-color:#80b918);
+    }
+  }
+}
+
+//Color Sidebar Control End//
+

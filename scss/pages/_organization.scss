@@ -1,0 +1,233 @@
+@mixin font ($line-height:20px,$padding-L:75px){
+  text-align: left;
+  padding-left: $padding-L;
+  line-height: $line-height;
+}
+@mixin level($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:65px) {
+  background-color: $background-color;
+    a{
+      font-size: 12px;
+        .dept{
+          line-height: 25px;
+          color: $white;
+          background-color: $dept-background;
+          border-radius: 4px 4px 0px 0px;
+        }
+        .pic{
+          float: left;
+          width: 65px;
+          height: $height;
+          overflow: hidden;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .position{
+          @include font;
+          padding-top: 3px;
+          color: lightcoral;
+        }
+        .name{
+          @include font;
+          color: $textColor;
+          font-weight: 500;
+          font-size: 14px
+        }
+        .count{
+          @include font;
+          color: $countColor;
+        }
+      }
+}
+@mixin RWD-level ($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:110px,$deptHeight:30px,$picWidth:150px){
+  background-color: $background-color;
+    a{
+      font-size: 12px;
+        .dept{
+          line-height: $deptHeight;
+          height: 40px;
+          color: $white;
+          background-color: $dept-background;
+          border-radius: 4px 4px 0px 0px;
+        }
+        .pic{
+          width: $picWidth;
+          height: $height;
+          overflow: hidden;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .position{
+          @include font($line-height:20px,$padding-L:0px);
+          padding-top: 3px;
+          color: lightcoral;
+          text-align: center
+        }
+        .name{
+          @include font($line-height:20px,$padding-L:0px);
+          color: $textColor;
+          font-weight: 500;
+          font-size: 14px;
+          text-align: center
+        }
+        .count{
+          @include font($line-height:20px,$padding-L:0px);
+          color: $countColor;
+          text-align: center
+        }
+      }
+}
+
+.organization_table {
+  border-collapse: separate;
+  margin: 0 auto;
+}
+.jOrgChart .node {
+  width: 180px;
+  height: 90px;
+  line-height: 40px;
+  border-radius: 4px;
+  margin: 0 8px;
+  padding: 0px;
+  box-shadow: 1px 1px 3px #ccc;
+  @media #{$breakpoint-md}{
+    width: 150px;
+    height: 210px;
+  }
+  @media #{$breakpoint-xs}{
+    width: 100px;
+    height: 200px;
+  }
+}
+.jOrgChart{
+  .level0{
+    @include level;
+    @media #{$breakpoint-md}{
+      @include RWD-level;
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($height:100px,$deptHeight:40px,$picWidth:100px);
+    }
+  }
+  .level1{
+    @include level ($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$height:100px,$deptHeight:18px,$picWidth:100px);
+    }
+    }
+  .level2{
+    @include level ($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0,$height:100px,$deptHeight:40px,$picWidth:100px);
+    }
+  }
+  .level5{
+    height: 60px;
+    border-left: 4px solid $yellow;
+    overflow: hidden;
+    a{
+      font-size: 12px;
+        .pic{
+          float: left;
+          width: 60px;
+          overflow: hidden;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+          @media #{$breakpoint-md}{
+            width: 60px;
+          }
+          @media #{$breakpoint-xs}{
+            display: none;
+          }
+        }
+        .position{
+          @include font($line-height:12px,$padding-L:75px);
+          padding-top: 10px;
+          color: lightcoral;
+          @media #{$breakpoint-md},#{$breakpoint-xs}{
+            @include font($line-height:12px,$padding-L:10px)
+          }
+        }
+        .name{
+          @include font($line-height:25px,$padding-L:75px);
+          color: $text;
+          font-weight: 500;
+          font-size: 14px;
+          @media #{$breakpoint-md},#{$breakpoint-xs}{
+            @include font($line-height:25px,$padding-L:10px)
+          }
+        }
+      }
+  }
+}
+.jOrgChart ul{
+  display: inherit;
+  li:first-child{
+    margin-top: 0px;
+  }
+  li{
+    margin-top: 5px;
+  }
+}
+
+
+
+// .jOrgChart .node {
+//     @media #{$breakpoint-md} {
+//     width: 150px;
+//     height: 200px;
+//     .level0{
+//     @include RWD-level;
+//     }
+//   .level1{
+//     @include RWD-level ($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary)
+//     }
+//   .level2{
+//     @include RWD-level ($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0)
+//   }
+//   .level5{
+//     height: 50px;
+//     border-left: 4px solid $yellow;
+//     overflow: hidden;
+//     a{
+//       font-size: 12px;
+//         .pic{
+//           float: left;
+//           width: 50px;
+//           height: 50px;
+//           overflow: hidden;
+//           img{
+//             max-width: 100%;
+//             height: auto;
+//             object-fit: cover;
+//           }
+//         }
+//         .position{
+//           @include font($line-height:12px);
+//           padding-top: 3px;
+//           color: lightcoral;
+//         }
+//         .name{
+//           @include font($line-height:25px);
+//           color: $text;
+//           font-weight: 500;
+//           font-size: 14px
+//         }
+//       }
+//   }
+//   }
+// }

@@ -1,0 +1,222 @@
+//--- Alert---//
+.alert{
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    z-index: 999;
+    .icon{
+        font-size: 25px;
+    }
+    .title{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    p{
+        font-size: 15px;
+        line-height: 15px;
+    }
+}
+
+
+
+
+//--- Title and BreadCrumb---//
+.page_title{
+    // width: 100%;
+    align-items: center;
+    h2{
+        line-height: 30px;
+    }
+    nav{
+        height: 30px;
+        .breadcrumb{
+            background-color: rgba(255, 255, 255, 0);
+            float: right;
+            padding: 0px;
+            margin: 0px;
+            .active{
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+//--- Title and BreadCrumb End ---//
+
+//--- Index.html  Search bar---//
+//  搜尋 //
+.SearchBar{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    .card-header{
+        background-color: $lightBlue;
+        border-top: 4px solid $primary;
+        line-height: 30px;
+        // padding: 3px 10px;
+        .btn-collapse{
+        color: $primary;
+        width: 100%;
+        outline-style: none;
+        border: none;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: left;
+        }
+    }
+    .card-body{
+        label,legend {
+        // text-align: right;
+        padding: 0px 10px 0px 0px;
+        line-height: 20px;
+        margin-top: 8px;
+        @media #{$breakpoint-md} {
+            text-align: left;
+        }
+        @media #{$breakpoint-sm} {
+            text-align: left;
+        }
+        @media #{$breakpoint-xs} {
+            text-align: left;
+        }
+    }
+
+    
+    .vdate{
+        background: #fff; 
+        cursor: pointer; 
+        padding: 0px; 
+        border-radius: 5px;
+        width: 100%;
+        .calendar{
+            border: 1px solid $border;
+            border-radius: 3px;
+            padding: 5px;
+            width: 100%;
+            font-size: 14px;
+            input{
+                width: 95%;
+            }
+        }
+    }
+    }
+}
+//--- Index.html  Search bar End---//
+
+// #InputArea
+.InputArea{
+    .card{
+        .card-header{
+            background-color: brown;
+            color: $white;
+        }
+        .card-body{
+            height: 370px !important;
+        }
+    }
+}
+.in-redline{
+    border:1px solid $red !important;
+}
+
+// #SelectArea
+.SelectArea{
+    .card-header{
+        background-color: $secondary;
+        color: $white;
+    }
+     .card-body{
+        height: 300px !important;
+    }
+}
+
+.checkbox_ex1[type=checkbox] {
+    -webkit-appearance:none;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    padding: 3px;
+    margin-right: 2px;
+    border: 1px solid rgb(226, 67, 67);
+    color: #444;
+    user-select: none; /* 防止文字被滑鼠選取反白 */
+    position: relative;
+}
+
+.checkbox_ex1[type=checkbox]:checked {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    // font-size: 13px;
+    background-color: rgb(226, 67, 67);
+    
+}
+.checkbox_ex1[type=checkbox]:checked::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    content: "\f00c";
+    font-size: 10px;
+    top: -3px;
+    left: 0px;
+    position: absolute; 
+}
+
+.radio_ex1[type=radio] {
+    -webkit-appearance:none;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    padding: 3px;
+    margin-right: 2px;
+    border: 1px solid rgb(226, 67, 67);
+    color: #444;
+    user-select: none; /* 防止文字被滑鼠選取反白 */
+    position: relative;
+}
+
+.radio_ex1[type=radio]:checked {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    background-color: rgb(226, 67, 67);
+    
+}
+.radio_ex1[type=radio]:checked::after {
+    width: 11px;
+    height: 11px;
+    border-radius: 50px;
+    background-color: rgb(226, 67, 67);
+    border: 2px solid #FFF;
+    top: 0px;
+    left: 0px;
+    content: '';
+    position: absolute; 
+}
+
+// #ButtonArea
+.ButtonArea{
+    .card-header{
+        background-color: rgb(0, 166, 196);
+        color: $white;
+    }
+}
+
+// #ChartArea
+.ChartArea{
+    .card-header{
+        background-color: rgb(0, 166, 196);
+        color: $white;
+    }
+    .card-body{
+        .Chart{
+            margin: 0 auto;
+            text-align: center;
+            thead{
+                background-color: #ccc;
+                line-height: 15px;
+            }
+        }
+    }
+}
+
+

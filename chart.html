@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Chart</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./public/img/core-img/favicon.png">
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./scss/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- ##### Header Area Start ##### -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="d-block" id="sidebar-wrapper">
+            <div class="side_logo mt-3">
+                <a href="homepage.html"><img src="./public/img/logo_3.png"></img></a>
+            </div>
+            <ul class="navbar-nav mt-3">
+                <li class="nav-item"><a class="nav-link">phoenixcontact官網</a>
+                </li>
+                <li class="nav-item"><a href="https://www.etherwan.com/tw" class="nav-link">公司官網</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"></i>前執行長的話</a>
+                </li>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">經營策略<i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item"><a href="chart.html">Chart</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link">公司原則</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">公司介紹</a></li>
+                <li class="nav-item"><a href="custom.html" class="nav-link">Html</a></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Main Content -->
+        <div id="page-content-wrapper">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg border-bottom" id="topNav">
+                <div class="logo"></div>
+                <button class="navbar-toggler d-lg-block d-none " id="menu-lg-toggle"><i class="fas fa-bars"></i></button>
+                <button class="navbar-toggler d-lg-none d-block" id="menu-laptop-toggle"><i class="fas fa-bars"></i></button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav justify-content-start">
+                        <li class="nav-item"><a href="#">公司文化</a></li>
+                        <li class="nav-item"><a href="#">公司組織</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- ##### Section Start ##### -->
+            <section class="container-fluid">
+                <div class="row page_title">
+                    <h2 class="col-6">Chart</h2>
+                    <nav aria-label="breadcrumb" class="col-6">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Chart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+            <section class="container-fluid ChartArea" id="ChartArea">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Pie Chart
+                            </div>
+                            <div class="card-body">
+                                <canvas id="myChart" width="400" height="200"></canvas>
+                                <table class="table table-bordered mt-3 Chart" style="width: 50%;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Red</th>
+                                            <th scope="col">Blue</th>
+                                            <th scope="col">Yellow</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr id=show>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Bar Chart
+                            </div>
+                            <div class="card-body">
+                                <canvas id="BarChart" width="400" height="200"></canvas>
+                                <table class="table table-bordered mt-3 Chart" style="width: 50%;" id="showBar">
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container-fluid ChartArea" id="ChartArea">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Line Chart
+                            </div>
+                            <div class="card-body">
+                                <canvas id="LineChart" width="400" height="200"></canvas>
+                                <table class="table table-bordered mt-3 Chart" style="width: 50%;" id="showLine">
+                                
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="card" id="input2">
+                            <div class="card-header">
+                                Mixed Chart
+                            </div>
+                            <div class="card-body">
+                                <canvas id="MixChart" width="400" height="200"></canvas>
+                                <table class="table table-bordered mt-3 Chart" style="width: 70%;" id="showMix">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- ##### Header Area End ##### -->
+
+
+
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-3.5.1 js -->
+    <script src="./plugins/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./plugins/bootstrap/js/popper.min.js"></script>
+    <script src="./plugins/select2/js/select2.min.js"></script>
+    <script src="./plugins/Magicsuggest/js/magicsuggest-min.js"></script>
+    <script src="./plugins/chart.js/Chart.min.js"></script>
+    <!-- DataTables -->
+    <script src="./plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/buttons.print.min.js"></script>
+    <script src="./plugins/select2/js/multiple-select.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/buttons.html5.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/buttons.colVis.min.js"></script>
+    <script src="./plugins/JSZip-2.5.0/jszip.min.js"></script>
+    <!-- SummerNote -->
+    <script src="./plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- datepicker -->
+    <script src="./plugins/daterangepicker-master/moment.min.js"></script>
+    <script src="./plugins/daterangepicker-master/daterangepicker.js"></script>
+    <!-- Active js -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/chart.js"></script>
+
+
+</body>
+
+</html>

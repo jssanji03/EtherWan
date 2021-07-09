@@ -1,0 +1,121 @@
+
+@mixin button($background-color:$text,$fontColor: $white,$hover-color:$lightGray,$hover-fontColor:$white) {
+    height: 35px;
+    min-width: 90px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin:0px 5px;
+    background-color: $background-color;
+    color: $fontColor;
+     &:hover{
+    background-color: $hover-color;
+    color: $hover-fontColor;
+    font-size: 16px;
+    font-weight: 400;
+    }
+    &:focus{
+    font-size: 16px;
+    font-weight: 400;
+    }
+}
+// 指派  //
+.btn-submit{
+    @include button($background-color:$secondary,$fontColor: $white,$hover-color:$hover,$hover-fontColor:$white)
+}
+// 回上一頁 //
+.btn-back{
+    @include button($background-color:rgb(90, 90, 90),$fontColor: $white,$hover-color:rgb(117, 117, 117),$hover-fontColor:$white);
+}
+// 刪除 //
+.btn-delete{
+    @include button($background-color: $red,$fontColor: $white,$hover-fontColor:$white);
+}
+
+// 儲存 //
+.btn-padding{
+     @include button($background-color:rgb(2, 166, 172),$fontColor: $white,$hover-color:rgb(14, 198, 204),$hover-fontColor:$white)
+}
+
+// 創建 //
+.btn-create{
+    @include button($background-color:$primary,$fontColor: $white,$hover-color:#4e78ee,$hover-fontColor:$white);
+}
+
+// 取消 //
+.btn-cancel{
+    @include button($background-color: rgb(216, 216, 216),$fontColor: $text);
+   
+}
+
+// 編輯 //
+.btn-edit{
+    @include button($background-color: $yellow,$fontColor: $text,$hover-color:#ffa601);
+}
+
+// 日曆 搜尋列 button //
+.btn-calendar{
+    @include button($background-color: $yellow,$fontColor: $text,$hover-color:#ffa601);
+    height: 35px;
+}
+
+// 日曆 搜尋列 button //
+.btn-dateFilter{
+    @include button($background-color: #FFF,$fontColor: $text,$hover-color:$lightBlue);
+    border: 1px solid $border;
+    height: 35px;
+    outline: none;
+    &:hover{
+        color: $bg-body;
+    }
+    &.active{
+        background-color: $primary;
+        color:#FFF;
+        z-index: -1;
+    }
+}
+
+.btn-sm{
+    min-width: 8px;
+}
+
+
+.btn-menu{
+    width: 100%;
+    height: 50px;
+    background-color: #d0dce6;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+    color: $text;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom:0px;
+        z-index:-1;
+        width: 100%;
+        height:100%;
+        background: transparent;
+        border-radius: 8px;
+        box-shadow: inset 0px 0px 0px $hover;
+        display: inline-block;
+        -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+        transition: all 0.6s ease-in-out
+    }
+    &:hover{
+        color: $white;
+        &::before{
+            box-shadow: inset 300px 0px 0px $hover;
+            color: $white;
+        }
+    }
+}
+
+button{
+    outline-style: none;
+}
