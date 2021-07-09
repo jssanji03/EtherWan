@@ -2371,12 +2371,6 @@ input:disabled {
 
 .header {
   height: 350px;
-  background: url(../../public/img/bg2.jpg) center center no-repeat;
-  background-size: cover;
-}
-
-.header .bg {
-  height: 350px;
 }
 
 .header .logo {
