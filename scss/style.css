@@ -2375,6 +2375,10 @@ input:disabled {
   background-size: cover;
 }
 
+.header .bg {
+  height: 350px;
+}
+
 .header .logo {
   width: 350px;
   margin: 0 auto;
