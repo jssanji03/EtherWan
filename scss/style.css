@@ -2363,6 +2363,12 @@ input:disabled {
   margin-top: 5px;
 }
 
+.info img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .header {
   height: 350px;
   background: url(../../public/img/bg2.jpg) center center no-repeat;
@@ -2446,11 +2452,5 @@ input:disabled {
 .link ul li .btn-menu:hover .fas {
   padding-right: 20px;
   color: #ffffff;
-}
-
-.info img {
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
