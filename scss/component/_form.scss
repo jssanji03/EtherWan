@@ -13,7 +13,73 @@
 }
 //--- Title and BreadCrumb End ---//
 
+// #InputArea
+.InputArea{
+    .card{
+        padding: 0px;
+        .card-header{
+            background-color: brown;
+            color: $white;
+        }
+        .card-body{
+            height: 300px !important;
+        }
+    }
+}
+.in-redline{
+    border:1px solid red !important;
+}
 
+// #SelectArea
+.SelectArea{
+    .card{
+        padding: 0px;
+    }
+    .card-header{
+        background-color: $secondary;
+        color: $white;
+    }
+     .card-body{
+        height: 300px !important;
+    }
+    .search{
+        background-color: $white !important;
+    }
+    .dropdown-menu{
+        left:0;
+    }
+}
+
+// #TableArea
+.TableArea{
+    .card-header{
+        background-color: rgb(79, 18, 150);
+        color: $white;
+    }
+    
+    .table-Hover{
+        td,th{
+            border-top: 1px solid rgb(155, 177, 219);
+        }
+        tbody tr{
+            
+            &:hover{
+                background-color: rgb(253, 216, 48) !important; 
+            }
+            &:nth-child(odd){
+                background-color: rgb(234, 245, 252);
+            }
+        }
+    }
+    .datatable-RWD{
+        text-align: left;
+        tbody{
+            .dtr-title{
+                text-align: left;
+            }
+        }
+    }
+}
 
 // #ChartArea
 .ChartArea{

@@ -1,0 +1,194 @@
+// DataTable 基本樣式 //
+table.dataTable tbody th, 
+table.dataTable tbody td{
+    color: $text;
+    padding: 15px 0px;
+    border: none;
+}
+table.dataTable{
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid rgb(204, 204, 204);
+    thead{
+       width: 100%;
+       border-bottom: 2px solid ;
+        tr{
+            color: $primary;
+            font-size: 16px;
+            th{
+               font-weight: 500 ;
+               font-size: 14px;
+               text-align: center;
+               padding: 8px;
+               width: 10%;
+            }
+        }
+       
+    }
+    tbody{
+        tr{
+            padding: 0px;
+            border: 1px solid rgba(134, 200, 238, 0.329);
+            .dateColor{
+                color: $secondary ;
+                font-weight: 300;
+            }
+            td{
+            outline: none;
+            border-left: 1px solid rgba(134, 200, 238, 0.329);
+            padding: 8px;
+            line-height: 30px;
+          }
+          &:nth-child(odd){
+              background-color: rgb(234, 245, 252);
+          }
+        }
+    }
+    tfoot{
+        tr{
+            border-top:1px solid $secondary ;
+            line-height: 40px;
+            color: $text;
+        }
+    }
+    .assignActive{
+      background-color: $primary;
+      color: $white;
+      display: inline-block;
+      width: 120px;
+      height: 35px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      padding: 5px;
+    }
+}
+  .dataTables_length,.dataTables_paginate{
+    margin-top: 10px;
+    padding: 0px;
+  }
+// DataTable 基本樣式 End //
+
+.table-gray{
+      text-align: center;
+      border: 1px solid rgb(204, 204, 204);
+      thead{
+        border-bottom: 2px solid ;
+        th{
+          color: $primary;
+        }
+      }
+      tbody tr{
+          td,th{
+              align-items: center;
+            }
+            &:nth-child(odd){
+              background-color: rgb(240, 240, 240) !important;
+            }
+        }
+    }
+
+// DataTable Card樣式 Start //
+.listDataTable,.datatable-card{
+    @media (max-width: 992px) {
+  border:none !important;
+  background-color: transparent !important;
+  min-width: 100%;
+  /*針對tr去做隱藏*/
+  thead{
+      .tr-only-hide {
+      display: none !important;
+      }
+      
+  }
+  tbody{
+    background-color: transparent;
+    /*讓tr變成區塊主要讓他有個區塊*/
+      tr{
+        width: 100%;
+        display: block;
+        font-size: 15px;
+        line-height: 15px;
+        box-shadow: 2px 2px 5px #ccc;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: none !important;
+        &:nth-child(odd){
+          border-left: 10px solid $text;
+          border-radius: 20px;
+        }
+        &:nth-child(even){
+          border-left: 10px solid $yellow;
+          border-radius: 20px;
+        }
+        .vcheckbox{
+          &:before{display: none;}
+        }
+        td {
+          text-align: left;
+          overflow: hidden;
+          width: 100%;
+          display: block;
+          padding: 5px 0px ;
+          border: none !important;
+        &:before {
+        /*最重要的就是這串*/
+        content: attr(data-th) " : ";
+        /*最重要的就是這串*/
+        display: inline-block;
+        text-transform: uppercase;
+        width: 50%;
+        font-weight: 400;
+        margin-right: 10px;
+        text-align:end;
+        color: $primary;
+        }
+  	  }
+    }
+  }
+  tfoot{
+    display: none !important;
+  }
+  }
+}
+// DataTable Card樣式 End //
+
+
+// #TableArea
+.TableArea{
+  .card{
+    padding: 0px;
+  }
+    .card-header{
+        background-color: rgb(79, 18, 150);
+        color: $white;
+    }
+    
+    .table-Hover{
+        td,th{
+            border-top: 1px solid rgb(155, 177, 219);
+        }
+        tbody tr{
+            
+            &:hover{
+                background-color: rgb(253, 216, 48) !important; 
+            }
+            &:nth-child(odd){
+                background-color: rgb(234, 245, 252);
+            }
+        }
+    }
+    .datatable-RWD{
+        text-align: left;
+        tbody{
+            .dtr-title{
+                text-align: left;
+            }
+        }
+    }
+}
+
+@page{
+  // size: landscape; /* 橫向 */
+  size: A4 landscape;  /* 尺寸/保留字 + 方向 */; 
+    }

@@ -1,5 +1,6 @@
+@charset "UTF-8";
 /* Plugins Master Stylesheet */
-@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.min.css");
+@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.css");
 @import url("../plugins/jOrgChart/jquery.jOrgChart.css");
 @import url("../plugins/fontawesome-free/css/all.min.css");
 @import url("../plugins/select2/css/select2.min.css");
@@ -7,7 +8,7 @@
 @import url("../plugins/Buttons-1.6.5/css/buttons.dataTables.min.css");
 @import url("../plugins/chart.js/Chart.min.css");
 @import url("../plugins/select2/css/multiple-select.min.css");
-@import url("../plugins/Magicsuggest/css/magicsuggest-min.css");
+@import url("../plugins/Magicsuggest/css/magicsuggest.css");
 @import url("../plugins/daterangepicker-master/daterangepicker.css");
 @import url("../plugins/summernote/summernote-bs4.min.css");
 @import url("../plugins/Responsive-2.2.7/css/responsive.bootstrap.min.css");
@@ -284,6 +285,69 @@ button {
   line-height: 30px;
   height: 30px;
   margin: 0px;
+}
+
+.InputArea .card {
+  padding: 0px;
+}
+
+.InputArea .card .card-header {
+  background-color: brown;
+  color: #ffffff;
+}
+
+.InputArea .card .card-body {
+  height: 300px !important;
+}
+
+.in-redline {
+  border: 1px solid red !important;
+}
+
+.SelectArea .card {
+  padding: 0px;
+}
+
+.SelectArea .card-header {
+  background-color: #708ba5;
+  color: #ffffff;
+}
+
+.SelectArea .card-body {
+  height: 300px !important;
+}
+
+.SelectArea .search {
+  background-color: #ffffff !important;
+}
+
+.SelectArea .dropdown-menu {
+  left: 0;
+}
+
+.TableArea .card-header {
+  background-color: #4f1296;
+  color: #ffffff;
+}
+
+.TableArea .table-Hover td, .TableArea .table-Hover th {
+  border-top: 1px solid #9bb1db;
+}
+
+.TableArea .table-Hover tbody tr:hover {
+  background-color: #fdd830 !important;
+}
+
+.TableArea .table-Hover tbody tr:nth-child(odd) {
+  background-color: #eaf5fc;
+}
+
+.TableArea .datatable-RWD {
+  text-align: left;
+}
+
+.TableArea .datatable-RWD tbody .dtr-title {
+  text-align: left;
 }
 
 .ChartArea .card-header {
@@ -759,6 +823,199 @@ button {
   margin-top: 8px;
 }
 
+table.dataTable tbody th,
+table.dataTable tbody td {
+  color: #5a5a5a;
+  padding: 15px 0px;
+  border: none;
+}
+
+table.dataTable {
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #cccccc;
+}
+
+table.dataTable thead {
+  width: 100%;
+  border-bottom: 2px solid;
+}
+
+table.dataTable thead tr {
+  color: #2d3994;
+  font-size: 16px;
+}
+
+table.dataTable thead tr th {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px;
+  width: 10%;
+}
+
+table.dataTable tbody tr {
+  padding: 0px;
+  border: 1px solid rgba(134, 200, 238, 0.329);
+}
+
+table.dataTable tbody tr .dateColor {
+  color: #708ba5;
+  font-weight: 300;
+}
+
+table.dataTable tbody tr td {
+  outline: none;
+  border-left: 1px solid rgba(134, 200, 238, 0.329);
+  padding: 8px;
+  line-height: 30px;
+}
+
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #eaf5fc;
+}
+
+table.dataTable tfoot tr {
+  border-top: 1px solid #708ba5;
+  line-height: 40px;
+  color: #5a5a5a;
+}
+
+table.dataTable .assignActive {
+  background-color: #2d3994;
+  color: #ffffff;
+  display: inline-block;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  padding: 5px;
+}
+
+.dataTables_length, .dataTables_paginate {
+  margin-top: 10px;
+  padding: 0px;
+}
+
+.table-gray {
+  text-align: center;
+  border: 1px solid #cccccc;
+}
+
+.table-gray thead {
+  border-bottom: 2px solid;
+}
+
+.table-gray thead th {
+  color: #2d3994;
+}
+
+.table-gray tbody tr td, .table-gray tbody tr th {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-gray tbody tr:nth-child(odd) {
+  background-color: #f0f0f0 !important;
+}
+
+@media (max-width: 992px) {
+  .listDataTable, .datatable-card {
+    border: none !important;
+    background-color: transparent !important;
+    min-width: 100%;
+    /*針對tr去做隱藏*/
+  }
+  .listDataTable thead .tr-only-hide, .datatable-card thead .tr-only-hide {
+    display: none !important;
+  }
+  .listDataTable tbody, .datatable-card tbody {
+    background-color: transparent;
+    /*讓tr變成區塊主要讓他有個區塊*/
+  }
+  .listDataTable tbody tr, .datatable-card tbody tr {
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    line-height: 15px;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+            box-shadow: 2px 2px 5px #ccc;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none !important;
+  }
+  .listDataTable tbody tr:nth-child(odd), .datatable-card tbody tr:nth-child(odd) {
+    border-left: 10px solid #5a5a5a;
+    border-radius: 20px;
+  }
+  .listDataTable tbody tr:nth-child(even), .datatable-card tbody tr:nth-child(even) {
+    border-left: 10px solid #FFCC01;
+    border-radius: 20px;
+  }
+  .listDataTable tbody tr .vcheckbox:before, .datatable-card tbody tr .vcheckbox:before {
+    display: none;
+  }
+  .listDataTable tbody tr td, .datatable-card tbody tr td {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    padding: 5px 0px;
+    border: none !important;
+  }
+  .listDataTable tbody tr td:before, .datatable-card tbody tr td:before {
+    /*最重要的就是這串*/
+    content: attr(data-th) " : ";
+    /*最重要的就是這串*/
+    display: inline-block;
+    text-transform: uppercase;
+    width: 50%;
+    font-weight: 400;
+    margin-right: 10px;
+    text-align: end;
+    color: #2d3994;
+  }
+  .listDataTable tfoot, .datatable-card tfoot {
+    display: none !important;
+  }
+}
+
+.TableArea .card {
+  padding: 0px;
+}
+
+.TableArea .card-header {
+  background-color: #4f1296;
+  color: #ffffff;
+}
+
+.TableArea .table-Hover td, .TableArea .table-Hover th {
+  border-top: 1px solid #9bb1db;
+}
+
+.TableArea .table-Hover tbody tr:hover {
+  background-color: #fdd830 !important;
+}
+
+.TableArea .table-Hover tbody tr:nth-child(odd) {
+  background-color: #eaf5fc;
+}
+
+.TableArea .datatable-RWD {
+  text-align: left;
+}
+
+.TableArea .datatable-RWD tbody .dtr-title {
+  text-align: left;
+}
+
+@page {
+  size: A4 landscape;
+  /* 尺寸/保留字 + 方向 */
+}
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 15px;
@@ -767,6 +1024,7 @@ body {
 
 label {
   margin-bottom: 2px;
+  line-height: 25px;
 }
 
 h1,

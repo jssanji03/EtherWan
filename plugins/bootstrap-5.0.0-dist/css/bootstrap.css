@@ -2197,7 +2197,11 @@ progress {
   background-color: #e9ecef;
   opacity: 1;
 }
-.form-control:disabled, .form-control:read-only {
+/* .form-control:read-only {
+  background-color: #e9ecef;
+  opacity: 1;
+} */
+.form-control:disabled{
   background-color: #e9ecef;
   opacity: 1;
 }

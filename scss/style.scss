@@ -1,5 +1,5 @@
 /* Plugins Master Stylesheet */
-@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.min.css");
+@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.css");
 // @import url('../plugins/bootstrap/css/bootstrap.css');
 @import url('../plugins/jOrgChart/jquery.jOrgChart.css');
 @import url('../plugins/fontawesome-free/css/all.min.css');
@@ -8,7 +8,7 @@
 @import url('../plugins/Buttons-1.6.5/css/buttons.dataTables.min.css');
 @import url('../plugins/chart.js/Chart.min.css');
 @import url('../plugins/select2/css/multiple-select.min.css');
-@import url('../plugins/Magicsuggest/css/magicsuggest-min.css');
+@import url('../plugins/Magicsuggest/css/magicsuggest.css');
 @import url('../plugins/daterangepicker-master/daterangepicker.css');
 @import url('../plugins/summernote/summernote-bs4.min.css');
 @import url('../plugins/Responsive-2.2.7/css/responsive.bootstrap.min.css');
@@ -38,6 +38,7 @@
 @import "component/form";
 @import "component/sidebar";
 @import "component/card";
+@import "component/datatable";
 
 // *******************
 //     base
