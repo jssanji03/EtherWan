@@ -1,7 +1,3 @@
-// * {
-//     margin: 0;
-//     padding: 0;
-// }
 body {
     font-family: $fontsNoto;
     font-size: 15px;
@@ -14,7 +10,6 @@ label{
 }
 
 
-
 h1,
 h2,
 h3,
@@ -25,11 +20,13 @@ h6 {
     font-weight: 500;
     margin: 0px;
 }
-
+h3{
+    font-size: 26px;
+}
 p {
     font-family: $fontsNoto;
     color: $text;
-    line-height: 2;
+    line-height: 1.5;
     font-weight: 400;
     margin: 0px;
 }
@@ -44,7 +41,6 @@ a:focus {
 
 ul {
     margin: 0;
-
     li {
         list-style: none;
     }
@@ -57,57 +53,4 @@ img {
 
 
 
-
-
-%outlineColor{
-    box-shadow: 0 0 0 0.2rem rgba(15, 173, 221, 0.25);
-    outline-style: none;
-}
-
-.form-group{
-    margin: 0px;
-    margin-top: 5px;
-}
-
-.form-control{
-    border: 1px solid $border !important;
-    &:focus{
-        @extend %outlineColor
-    }
-}
-
-.form-control-sm,.input-group-text,.custom-file-input,.custom-file-label {
-    height: 35px ;
-    border: 1px solid $border
-}
-.custom-file-label::after{
-    height: 33px !important;
-}
-
-.form-control-sm:focus {
-   @extend %outlineColor
-}
-
-.select2-search__field{
-    @extend %outlineColor
-}
-.select2-selection--multiple{
-    margin-bottom: 0 !important;
-    &:focus{
-        border: 1px solid $border !important;
-        @extend %outlineColor
-    }
-}
-.select2-selection--single {
-    height: 35px !important;
-    padding:3px;
-}
-
-input:disabled {
-     background-color : rgb(233, 233, 233); // 修改默認灰色樣式
-     color: #666; 
-     opacity:0.3; // 默認的不透明級別為0.3
-     -webkit-text-fill-color:#666; // 字體顏色安卓與IOS適配  
-     -webkit-opacity: 1;
- }
 

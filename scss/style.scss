@@ -21,6 +21,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
 
 
+@import "base/reset";
 // *******************
 //     helpers
 // *******************
@@ -33,7 +34,7 @@
 //     component
 // *******************
 @import "component/button";
-@import "component/datatable";
+@import "component/img";
 @import "component/form";
 @import "component/sidebar";
 @import "component/card";
@@ -46,9 +47,9 @@
 // *******************
 //     pages
 // *******************
-@import "pages/calendar";
-@import "pages/colorControl";
-@import "pages/login";
+// @import "pages/calendar";
+// @import "pages/colorControl";
+// @import "pages/login";
 @import "pages/organization";
 @import "pages/homepage";
 @import "pages/index";

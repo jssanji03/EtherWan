@@ -8,38 +8,29 @@ $secondary: #708ba5;
 .secondary{
     color: $secondary;
 }
-// Heading Color
-// $heading: #8a8a8a;
 // Text Color
 $text: #5a5a5a;
 
-// Gray Background
-// $bg-gray: #f2f4f5;
-
 // Body Background
 $bg-body: #ecf5ff;
-
+.background{
+    background-color: $bg-body;
+}
+.background-blue30{
+    background-color: #ebf8ff;
+}
 // White Color
 $white: #ffffff;
 
 // Dark Color
 $dark: #303030;
 
-// Border Color
-$border: rgb(165, 165, 165);
-
-// Border Focus
-$borderFocus: #44a1d0;
-
 // Hover Color
 $hover: #2D94CE;
-
-// Light Gray Color
-$lightGray: #b1b1b1;
-
-//light Blue
-$lightBlue:#D9EDF7;
+.hover{
+    color: $hover;
+}
 
 $yellow: #FFCC01;
 
-$red:rgb(233, 74, 74)
+// $red:rgb(233, 74, 74)

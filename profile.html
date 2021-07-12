@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Template</title>
+    <title>Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./public/img/core-img/favicon.png">
@@ -24,59 +24,28 @@
 
     <!-- ##### Header Area Start ##### -->
     <div class="d-flex" id="wrapper">
-        <!-- Color Sidebar -->
-        <div id="color-sidebar">
-            <div class="colorSelect">
-                <h6>Customize Template</h6>
-                <p>Dark Theme</p>
-                <div class="dark-yellow"></div>
-                <div class="dark-brown"></div>
-                <div class="dark-blue"></div>
-                <p class="mt-15">Light Theme</p>
-                <div class="light-red"></div>
-                <div class="light-purple"></div>
-                <div class="light-green"></div>
-            </div>
-        </div>
-        <!-- /#Color Sidebar -->
 
         <!-- Sidebar -->
         <div class="d-block" id="sidebar-wrapper">
-            <div class="side_logo">
-                <img src="./public/img/logo.png"></img>
+            <div class="side_logo mt-3">
+                <a href="index.html"><img src="./public/img/logo_3.png"></img></a>
             </div>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa-icon fas fa-home "></i>index</a>
+            <ul class="navbar-nav mt-3">
+                <li class="nav-item"><a class="nav-link">phoenixcontact官網</a>
                 </li>
-                <li class="nav-item has-menu"><a class="nav-link"><i class="fa-icon far fa-file"></i>Form<i
-                            class="fas fa-angle-down"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item"><a href="form.html">General Form</a></li>
-                        <li class="dropdown-item"><a href="form2.html">Table</a></li>
-                    </ul>
+                <li class="nav-item"><a href="https://www.etherwan.com/tw" class="nav-link">公司官網</a>
                 </li>
-                <li class="nav-item"><a href="summernote.html" class="nav-link"><i
-                            class="fa-icon fas fa-edit"></i>SummerNote</a>
+                <li class="nav-item"><a class="nav-link"></i>前執行長的話</a>
                 </li>
-                <li class="nav-item has-menu"><a href="#" class="nav-link"><i
-                            class="fa-icon fas fa-chart-line"></i>Chart<i class="fas fa-angle-down"></i></a>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">經營策略<i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li class="dropdown-item"><a href="chart.html">Chart</a></li>
                     </ul>
                 </li>
-                <li class="nav-item has-menu"><a href="#" class="nav-link"><i
-                            class="fa-icon fas fa-sign-in-alt"></i>Layout<i class="fas fa-angle-down"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item"><a href="login.html">Login</a></li>
-                        <li class="dropdown-item"><a href="login2.html">Login2</a></li>
-                        <li class="dropdown-item"><a href="logout.html">Logout</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="organization.html" class="nav-link"><i
-                            class="fa-icon fas fa-sitemap"></i>公司組織圖</a>
-                </li>
-                <li class="nav-item"><a href="profile.html" class="nav-link"><i class="fa-icon fas fa-id-card"></i>Profile</a>
-                </li>
+                <li class="nav-item"><a class="nav-link">公司原則</a></li>
+                <li class="nav-item"><a href="homepage.html" class="nav-link">公司介紹</a></li>
+                <li class="nav-item"><a href="custom.html" class="nav-link">Html</a></li>
+                <li class="nav-item"><a href="profile.html" .html" class="nav-link">Profile</a></li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -92,65 +61,78 @@
                         class="fas fa-bars"></i></button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav justify-content-end">
-                        <li class="nav-item"><i class="far fa-calendar-alt pr-2"></i><a href="calendar.html">日曆</a></li>
-                        <li class="nav-item dropdown dropdown-toggle"><i class="fas fa-cog"></i>
-                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <li class="dropdown-item" href="#">option1</li>
-                                <li class="dropdown-item" href="#">option2</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item" id="color-menu-toggle"><i class="fas fa-palette"></i></li>
+                    <ul class="nav justify-content-start">
+                        <li class="nav-item"><a href="#">公司文化</a></li>
+                        <li class="nav-item"><a href="organization.html">公司組織</a></li>
                     </ul>
                 </div>
             </nav>
             <!-- Navbar End -->
 
             <!-- ##### Section Start ##### -->
-            <section class="container-fluid">
-                <div class="row page_title">
-                    <h2 class="col-6">Profile</h2>
-                    <nav aria-label="breadcrumb" class="col-6">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Profile</li>
-                        </ol>
-                    </nav>
+            <section>
+                <div class="container">
+                    <div class="row page_title">
+                        <h2 class="col-6">Profile</h2>
+                        <nav class="breadcrumb col-6 justify-content-end">
+                            <ol class="d-flex">
+                                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                <li class="breadcrumb-item active">Profile</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </section>
-            <section class="container-fluid">
-                <div class="row">
-                    <!-- Profile Image -->
-                    <div class="card ">
-                        <div class="card-body box-profile">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div class="text-center">
-                                        <img class="profile-user-img img-fluid img-circle" src="./public/img/organization/user03.jpeg"
-                                            alt="User profile picture">
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <h3 class="profile-username text-left">Nina Mcintire</h3>
-                                    <p class="text-muted text-left">Software Engineer</p>
-                                    <ul class="list-group list-group-unbordered mb-3">
-                                        <li class="list-group-item">
-                                            <b>Followers</b> <a class="float-right">1,322</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <b>Following</b> <a class="float-right">543</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <b>Friends</b> <a class="float-right">13,287</a>
-                                        </li>
-                                    </ul>
-                                </div>
+            <section>
+                <div class="container">
+                    <div class="row card-noShadow background-blue30 justify-content-between">
+                        <div class="col-2">
+                            <div class="text-center">
+                                <img class="img-L img-circle" src="./public/img/organization/user01.jpeg" alt="User profile picture">
                             </div>
                         </div>
-                        <!-- /.card-body -->
+                        <div class="col-8">
+                            <p class="hover text-left">Dept.</p>
+                            <h3 class="primary text-left">Nina Mcintire</h3>
+                            <p class="secondary text-left">Software Engineer</p>
+                            <ul class="mt-3">
+                                <li>
+                                    <p>
+                                        <i class="fas fa-envelope pr-10"></i>
+                                        abc1234@gmail.com
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="fab fa-line pr-10"></i>
+                                        abc1234
+                                    </p>
+                                </li>
+                        
+                            </ul>
+                        </div>
                     </div>
-                    <!-- /.card -->
+                        <!-- /.card -->
+                    <div class="row mt-50">
+                        <div class="col-3">
+                            <div class="card">
+                                <ul class="mt-3">
+                                    <li>
+                                        <p class="">Work</p>
+                                        <h4>Software Engineer</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur adipisci, necessitatibus velit iste, eaque</p>
+                                    </li>
+                                    <li>
+                                        <p class="">Skill</p>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-9"></div>
+                    </div>
                 </div>
+                
             </section>
         </div>
         <!-- /#page-content-wrapper -->
