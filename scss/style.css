@@ -350,6 +350,10 @@ button {
   text-align: left;
 }
 
+.ChartArea .card {
+  padding: 0px;
+}
+
 .ChartArea .card-header {
   background-color: #00a6c4;
   color: #ffffff;

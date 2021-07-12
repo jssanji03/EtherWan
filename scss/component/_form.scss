@@ -83,6 +83,9 @@
 
 // #ChartArea
 .ChartArea{
+    .card{
+        padding: 0px;
+    }
     .card-header{
         background-color: rgb(0, 166, 196);
         color: $white;
