@@ -69,27 +69,9 @@ table.dataTable{
   }
 // DataTable 基本樣式 End //
 
-.table-gray{
-      text-align: center;
-      border: 1px solid rgb(204, 204, 204);
-      thead{
-        border-bottom: 2px solid ;
-        th{
-          color: $primary;
-        }
-      }
-      tbody tr{
-          td,th{
-              align-items: center;
-            }
-            &:nth-child(odd){
-              background-color: rgb(240, 240, 240) !important;
-            }
-        }
-    }
 
 // DataTable Card樣式 Start //
-.listDataTable,.datatable-card{
+.datatable-card{
     @media (max-width: 992px) {
   border:none !important;
   background-color: transparent !important;
@@ -188,7 +170,3 @@ table.dataTable{
     }
 }
 
-@page{
-  // size: landscape; /* 橫向 */
-  size: A4 landscape;  /* 尺寸/保留字 + 方向 */; 
-    }

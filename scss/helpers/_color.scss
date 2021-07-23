@@ -8,19 +8,36 @@ $secondary: #708ba5;
 .secondary{
     color: $secondary;
 }
+.bg_secondary{
+    background-color: $secondary;
+}
+// important Color
+$important: #26a1f3;
+.important{
+    color: $important;
+}
+.bg_important{
+    background-color: $important;
+}
 // Text Color
 $text: #5a5a5a;
+.text{
+    color: $text;
+}
 
 // Body Background
 $bg-body: #ecf5ff;
-.background{
+.bg{
     background-color: $bg-body;
 }
-.background-blue30{
+.bg-blue30{
     background-color: #ebf8ff;
 }
 // White Color
 $white: #ffffff;
+.white{
+    color: $white;
+}
 
 // Dark Color
 $dark: #303030;
@@ -30,7 +47,8 @@ $hover: #2D94CE;
 .hover{
     color: $hover;
 }
+.bg_hover{
+    background-color: $hover;
+}
 
 $yellow: #FFCC01;
-
-// $red:rgb(233, 74, 74)

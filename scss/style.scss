@@ -29,6 +29,7 @@
 @import "helpers/color";
 @import "helpers/responsive";
 @import "helpers/spacing";
+@import "helpers/border";
 
 // *******************
 //     component
@@ -48,10 +49,8 @@
 // *******************
 //     pages
 // *******************
-// @import "pages/calendar";
-// @import "pages/colorControl";
-// @import "pages/login";
 @import "pages/organization";
 @import "pages/homepage";
 @import "pages/index";
+@import "pages/profile";
 

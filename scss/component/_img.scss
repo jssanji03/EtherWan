@@ -7,3 +7,9 @@
     padding: 0px;
     object-fit: cover;
 }
+.img-sm{
+    @media #{$breakpoint-xs}{
+        width: 30%;
+        height: 30%;
+    }
+}

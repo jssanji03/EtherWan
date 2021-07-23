@@ -86,6 +86,18 @@ table {
   font-size: 12px;
 }
 
+.lh-20 {
+  line-height: 20px;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-40 {
+  line-height: 40px;
+}
+
 .primary {
   color: #2d3994;
 }
@@ -94,24 +106,40 @@ table {
   color: #708ba5;
 }
 
-.background {
+.bg_secondary {
+  background-color: #708ba5;
+}
+
+.important {
+  color: #26a1f3;
+}
+
+.bg_important {
+  background-color: #26a1f3;
+}
+
+.text {
+  color: #5a5a5a;
+}
+
+.bg {
   background-color: #ecf5ff;
 }
 
-.background-blue30 {
+.bg-blue30 {
   background-color: #ebf8ff;
+}
+
+.white {
+  color: #ffffff;
 }
 
 .hover {
   color: #2D94CE;
 }
 
-#page-content-wrapper section:first-of-type {
-  margin-top: 10px;
-}
-
-#page-content-wrapper section:not(:first-of-type) {
-  margin-top: 20px;
+.bg_hover {
+  background-color: #2D94CE;
 }
 
 .mt-15 {
@@ -215,6 +243,112 @@ table {
   padding-right: 10px;
 }
 
+.border-b {
+  border-bottom: 1px solid #000;
+}
+
+.border-blue {
+  border-color: #2D94CE;
+}
+
+.btn-edit {
+  height: 35px;
+  line-height: 35px;
+  min-width: auto;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0px 5px;
+  background-color: #708ba5;
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: #2D94CE;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-edit:focus {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-delete {
+  height: 35px;
+  line-height: 35px;
+  min-width: auto;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0px 5px;
+  background-color: #e43d27;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #8d1414;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-delete:focus {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-padding {
+  height: 35px;
+  line-height: 35px;
+  min-width: auto;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0px 5px;
+  background-color: #16abb6;
+  color: #ffffff;
+}
+
+.btn-padding:hover {
+  background-color: #10767e;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-padding:focus {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-cal {
+  height: 35px;
+  line-height: 35px;
+  min-width: auto;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0px 5px;
+  background-color: #708ba5;
+  color: #ffffff;
+  width: 35px;
+  height: 35px;
+}
+
+.btn-cal:hover {
+  background-color: #708ba5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-cal:focus {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .btn-menu {
   width: 100%;
   height: 50px;
@@ -269,6 +403,13 @@ button {
   padding: 0px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media only screen and (max-width: 767px) {
+  .img-sm {
+    width: 30%;
+    height: 30%;
+  }
 }
 
 .page_title {
@@ -827,6 +968,16 @@ button {
   margin-top: 8px;
 }
 
+@media only screen and (max-width: 767px) {
+  .information_card {
+    width: 150px;
+    padding: 40px 0px;
+  }
+  .information_card h3 {
+    font-size: 20px;
+  }
+}
+
 table.dataTable tbody th,
 table.dataTable tbody td {
   color: #5a5a5a;
@@ -902,44 +1053,21 @@ table.dataTable .assignActive {
   padding: 0px;
 }
 
-.table-gray {
-  text-align: center;
-  border: 1px solid #cccccc;
-}
-
-.table-gray thead {
-  border-bottom: 2px solid;
-}
-
-.table-gray thead th {
-  color: #2d3994;
-}
-
-.table-gray tbody tr td, .table-gray tbody tr th {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.table-gray tbody tr:nth-child(odd) {
-  background-color: #f0f0f0 !important;
-}
-
 @media (max-width: 992px) {
-  .listDataTable, .datatable-card {
+  .datatable-card {
     border: none !important;
     background-color: transparent !important;
     min-width: 100%;
     /*針對tr去做隱藏*/
   }
-  .listDataTable thead .tr-only-hide, .datatable-card thead .tr-only-hide {
+  .datatable-card thead .tr-only-hide {
     display: none !important;
   }
-  .listDataTable tbody, .datatable-card tbody {
+  .datatable-card tbody {
     background-color: transparent;
     /*讓tr變成區塊主要讓他有個區塊*/
   }
-  .listDataTable tbody tr, .datatable-card tbody tr {
+  .datatable-card tbody tr {
     width: 100%;
     display: block;
     font-size: 15px;
@@ -950,18 +1078,18 @@ table.dataTable .assignActive {
     border-radius: 10px;
     border: none !important;
   }
-  .listDataTable tbody tr:nth-child(odd), .datatable-card tbody tr:nth-child(odd) {
+  .datatable-card tbody tr:nth-child(odd) {
     border-left: 10px solid #5a5a5a;
     border-radius: 20px;
   }
-  .listDataTable tbody tr:nth-child(even), .datatable-card tbody tr:nth-child(even) {
+  .datatable-card tbody tr:nth-child(even) {
     border-left: 10px solid #FFCC01;
     border-radius: 20px;
   }
-  .listDataTable tbody tr .vcheckbox:before, .datatable-card tbody tr .vcheckbox:before {
+  .datatable-card tbody tr .vcheckbox:before {
     display: none;
   }
-  .listDataTable tbody tr td, .datatable-card tbody tr td {
+  .datatable-card tbody tr td {
     text-align: left;
     overflow: hidden;
     width: 100%;
@@ -969,7 +1097,7 @@ table.dataTable .assignActive {
     padding: 5px 0px;
     border: none !important;
   }
-  .listDataTable tbody tr td:before, .datatable-card tbody tr td:before {
+  .datatable-card tbody tr td:before {
     /*最重要的就是這串*/
     content: attr(data-th) " : ";
     /*最重要的就是這串*/
@@ -981,7 +1109,7 @@ table.dataTable .assignActive {
     text-align: end;
     color: #2d3994;
   }
-  .listDataTable tfoot, .datatable-card tfoot {
+  .datatable-card tfoot {
     display: none !important;
   }
 }
@@ -1015,11 +1143,6 @@ table.dataTable .assignActive {
   text-align: left;
 }
 
-@page {
-  size: A4 landscape;
-  /* 尺寸/保留字 + 方向 */
-}
-
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 15px;
@@ -1044,6 +1167,10 @@ h6 {
 
 h3 {
   font-size: 26px;
+}
+
+h4 {
+  font-size: 22px;
 }
 
 p {
@@ -1709,5 +1836,40 @@ header .announcement .photoLink {
 .link ul li .btn-menu:hover .fas {
   padding-right: 20px;
   color: #ffffff;
+}
+
+.a-link {
+  color: #5a5a5a;
+  line-height: 30px;
+}
+
+.a-link.active {
+  border-bottom: 3px solid #26a1f3;
+  color: #26a1f3;
+}
+
+.timeline .time_line {
+  position: relative;
+}
+
+.timeline .time_line::before {
+  background-color: #708ba5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 23px;
+  width: 3px;
+  content: " ";
+  margin: 0;
+}
+
+.timeline .circle-s {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */

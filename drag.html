@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Drag & Drop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./public/img/core-img/favicon.png">
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./scss/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- ##### Header Area Start ##### -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="d-block sidebar-wrapper" id="sidebar-wrapper">
+            <div class="side_logo mt-3">
+                <a href="index.html"><img src="./public/img/logo_3.png"></img></a>
+            </div>
+            <ul class="navbar-nav mt-3">
+                <li class="nav-item"><a class="nav-link">phoenixcontact官網</a>
+                </li>
+                <li class="nav-item"><a href="https://www.etherwan.com/tw" class="nav-link">公司官網</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"></i>前執行長的話</a>
+                </li>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">經營策略<i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item"><a href="chart.html">Chart</a></li>
+                        <li class="dropdown-item"><a href="form.html">Form</a></li>
+                        <li class="dropdown-item"><a href="form2.html">Form2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link">公司原則</a></li>
+                <li class="nav-item"><a href="homepage.html" class="nav-link">公司介紹</a></li>
+                <li class="nav-item"><a href="custom.html" class="nav-link">Html</a></li>
+                <li class="nav-item"><a href="profile.html" .html" class="nav-link">Profile</a></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Main Content -->
+        <div id="page-content-wrapper">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg border-bottom" id="topNav">
+                <div class="logo"></div>
+                <button class="navbar-toggler d-lg-block d-none " id="menu-lg-toggle"><i
+                        class="fas fa-bars"></i></button>
+                <button class="navbar-toggler d-lg-none d-block" id="menu-laptop-toggle"><i
+                        class="fas fa-bars"></i></button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav justify-content-start">
+                        <li class="nav-item"><a href="#">公司文化</a></li>
+                        <li class="nav-item"><a href="organization.html">公司組織</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- ##### Section Start ##### -->
+            <section>
+                <div class="container">
+                    <div class="row page_title">
+                        <h2 class="col-6">Drag & Drop</h2>
+                        <nav class="breadcrumb col-6 justify-content-end">
+                            <ol class="d-flex">
+                                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                <li class="breadcrumb-item active">Drag</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <section class="process mt-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>請選取資料</h4>
+                            <div class="row mt-2">
+                                <div id="menu" class="dropper_box col-3" droppable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <!-- <div id="menu" class="items" droppable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div> -->
+                                </div>
+                                <div class="col-9">
+                                        <div class="row justify-content-between">
+                                            <div id="num1" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                            <span class="col-1 btn-cal mx-2">+</span>
+                                            <div id="num2" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                            <span class="col-1 btn-cal mx-2">*</span>
+                                            <div id="num3" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                        </div>
+                                        <div class="row justify-content-start">
+                                            <div class="col-4 p-0">
+                                                <div class="input-group mt-3">
+                                                    <span class="input-group-text" id="basic-addon1">總價</span>
+                                                    <input id="numTotal" type="number" class="form-control" value="0">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                </div>
+                            </div>
+                            <hr>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- ##### Header Area End ##### -->
+
+
+
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-3.5.1 js -->
+    <script src="./plugins/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="./plugins/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <!-- <script src="js/component.js"></script> -->
+    <script>
+        const item =[
+            {
+                id:"drag1",
+                title:'blue',
+                price:100,
+                color:'primary'
+            },
+            {
+                id: "drag2",
+                title: 'red',
+                price: 80,
+                color: 'danger'
+            },
+            {
+                id: "drag3",
+                title: 'yellow',
+                price: 70,
+                color: 'warning'
+            },
+            {
+                id: "drag4",
+                title: 'gray',
+                price: 60,
+                color: 'secondary'
+            },
+            {
+                id: "drag5",
+                title: 'dark',
+                price: 50,
+                color: 'dark'
+            }
+        ] 
+        const num1 = document.getElementById('num1')
+        const num1Count = num1.getElementsByTagName('span')
+        const num2 = document.getElementById('num2')
+        const num2Count = num2.getElementsByTagName('span')
+        const num3 = document.getElementById('num3')
+        const num3Count = num3.getElementsByTagName('span')
+
+        let draggerBox = document.querySelector('.dropper_box');
+        let dragger = document.querySelectorAll('.numBox');
+        let dropper = document.querySelectorAll('.textBox');
+        let result = document.querySelector('#numTotal')
+
+        item.forEach(function (obj, key) {
+                    //function(item,index) //callback function
+                    let htmlTemplate = ''
+                    htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" id="${obj.id}" data-value="${obj.price}">  
+                      ${obj.title},${obj.price}
+            </span>`;
+            const menu = document.querySelector('#menu');
+            menu.innerHTML += htmlTemplate
+            
+        });
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            // ev.dataTransfer.setData("text", ev.target.dataset.value,1);
+            ev.dataTransfer.setData("plain", ev.target.id);
+            ev.target.style.opacity = "0.4";
+        }
+        
+        dragger.forEach((item)=>{
+            item.addEventListener("dragleave", (e) => {
+               e.target.style.background = "#FFF";
+                e.target.style.opacity = "1";
+            });
+            item.addEventListener("dragend", (e) => {
+               e.target.style.background = "#FFF";
+                e.target.style.opacity = "1";
+            });
+        })
+        dropper.forEach((item)=>{
+            item.addEventListener("dragenter", (e) => {
+                e.target.style.background = "#ebf8ff";
+            });
+            item.addEventListener("dragleave", (e) => {
+               e.target.style.background = "#FFF";
+                e.target.style.opacity = "1";
+            });
+            item.addEventListener("dragend", (e) => {
+               e.target.style.background = "#FFF";
+                e.target.style.opacity = "1";
+            });
+        })
+        draggerBox.addEventListener("dragenter", (e) => {
+            e.target.style.background = "#ebf8ff";
+        });
+        draggerBox.addEventListener("dragleave", (e) => {
+            e.target.style.background = "#FFF";
+            e.target.style.opacity = "1";
+        });
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("plain",0);
+            // var data2 = parseInt(ev.dataTransfer.getData("text",1));
+            ev.target.appendChild(document.getElementById(data));
+            ev.target.style.opacity = "1";
+            ev.target.style.background = "#FFF";
+            
+            let num1Total = 0;
+            for (let i = 0; i < num1Count.length; i++) {
+                const num = parseInt(num1Count[i].getAttribute('data-value'))
+                num1Total += num
+                // 用 children[i] 來取得遍歷到子元素
+            } console.log('num1Total', num1Total);
+
+            let num2Total = 0;
+            for (let i = 0; i < num2Count.length; i++) {
+                const num = parseInt(num2Count[i].getAttribute('data-value'))
+                num2Total += num
+            } console.log('num2Total', num2Total);
+
+            let num3Total = 0;
+            for (let i = 0; i < num3Count.length; i++) {
+                const num = parseInt(num3Count[i].getAttribute('data-value'))
+                num3Total += num
+            } console.log('num3Total', num3Total);
+
+            // const calculate =  function(x,y,z){
+            //     if ( x > 0 && y > 0 && z > 0){
+            //         return (x+y)*z
+            //     }else if( z === 0){
+            //         return x+y
+            //     }else if( x!=0 || y!=0){
+            //         return (x + y) * z
+            //     }
+            //     return z
+            // }
+            const calculate =  function(x,y,z){
+                return (x > 0 && y > 0 && z > 0) ? ((x + y) * z)
+                    :  (z === 0) ? (x + y)
+                    :  (x != 0 || y != 0) ? ((x + y) * z)
+                    :   z
+            }
+            result.value = calculate(num1Total, num2Total, num3Total);
+        }
+    
+    </script>
+
+
+
+</body>
+
+</html>

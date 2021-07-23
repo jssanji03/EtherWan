@@ -1,7 +1,8 @@
 
 @mixin button($background-color:$text,$fontColor: $white,$hover-color:$lightGray,$hover-fontColor:$white) {
     height: 35px;
-    min-width: 90px;
+    line-height: 35px;
+    min-width: auto;
     font-size: 16px;
     font-weight: 400;
     border-radius: 5px;
@@ -20,6 +21,22 @@
     }
 }
 
+.btn-edit {
+    @include button($background-color:$secondary,$fontColor: $white,$hover-color:$hover,$hover-fontColor:$white);
+}
+.btn-delete {
+    @include button($background-color:rgb(228, 61, 39),$fontColor: $white,$hover-color:rgb(141, 20, 20),$hover-fontColor:$white);
+}
+.btn-padding {
+    @include button($background-color:rgb(22, 171, 182),$fontColor: $white,$hover-color:rgb(16, 118, 126),$hover-fontColor:$white);
+}
+
+.btn-cal{
+    @include button($background-color:$secondary,$fontColor: $white,$hover-color:$secondary,$hover-fontColor:$white);
+    width: 35px;
+    height: 35px;
+    
+}
 
 .btn-menu{
     width: 100%;
