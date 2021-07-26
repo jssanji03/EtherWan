@@ -13,6 +13,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="./public/img/core-img/favicon.png">
+   
 
 
     <!-- Stylesheet -->
@@ -46,8 +47,14 @@
                 </li>
                 <li class="nav-item"><a class="nav-link">公司原則</a></li>
                 <li class="nav-item"><a href="homepage.html" class="nav-link">公司介紹</a></li>
-                <li class="nav-item"><a href="custom.html" class="nav-link">Html</a></li>
-                <li class="nav-item"><a href="profile.html" .html" class="nav-link">Profile</a></li>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">Custom<i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item"><a href="custom.html">Custom Html</a></li>
+                        <li class="dropdown-item"><a href="profile.html">Profile</a></li>
+                        <li class="dropdown-item"><a href="process.html">Process</a></li>
+                        <li class="dropdown-item"><a href="drag.html">Drag & Drop</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -72,9 +79,9 @@
             <!-- Navbar End -->
 
             <!-- ##### Section Start ##### -->
-            <section>
+            <section class="page_title">
                 <div class="container">
-                    <div class="row page_title">
+                    <div class="row">
                         <h2 class="col-6">Profile</h2>
                         <nav class="breadcrumb col-6 justify-content-end">
                             <ol class="d-flex">
@@ -85,7 +92,7 @@
                     </div>
                 </div>
             </section>
-            <section class="mt-3">
+            <section>
                 <div class="container">
                     <div class="row card-noShadow bg-blue30 justify-content-between">
                         <div class="col-md-2 col-12">
@@ -251,6 +258,12 @@
     <script src="./plugins/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/component.js"></script>
+    <script>
+        var tabEl = document.querySelector('button[data-bs-toggle="tab"]')
+            tabEl.addEventListener('shown.bs.tab', function (event) {
+                event.target.preventDefault();
+            })
+    </script>
 
 
 

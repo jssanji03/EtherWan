@@ -46,8 +46,14 @@
                 </li>
                 <li class="nav-item"><a class="nav-link">公司原則</a></li>
                 <li class="nav-item"><a href="homepage.html" class="nav-link">公司介紹</a></li>
-                <li class="nav-item"><a href="custom.html" class="nav-link">Html</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">Custom<i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item"><a href="custom.html">Custom Html</a></li>
+                        <li class="dropdown-item"><a href="profile.html">Profile</a></li>
+                        <li class="dropdown-item"><a href="process.html">Process</a></li>
+                        <li class="dropdown-item"><a href="drag.html">Drag & Drop</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -69,15 +75,17 @@
             <!-- Navbar End -->
 
             <!-- ##### Section Start ##### -->
-            <section class="container-fluid">
-                <div class="row page_title">
-                    <h2 class="col-6">Chart</h2>
-                    <nav aria-label="breadcrumb" class="col-6">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="homepage.html">首頁</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Chart</li>
-                        </ol>
-                    </nav>
+            <section class="page_title">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="col-6">Chart</h2>
+                        <nav class="breadcrumb col-6 justify-content-end">
+                            <ol class="d-flex">
+                                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                <li class="breadcrumb-item active">Chart</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </section>
             <section class="container-fluid ChartArea" id="ChartArea">

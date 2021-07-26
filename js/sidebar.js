@@ -9,6 +9,29 @@ $(function () {
     });
 });
 
+//FullScreen
+$(function () {
+    document.fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen;
+    const fullScreen = document.getElementById('fullScreen')
+
+    function requestFullscreen(element) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullScreen) {
+            element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+    }
+
+    fullScreen.addEventListener('click', () => {
+        if (document.fullscreenEnabled) {
+            requestFullscreen(document.documentElement);
+        }
+    })
+
+})
+
 // SideBar dropdown Control ///
 $(function () {
     $(document).delegate('.nav-link', 'click', function (event) {

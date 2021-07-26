@@ -1,11 +1,22 @@
-// #page-content-wrapper section:first-of-type {
-//     margin-top: 10px;
-//     // margin-bottom: 20px;
-// }
-// #page-content-wrapper section:not(:first-of-type) {
-//     margin-top: 20px;
-// }
+section.page_title {
+    padding-top: 3px;
+    padding-bottom: 30px;
+    // padding:3px 20px 30px 0px;
+}
 
+//--- Title and BreadCrumb---//
+.page_title{
+    align-items: center;
+    h2{
+        line-height: 30px;
+    }
+    .breadcrumb{
+        line-height: 30px;
+        height: 30px;
+        margin: 0px;
+    }
+}
+//--- Title and BreadCrumb End ---//
 .mt-15 {
     margin-top: 15px !important;
 }

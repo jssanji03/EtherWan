@@ -82,6 +82,14 @@ table {
   font-size: 20px;
 }
 
+.fz-25 {
+  font-size: 25px;
+}
+
+.fz-30 {
+  font-size: 30px;
+}
+
 .fz-12 {
   font-size: 12px;
 }
@@ -140,6 +148,27 @@ table {
 
 .bg_hover {
   background-color: #2D94CE;
+}
+
+section.page_title {
+  padding-top: 3px;
+  padding-bottom: 30px;
+}
+
+.page_title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page_title h2 {
+  line-height: 30px;
+}
+
+.page_title .breadcrumb {
+  line-height: 30px;
+  height: 30px;
+  margin: 0px;
 }
 
 .mt-15 {
@@ -253,7 +282,6 @@ table {
 
 .btn-edit {
   height: 35px;
-  line-height: 35px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -277,7 +305,6 @@ table {
 
 .btn-delete {
   height: 35px;
-  line-height: 35px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -301,7 +328,6 @@ table {
 
 .btn-padding {
   height: 35px;
-  line-height: 35px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -325,7 +351,6 @@ table {
 
 .btn-cal {
   height: 35px;
-  line-height: 35px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -393,6 +418,10 @@ button {
   outline-style: none;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .img-circle {
   border-radius: 50%;
 }
@@ -410,22 +439,6 @@ button {
     width: 30%;
     height: 30%;
   }
-}
-
-.page_title {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page_title h2 {
-  line-height: 30px;
-}
-
-.page_title .breadcrumb {
-  line-height: 30px;
-  height: 30px;
-  margin: 0px;
 }
 
 .InputArea .card {
@@ -740,7 +753,7 @@ button {
 }
 
 .openmenu #sidebar-wrapper .navbar-nav li a {
-  color: #ffffff;
+  color: #2d3994;
   font-size: 15px;
   width: 100%;
   padding: 5px;
@@ -754,7 +767,7 @@ button {
 }
 
 .openmenu #sidebar-wrapper .navbar-nav li i {
-  color: #ffffff;
+  color: #2d3994;
   position: absolute;
   right: 15px;
   top: 10px;
