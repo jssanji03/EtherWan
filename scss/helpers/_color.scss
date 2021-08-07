@@ -1,18 +1,27 @@
 // Primary Color
-$primary: #2d3994;
+$primary: #313994;
 .primary{
     color: $primary;
 }
 // Secondary Color
-$secondary: #708ba5;
+// $secondary: #708ba5;
+$secondary:  RGB(53 ,157 ,209);
 .secondary{
     color: $secondary;
 }
 .bg_secondary{
     background-color: $secondary;
 }
+
+//Third Color
+$third: #708ba5;
+.third{
+    color: $third;
+}
+
 // important Color
-$important: #26a1f3;
+// $important: #708ba5;
+$important: #5bbbeb;
 .important{
     color: $important;
 }
@@ -39,11 +48,19 @@ $white: #ffffff;
     color: $white;
 }
 
+$light-gray:#E6E6E6;
+.bg-lightGray{
+    background-color: $light-gray;
+}
+
 // Dark Color
 $dark: #303030;
+.dark{
+    color: $dark;
+}
 
 // Hover Color
-$hover: #2D94CE;
+$hover: #313994;
 .hover{
     color: $hover;
 }
@@ -51,4 +68,12 @@ $hover: #2D94CE;
     background-color: $hover;
 }
 
-$yellow: #FFCC01;
+$yellow: RGB(245,199,29);
+$purple:#88157b;
+.purple{
+    color: $purple;
+}
+$pink:#d31577;
+.pink{
+    color: $pink;
+}

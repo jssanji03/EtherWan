@@ -135,16 +135,16 @@
   	$nodeDiv = $("<div>").addClass("node")
                                      .data("tree-node", nodeCount)
                                      .append($nodeContent);
-                                     
+                                  console.log($nodeDiv.find('.dept'));
     // Expand and contract nodes
     if ($childNodes.length > 0) {
-      $nodeDiv.click(function (e) {
+      $nodeDiv.find('.dept').click(function (e) {
         console.log(e.target);
           var $this = $(this);
           var $tr = $this.closest("tr");
 
           if($tr.hasClass('contracted')){
-            $this.find(".dept").css({'cursor':'n-resize','background-color':''});
+            $this.css({'cursor':'n-resize','background-color':''});
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -152,7 +152,7 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.find(".dept").css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.css({'cursor':'n-resize','background-color':'#f79c00'});
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
@@ -161,14 +161,14 @@
         });
     }
     if ($lastNodes.length > 0) {
-      $nodeDiv.click(function (e) {
+      $nodeDiv.find('.dept').click(function (e) {
         console.log(e.target);
           var $this = $(this);
           var $tr = $this.closest("tr");
           var $ul = $this.closest("ul");
 
           if($tr.hasClass('contracted')){
-            $this.find(".dept").css({'cursor':'n-resize','background-color':''});
+            $this.css({'cursor':'n-resize','background-color':''});
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -176,7 +176,7 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.find(".dept").css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.css({'cursor':'n-resize','background-color':'#f79c00'});
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 

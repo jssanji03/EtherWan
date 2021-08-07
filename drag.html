@@ -80,7 +80,7 @@
 
             <!-- ##### Section Start ##### -->
             <section class="page_title">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <h2 class="col-6">Drag & Drop</h2>
                         <nav class="breadcrumb col-6 justify-content-end">
@@ -93,7 +93,7 @@
                 </div>
             </section>
             <section class="process">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <h4>請選取資料</h4>
@@ -101,13 +101,13 @@
                                 <div id="menu" class="col-3 dropper_box" droppable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
                                 </div>
                                 <div class="col-9">
-                                        <div class="row justify-content-between">
+                                        <div class="row justify-content-between" id="valueBox">
                                             <div id="num1" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                             <button class="btn btn-cal mx-2">+</button>
                                             <div id="num2" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                             <button class="btn btn-cal mx-2">*</button>
                                             <div id="num3" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                        </div>
+                                        </div> 
                                         <div class="row justify-content-start mt-3">
                                             <div class="col-4 p-0">
                                                 <div class="input-group">
@@ -119,6 +119,7 @@
                                                 <input id="clear" type="button" class="btn btn-padding fontsEn" value="Clear"onclick="reset();">
                                             </div>
                                         </div>
+                                        <p id='res'></p>
                                 </div>
                             </div>
                             <hr>

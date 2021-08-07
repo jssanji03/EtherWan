@@ -1,5 +1,17 @@
 const item =[
             {
+                id:"add",
+                title:'+',
+                price:'',
+                color:'info'
+            },
+            {
+                id:"multiply",
+                title:'x',
+                price:'',
+                color:'info'
+            },
+            {
                 id:"drag1",
                 title:'blue',
                 price:100,
@@ -36,6 +48,9 @@ const item =[
         const num2Count = num2.getElementsByTagName('span')
         const num3 = document.getElementById('num3')
         const num3Count = num3.getElementsByTagName('span')
+        const res = document.getElementById('res')
+        const valueBox = document.querySelector('#valueBox')
+        
         
         let collection = document.getElementById('collection')
         let draggerBox = document.querySelector('.dropper_box');
@@ -44,13 +59,13 @@ const item =[
         let result = document.querySelector('#numTotal')
         let ac = document.getElementById('clear')
         let pendingVal;
-        let evalStrAry = [];
+        let evalStrAry = '';
 
         item.forEach(function (obj, key) {
                     //function(item,index) //callback function
                     let htmlTemplate = ''
                     htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" id="${obj.id}" data-value="${obj.price}">  
-                      ${obj.title},${obj.price}
+                      ${obj.title}${obj.price}
             </span>`;
             const menu = document.querySelector('#menu');
             menu.innerHTML += htmlTemplate
@@ -92,6 +107,7 @@ const item =[
                e.target.style.background = "#FFF";
                 e.target.style.opacity = "1";
             });
+            
         })
         draggerBox.addEventListener("dragenter", (e) => {
             e.target.style.background = "#ebf8ff";
@@ -102,19 +118,20 @@ const item =[
         });
         function drop(ev) {
             ev.preventDefault();
+            // console.log(ev.target);
             var data = ev.dataTransfer.getData("text/plain");
             // var data2 = parseInt(ev.dataTransfer.getData("text",1));
             ev.target.appendChild(document.getElementById(data));
             ev.target.style.opacity = "1";
             ev.target.style.background = "#FFF";
-            
+            // console.log(evalStrAry);
             let num1Total = 0;
             for (let i = 0; i < num1Count.length; i++) {
                 const num = parseInt(num1Count[i].getAttribute('data-value'))
                 num1Total += num
-                // evalStrAry.push(num1Total);
                 // 用 children[i] 來取得遍歷到子元素
             } console.log('num1Total', num1Total);
+            evalStrAry = num1Total
 
             let num2Total = 0;
             for (let i = 0; i < num2Count.length; i++) {
@@ -128,15 +145,25 @@ const item =[
                 num3Total += num
             } console.log('num3Total', num3Total);
 
+            
             const calculate =  function(x,y,z){
                 return (x > 0 && y > 0 && z > 0) ? ((x + y) * z)
-                    :  (z === 0) ? (x + y)
-                    :  (x != 0 || y != 0) ? ((x + y) * z)
-                    :   z
+                :  (z === 0) ? (x + y)
+                :  (x != 0 || y != 0) ? ((x + y) * z)
+                :   z
             }
             result.value = calculate(num1Total, num2Total, num3Total);
-
+            // res.innerHTML = evalStrAry
+            dropper.forEach((item) => {
+                item.addEventListener('drop', function (event) {
+                    console.log(event.target);
+                    console.log(event.currentTarget);
+                    // evalStrAry += event.target.innerText
+                    // res.innerHTML = evalStrAry
+                })
+            })
         }
+
         function reset() {
             // collection.innerHTML = html;
             window.location.reload();

@@ -27,7 +27,7 @@ h4{
     font-size: 22px;
 }
 p {
-    font-family: $fontsNoto;
+    font-family: $font-family-sans-serif;
     color: $text;
     line-height: 1.5;
     font-weight: 400;
@@ -40,6 +40,7 @@ a:focus {
     text-decoration: none;
     outline: 0 solid transparent;
     font-family: $fonts;
+    color: $secondary;
 }
 
 ul {

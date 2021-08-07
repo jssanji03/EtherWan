@@ -109,11 +109,12 @@
             "data": [{
                 "id": 1,
                 "level": 0,
-                "Dept": "總經理",
+                "Dept": "總管理室",
                 "position":"General Manager",
                 "name": "Tony",
                 "pic": "user00.jpeg",
-                "count":"10",
+                "count": "10",
+                "teamDetail":"我是總管理室",
                 "childrens": [
                     {
                         "id": 2,
@@ -122,7 +123,8 @@
                         "position":"Director",
                         "name": "Charlie",
                         "pic": "user01.jpeg",
-                        "count":"20",
+                        "count": "20",
+                        "teamDetail":"我是 BA dept.",
                         "childrens": [
                         {
                             "id": 5,
@@ -131,7 +133,8 @@
                             "position":"Manager",
                             "name": "Kerry",
                             "pic": "user02.jpeg",
-                            "count":"10",
+                            "count": "10",
+                            "teamDetail":"我是 .Net",
                             "childrens": [
                                 {
                                     "id": 10,
@@ -167,7 +170,8 @@
                             "name": "Gary",
                             "position":"Manager",
                             "pic": "user02.jpeg",
-                            "count":"10",
+                            "count": "10",
+                            "teamDetail":"我是 Gary",
                             "childrens": [
                                 {
                                     "id": 13,
@@ -188,7 +192,8 @@
                         "name": "SAP",
                         "position":"Manager",
                         "pic": "user01.jpeg",
-                        "count":"",
+                        "count": "",
+                        "teamDetail":"我是 ",
                         "childrens": [
                             {
                                 "id": 7,
@@ -198,7 +203,8 @@
                                 "position":"Manager",
                                 "name": "OOO",
                                 "pic": "user02.jpeg",
-                                "count":"10",
+                                "count": "10",
+                                "teamDetail":"我是 ",
                                 "childrens": [{
                                     "id": 14,
                                     "level": 5,
@@ -215,7 +221,8 @@
                                 "position":"Manager",
                                 "name": "OOO",
                                 "pic": "user02.jpeg",
-                                "count":"10",
+                                "count": "10",
+                                "teamDetail":"我是 ",
                                 "childrens": [{
                                     "id": 15,
                                     "level": 5,
@@ -234,7 +241,8 @@
                         "position":"Director",
                         "name": "Collin",
                         "pic": "user01.jpeg",
-                        "count":"20",
+                        "count": "20",
+                        "teamDetail":"我是業務部 ",
                         "childrens": [{
                             "id": 9,
                             "level": 2,
@@ -242,7 +250,8 @@
                             "position":"Manager",
                             "name": "OOO",
                             "pic": "user02.jpeg",
-                            "count":"10",
+                            "count": "10",
+                            "teamDetail":"我是業務部A",
                             "childrens": [{
                                 "id": 16,
                                 "level": 5,
@@ -269,7 +278,8 @@
                         </div>
                         <p class="position">${val.position}</p>
                         <p class="name">${val.name}</p>
-                        <p class="count"><i class="fas fa-user"></i>&nbsp; ${val.count}</p>
+                        <p class="count mt-1 px-2 d-flex justify-content-between"><i class="fas fa-user">&nbsp;${val.count} </i><i class="far fa-id-card"></i></p>
+                        <div class="detail">${val.teamDetail}</div>
                     </a>`
                     ).append("<ul></ul>").appendTo(parent);
                     //递归显示
@@ -301,3 +311,8 @@
         function getOrgId(val) {
             // console.log(val);
         }
+$(document).ready(function () {
+    $('.fa-id-card').click(function () {
+        $(this).parent().next('div.detail').toggleClass('open');
+    })
+})

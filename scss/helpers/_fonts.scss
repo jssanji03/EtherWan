@@ -1,11 +1,11 @@
 // Fonts
 $fonts: 'Roboto', sans-serif;
 $fontsNoto: 'Noto Sans TC', sans-serif;
-$fontLogin:'Oswald', sans-serif;
-$fontsEn: "Montserrat", sans-serif;
+// $fontLogin:'Oswald', sans-serif;
+// $fontsEn: "Montserrat", sans-serif;
 
 .fontsEn{
-    font-family: $fontsEn;
+    font-family: $font-family-sans-serif;
 }
 .f-500{
     font-weight: 500;
@@ -31,4 +31,7 @@ $fontsEn: "Montserrat", sans-serif;
 }
 .lh-40{
     line-height: 40px;
+}
+.lh-70{
+    line-height: 70px;
 }

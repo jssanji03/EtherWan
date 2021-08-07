@@ -36,7 +36,7 @@
           font-size: 14px
         }
         .count{
-          @include font;
+          @include font($line-height:30px);
           color: $countColor;
         }
       }
@@ -184,6 +184,26 @@
   }
 }
 
+.jOrgChart .detail{
+  width: 150px;
+  height: 90px;
+  border-radius: 3px;
+  background-color: rgb(189, 216, 238);
+  color: $dark;
+  position: absolute;
+  left: 95px;
+  top: 0px;
+  z-index: 9;
+  text-align: left;
+  padding: 5px;
+  display: none;
+}
+.jOrgChart .detail.open{
+  display: block;
+}
+.jOrgChart .organization_text{
+  position: relative;
+}
 
 
 // .jOrgChart .node {

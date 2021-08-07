@@ -5,10 +5,10 @@
         padding: 10px;
     }
 header {
+    .photoLink{
+        height: 450px;
+    }
     .announcement{
-        .photoLink{
-            height: 450px;
-        }
     }
     
 }
@@ -44,4 +44,47 @@ header {
         }
     }
 }
+.marquee-vertical{
+	transform-origin: left;
+	transform: rotate(90deg) translateY(-50px);
+}
 
+.marquee-wrapper {
+	position: relative;
+	display: flex;
+	animation-name: marquee;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	will-change: transform;
+}
+
+.marquee-wrapper ul{
+    // overflow: hidden;
+	
+	li{
+		display: block;
+		padding: 0 20px;
+	}
+	
+	&:last-child {
+		position: absolute;
+		top: 0;
+		left: 0px;
+	}
+}
+
+@keyframes marquee{
+  0%{
+		transform:translateY(50%)
+  }
+  to{
+		transform:translateY(-800%)
+		// transform:translate3d(0,-120%,0)
+	}
+}
+
+.ui-datepicker-week-end a {
+    color: rgb(170, 12, 12) !important;
+}

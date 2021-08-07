@@ -14,6 +14,12 @@ section.page_title {
         line-height: 30px;
         height: 30px;
         margin: 0px;
+        a{
+            color: $dark;
+        }
+    }
+    .active{
+        color: $hover;
     }
 }
 //--- Title and BreadCrumb End ---//
