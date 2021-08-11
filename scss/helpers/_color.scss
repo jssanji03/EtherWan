@@ -48,7 +48,7 @@ $white: #ffffff;
     color: $white;
 }
 
-$light-gray:#E6E6E6;
+$light-gray:#E9EEF2;
 .bg-lightGray{
     background-color: $light-gray;
 }
@@ -69,11 +69,17 @@ $hover: #313994;
 }
 
 $yellow: RGB(245,199,29);
+
 $purple:#88157b;
 .purple{
     color: $purple;
 }
+
 $pink:#d31577;
 .pink{
     color: $pink;
+}
+
+.bg_gradient{
+    background:linear-gradient(to left, #113E9A, #52B0DD);
 }

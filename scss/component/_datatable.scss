@@ -169,6 +169,11 @@ table.dataTable{
             .dtr-title{
                 text-align: left;
             }
+            tr{
+              &:nth-child(odd){
+                background-color: rgb(234, 245, 252) !important;
+              }
+            }
         }
     }
 }

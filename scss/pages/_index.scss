@@ -9,8 +9,19 @@ header {
         height: 450px;
     }
     .announcement{
+        // background-image: url(../../public/img/bg2.jpg);
+        // background-size: cover;
+        // border-radius:50% / 0 0 100% 100%;
+        // height: 450px;
+        // width: 100%;
+        .carousel-indicators{
+            bottom: 50px;
+        }
     }
-    
+    .in_link{
+        position: relative;
+        top: -60px;
+    }
 }
 .company {
     margin-top: -120px;
@@ -48,42 +59,43 @@ header {
 	transform-origin: left;
 	transform: rotate(90deg) translateY(-50px);
 }
-
-.marquee-wrapper {
-	position: relative;
-	display: flex;
-	animation-name: marquee;
-	animation-duration: 8s;
-	animation-timing-function: linear;
-	animation-delay: 0s;
-	animation-iteration-count: infinite;
-	will-change: transform;
+.marqueeBox{
+    height: 130px;
+    .marquee-wrapper {
+        position: relative;
+        display: flex;
+        animation-name: marquee;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        will-change: transform;
+        ul{
+            // overflow: hidden;
+            
+            li{
+                display: block;
+                padding: 0 40px;
+            }
+            
+            // &:last-child {
+            // 	position: absolute;
+            // 	top: 0;
+            // 	left: 0px;
+            // }
+        }
+    }
 }
-
-.marquee-wrapper ul{
-    // overflow: hidden;
-	
-	li{
-		display: block;
-		padding: 0 20px;
-	}
-	
-	&:last-child {
-		position: absolute;
-		top: 0;
-		left: 0px;
-	}
-}
-
 @keyframes marquee{
   0%{
-		transform:translateY(50%)
+		transform:translateY(30%)
   }
   to{
-		transform:translateY(-800%)
+		transform:translateY(-100%)
 		// transform:translate3d(0,-120%,0)
 	}
 }
+
 
 .ui-datepicker-week-end a {
     color: rgb(170, 12, 12) !important;

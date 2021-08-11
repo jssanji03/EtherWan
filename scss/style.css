@@ -73,8 +73,24 @@ table {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.f-300 {
+  font-weight: 300;
+}
+
+.f-400 {
+  font-weight: 400;
+}
+
 .f-500 {
   font-weight: 500;
+}
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-15 {
+  font-size: 15px;
 }
 
 .fz-20 {
@@ -87,10 +103,6 @@ table {
 
 .fz-30 {
   font-size: 30px;
-}
-
-.fz-12 {
-  font-size: 12px;
 }
 
 .lh-20 {
@@ -150,7 +162,7 @@ table {
 }
 
 .bg-lightGray {
-  background-color: #E6E6E6;
+  background-color: #E9EEF2;
 }
 
 .dark {
@@ -171,6 +183,11 @@ table {
 
 .pink {
   color: #d31577;
+}
+
+.bg_gradient {
+  background: -webkit-gradient(linear, right top, left top, from(#113E9A), to(#52B0DD));
+  background: linear-gradient(to left, #113E9A, #52B0DD);
 }
 
 section.page_title {
@@ -199,7 +216,7 @@ section.page_title {
 }
 
 .page_title .active {
-  color: #313994;
+  color: RGB(53, 157, 209);
 }
 
 .mt-15 {
@@ -480,6 +497,34 @@ button {
   cursor: pointer;
 }
 
+.pill-success {
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.pill-danger {
+  background-color: #af1919;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.pill-approval {
+  background-color: #313994;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.pill-draft {
+  background-color: RGB(245, 199, 29);
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
 .img-circle {
   border-radius: 50%;
 }
@@ -677,7 +722,7 @@ button {
 }
 
 #sidebar-wrapper ul li ul li a:hover {
-  background-color: #e0e0e0;
+  background-color: #ebebeb;
   color: #5a5a5a;
 }
 
@@ -853,7 +898,7 @@ button {
 }
 
 .openmenu #sidebar-wrapper .navbar-nav li ul li a:hover {
-  background-color: #646464;
+  background-color: #d3d3d3;
   color: #ffffff;
 }
 
@@ -1014,7 +1059,7 @@ button {
 .card {
   -webkit-box-shadow: 1px 1px 3px 1px rgba(197, 197, 197, 0.37);
           box-shadow: 1px 1px 3px 1px rgba(197, 197, 197, 0.37);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 20px;
 }
 
@@ -1026,6 +1071,7 @@ button {
 .card-radius {
   border-radius: 5px;
   padding: 5px;
+  height: 100%;
 }
 
 .information_card {
@@ -1035,16 +1081,15 @@ button {
   padding: 40px 0px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  margin: 10px 20px;
-  border-radius: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
   padding: 20px;
 }
 
 .information_card:hover {
-  -webkit-box-shadow: 0px 3px 10px 2px rgba(146, 161, 184, 0.27);
-          box-shadow: 0px 3px 10px 2px rgba(146, 161, 184, 0.27);
-  margin-top: 8px;
-  border: 1px solid #ccc;
+  -webkit-box-shadow: 0px 3px 5px 1px rgba(138, 150, 170, 0.527);
+          box-shadow: 0px 3px 5px 1px rgba(138, 150, 170, 0.527);
+  margin-top: 5px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1230,6 +1275,10 @@ table.dataTable .assignActive {
   text-align: left;
 }
 
+.TableArea .datatable-RWD tbody tr:nth-child(odd) {
+  background-color: #eaf5fc !important;
+}
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 15px;
@@ -1269,12 +1318,16 @@ p {
 }
 
 a,
-a:hover,
 a:focus {
   text-decoration: none;
   outline: 0 solid transparent;
   font-family: "Roboto", sans-serif;
   color: RGB(53, 157, 209);
+}
+
+a:hover,
+a:focus:hover {
+  color: #313994;
 }
 
 ul {
@@ -1888,12 +1941,6 @@ img {
   position: relative;
 }
 
-.info img {
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .logo {
   width: 200px;
   margin: 0 auto;
@@ -1902,6 +1949,15 @@ img {
 
 header .photoLink {
   height: 450px;
+}
+
+header .announcement .carousel-indicators {
+  bottom: 50px;
+}
+
+header .in_link {
+  position: relative;
+  top: -60px;
 }
 
 .company {
@@ -1956,15 +2012,19 @@ header .photoLink {
           transform: rotate(90deg) translateY(-50px);
 }
 
-.marquee-wrapper {
+.marqueeBox {
+  height: 130px;
+}
+
+.marqueeBox .marquee-wrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation-name: marquee;
           animation-name: marquee;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 0s;
@@ -1974,41 +2034,41 @@ header .photoLink {
   will-change: transform;
 }
 
-.marquee-wrapper ul li {
+.marqueeBox .marquee-wrapper ul li {
   display: block;
-  padding: 0 20px;
-}
-
-.marquee-wrapper ul:last-child {
-  position: absolute;
-  top: 0;
-  left: 0px;
+  padding: 0 40px;
 }
 
 @-webkit-keyframes marquee {
   0% {
-    -webkit-transform: translateY(50%);
-            transform: translateY(50%);
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
   }
   to {
-    -webkit-transform: translateY(-800%);
-            transform: translateY(-800%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
 @keyframes marquee {
   0% {
-    -webkit-transform: translateY(50%);
-            transform: translateY(50%);
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
   }
   to {
-    -webkit-transform: translateY(-800%);
-            transform: translateY(-800%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
 .ui-datepicker-week-end a {
   color: #aa0c0c !important;
+}
+
+.info img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .a-link {
@@ -2044,5 +2104,14 @@ header .photoLink {
   color: #ffffff;
   text-align: center;
   font-size: 20px;
+}
+
+.process .list-group .active {
+  background-color: RGB(53, 157, 209);
+  border: none;
+}
+
+.process .list-group .active p {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

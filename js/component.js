@@ -161,7 +161,7 @@ $(".listDataTable").DataTable({
 
 //## Datatable Responsive 套件 - Start ##//
  $('.datatable-RWD').DataTable({
-        searching: true,
+        searching: false,
         "paging": true,
         "ordering": false,
         "info": true,

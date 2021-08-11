@@ -278,8 +278,9 @@
                         </div>
                         <p class="position">${val.position}</p>
                         <p class="name">${val.name}</p>
-                        <p class="count mt-1 px-2 d-flex justify-content-between"><i class="fas fa-user">&nbsp;${val.count} </i><i class="far fa-id-card"></i></p>
-                        <div class="detail">${val.teamDetail}</div>
+                        <p class="count mt-1 px-2 d-flex justify-content-between"><i class="fas fa-user">&nbsp;${val.count} </i><i class="far fa-id-card"data-bs-toggle="modal" data-bs-target="#exampleModal${val.id}"></i>
+                        </p>
+                         <div class="detail">${val.teamDetail}</div>
                     </a>`
                     ).append("<ul></ul>").appendTo(parent);
                     //递归显示
@@ -311,8 +312,8 @@
         function getOrgId(val) {
             // console.log(val);
         }
-$(document).ready(function () {
-    $('.fa-id-card').click(function () {
-        $(this).parent().next('div.detail').toggleClass('open');
-    })
-})
+// $(document).ready(function () {
+//     $('.fa-id-card').click(function () {
+//         $(this).parent().next('div.modal').toggleClass('open');
+//     })
+// })

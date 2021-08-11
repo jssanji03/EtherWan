@@ -96,63 +96,130 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3 col-12">
-                            <ul class="list-group nav-tabs" role="tablist">
-                                <li class="list-group-item">
-                                    <a class="d-flex justify-content-between align-items-center secondary active" data-bs-toggle="tab" data-bs-target="#All" type="button" role="tab">All
+                            <div class="list-group">
+                                <a class="list-group-item list-group-item-action active" aria-current="true" data-bs-toggle="tab" data-bs-target="#All" type="button" role="tab">
+                                    <p class="d-flex justify-content-between align-items-center secondary">All
                                     <span class="badge bg-primary rounded-pill">14</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="d-flex justify-content-between align-items-center secondary" data-bs-toggle="tab" data-bs-target="#Draft" type="button"
-                                        role="tab">Draft
+                                    </p>
+                                </a>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#Success" type="button"
+                                        role="tab">
+                                    <p class="d-flex justify-content-between align-items-center secondary">Success
+                                        <span class="badge bg-success rounded-pill">5</span>
+                                    </p>
+                                </a>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#Draft" type="button"
+                                        role="tab">
+                                    <p class="d-flex justify-content-between align-items-center secondary">Draft
                                         <span class="badge bg-warning rounded-pill">3</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="d-flex justify-content-between align-items-center secondary" data-bs-toggle="tab" data-bs-target="#Approval"
-                                        type="button" role="tab">Approval
+                                    </p>
+                                </a>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#Approval"
+                                        type="button" role="tab">
+                                    <p class="d-flex justify-content-between align-items-center secondary" >Approval
                                         <span class="badge bg-primary rounded-pill">2</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="d-flex justify-content-between align-items-center secondary" data-bs-toggle="tab" data-bs-target="#Reject"
-                                        type="button" role="tab">Reject
+                                    </p>
+                                </a>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#Reject"
+                                        type="button" role="tab">
+                                    <p class="d-flex justify-content-between align-items-center secondary">Reject
                                         <span class="badge bg-danger rounded-pill">2</span>
-                                    </a>
-                                </li>
-                            </ul>
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-lg-9 col-12 mt-lg-0 mt-4">
                             <div class="tab-content">
                                 <section class="tab-pane fade show active" role="tabpanel" id="All">
-                                    <h4>All items</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="primary">All items</h4>
+                                        <a class="badge bg-primary f-400 fz-15 p-2" href="https://www.bejson.com/othertools/cron/">排程設定</a>
+                                    </div>
                                     <hr>
-                                    <table class="table table-striped table-bordered mt-2">
-                                        <thead class="table-dark">
-                                            <tr>
-                                                <th scope="col" style="width:10%">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="lh-30">
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <table class="table table-striped table-bordered border mt-2">
+                                                <thead class="table-dark">
+                                                    <tr class="text-center">
+                                                        <th class="border" scope="col" style="width:50%">內容</th>
+                                                        <th class="border" scope="col">時間</th>
+                                                        <th class="border" scope="col">自動 / 手動</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="lh-30">
+                                                    <tr>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
+                                                        <td class="border text-center">
+                                                            <input class='datePicker'>
+                                                        </td>
+                                                        <td class="border text-center">
+                                                            <button type="button" class="btn btn-edit btn-sm">Ａ</button>
+                                                            <button type="button" class="btn btn-padding btn-sm">Ｍ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
+                                                        <td class="border text-center">
+                                                            <input class='datePicker'>
+                                                        </td>
+                                                        <td class="border text-center">
+                                                            <button type="button" class="btn btn-edit btn-sm">Ａ</button>
+                                                            <button type="button" class="btn btn-padding btn-sm">Ｍ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
+                                                        <td class="border text-center">
+                                                            <input class='datePicker'>
+                                                        </td>
+                                                        <td class="border text-center">
+                                                            <button type="button" class="btn btn-edit btn-sm">Ａ</button>
+                                                            <button type="button" class="btn btn-padding btn-sm">Ｍ</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="col-12">
+                                                <table class="responsive nowrap datatable-RWD" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>日期</th>
+                                                            <th>時間</th>
+                                                            <th>狀態</th>
+                                                            <th>訊息</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2021/08/21</td>
+                                                            <td>10:30 am</td>
+                                                            <td><span class="">Success</span></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2021/08/22</td>
+                                                            <td>9:30 am</td>
+                                                            <td><span>Success</span></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2021/08/23</td>
+                                                            <td>14:30 pm</td>
+                                                            <td><span>Reject</span></td>
+                                                            <td>訊息錯誤</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </section>
+                                <section class="tab-pane fade" role="tabpanel" id="Success">
+                                    <h4>Success items</h4>
+                                    <hr>
                                 </section>
                                 <section class="tab-pane fade" role="tabpanel" id="Draft">
                                     <h4>Draft items</h4>
@@ -184,8 +251,50 @@
     <script src="./plugins/jquery/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap js -->
     <script src="./plugins/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="./plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/Responsive-2.2.7/js/dataTables.responsive.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src="./plugins/Buttons-1.6.5/js/buttons.print.min.js"></script>
+    <script src="./plugins/select2/js/select2.full.min.js"></script>
+    <script src="./plugins/Magicsuggest/js/magicsuggest-min.js"></script>
+    <!-- SummerNote -->
+    <script src="./plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- datepicker -->
+    <script src="./plugins/daterangepicker-master/moment.min.js"></script>
+    <script src="./plugins/daterangepicker-master/daterangepicker.js"></script>
+
     <script src="js/sidebar.js"></script>
     <script src="js/component.js"></script>
+    <script src="js/dateformat.js"></script>
+    <script>
+        // document.getElementById('datePicker').value = new Date().format("yyyy-MM-dd hh:mm:ss");
+        const dataTable = document.querySelector('.datatable-RWD')
+        const rows = dataTable.rows;//獲取所有行
+        // console.log(rows.length);
+        for (let i=0;i < rows.length;i++){
+            for (let j=0;j< rows[i].cells.length; j++){
+                // console.log(rows[i].cells[j].innerText);
+                let text = rows[i].cells[j]
+                console.log(rows[i].cells[j]);
+                switch(text.innerText){
+                    case 'Success':
+                        text.firstChild.className = 'pill-success';
+                        break;
+                    case 'Reject':
+                        text.firstChild.className = 'pill-danger'
+                        break;
+                    case 'Approval':
+                        text.firstChild.className = 'pill-approval'
+                        break;
+                    case 'Draft':
+                        text.firstChild.className = 'pill-draft'
+                        break;
+                }
+            }
+        }
+
+    </script>
 
 
 

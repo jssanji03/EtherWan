@@ -96,3 +96,23 @@ button{
 .cursor{
     cursor: pointer;
 }
+
+@mixin pill($background-color:green) {
+    background-color: $background-color;
+    color: white;
+    border-radius: 20px;
+    padding: 2px 10px;
+}
+
+.pill-success{
+    @include pill;
+}
+.pill-danger{
+    @include pill($background-color:rgb(175, 25, 25));
+}
+.pill-approval{
+    @include pill($background-color:$primary);
+}
+.pill-draft{
+    @include pill($background-color:$yellow);
+}

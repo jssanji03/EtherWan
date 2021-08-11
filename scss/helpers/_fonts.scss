@@ -7,10 +7,22 @@ $fontsNoto: 'Noto Sans TC', sans-serif;
 .fontsEn{
     font-family: $font-family-sans-serif;
 }
+.f-300{
+    font-weight: 300;
+}
+.f-400{
+    font-weight: 400;
+}
 .f-500{
     font-weight: 500;
 }
 
+.fz-12{
+    font-size: 12px;
+}
+.fz-15{
+    font-size: 15px;
+}
 .fz-20{
     font-size: 20px;
 }
@@ -19,9 +31,6 @@ $fontsNoto: 'Noto Sans TC', sans-serif;
 }
 .fz-30{
     font-size: 30px;
-}
-.fz-12{
-    font-size: 12px;
 }
 .lh-20{
     line-height: 20px;

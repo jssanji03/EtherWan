@@ -99,20 +99,23 @@
                             <h4>請選取資料</h4>
                             <div id="collection" class="row mt-2">
                                 <div id="menu" class="col-3 dropper_box" droppable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <!-- <div id="menu" class="col-12"></div> -->
+                                    <!-- <div id="menu2" class="col-12"></div> -->
                                 </div>
                                 <div class="col-9">
-                                        <div class="row justify-content-between" id="valueBox">
-                                            <div id="num1" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                            <button class="btn btn-cal mx-2">+</button>
+                                        <div class="row justify-content-between">
+                                            <div id="num1" class="textBox col-12 border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 50px;"></div>
+                                            <!-- <button class="btn btn-cal mx-2">+</button>
                                             <div id="num2" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                             <button class="btn btn-cal mx-2">*</button>
-                                            <div id="num3" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                            <div id="num3" class="textBox col border p-0" droppable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
                                         </div> 
                                         <div class="row justify-content-start mt-3">
                                             <div class="col-4 p-0">
                                                 <div class="input-group">
                                                     <span class="input-group-text" id="basic-addon1">總價</span>
                                                     <input id="numTotal" type="number" class="form-control" value="0" readonly>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-2">
@@ -142,7 +145,8 @@
     <script src="./plugins/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/sidebar.js"></script>
     <!-- <script src="js/component.js"></script> -->
-    <script src="js/drag.js"></script>
+    <!-- <script src="js/drag.js"></script> -->
+    <script src="js/drag2.js"></script>
 
 
 

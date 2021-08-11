@@ -75,7 +75,7 @@ const marqueeArr = document.querySelectorAll('#marquee')
             const todayEvent = data.map(function(item,index){
                 const today = new Date().format("yyyy/MM/dd");
                 if (item.date === today) {
-                    return `<p class='primary'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
+                    return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }
             });
             $('#event').html(todayEvent)
@@ -84,10 +84,12 @@ const marqueeArr = document.querySelectorAll('#marquee')
             const select = document.querySelector('.ui-datepicker-month')
             const value = select.options[select.selectedIndex].text;
             // console.log(select.selectedIndex)
-            // console.log(value)
-            const monthEvent = data.map(function(item,index){
+            const monthEvent = data.map(function (item, index) {
+                const today = new Date().toLocaleDateString();
+                // const week = today.setDate(today.getDate() + 2)
+                // console.log(today.toLocaleDateString());
                 if (item.month === value) {
-                    return `<p class='primary'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
+                    return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }
             });
             $('#event').html(monthEvent)
@@ -97,7 +99,7 @@ const marqueeArr = document.querySelectorAll('#marquee')
                 console.log(ev);
                 // console.log(item.date);
                 if (item.date === ev) {
-                    return `<p class='primary'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
+                    return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 } else {
                     return ``
                 }
