@@ -206,17 +206,6 @@ $(".listDataTable").DataTable({
 /////### Datatable Control End ###/////
 
 
-/////### SummerNote Start ###/////
-  $(document).ready(function() {
-    $('#summernote').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 200,
-    }
-  );
-});
-/////### SummerNote End ###/////
-
 /////###  設定列印範圍 Start ###/////
 function printDiv(){
   var newWin=window.open('','列印視窗');

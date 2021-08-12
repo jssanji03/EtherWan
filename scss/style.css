@@ -1,18 +1,16 @@
 @charset "UTF-8";
 /* Plugins Master Stylesheet */
 @import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.css");
-@import url("../plugins/jOrgChart/jquery.jOrgChart.css");
-@import url("../plugins/fontawesome-free/css/all.min.css");
-@import url("../plugins/select2/css/select2.min.css");
-@import url("../plugins/datatables/css/jquery.dataTables.min.css");
-@import url("../plugins/Buttons-1.6.5/css/buttons.dataTables.min.css");
-@import url("../plugins/chart.js/Chart.min.css");
-@import url("../plugins/select2/css/multiple-select.min.css");
-@import url("../plugins/Magicsuggest/css/magicsuggest.css");
-@import url("../plugins/daterangepicker-master/daterangepicker.css");
-@import url("../plugins/summernote/summernote-bs4.min.css");
+@import url("../plugins/fontawesome-free-5.15.4/css/all.min.css");
+@import url("../plugins/select2-4.0.13/css/select2.min.css");
+@import url("../plugins/select2-4.0.13/css/multiple-select.min.css");
+@import url("../plugins/DataTables-1.10.25/datatables.min.css");
 @import url("../plugins/Responsive-2.2.7/css/responsive.bootstrap.min.css");
+@import url("../plugins/daterangepicker-3.0.5/daterangepicker.css");
 @import url("../plugins/jquery/jquery-ui.min.css");
+@import url("../plugins/jOrgChart/jquery.jOrgChart.css");
+@import url("../plugins/chart.js/Chart.min.css");
+@import url("../plugins/Magicsuggest/css/magicsuggest.css");
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
@@ -587,6 +585,10 @@ button {
   color: #ffffff;
 }
 
+.TableArea .card-body {
+  min-height: 300px !important;
+}
+
 .TableArea .table-Hover td, .TableArea .table-Hover th {
   border-top: 1px solid #9bb1db;
 }
@@ -865,10 +867,6 @@ button {
   padding-left: 40px;
 }
 
-.openmenu #sidebar-wrapper .navbar-nav li:hover {
-  background-color: rgba(204, 204, 204, 0.315);
-}
-
 .openmenu #sidebar-wrapper .navbar-nav li i {
   color: #313994;
   position: absolute;
@@ -898,7 +896,6 @@ button {
 }
 
 .openmenu #sidebar-wrapper .navbar-nav li ul li a:hover {
-  background-color: #d3d3d3;
   color: #ffffff;
 }
 
@@ -2113,5 +2110,9 @@ header .in_link {
 
 .process .list-group .active p {
   color: white;
+}
+
+.process #All .cronLink:hover {
+  color: RGB(245, 199, 29);
 }
 /*# sourceMappingURL=style.css.map */

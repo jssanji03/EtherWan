@@ -62,10 +62,10 @@ const item =[
         const num1Count = num1.getElementsByTagName('span')
         
         let collection = document.getElementById('collection')
-        let draggerBox = document.querySelector('.dropper_box');
+        let draggerBox = document.querySelector('.dragger_box');
         let dragger = document.querySelectorAll('.numBox');
         let dropper = document.querySelectorAll('.textBox');
-        let disPlayDetail = document.getElementById('res')
+        let disPlayDetail = document.getElementById('detail')
         let disPlayresult = document.querySelector('#numTotal')
         let ac = document.getElementById('clear')
         let pendingVal;
@@ -85,7 +85,7 @@ const item =[
             } else {
                 let htmlTemplate = ''
                 htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" id="${obj.id}" data-value="${obj.price}">  
-                  ${obj.title}
+                  ${obj.title}${obj.price}
                 </span>`;
                 const menu = document.querySelector('#menu');
                 menu.innerHTML += htmlTemplate
@@ -103,21 +103,6 @@ const item =[
             // console.log(ev.target.dataset.value);
         }
         
-        // dragger.forEach((item)=>{
-        //     item.addEventListener("dragstart", (e) => {
-        //     //    e.target.style.background = "#FFF";
-        //         console.log(e.target);
-        //         e.target.style.opacity = "0.4";
-        //     });
-        //     item.addEventListener("dragleave", (e) => {
-        //        e.target.style.background = "#FFF";
-        //         e.target.style.opacity = "1";
-        //     });
-        //     item.addEventListener("dragend", (e) => {
-        //        e.target.style.background = "#FFF";
-        //         e.target.style.opacity = "1";
-        //     });
-        // })
         dropper.forEach((item) => {
             item.addEventListener("dragenter", (e) => {
                 e.target.style.background = "#ebf8ff";
@@ -137,11 +122,11 @@ const item =[
         draggerBox.addEventListener("dragenter", (e) => {
             e.target.style.background = "#ebf8ff";
             e.target.style.borderStyle = 'dashed';
-            e.target.style.opacity = "1";
+            // e.target.style.opacity = "1";
         });
         draggerBox.addEventListener("dragleave", (e) => {
             e.target.style.background = "#FFF";
-            e.target.style.opacity = "1";
+            // e.target.style.opacity = "1";
         });
         draggerBox.addEventListener("dragend", () => {
             // e.target.style.opacity = "1";
@@ -237,3 +222,8 @@ ac.addEventListener('click', () => {
 // window.onload = function(){
 //     html = collection.innerHTML;
 // };
+function TwoDecimal() {
+    const Num = disPlayresult.value
+    const TwoDecimal = Math.round(Num * 100) / 100;
+    disPlayresult.value = TwoDecimal
+}

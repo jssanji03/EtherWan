@@ -171,7 +171,7 @@
                             "position":"Manager",
                             "pic": "user02.jpeg",
                             "count": "10",
-                            "teamDetail":"我是 Gary",
+                            "teamDetail":"我是 ",
                             "childrens": [
                                 {
                                     "id": 13,
@@ -297,6 +297,29 @@
                         </a>
                         `).append("<ul class='grid'></ul>").appendTo(parent);
                 }
+            });
+            $.each(menu_list, function (index, val) {
+                console.log(val);
+                const Area = document.querySelector('#modalArea')
+                if (val.childrens.length > 0) {
+                    $(`<div class="modal fade" id="exampleModal${val.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">${val.Dept}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ${val.teamDetail}
+                        </div>
+                        
+                        </div>
+                    </div>
+                    </div>`).appendTo(Area);
+                    
+                    //递归显示
+                    // showall(val.childrens, $(li).children().eq(1));
+                } 
             });
 
         }

@@ -52,4 +52,11 @@
             }
         }
     }
+    #All{
+        .cronLink{
+            &:hover{
+                color: $yellow;
+            }
+        }
+    }
 }

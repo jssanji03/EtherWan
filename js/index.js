@@ -48,22 +48,22 @@ const marqueeArr = document.querySelectorAll('#marquee')
         const data = [
                 {
                     month: 'Aug',
-                    date: '2021/08/09',
+                    date: '2021/08/19',
                     event: '公益路跑'
                 },
                 {
                     month: 'Aug',
-                    date: '2021/08/10',
+                    date: '2021/08/20',
                     event: '慶生會10'
                 },
                 {
                     month: 'Aug',
-                    date: '2021/08/11',
+                    date: '2021/08/21',
                     event: '慶生會11'
                 },
                 {
                     month: 'Aug',
-                    date: '2021/08/12',
+                    date: '2021/08/22',
                     event: '慶生會12'
                 },
                 {
@@ -84,10 +84,11 @@ const marqueeArr = document.querySelectorAll('#marquee')
             const select = document.querySelector('.ui-datepicker-month')
             const value = select.options[select.selectedIndex].text;
             // console.log(select.selectedIndex)
+            const today = new Date();
+            const week = today.setDate(today.getDate() +14)
+            console.log(week.toLocaleString());
             const monthEvent = data.map(function (item, index) {
-                const today = new Date().toLocaleDateString();
-                // const week = today.setDate(today.getDate() + 2)
-                // console.log(today.toLocaleDateString());
+                // console.log(item.date);
                 if (item.month === value) {
                     return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }

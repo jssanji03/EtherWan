@@ -44,6 +44,9 @@
         background-color: rgb(79, 18, 150);
         color: $white;
     }
+    .card-body{
+        min-height: 300px !important;
+    }
     
     .table-Hover{
         td,th{
