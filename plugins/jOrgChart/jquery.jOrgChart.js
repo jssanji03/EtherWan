@@ -135,7 +135,7 @@
   	$nodeDiv = $("<div>").addClass("node")
                                      .data("tree-node", nodeCount)
                                      .append($nodeContent);
-                                  console.log($nodeDiv.find('.dept'));
+                                  // console.log($nodeDiv.find('.dept'));
     // Expand and contract nodes
     if ($childNodes.length > 0) {
       $nodeDiv.find('.dept').click(function (e) {

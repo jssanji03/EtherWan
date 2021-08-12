@@ -267,7 +267,7 @@
         }
         function showall(menu_list, parent) {
             $.each(menu_list, function (index, val) {
-                console.log(val);
+                // console.log(val);
                 if (val.childrens.length > 0) {
                     var li = $("<li></li>").addClass("level"+val.level);
                     li.append(
@@ -299,7 +299,7 @@
                 }
             });
             $.each(menu_list, function (index, val) {
-                console.log(val);
+                // console.log(val);
                 const Area = document.querySelector('#modalArea')
                 if (val.childrens.length > 0) {
                     $(`<div class="modal fade" id="exampleModal${val.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
