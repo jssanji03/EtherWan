@@ -95,40 +95,57 @@
             <section class="process">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-3 col-12">
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action active" aria-current="true" data-bs-toggle="tab" data-bs-target="#process1" type="button" role="tab">
+                        <div class="col-xl-3 col-12">
+                            <ul class="nav justify-content-start d-xl-none" id="myTab" role="tablist">
+                                <li class="nav-item me-4" role="presentation">
+                                    <a class="a-link active" data-bs-toggle="tab" data-bs-target="#process1" role="tab">排程1</a>
+                                </li>
+                                <li class="nav-item me-4" role="presentation">
+                                    <a class="a-link " data-bs-toggle="tab" data-bs-target="#process2" role="tab">排程2</a>
+                                </li>
+                                <li class="nav-item me-4" role="presentation">
+                                    <a class="a-link " data-bs-toggle="tab" data-bs-target="#process3" role="tab">排程3</a>
+                                </li>
+                                <li class="nav-item me-4" role="presentation">
+                                    <a class="a-link " data-bs-toggle="tab" data-bs-target="#process4" role="tab">排程4</a>
+                                </li>
+                                <li class="nav-item me-4" role="presentation">
+                                    <a class="a-link " data-bs-toggle="tab" data-bs-target="#process5" role="tab">排程5</a>
+                                </li>
+                            </ul>
+                            <div class="list-group d-none d-xl-block">
+                                <a href="#" class="list-group-item list-group-item-action active" aria-current="true" data-bs-toggle="tab" data-bs-target="#process1" role="tab">
                                     <p class="d-flex justify-content-between align-items-center secondary">排程1
                                     <!-- <span class="badge bg-primary rounded-pill">14</span> -->
                                     </p>
                                 </a>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process2" type="button"
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process2"
                                         role="tab">
                                     <p class="d-flex justify-content-between align-items-center secondary">排程2
                                         <!-- <span class="badge bg-success rounded-pill">5</span> -->
                                     </p>
                                 </a>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process3" type="button"
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process3" 
                                         role="tab">
                                     <p class="d-flex justify-content-between align-items-center secondary">排程3
                                         <!-- <span class="badge bg-warning rounded-pill">3</span> -->
                                     </p>
                                 </a>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process4"
-                                        type="button" role="tab">
+                                        role="tab">
                                     <p class="d-flex justify-content-between align-items-center secondary" >排程4
                                         <!-- <span class="badge bg-primary rounded-pill">2</span> -->
                                     </p>
                                 </a>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="tab" data-bs-target="#process5"
-                                        type="button" role="tab">
+                                        role="tab">
                                     <p class="d-flex justify-content-between align-items-center secondary">排程5
                                         <!-- <span class="badge bg-danger rounded-pill">2</span> -->
                                     </p>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-12 mt-lg-0 mt-4">
+                        <div class="col-xl-9  col-12 mt-lg-0 mt-4">
                             <div class="tab-content">
                                 <section class="tab-pane fade show active" role="tabpanel" id="process1">
                                     <div class="d-flex justify-content-between">
@@ -138,19 +155,29 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-12">
-                                            <table class="table table-striped table-bordered border mt-2">
+                                            <table class="table table-striped table-bordered border mt-2 vCorn">
                                                 <thead class="table-dark">
                                                     <tr class="text-center">
-                                                        <th class="border" scope="col" style="width:50%">內容</th>
-                                                        <th class="border" scope="col">時間</th>
+                                                        <th class="border" scope="col">內容</th>
+                                                        <th class="border" style="width: 20%;" scope="col">時間</th>
                                                         <th class="border" scope="col">自動 / 手動</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="lh-30">
                                                     <tr>
-                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, adipisicing elit. </td>
+                                                        <td class="border text-center p-2">
+                                                            <input type="text" class="form-control form-control-sm">
+                                                        </td>
+                                                        <td class="border text-center p-0">
+                                                            <button type="button" class="btn btn-edit btn-sm">Ａ</button>
+                                                            <button type="button" class="btn btn-padding btn-sm">Ｍ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, adipisicing elit.</td>
                                                         <td class="border text-center">
-                                                            <input class='datePicker'>
+                                                            <input type="text" class="form-control form-control-sm">
                                                         </td>
                                                         <td class="border text-center">
                                                             <button type="button" class="btn btn-edit btn-sm">Ａ</button>
@@ -158,19 +185,9 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
+                                                        <td scope="row" class="border">Lorem ipsum dolor sit, adipisicing elit.</td>
                                                         <td class="border text-center">
-                                                            <input class='datePicker'>
-                                                        </td>
-                                                        <td class="border text-center">
-                                                            <button type="button" class="btn btn-edit btn-sm">Ａ</button>
-                                                            <button type="button" class="btn btn-padding btn-sm">Ｍ</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row" class="border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </td>
-                                                        <td class="border text-center">
-                                                            <input class='datePicker'>
+                                                            <input type="text" class="form-control form-control-sm">
                                                         </td>
                                                         <td class="border text-center">
                                                             <button type="button" class="btn btn-edit btn-sm">Ａ</button>
@@ -181,38 +198,36 @@
                                             </table>
                                         </div>
                                         <div class="col-12 mt-3">
-                                            <div class="col-12">
-                                                <table class="responsive nowrap datatable-RWD" style="width:100%">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>日期</th>
-                                                            <th>時間</th>
-                                                            <th>狀態</th>
-                                                            <th>訊息</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>2021/08/21</td>
-                                                            <td>10:30 am</td>
-                                                            <td><span class="">Success</span></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2021/08/22</td>
-                                                            <td>9:30 am</td>
-                                                            <td><span>Success</span></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2021/08/23</td>
-                                                            <td>14:30 pm</td>
-                                                            <td><span>Reject</span></td>
-                                                            <td>訊息錯誤</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                            <table class="responsive nowrap datatable-RWD" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>時間</th>
+                                                        <th>狀態</th>
+                                                        <th>訊息</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2021/08/21</td>
+                                                        <td>10:30 am</td>
+                                                        <td><span class="">Success</span></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2021/08/22</td>
+                                                        <td>9:30 am</td>
+                                                        <td><span>Success</span></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2021/08/23</td>
+                                                        <td>14:30 pm</td>
+                                                        <td><span>Reject</span></td>
+                                                        <td>訊息錯誤</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                     

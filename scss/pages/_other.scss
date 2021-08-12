@@ -45,17 +45,24 @@
 .process{
     .list-group{
         .active{
+            // background-color: #ccc;
             background-color: $secondary;
             border: none;
             p{
                 color: white;
+                // color: #000;
             }
         }
     }
-    #All{
+    .tab-content{
         .cronLink{
             &:hover{
                 color: $yellow;
+            }
+        }
+        table.vCorn{
+            td{
+                vertical-align: middle;
             }
         }
     }

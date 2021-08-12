@@ -2112,7 +2112,11 @@ header .in_link {
   color: white;
 }
 
-.process #All .cronLink:hover {
+.process .tab-content .cronLink:hover {
   color: RGB(245, 199, 29);
+}
+
+.process .tab-content table.vCorn td {
+  vertical-align: middle;
 }
 /*# sourceMappingURL=style.css.map */
