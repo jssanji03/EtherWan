@@ -1,6 +1,25 @@
 // Fonts
 $fonts: 'Roboto', sans-serif;
 $fontsNoto: 'Noto Sans TC', sans-serif;
+
+$font-family-sans-serif:
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for macOS (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue", Arial,
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 // $fontLogin:'Oswald', sans-serif;
 // $fontsEn: "Montserrat", sans-serif;
 

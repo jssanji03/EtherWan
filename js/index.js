@@ -54,17 +54,22 @@ const marqueeArr = document.querySelectorAll('#marquee')
                 {
                     month: 'Aug',
                     date: '2021/08/20',
-                    event: '慶生會10'
+                    event: '會議20'
                 },
                 {
                     month: 'Aug',
-                    date: '2021/08/21',
-                    event: '慶生會11'
+                    date: '2021/08/23',
+                    event: '會議23'
                 },
                 {
                     month: 'Aug',
-                    date: '2021/08/22',
-                    event: '慶生會12'
+                    date: '2021/08/24',
+                    event: '會議24'
+                },
+                {
+                    month: 'Aug',
+                    date: '2021/08/31',
+                    event: '會議31'
                 },
                 {
                     month: 'Sep',
@@ -80,15 +85,38 @@ const marqueeArr = document.querySelectorAll('#marquee')
             });
             $('#event').html(todayEvent)
         }
+        function week() {
+            const startDate = new Date();
+            let endDate = new Date();
+            endDate.setDate(startDate.getDate() + 14);
+            const dateList = [];
+            // console.log(startDate.getMonth()); 
+            while ((endDate.getTime() - startDate.getTime()) >= 0) {
+                let year = startDate.getFullYear();
+                let month = (startDate.getMonth() + 1).toString().length === 1 ? "0" + (startDate.getMonth() + 1).toString() : (
+                    startDate.getMonth() + 1);
+                let day = startDate.getDate().toString().length === 1 ? "0" + startDate.getDate() : startDate.getDate();
+                dateList.push(`${year}/${month}/${day}`);
+                startDate.setDate(startDate.getDate() + 1);
+            }
+            data.map(function (item, index) {
+                dateList.forEach((vDay) => {
+                    if (item.date === vDay) {
+                        let htmlTemplate = ''
+                        htmlTemplate = htmlTemplate + `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
+
+                        const event = document.querySelector('#event')
+                        event.innerHTML += htmlTemplate
+                    }
+                })
+            });
+        }
+
         function month(year,month) {
             const select = document.querySelector('.ui-datepicker-month')
             const value = select.options[select.selectedIndex].text;
-            // console.log(select.selectedIndex)
-            const today = new Date();
-            const week = today.setDate(today.getDate() +14)
-            console.log(week.toLocaleString());
+            // console.log(month)
             const monthEvent = data.map(function (item, index) {
-                // console.log(item.date);
                 if (item.month === value) {
                     return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }
@@ -98,55 +126,15 @@ const marqueeArr = document.querySelectorAll('#marquee')
         function gotoDate(ev) {
             const event = data.map(function (item, index) {
                 console.log(ev);
-                // console.log(item.date);
                 if (item.date === ev) {
                     return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
-                } else {
+                }
+                else {
                     return ``
                 }
             })
             $('#event').html(event)
         }
-        // function gotoDate(ev) {
-
-        //     data.forEach((obj) => {
-        //             const div = document.querySelector('#event')
-        //         const vEvent = obj.event.map(function (item, index) {
-        //                 console.log(item.date);
-        //                 console.log(ev);
-        //                 if (item.date === ev) {
-        //                     return `<p class='primary'>${item.date.substr(0, 5)}  <span class='mx-2'>${item.event}</span><p>`
-        //                 }
-        //             })
-        //             $('#event').html(vEvent)
-        //     });
-        //     // data.map(function(item,index){
-        //     //     console.log(item);
-        //     // })
-        //     // if (item.event.length > 0) {
-        //     //     // console.log(item);
-        //     //     const vEvent = item.event.map(function (obj, index) {
-        //     //         console.log(obj.date);
-        //     //         console.log(ev);
-        //     //         if (obj.date === ev) {
-        //     //             return `<p class='primary'>${obj.date.substr(0, 5)}  <span class='mx-2'>${obj.event}</span><p>`
-        //     //         }
-        //     //         else {
-        //     //             return ``
-        //     //         }
-        //     //     })
-        //     //     $('#event').html(vEvent)
-        //     // }
-        //         // const vEvent = event.map(function (item, index) {
-        //         //     if (item.date === ev) {
-        //         //         return `<p class='primary'>${item.date.substr(0, 5)}  <span class='mx-2'>${item.event}</span><p>`
-        //         //     } else {
-        //         //         return ``
-        //         //     }
-        //         // })
-            
-            
-        // }
         $("#datepicker").datepicker({
             changeMonth: true,
             onSelect: gotoDate,
@@ -154,9 +142,5 @@ const marqueeArr = document.querySelectorAll('#marquee')
             showMonthAfterYear: true,
             dateFormat: "yy/mm/dd"
         });
-        // $("#datepicker").datepicker("option", "dateFormat", "dd");
-        // $('#datepicker').change(function () {
-        //     $('.ui-datepicker-month').val($('#datepicker').val());
-        // })
         window.onload = month;
     });

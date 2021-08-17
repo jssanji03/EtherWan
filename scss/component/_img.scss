@@ -8,6 +8,10 @@
     object-fit: cover;
 }
 .img-sm{
+    width: 80%;
+    height: 80%;
+    padding: 0px;
+    object-fit: cover;
     @media #{$breakpoint-xs}{
         width: 30%;
         height: 30%;

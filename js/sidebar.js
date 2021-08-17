@@ -57,15 +57,15 @@ $(function () {
         }
     });
 });
-$(function () {
-    var pathname = window.location.pathname;
-   $(".navbar-collapse li a").each( function() {
-        var href= $(this).attr("href");
-        if (href != undefined && pathname.indexOf(href) >= 0){
-            $(this).addClass("active").css("color","#2D94CE");
-        }
-    });
-});
+// $(function () {
+//     var pathname = window.location.pathname;
+//    $(".navbar-collapse li a").each( function() {
+//         var href= $(this).attr("href");
+//         if (href != undefined && pathname.indexOf(href) >= 0){
+//             $(this).addClass("active").css("color","#2D94CE");
+//         }
+//     });
+// });
 
 
 // Laptop SideBar Control ///

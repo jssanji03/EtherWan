@@ -1,28 +1,8 @@
-section.page_title {
-    padding-top: 3px;
-    padding-bottom: 30px;
-    // padding:3px 20px 30px 0px;
-}
-
-//--- Title and BreadCrumb---//
-.page_title{
-    align-items: center;
-    h2{
-        line-height: 30px;
-    }
-    .breadcrumb{
-        line-height: 30px;
-        height: 30px;
-        margin: 0px;
-        a{
-            color: $dark;
-        }
-    }
-    .active{
-        color: $secondary;
-    }
-}
-//--- Title and BreadCrumb End ---//
+// section.page_title {
+//     padding-top: 3px;
+//     padding-bottom: 30px;
+//     // padding:3px 20px 30px 0px;
+// }
 .mt-15 {
     margin-top: 15px !important;
 }

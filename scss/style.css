@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Plugins Master Stylesheet */
-@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.css");
+@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap-reboot.min.css");
+@import url("../plugins/bootstrap-5.0.0-dist/css/bootstrap.min.css");
 @import url("../plugins/fontawesome-free-5.15.4/css/all.min.css");
 @import url("../plugins/select2-4.0.13/css/select2.min.css");
 @import url("../plugins/select2-4.0.13/css/multiple-select.min.css");
@@ -29,7 +30,6 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
-  border: 0;
   vertical-align: baseline;
   text-decoration: none;
 }
@@ -186,35 +186,6 @@ table {
 .bg_gradient {
   background: -webkit-gradient(linear, right top, left top, from(#113E9A), to(#52B0DD));
   background: linear-gradient(to left, #113E9A, #52B0DD);
-}
-
-section.page_title {
-  padding-top: 3px;
-  padding-bottom: 30px;
-}
-
-.page_title {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page_title h2 {
-  line-height: 30px;
-}
-
-.page_title .breadcrumb {
-  line-height: 30px;
-  height: 30px;
-  margin: 0px;
-}
-
-.page_title .breadcrumb a {
-  color: #303030;
-}
-
-.page_title .active {
-  color: RGB(53, 157, 209);
 }
 
 .mt-15 {
@@ -535,6 +506,14 @@ button {
      object-fit: cover;
 }
 
+.img-sm {
+  width: 80%;
+  height: 80%;
+  padding: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media only screen and (max-width: 767px) {
   .img-sm {
     width: 30%;
@@ -578,6 +557,54 @@ button {
 
 .SelectArea .dropdown-menu {
   left: 0;
+}
+
+.checkBoxArea .checkbox_ex1[type=checkbox] {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  padding: 3px;
+  margin-right: 2px;
+  border: 1px solid #e24343;
+  color: #444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* 防止文字被滑鼠選取反白 */
+  position: relative;
+}
+
+.checkBoxArea .checkbox_ex1[type=checkbox]:checked {
+  color: white;
+  display: inline-block;
+  background-color: #e24343;
+}
+
+.checkBoxArea .radio_ex1[type=radio] {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 3px;
+  margin-right: 2px;
+  border: 1px solid #e24343;
+  color: #444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* 防止文字被滑鼠選取反白 */
+  position: relative;
+}
+
+.checkBoxArea .radio_ex1[type=radio]:checked {
+  color: white;
+  display: inline-block;
+  background-color: #e24343;
 }
 
 .TableArea .card-header {
@@ -659,7 +686,7 @@ button {
 
 #sidebar-wrapper .side_logo {
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   height: 40px;
 }
 
@@ -728,7 +755,7 @@ button {
   color: #5a5a5a;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   #sidebar-wrapper {
     width: 15vw;
     height: 100%;
@@ -741,10 +768,9 @@ button {
   margin-left: 15vw;
   margin-top: 50px;
   width: 85vw;
-  padding: 15px;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   #page-content-wrapper {
     width: 100vw;
     height: 100%;
@@ -757,14 +783,14 @@ button {
   position: fixed;
   right: 0;
   top: 0;
-  margin-left: 20vw;
+  margin-left: 15vw;
   width: 85vw;
   height: 50px;
   z-index: 100;
   background-color: #ffffff;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   #page-content-wrapper .navbar {
     width: 100vw;
     margin-left: 0vw;
@@ -780,12 +806,11 @@ button {
 }
 
 #page-content-wrapper .navbar .navbar-toggler {
-  margin-left: 10px;
   border: none;
 }
 
 #page-content-wrapper .navbar .navbar-toggler:focus {
-  outline: none;
+  outline: 0;
 }
 
 #page-content-wrapper .navbar ul {
@@ -794,8 +819,6 @@ button {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: absolute;
-  left: 70px;
   height: 50px;
 }
 
@@ -806,23 +829,47 @@ button {
 }
 
 #page-content-wrapper .navbar ul li {
-  padding: 5px 15px;
+  padding: 5px;
   display: block;
   line-height: 40px;
+  margin: 0px 20px;
   text-align: center;
   cursor: pointer;
 }
 
 #page-content-wrapper .navbar ul li a {
-  color: #303030;
-}
-
-#page-content-wrapper .navbar ul li a:hover {
-  color: #313994;
+  color: #5a5a5a !important;
 }
 
 #page-content-wrapper .navbar ul li ul {
   display: none;
+}
+
+#page-content-wrapper .navbar ul li:hover {
+  color: #313994;
+}
+
+#page-content-wrapper .navbar ul li:hover ul {
+  display: block;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  height: auto;
+}
+
+#page-content-wrapper .navbar ul li:hover ul li {
+  color: #5a5a5a;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 40px;
+  width: 100%;
+  text-align: left;
+  margin: 0px;
+}
+
+#page-content-wrapper .navbar ul li:hover ul li:hover {
+  color: #5a5a5a;
+  background-color: #ecf5ff;
 }
 
 .openmenu #sidebar-wrapper {
@@ -1941,7 +1988,7 @@ img {
 .logo {
   width: 200px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
 }
 
 header .photoLink {
@@ -2060,6 +2107,31 @@ header .in_link {
 
 .ui-datepicker-week-end a {
   color: #aa0c0c !important;
+}
+
+.page_title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 30px;
+}
+
+.page_title h2 {
+  line-height: 30px;
+}
+
+.page_title .breadcrumb {
+  line-height: 30px;
+  height: 30px;
+  margin: 0px;
+}
+
+.page_title .breadcrumb a {
+  color: #303030;
+}
+
+.page_title .active {
+  color: RGB(53, 157, 209);
 }
 
 .info img {

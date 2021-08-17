@@ -28,6 +28,20 @@ const item =[
                 color:'info'
             },
             {
+                id:"left",
+                title:'(',
+                math: '(',
+                price:'(',
+                color:'info'
+            },
+            {
+                id:"right",
+                title:')',
+                math: ')',
+                price:')',
+                color:'info'
+            },
+            {
                 id:"drag1",
                 title:'blue',
                 price:'100',
@@ -106,7 +120,7 @@ const item =[
         dropper.forEach((item) => {
             item.addEventListener("dragenter", (e) => {
                 e.target.style.background = "#ebf8ff";
-                e.target.style.borderStyle = 'dashed';
+                // e.target.style.borderStyle = 'dashed';
                 e.target.style.opacity = "1";
             });
             item.addEventListener("dragleave", (e) => {
@@ -121,7 +135,7 @@ const item =[
         
         draggerBox.addEventListener("dragenter", (e) => {
             e.target.style.background = "#ebf8ff";
-            e.target.style.borderStyle = 'dashed';
+            // e.target.style.borderStyle = 'dashed';
             // e.target.style.opacity = "1";
         });
         draggerBox.addEventListener("dragleave", (e) => {
