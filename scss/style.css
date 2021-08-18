@@ -2049,33 +2049,22 @@ header .in_link {
   color: #ffffff;
 }
 
-.marquee-vertical {
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transform: rotate(90deg) translateY(-50px);
-          transform: rotate(90deg) translateY(-50px);
-}
-
-.marqueeBox {
-  height: 130px;
-}
-
 .marqueeBox .marquee-wrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation-name: marquee;
-          animation-name: marquee;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  will-change: transform;
+  height: 80px;
+}
+
+.marqueeBox .marquee-wrapper ul {
+  position: absolute;
+  top: 0;
+  left: calc(40% - 100px);
+  opacity: 0;
+  -webkit-animation: display 8s infinite;
+          animation: display 8s infinite;
+  width: 100%;
 }
 
 .marqueeBox .marquee-wrapper ul li {
@@ -2083,25 +2072,69 @@ header .in_link {
   padding: 0 40px;
 }
 
-@-webkit-keyframes marquee {
+.marqueeBox .marquee-wrapper ul:nth-child(2) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.marqueeBox .marquee-wrapper ul:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+@-webkit-keyframes display {
   0% {
-    -webkit-transform: translateY(30%);
-            transform: translateY(30%);
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+    opacity: 0;
   }
-  to {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+  10% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
   }
 }
 
-@keyframes marquee {
+@keyframes display {
   0% {
-    -webkit-transform: translateY(30%);
-            transform: translateY(30%);
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+    opacity: 0;
   }
-  to {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+  10% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
   }
 }
 
@@ -2190,5 +2223,15 @@ header .in_link {
 
 .process .tab-content table.vCorn td {
   vertical-align: middle;
+}
+
+[draggable="true"] {
+  /*
+   To prevent user selecting inside the drag source
+  */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 /*# sourceMappingURL=style.css.map */

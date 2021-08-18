@@ -73,11 +73,12 @@ const item =[
             }
         ] 
         const num1 = document.getElementById('num1')
-        const num1Count = num1.getElementsByTagName('span')
+        // const num1Count = num1.getElementsByTagName('span')
+        const num1Count = document.querySelectorAll('.badge')
         
         let collection = document.getElementById('collection')
         let draggerBox = document.querySelector('.dragger_box');
-        let dragger = document.querySelectorAll('.numBox');
+        // let dragger = document.querySelectorAll('.numBox');
         let dropper = document.querySelectorAll('.textBox');
         let disPlayDetail = document.getElementById('detail')
         let disPlayresult = document.querySelector('#numTotal')
@@ -91,14 +92,14 @@ const item =[
                     //function(item,index) //callback function
             if (obj.math) {
                 let htmlTemplate = ''
-                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge math bg-${obj.color} rounded-pill" id="${obj.id}" data-math="${obj.math}" data-value="${obj.math}">  
+                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" ondragover="drop_handler(event)"class="m-1 badge math bg-${obj.color} rounded-pill" id="${obj.id}" data-math="${obj.math}" data-value="${obj.math}">  
                   ${obj.title}
                 </span>`;
                 const menu = document.querySelector('#menu');
                 menu.innerHTML += htmlTemplate
             } else {
                 let htmlTemplate = ''
-                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" id="${obj.id}" data-value="${obj.price}">  
+                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" ondragover="drop_handler(event)" id="${obj.id}" data-value="${obj.price}">  
                   ${obj.title}${obj.price}
                 </span>`;
                 const menu = document.querySelector('#menu');
@@ -114,36 +115,50 @@ const item =[
             // ev.dataTransfer.setData("application/json", ev.target.dataset.math);
             ev.dataTransfer.setData("text/plain", ev.target.id);
             ev.target.style.opacity = "0.4";
-            // console.log(ev.target.dataset.value);
+            // let index = ev.target.index
+            // console.log(index);
+            // ev.dataTransfer.setData('text/plain', ev.target.index);
+            ev.dataTransfer.effectAllowed = 'move';
         }
+
+        num1.addEventListener("dragenter", (e) => {
+            e.target.style.background = "#ebf8ff";
+        })
+        num1.addEventListener("dragend", (e) => {
+            e.target.style.opacity = "1";
+        })
+        num1.addEventListener("dragleave", (e) => {
+            e.target.style.background = "#FFF";
+        })
         
-        dropper.forEach((item) => {
-            item.addEventListener("dragenter", (e) => {
-                e.target.style.background = "#ebf8ff";
-                // e.target.style.borderStyle = 'dashed';
-                e.target.style.opacity = "1";
+        num1Count.forEach((item) => {
+            item.addEventListener("dragstart", (e) => {
+                e.target.style.background = "#FFF";
+                e.dataTransfer.effectAllowed = "none";
+                e.dataTransfer.dropEffect = 'none';
+                
             });
-            item.addEventListener("dragleave", (e) => {
-               e.target.style.background = "#FFF";
-                e.target.style.opacity = "1";
-            });
-            item.addEventListener("dragend", (e) => {
-               e.target.style.background = "#FFF";
-                e.target.style.opacity = "1";
-            });
+            item.addEventListener("dragover", (e) => {
+                // e.dataTransfer.dropEffect = 'none';
+                // e.dataTransfer.effectAllowed = "none";
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                e.dataTransfer.dropEffect = 'move';
+                return false;
+                });
         })
         
         draggerBox.addEventListener("dragenter", (e) => {
+            e.preventDefault();
             e.target.style.background = "#ebf8ff";
-            // e.target.style.borderStyle = 'dashed';
-            // e.target.style.opacity = "1";
         });
         draggerBox.addEventListener("dragleave", (e) => {
+            e.preventDefault();
             e.target.style.background = "#FFF";
-            // e.target.style.opacity = "1";
         });
-        draggerBox.addEventListener("dragend", () => {
-            // e.target.style.opacity = "1";
+        draggerBox.addEventListener("dragend", (e) => {
+            e.target.style.opacity = "1";
             let evalStrAry_length = evalStrAry.length;
             let evalStrAry_math_length = evalStrAry_math.length;
             evalStrAry = evalStrAry.slice(0, evalStrAry_length - 1);
@@ -158,16 +173,19 @@ const item =[
             disPlayresult.value = evaluation_math;
             disPlayDetail.innerText = evalStrAry.join(' ');
         },false);
-
+        function drop_handler(ev) {
+            ev.preventDefault()
+            ev.dataTransfer.dropEffect = "none"
+            ev.dataTransfer.effectAllowed = "none";
+        }
         function drop(ev) {
             ev.preventDefault();
+            ev.target.style.opacity = "1";
             var data = ev.dataTransfer.getData("text/plain");
             var data2 = ev.dataTransfer.getData("application/json");
             // var dataMath = parseInt(ev.dataTransfer.getData("application/json"));
             // console.log(typeof(data2));
-            // console.log(ev.target.getAttribute('data-value'));
             ev.target.appendChild(document.getElementById(data));
-            ev.target.style.opacity = "1";
             ev.target.style.background = "#FFF";
 
 

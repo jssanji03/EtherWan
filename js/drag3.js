@@ -28,6 +28,20 @@ const item =[
                 color:'info'
             },
             {
+                id:"left",
+                title:'(',
+                math: '(',
+                price:'(',
+                color:'info'
+            },
+            {
+                id:"right",
+                title:')',
+                math: ')',
+                price:')',
+                color:'info'
+            },
+            {
                 id:"drag1",
                 title:'blue',
                 price:'100',
@@ -58,11 +72,12 @@ const item =[
                 color: 'dark'
             }
         ] 
-        const num1 = document.getElementById('num1')
-        const num1Count = num1.getElementsByTagName('span')
+        // const num1 = document.getElementById('num1')
+        // const num1Count = num1.getElementsByTagName('span')
+        const num1Count = document.querySelectorAll('.badge')
         
         let collection = document.getElementById('collection')
-        let draggerBox = document.querySelector('.dragger_box');
+        let draggerBox = document.querySelectorAll('.dragger_box');
         let dragger = document.querySelectorAll('.numBox');
         let dropper = document.querySelectorAll('.textBox');
         let disPlayDetail = document.getElementById('detail')
@@ -77,14 +92,14 @@ const item =[
                     //function(item,index) //callback function
             if (obj.math) {
                 let htmlTemplate = ''
-                htmlTemplate = htmlTemplate + `<span class="m-1 badge math bg-${obj.color} rounded-pill" id="${obj.id}" data-math="${obj.math}" data-value="${obj.math}">  
+                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" ondragover="drop_handler(event)"class="m-1 badge math bg-${obj.color} rounded-pill" id="${obj.id}" data-math="${obj.math}" data-value="${obj.math}">  
                   ${obj.title}
                 </span>`;
                 const menu = document.querySelector('#menu');
                 menu.innerHTML += htmlTemplate
             } else {
                 let htmlTemplate = ''
-                htmlTemplate = htmlTemplate + `<span class="m-1 badge numBox bg-${obj.color} rounded-pill" id="${obj.id}" data-value="${obj.price}">  
+                htmlTemplate = htmlTemplate + `<span draggable="true" ondragstart="drag(event)" class="m-1 badge numBox bg-${obj.color} rounded-pill" ondragover="drop_handler(event)" id="${obj.id}" data-value="${obj.price}">  
                   ${obj.title}${obj.price}
                 </span>`;
                 const menu = document.querySelector('#menu');
@@ -92,72 +107,98 @@ const item =[
             }
             
         });
-        // function allowDrop(ev) {
-        //     ev.preventDefault();
-        // }
-        // function drag(ev) {
-        //     ev.dataTransfer.setData("application/json", ev.target.dataset.value);
-        //     // ev.dataTransfer.setData("application/json", ev.target.dataset.math);
-        //     ev.dataTransfer.setData("text/plain", ev.target.id);
-        //     ev.target.style.opacity = "0.4";
-        //     // console.log(ev.target.dataset.value);
-        // }
-        
-        // dropper.forEach((item) => {
-        //     item.addEventListener("dragenter", (e) => {
-        //         e.target.style.background = "#ebf8ff";
-        //         e.target.style.borderStyle = 'dashed';
-        //         e.target.style.opacity = "1";
-        //     });
-        //     item.addEventListener("dragleave", (e) => {
-        //        e.target.style.background = "#FFF";
-        //         e.target.style.opacity = "1";
-        //     });
-        //     item.addEventListener("dragend", (e) => {
-        //        e.target.style.background = "#FFF";
-        //         e.target.style.opacity = "1";
-        //     });
-        // })
-        
-        // draggerBox.addEventListener("dragenter", (e) => {
-        //     e.target.style.background = "#ebf8ff";
-        //     e.target.style.borderStyle = 'dashed';
-        //     // e.target.style.opacity = "1";
-        // });
-        // draggerBox.addEventListener("dragleave", (e) => {
-        //     e.target.style.background = "#FFF";
-        //     // e.target.style.opacity = "1";
-        // });
-        // draggerBox.addEventListener("dragend", () => {
-        //     // e.target.style.opacity = "1";
-        //     let evalStrAry_length = evalStrAry.length;
-        //     let evalStrAry_math_length = evalStrAry_math.length;
-        //     evalStrAry = evalStrAry.slice(0, evalStrAry_length - 1);
-        //     evalStrAry_math = evalStrAry_math.slice(0, evalStrAry_math_length - 1);
-        //     let evaluation_math = eval(evalStrAry_math.join(' '));
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("application/json", ev.target.dataset.value);
+            // ev.dataTransfer.setData("application/json", ev.target.dataset.math);
+            ev.dataTransfer.setData("text/plain", ev.target.id);
+            ev.target.style.opacity = "0.4";
+            // let index = ev.target.index
+            // console.log(index);
+            // ev.dataTransfer.setData('text/plain', ev.target.index);
+            ev.dataTransfer.effectAllowed = 'move';
+            var index = $(ev.target).index();
+            ev.dataTransfer.setData('text/plain', index);
+            // console.log(index);
+        }
+        function drop_handler(ev) {
+            ev.preventDefault()
+            ev.dataTransfer.dropEffect = "none"
+            // ev.dataTransfer.dropEffect = 'move';
+            ev.dataTransfer.effectAllowed = "none";
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            ev.target.style.opacity = "1";
+            // var index = $(ev.target).index();
+            var data = ev.dataTransfer.getData("text/plain");
+            var data2 = ev.dataTransfer.getData("application/json");
+            // var dataMath = parseInt(ev.dataTransfer.getData("application/json"));
+            // var lines = ev.dataTransfer.getData("text/plain")
+            for (let line of data) {
+                let link = document.getElementById(data);
+                // link.href = line;
+                console.log(link);
+                link.textContent = line;
+                ev.target.appendChild(link);
+            }
+
+            // ev.target.appendChild(document.getElementById(data));
+            ev.target.style.background = "#FFF";
+        }
+        function handleDragEnter(e) {
+            e.preventDefault();
+            e.target.style.background = "#ebf8ff";
+        }
+        function handleDragLeave(e) {
+            e.preventDefault();
+            e.target.style.background = "#FFF";
+        }
+        function handleDragEnd(e) {
+            e.preventDefault();
+            e.target.style.opacity = "1";
+        }
+        var dragSrcEl = null;
+        function dragStart(e) {
+            dragSrcEl = this;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+
+        dragger.forEach((item) => {
+            item.addEventListener('dragstart', dragStart, false);
+            item.addEventListener('dragover', drop_handler, false);
+            item.addEventListener('dragend', handleDragEnd, false);
+        })
+        dropper.forEach((item) => {
+            item.addEventListener('dragenter', handleDragEnter, false);
+            item.addEventListener('dragleave', handleDragLeave, false);
+            item.addEventListener('dragend', handleDragEnd, false);
+        })
+
+        draggerBox.forEach((item) => {
+            item.addEventListener('dragenter', handleDragEnter, false);
+            item.addEventListener('dragleave', handleDragLeave, false);
+            item.addEventListener("dragend", (e) => {
+            e.target.style.opacity = "1";
+            let evalStrAry_length = evalStrAry.length;
+            let evalStrAry_math_length = evalStrAry_math.length;
+            evalStrAry = evalStrAry.slice(0, evalStrAry_length - 1);
+            evalStrAry_math = evalStrAry_math.slice(0, evalStrAry_math_length - 1);
+            let evaluation_math = eval(evalStrAry_math.join(' '));
             
-        //     console.log(evalStrAry);
-        //     console.log(evalStrAry.length);
-        //     if(displayVal === '') {
-        //         displayVal = '0';
-        //     }
-        //     disPlayresult.value = evaluation_math;
-        //     disPlayDetail.innerText = evalStrAry.join(' ');
-        // },false);
-
-        // function drop(ev) {
-        //     ev.preventDefault();
-        //     var data = ev.dataTransfer.getData("text/plain");
-        //     var data2 = ev.dataTransfer.getData("application/json");
-        //     // var dataMath = parseInt(ev.dataTransfer.getData("application/json"));
-        //     // console.log(typeof(data2));
-        //     // console.log(ev.target.getAttribute('data-value'));
-        //     ev.target.appendChild(document.getElementById(data));
-        //     ev.target.style.opacity = "1";
-        //     ev.target.style.background = "#FFF";
-
-
-        // }
+            console.log(evalStrAry);
+            // console.log(evalStrAry.length);
+            if(displayVal === '') {
+                displayVal = '0';
+            }
+            disPlayresult.value = evaluation_math;
+            disPlayDetail.innerText = evalStrAry.join(' ');
+            },false);
+        })
+        
 
     let updateDisplayVal = (e) => {
             // console.log(e.target);
@@ -227,23 +268,3 @@ function TwoDecimal() {
     const TwoDecimal = Math.round(Num * 100) / 100;
     disPlayresult.value = TwoDecimal
 }
-
-// const menu = document.querySelector('#menu')
-// Sortable.create( el, {
-//   		// 參數設定[註1]
-//   		disabled: false, // 關閉Sortable
-//   		animation: 150,  // 物件移動時間(單位:毫秒)
-//   		handle: "#collection",  // 可拖曳的區域
-//   		// filter: ".ignore",  // 過濾器，不能拖曳的物件
-//   		preventOnFilter: true, // 當過濾器啟動的時候，觸發event.preventDefault()
-//   		draggable: ".badge",  // 可拖曳的物件
-//   		ghostClass: "sortable-ghost",  // 拖曳時，給予物件的類別
-//   		chosenClass: "sortable-chosen",  // 選定時，給予物件的類別
-//   		forceFallback: false  // 忽略HTML5 DnD
-//   	});
-
-$(function() {
-    $( "#menu" ).sortable({
-      connectWith: ".dragger_box"
-    }).disableSelection();
-  });

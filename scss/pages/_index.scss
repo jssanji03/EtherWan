@@ -55,27 +55,33 @@ header {
         }
     }
 }
-.marquee-vertical{
-	transform-origin: left;
-	transform: rotate(90deg) translateY(-50px);
-}
+// .marquee-vertical{
+// 	transform-origin: left;
+// 	transform: rotate(90deg) translateY(-50px);
+// }
 .marqueeBox{
-    height: 130px;
+    
     .marquee-wrapper {
         position: relative;
         display: flex;
-        animation-name: marquee;
-        animation-duration: 15s;
-        animation-timing-function: linear;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
-        will-change: transform;
+        height: 80px;
+        // animation-duration: 15s;
+        // animation-timing-function: linear;
+        // animation-delay: 0s;
+        // animation-iteration-count: infinite;
+        // will-change: transform;
         ul{
             // overflow: hidden;
-            
+            position: absolute;
+            top: 0;
+            left: calc(40% - 100px);
+            opacity: 0;
+            animation: display 8s infinite;
+            width: 100%;
             li{
                 display: block;
                 padding: 0 40px;
+                // text-align: center;
             }
             
             // &:last-child {
@@ -84,17 +90,77 @@ header {
             // 	left: 0px;
             // }
         }
+        ul:nth-child(2) {
+            animation-delay: 4s;
+        }
+        ul:nth-child(3) {
+            animation-delay: 4s;
+        }
     }
 }
-@keyframes marquee{
-  0%{
-		transform:translateY(30%)
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
   }
-  to{
-		transform:translateY(-100%)
-		// transform:translate3d(0,-120%,0)
-	}
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
 }
+// .marquee-vertical{
+// 	transform-origin: left;
+// 	transform: rotate(90deg) translateY(-50px);
+// }
+// .marqueeBox{
+//     height: 80px;
+//     .marquee-wrapper {
+//         position: relative;
+//         display: flex;
+//         animation-name: marquee;
+//         animation-duration: 15s;
+//         animation-timing-function: linear;
+//         animation-delay: 0s;
+//         animation-iteration-count: infinite;
+//         will-change: transform;
+//         ul{
+//             // overflow: hidden;
+            
+//             li{
+//                 display: block;
+//                 padding: 0 40px;
+//             }
+            
+//             // &:last-child {
+//             // 	position: absolute;
+//             // 	top: 0;
+//             // 	left: 0px;
+//             // }
+//         }
+//     }
+// }
+// @keyframes marquee{
+//   0%{
+// 		transform:translateY(30%)
+//   }
+//   to{
+// 		transform:translateY(-100%)
+// 		// transform:translate3d(0,-120%,0)
+// 	}
+// }
 
 
 .ui-datepicker-week-end a {
