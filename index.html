@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EtherWan</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="./public/img/core-img/favicon.png">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./scss/style.min.css">
 
@@ -141,35 +144,35 @@
     <section class="py-5 bg-lightGray">
         <div class="container">
                     <div class="row" >
-                        <div class="col-lg-5 col-md-12 col-12 p-3" style="min-height: 400px;">
+                        <div class="col-lg-6 col-md-12 col-12 p-3" style="min-height: 400px;">
                             <div class="p-4 border-end card-radius bg-white shadow-sm">
-                                <p class="fz-20 lh-40 border-bottom">公告</p>
+                                <p class="fz-20 lh-40 border-bottom text-center">公告</p>
                                 <ul class="lh-30 my-2">
                                     <li class="d-flex justify-content-between">
                                         <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07003號_企業識別系統</a>
-                                        <span class="third">2021/08/06</span>
+                                        <span class="third">2021/08/19</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
                                         <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
-                                        <span class="third">2021/08/09</span>
+                                        <span class="third">2021/08/18</span>
                                     </li>
                                 </ul>
                                 <div class="row my-5 text-end">
-                                    <a class="" href="#">過往資訊 <i class="mx-2 fas fa-angle-right"></i></a>
+                                    <a class="" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i class="mx-2 fas fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 p-3">
-                            <div class="p-4 border-end card-radius bg-white shadow-sm">
-                                <p class="fz-20 lh-40 border-bottom">行事曆</p>
-                                <p class="pink lh-40">＊點選可查看當日行程</p>
-                                <div id="datepicker" ></div>
-                                <div id="event" class="my-3"></div>
+                        <div class="col-lg-3 col-md-6 col-12 p-3">
+                            <div class="p-4 border-end card-radius bg-white shadow-sm ">
+                                <p class="fz-20 lh-40 border-bottom text-center">行事曆</p>
+                                <p class="pink lh-40 text-center">＊點選可查看當日行程</p>
+                                <div  id="datepicker" ></div>
+                                <div id="event" class="my-3 "></div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mt-lg-0 p-3">
                             <div class="p-4 border-end card-radius bg-white shadow-sm">
-                                <p class="fz-20 lh-40 border-bottom">系統連結</p>
+                                <p class="fz-20 lh-40 border-bottom text-center">系統連結</p>
                                 <ul class="lh-30 mt-2">
                                     <li>
                                         <a href="#">E學習平台 E-Learning<i class="mx-2 fas fa-angle-right"></i></a>
@@ -194,6 +197,98 @@
                                     </li>
                                 </ul>
                                 <a href="homepage.html"><button class="btn btn-link mt-4 white">快速連結<i class="fas fa-sort-down fz-20 mx-2"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">過往資訊</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="lh-30 my-2 p-1">
+                                        <li class="d-flex justify-content-between">
+                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07003號_企業識別系統</a>
+                                            <span class="third">2021/08/19</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
+                                            <span class="third">2021/08/18</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <a href="#" target="_blank">(110) 益公字第07005號_ Lorem ipsum dolor sit.</a>
+                                            <span class="third">2021/08/17</span>
+                                        </li>
+                                    </ul>
+                                    <article class="collapse-box-wrapper">
+                                        <input type="checkbox" id="collapsebox2" class="collapse-box-check">
+                                        <label for="collapsebox2" class="collapse-box-label">
+                                            <span></span>
+                                            <p class="thin ">七月份公告</p>
+                                        </label>
+                                        <div class="collapse-box left-align">
+                                            <ul class="lh-30 p-0">
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110)  Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/07/30</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/07/29</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/07/27</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/07/25</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/07/22</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                    <article class="collapse-box-wrapper">
+                                        <input type="checkbox" id="collapsebox3" class="collapse-box-check">
+                                        <label for="collapsebox3" class="collapse-box-label">
+                                            <span></span>
+                                            <p class="thin ">六月份公告</p>
+                                        </label>
+                                        <div class="collapse-box left-align">
+                                            <ul class="lh-30 p-0">
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110)  Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/06/30</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/06/29</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/06/27</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/06/25</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <a href="#" target="_blank">(110) Lorem ipsum dolor sit.</a>
+                                                    <span class="third">2021/06/22</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>

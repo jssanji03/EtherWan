@@ -2060,10 +2060,10 @@ header .in_link {
 .marqueeBox .marquee-wrapper ul {
   position: absolute;
   top: 0;
-  left: calc(40% - 100px);
+  left: calc(40% - 120px);
   opacity: 0;
-  -webkit-animation: display 8s infinite;
-          animation: display 8s infinite;
+  -webkit-animation: display 8s ease-in-out  infinite;
+          animation: display 8s ease-in-out  infinite;
   width: 100%;
 }
 
@@ -2140,6 +2140,110 @@ header .in_link {
 
 .ui-datepicker-week-end a {
   color: #aa0c0c !important;
+}
+
+.collapse-box-wrapper {
+  width: 100%;
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.collapse-box-wrapper label.collapse-box-label {
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.collapse-box-wrapper label.collapse-box-label h3 {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+
+.collapse-box-wrapper label.collapse-box-label span {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  background: #FF5656;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  cursor: pointer;
+}
+
+.collapse-box-wrapper label.collapse-box-label span:before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 1px;
+  background: inherit;
+  transition: inherit;
+  -webkit-transition: inherit;
+  transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+}
+
+.collapse-box-wrapper label.collapse-box-label span:after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 1px;
+  left: 8px;
+  background: inherit;
+  transition: inherit;
+  -webkit-transition: inherit;
+  transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  -moz-transform: rotate(-50deg);
+  -webkit-transform: rotate(-50deg);
+}
+
+.collapse-box-wrapper .collapse-box-check {
+  position: fixed;
+  left: -9999px;
+  opacity: 0;
+}
+
+.collapse-box-wrapper .collapse-box-check:checked + label.collapse-box-label span:before {
+  transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  -moz-transform: rotate(-50deg);
+  -webkit-transform: rotate(-50deg);
+}
+
+.collapse-box-wrapper .collapse-box-check:checked + label.collapse-box-label span:after {
+  transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+}
+
+.collapse-box-wrapper .collapse-box-check:checked + label.collapse-box-label + .collapse-box {
+  height: auto;
+  opacity: 1;
+  margin-top: 0px;
+}
+
+.collapse-box-wrapper .collapse-box {
+  padding-top: 10px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-top: -50px;
+  padding-right: 1px;
+}
+
+.collapse-box-wrapper .collapse-box p {
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .page_title {
