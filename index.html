@@ -22,31 +22,42 @@
                 <img src="./public/img/logo_2.png">
             </div>
         </div> -->
-        <div class="row bg-white fixed-top shadow-sm">
+        <div class="row bg-white fixed-top shadow-sm p-3">
             <div class="logo">
-                <img class="img-fluid" src="./public/img/logo_4.png">
+                <img class="img-fluid" src="./public/img/logo.png">
             </div>
         </div>
-        <div class="row announcement ">
+        <div class="row announcement">
             <div class="col-12 p-0">
-                <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <!-- <ol class="carousel-indicators"></ol> -->
+                    <div class="carousel-indicators ">
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active photoLink">
                             <img src="./public/img/bg2.jpg" class="img-fluid" alt="...">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <a href="#"><h5>First slide label</h5></a>
+                                <p class="white">Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item photoLink">
+                            <img src="./public/img/bg.jpg" class="img-fluid" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <a href="#">
+                                    <h5>First slide label</h5>
+                                </a>
+                                <p class="white">Some representative placeholder content for the first slide.</p>
+                            </div>
                         </div>
                         <div class="carousel-item photoLink">
                             <img src="./public/img/bg2.jpg" class="img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item photoLink">
-                            <img src="./public/img/bg2.jpg" class="img-fluid" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <a href="#">
+                                    <h5>First slide label</h5>
+                                </a>
+                                <p class="white">Some representative placeholder content for the first slide.</p>
+                            </div>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -64,31 +75,37 @@
             </div>
         </div>
         <div class="container">
-            <div class="row justify-content-center in_link">
-                <div class="col-lg-4 col-12">
-                    <div class="information_card bg-white shadow">
-                        <a class="p-4" href="homepage.html">
-                            <h3 class="primary">關於益網</h3>
-                            <p class="secondary fontsEn fz-12 lh-30">About EtherWan</p>
+            <div class="row justify-content-evenly p-2 bg_gradient">
+                <div class="col-lg-4 col-12 border-right">
+                    <div class="information_card bottom_line">
+                        <a class="p-4 " href="homepage.html">
+                            <h3 class="white">關於益網</h3>
+                            <p class="important fontsEn fz-12 lh-30">About EtherWan</p>
+                            <!-- <div class="img-circle circle-sm shadow-sm bg_gradient mx-auto"></div> -->
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12">
-                    <div class="information_card bg-white shadow">
+                <div class="col-lg-4 col-12 border-right">
+                    <!-- <div class="information_card bg-white shadow">
                         <a class="p-4" href="homepage.html">
                             <h3 class="primary">公司管理辦法/表單</h3>
                             <p class="secondary fontsEn fz-12 lh-30">Policy / Form</p>
                         </a>
+                    </div> -->
+                    <div class="information_card bottom_line">
+                        <a class="p-4" href="companyForm.html">
+                            <h3 class="white">公司管理辦法/表單</h3>
+                            <p class="important fontsEn fz-12 lh-30">Policy / Form</p>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
-                    <div class="information_card bg-white shadow">
-                        <a class="p-4" href="homepage.html">
-                            <h3 class="primary">常用資訊</h3>
-                            <p class="secondary fontsEn fz-12 lh-30">Useful Information</p>
+                    <div class="information_card bottom_line">
+                        <a class="p-4" href="useForm.html">
+                            <h3 class="white">常用資訊</h3>
+                            <p class="important fontsEn fz-12 lh-30">Useful Information</p>
                         </a>
                     </div>
-    
                 </div>
             </div>
         </div>
@@ -113,12 +130,10 @@
             </div>
         </div>
     </section> -->
-    <section class="mt-5">
+    <!-- 今日動態 -->
+    <!-- <section class="mt-5">
         <div class="container-fluid">
             <div class="row px-sm-0 px-4">
-                <!-- <div class="col-12">
-                    <p class="primary text-center f-500 fz-25"><i class="fas fa-bell"></i> 今日動態</p>
-                </div> -->
                 <div class="p-30 bg_gradient mt-1">
                     <div class="row  marqueeBox overflow-hidden">
                         <div class="col-12">
@@ -140,63 +155,166 @@
                 </div>
             </div>
         </div>
+    </section> -->
+    <!-- 今日動態 End -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12 p-3" style="min-height: 300px;">
+                    <div class="p-3 card-border d-flex flex-wrap">
+                        <div class="col-12">
+                            <p class="fz-20 lh-40 border-bottom primary text-center">公告</p>
+                        </div>
+                        <div class="col-12 my-2">
+                            <ul class="lh-30 ">
+                                <li class="d-flex justify-content-between">
+                                    <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07003號_企業識別系統</a>
+                                    <span class="third">2021/08/19</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
+                                    <span class="third">2021/08/18</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
+                                    <span class="third">2021/08/18</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
+                                    <span class="third">2021/08/18</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
+                                    <span class="third">2021/08/18</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 text-end align-items-end">
+                            <a class="" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i
+                                    class="mx-2 fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 p-3">
+                    <div class="p-3 card-border d-flex flex-wrap">
+                        <div class="col-12">
+                            <p class="fz-20 lh-40 border-bottom primary text-center">請假資訊</p>
+                        </div>
+                        <div class="col-12 my-2">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr class="fz-15">
+                                        <th scope="col" style="width:25%">請假人員</th>
+                                        <th scope="col" style="width:30%">日期</th>
+                                        <th scope="col" style="width:20%">假別</th>
+                                        <th scope="col" style="width:25%">代理人</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fz-13">
+                                        <td scope="row">Mark</td>
+                                        <td>2021/09/02</td>
+                                        <td>特休</td>
+                                        <td>John Lin</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td scope="row">Mark</td>
+                                        <td>2021/09/02</td>
+                                        <td>特休</td>
+                                        <td>John Lin</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td scope="row">Mark</td>
+                                        <td>2021/09/02</td>
+                                        <td>特休</td>
+                                        <td>John Lin</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td scope="row">Mark</td>
+                                        <td>2021/09/02</td>
+                                        <td>特休</td>
+                                        <td>John Lin</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td scope="row">Mark</td>
+                                        <td>2021/09/02</td>
+                                        <td>特休</td>
+                                        <td>John Lin</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-12 text-end align-items-end">
+                            <a class="" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">查看更多 <i
+                                    class="mx-2 fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="py-5 bg-lightGray">
         <div class="container">
-                    <div class="row" >
-                        <div class="col-lg-6 col-md-12 col-12 p-3" style="min-height: 400px;">
-                            <div class="p-4 border-end card-radius bg-white shadow-sm">
-                                <p class="fz-20 lh-40 border-bottom text-center">公告</p>
-                                <ul class="lh-30 my-2">
-                                    <li class="d-flex justify-content-between">
-                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07003號_企業識別系統</a>
-                                        <span class="third">2021/08/19</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110) 益公字第07005號_企業識別系統</a>
-                                        <span class="third">2021/08/18</span>
-                                    </li>
-                                </ul>
-                                <div class="row my-5 text-end">
-                                    <a class="" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i class="mx-2 fas fa-angle-right"></i></a>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12 p-3">
+                            <div class="p-4 card-radius bg-white shadow-sm d-flex flex-wrap justify-content-center">
+                                <div class="col-12">
+                                    <p class="fz-20 lh-40 border-bottom text-center primary">行事曆</p>
+                                </div>
+                                <div class="col-9">
+                                    <p class="pink lh-40 text-center">＊點選可查看當日行程</p>
+                                    <div id="datepicker"></div>
+                                    <div id="event" class="m-3 d-flex flex-wrap">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-12 p-3">
-                            <div class="p-4 border-end card-radius bg-white shadow-sm ">
-                                <p class="fz-20 lh-40 border-bottom text-center">行事曆</p>
-                                <p class="pink lh-40 text-center">＊點選可查看當日行程</p>
-                                <div  id="datepicker" ></div>
-                                <div id="event" class="my-3 "></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 mt-lg-0 p-3">
-                            <div class="p-4 border-end card-radius bg-white shadow-sm">
-                                <p class="fz-20 lh-40 border-bottom text-center">系統連結</p>
-                                <ul class="lh-30 mt-2">
-                                    <li>
-                                        <a href="#">E學習平台 E-Learning<i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">電子簽核 BPM <i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">假勤簽核 E-HR <i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">文件管理 DCC Server <i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">追蹤管理 Redmine <i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">訂便當管理 Din.Ben.Don<i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">會議室預約 Meeting Room<i class="mx-2 fas fa-angle-right"></i></a>
-                                    </li>
-                                </ul>
-                                <a href="homepage.html"><button class="btn btn-link mt-4 white">快速連結<i class="fas fa-sort-down fz-20 mx-2"></i></button></a>
+                        <div class="col-lg-6 col-md-6 col-12 mt-lg-0 p-3">
+                            <div class="p-4 card-radius bg-white shadow-sm d-flex flex-wrap">
+                                <div class="col-12">
+                                    <p class="fz-20 lh-40 border-bottom text-center primary">系統連結</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <ul class="list">
+                                                <li>
+                                                    <button class="btn btn-menu">員工園地 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">文件檔案區 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">網頁信箱 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">SalesForce <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <ul class="list">
+                                                <li>
+                                                    <button class="btn btn-menu">線上學習平台 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">Redmine追蹤管理系統 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">匯率查詢系統 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-menu">退貨維護查詢 <i class="fas fa-angle-right"></i></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-end align-items-end">
+                                    <a class="" href="sysForm.html">快速連結 <i
+                                            class="mx-2 fas fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -305,5 +423,8 @@
 <script src="./plugins/jquery/jquery-ui.min.js"></script>
 <script src="./js/index.js"></script>
 <script src="./js/dateformat.js"></script>
+<script>
+    
+</script>
 
 </html>

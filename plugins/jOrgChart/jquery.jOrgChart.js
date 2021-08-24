@@ -112,6 +112,8 @@
     var $nodeRow = $("<tr/>").addClass("node-cells");
     var $nodeCell = $("<td/>").addClass("node-cell").attr("colspan", 2);
     // var $childNodes = $node.children("ul:first").children("li");
+    var $childLevel3 = $node.children("ul:first").children("li").find(".level3");
+    var $childLevel2 = $node.children("ul:first").children("li").find(".level2");
     var $childNodes = $node.children("ul:first").children("li").not(".level5");
     var $lastNodes = $node.children("ul:first").children("li").filter(".level5");
     var $nodeDiv;
@@ -138,13 +140,19 @@
                                   // console.log($nodeDiv.find('.dept'));
     // Expand and contract nodes
     if ($childNodes.length > 0) {
+      console.log($node);
+    //  $childNodes.addClass('contracted');
+      $childNodes.find('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+      // $('.level3').parent().parent('.node-cells').addClass('contracted')
+      $childNodes.nextAll("tr").css('visibility', 'hidden');
+      $childNodes.addClass('collapsed');
       $nodeDiv.find('.dept').click(function (e) {
+        var $this = $(this);
+        var $tr = $this.closest("tr");
         console.log(e.target);
-          var $this = $(this);
-          var $tr = $this.closest("tr");
 
           if($tr.hasClass('contracted')){
-            $this.css({'cursor':'n-resize','background-color':''});
+            $this.parent('.header').css({'cursor':'n-resize','background-color':''});
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -152,13 +160,29 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.parent('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
             $node.addClass('collapsed');
           }
-        });
+      });
+      $('.ext').click((e) => {
+        console.log(e.target);
+        if ($('.node-cells').hasClass('contracted')) {
+          $('.node-cells').find('.header').css({'cursor':'n-resize','background-color':''});
+          $('.node-cells').removeClass('contracted').addClass('expanded');
+          $('.node-cells').nextAll("tr").css('visibility', '');
+          $node.removeClass('collapsed');
+        }
+        else {
+          $('.level2').find('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+          $('.level2').parent().parent('.node-cells').removeClass('expanded').addClass('contracted');
+          $('.level2').parent().parent('.node-cells').nextAll("tr").css('visibility', 'hidden');
+          $node.addClass('collapsed');
+        }
+        $(e).toggle()
+      })
     }
     if ($lastNodes.length > 0) {
       $nodeDiv.find('.dept').click(function (e) {
@@ -168,7 +192,7 @@
           var $ul = $this.closest("ul");
 
           if($tr.hasClass('contracted')){
-            $this.css({'cursor':'n-resize','background-color':''});
+            $this.parent('.header').css({'cursor':'n-resize','background-color':''});
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -176,7 +200,7 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.parent('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
@@ -282,7 +306,7 @@
         var classList = $node.attr('class').split(/\s+/);
         $.each(classList, function(index,item) {
             if (item == 'collapsed') {
-                console.log($node);
+                // console.log($node);
                 $nodeRow.nextAll('tr').css('visibility', 'hidden');
                     $nodeRow.removeClass('expanded');
                     $nodeRow.addClass('contracted');

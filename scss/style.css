@@ -87,6 +87,10 @@ table {
   font-size: 12px;
 }
 
+.fz-13 {
+  font-size: 13px;
+}
+
 .fz-15 {
   font-size: 15px;
 }
@@ -103,6 +107,10 @@ table {
   font-size: 30px;
 }
 
+.lh-15 {
+  line-height: 15px;
+}
+
 .lh-20 {
   line-height: 20px;
 }
@@ -115,12 +123,20 @@ table {
   line-height: 40px;
 }
 
+.lh-50 {
+  line-height: 50px;
+}
+
 .lh-70 {
   line-height: 70px;
 }
 
 .primary {
   color: #313994;
+}
+
+.bg_primary {
+  background-color: #313994;
 }
 
 .secondary {
@@ -303,6 +319,16 @@ table {
 
 .border-pink {
   border-color: #d31577;
+}
+
+.border-right {
+  border-right: 1px white solid;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (max-width: 767px) {
+  .border-right {
+    border-right: 0px;
+  }
 }
 
 .btn-edit {
@@ -677,7 +703,7 @@ button {
   z-index: 999;
   top: 0;
   left: 0;
-  width: 15vw;
+  min-width: 15vw;
   height: 100%;
   margin-left: 0vw;
   -webkit-transition: margin .25s ease-out;
@@ -692,13 +718,15 @@ button {
 
 #sidebar-wrapper ul {
   list-style-type: none;
-  width: 100%;
+  width: auto;
 }
 
 #sidebar-wrapper ul li {
   position: relative;
   padding: 5px;
   margin-left: 0px;
+  width: auto;
+  white-space: nowrap;
 }
 
 #sidebar-wrapper ul li .fa-icon {
@@ -715,7 +743,6 @@ button {
 }
 
 #sidebar-wrapper ul li a {
-  width: 100%;
   text-align: left;
   font-size: 15px;
   border-radius: 3px;
@@ -733,12 +760,14 @@ button {
 #sidebar-wrapper ul li ul {
   background-color: #ffffff;
   padding: 0px;
-  width: 100%;
+  width: auto;
   border-radius: 5px;
 }
 
 #sidebar-wrapper ul li ul li {
   padding: 0px;
+  width: auto;
+  white-space: nowrap;
 }
 
 #sidebar-wrapper ul li ul li a {
@@ -755,7 +784,7 @@ button {
   color: #5a5a5a;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
   #sidebar-wrapper {
     width: 15vw;
     height: 100%;
@@ -770,7 +799,7 @@ button {
   width: 85vw;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
   #page-content-wrapper {
     width: 100vw;
     height: 100%;
@@ -790,7 +819,7 @@ button {
   background-color: #ffffff;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
   #page-content-wrapper .navbar {
     width: 100vw;
     margin-left: 0vw;
@@ -822,7 +851,7 @@ button {
   height: 50px;
 }
 
-@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
   #page-content-wrapper .navbar ul {
     display: block;
   }
@@ -1118,22 +1147,31 @@ button {
   height: 100%;
 }
 
+.card-border {
+  border-radius: 2px;
+  padding: 5px;
+  height: 100%;
+  border: 1px solid #cecece;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card-border:hover {
+  border: 0px;
+  -webkit-box-shadow: 1px 1px 20px 7px rgba(197, 197, 197, 0.336);
+          box-shadow: 1px 1px 20px 7px rgba(197, 197, 197, 0.336);
+}
+
 .information_card {
   width: 100%;
-  height: 130px;
+  height: 110px;
   text-align: center;
   padding: 40px 0px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  margin-top: 10px;
   border-radius: 5px;
   padding: 20px;
-}
-
-.information_card:hover {
-  -webkit-box-shadow: 0px 3px 5px 1px rgba(138, 150, 170, 0.527);
-          box-shadow: 0px 3px 5px 1px rgba(138, 150, 170, 0.527);
-  margin-top: 5px;
+  position: relative;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1144,6 +1182,11 @@ button {
   .information_card h3 {
     font-size: 20px;
   }
+}
+
+.circle-sm {
+  width: 40px;
+  height: 40px;
 }
 
 table.dataTable tbody th,
@@ -1323,6 +1366,162 @@ table.dataTable .assignActive {
   background-color: #eaf5fc !important;
 }
 
+.ui-widget.ui-widget-content {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  width: 100%;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(197, 197, 197, 0.486);
+          box-shadow: 1px 1px 5px 2px rgba(197, 197, 197, 0.486);
+  margin: 0 auto;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  background: -webkit-gradient(linear, right top, left top, from(#113E9A), to(#52B0DD));
+  background: linear-gradient(to left, #113E9A, #52B0DD);
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+  line-height: 40px;
+}
+
+.ui-datepicker-prev {
+  position: relative;
+}
+
+.ui-datepicker-prev::before {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #ffffff;
+  background-color: none;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f053";
+  font-size: 20px;
+}
+
+.ui-datepicker-next {
+  position: relative;
+}
+
+.ui-datepicker-next::before {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+  background-color: none;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f054";
+  font-size: 20px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  display: none;
+  top: 3px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  display: none;
+  top: 3px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-next:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.ui-state-hover.ui-datepicker-next-hover, .ui-state-hover.ui-datepicker-prev-hover {
+  background-color: transparent !important;
+}
+
+.ui-state-hover.ui-datepicker-next-hover:hover, .ui-state-hover.ui-datepicker-prev-hover:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.ui-corner-all {
+  border: none;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+  background-image: none;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+  margin-top: 0px;
+}
+
+.ui-datepicker table {
+  padding: 2px;
+}
+
+.ui-datepicker table thead {
+  color: #000;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.ui-datepicker table tbody .ui-datepicker td span, .ui-datepicker table tbody .ui-datepicker td a {
+  text-align: center;
+}
+
+.ui-datepicker table tbody .ui-state-default {
+  color: #464646;
+  border: none;
+  line-height: 25px;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ui-datepicker table tbody .ui-datepicker-week-end a {
+  color: #f81190;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  color: #ffffff !important;
+  background-color: #5bbbeb !important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ui-datepicker-current-day .ui-state-default.ui-state-active {
+  background-color: #f1dcb4;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ui-state-hover {
+  background-color: #f2ecf7 !important;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 15px;
@@ -1341,12 +1540,12 @@ h4,
 h5,
 h6 {
   font-family: "Noto Sans TC", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0px;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 25px;
 }
 
 h4 {
@@ -1387,14 +1586,13 @@ img {
   max-width: 100%;
 }
 
-.organization_table {
-  border-collapse: separate;
-  margin: 0 auto;
+.orgArea {
+  position: relative;
 }
 
 .jOrgChart .node {
-  width: 180px;
-  height: 90px;
+  min-width: 200px;
+  height: 120px;
   line-height: 40px;
   border-radius: 4px;
   margin: 0 8px;
@@ -1406,37 +1604,207 @@ img {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .jOrgChart .node {
     width: 150px;
-    height: 210px;
+    height: 250px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .jOrgChart .node {
     width: 100px;
-    height: 200px;
+    height: 230px;
+  }
+}
+
+.organization_table {
+  border-collapse: separate;
+  margin: 0 auto;
+}
+
+.jOrgChart {
+  position: relative;
+}
+
+.jOrgChart .ext {
+  position: absolute;
+  right: 30px;
+}
+
+.jOrgChart .level {
+  background-color: #f0ebf1fa;
+}
+
+.jOrgChart .level a {
+  font-size: 12px;
+}
+
+.jOrgChart .level a .header {
+  line-height: 25px;
+  color: #ffffff;
+  background-color: #6d18a5;
+  border-radius: 4px 4px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.jOrgChart .level a .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.jOrgChart .level a .pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.jOrgChart .level a .pic img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.jOrgChart .level a .position {
+  color: lightcoral;
+  text-align: left;
+}
+
+.jOrgChart .level a .name {
+  font-weight: 600;
+  text-align: left;
+}
+
+.jOrgChart .level a .count {
+  color: #313994;
+  position: relative;
+}
+
+.jOrgChart .level a .count i.fa-user {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .jOrgChart .level {
+    background-color: #f0ebf1fa;
+  }
+  .jOrgChart .level a {
+    font-size: 12px;
+  }
+  .jOrgChart .level a .header {
+    line-height: 30px;
+    color: #ffffff;
+    background-color: #6d18a5;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .jOrgChart .level a .pic {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .jOrgChart .level a .pic img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .jOrgChart .level a .position {
+    padding-top: 3px;
+    color: lightcoral;
+    text-align: center;
+  }
+  .jOrgChart .level a .name {
+    color: #303030;
+    font-weight: 500;
+    text-align: center;
+  }
+  .jOrgChart .level a .count {
+    color: #313994;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .jOrgChart .level {
+    background-color: #f0ebf1fa;
+  }
+  .jOrgChart .level a {
+    font-size: 12px;
+  }
+  .jOrgChart .level a .header {
+    line-height: 30px;
+    color: #ffffff;
+    background-color: #6d18a5;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .jOrgChart .level a .pic {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .jOrgChart .level a .pic img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .jOrgChart .level a .position {
+    padding-top: 3px;
+    color: lightcoral;
+    text-align: center;
+  }
+  .jOrgChart .level a .name {
+    color: #303030;
+    font-weight: 500;
+    text-align: center;
+  }
+  .jOrgChart .level a .count {
+    color: #313994;
+    text-align: center;
   }
 }
 
 .jOrgChart .level0 {
-  background-color: #bddbf3;
+  background-color: #f0ebf1fa;
 }
 
 .jOrgChart .level0 a {
   font-size: 12px;
 }
 
-.jOrgChart .level0 a .dept {
+.jOrgChart .level0 a .header {
   line-height: 25px;
   color: #ffffff;
-  background-color: #313994;
+  background-color: #6d18a5;
   border-radius: 4px 4px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.jOrgChart .level0 a .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .jOrgChart .level0 a .pic {
-  float: left;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 5px;
 }
 
 .jOrgChart .level0 a .pic img {
@@ -1447,47 +1815,45 @@ img {
 }
 
 .jOrgChart .level0 a .position {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  padding-top: 3px;
   color: lightcoral;
+  text-align: left;
 }
 
 .jOrgChart .level0 a .name {
+  font-weight: 600;
   text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  color: #303030;
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .jOrgChart .level0 a .count {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 30px;
   color: #313994;
+  position: relative;
+}
+
+.jOrgChart .level0 a .count i.fa-user {
+  position: absolute;
+  top: 3px;
+  right: 5px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .jOrgChart .level0 {
-    background-color: #bddbf3;
+    background-color: #f0ebf1fa;
   }
   .jOrgChart .level0 a {
     font-size: 12px;
   }
-  .jOrgChart .level0 a .dept {
+  .jOrgChart .level0 a .header {
     line-height: 30px;
-    height: 40px;
     color: #ffffff;
-    background-color: #313994;
+    background-color: #6d18a5;
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level0 a .pic {
-    width: 150px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level0 a .pic img {
     max-width: 100%;
@@ -1496,26 +1862,16 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level0 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level0 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level0 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #313994;
     text-align: center;
   }
@@ -1523,22 +1879,23 @@ img {
 
 @media only screen and (max-width: 767px) {
   .jOrgChart .level0 {
-    background-color: #bddbf3;
+    background-color: #f0ebf1fa;
   }
   .jOrgChart .level0 a {
     font-size: 12px;
   }
-  .jOrgChart .level0 a .dept {
-    line-height: 40px;
-    height: 40px;
+  .jOrgChart .level0 a .header {
+    line-height: 30px;
     color: #ffffff;
-    background-color: #313994;
+    background-color: #6d18a5;
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level0 a .pic {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level0 a .pic img {
     max-width: 100%;
@@ -1547,51 +1904,52 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level0 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level0 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level0 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #313994;
     text-align: center;
   }
 }
 
 .jOrgChart .level1 {
-  background-color: #ececec;
+  background-color: #bddbf3;
 }
 
 .jOrgChart .level1 a {
   font-size: 12px;
 }
 
-.jOrgChart .level1 a .dept {
+.jOrgChart .level1 a .header {
   line-height: 25px;
   color: #ffffff;
-  background-color: RGB(53, 157, 209);
+  background-color: #313994;
   border-radius: 4px 4px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.jOrgChart .level1 a .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .jOrgChart .level1 a .pic {
-  float: left;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 5px;
 }
 
 .jOrgChart .level1 a .pic img {
@@ -1602,47 +1960,45 @@ img {
 }
 
 .jOrgChart .level1 a .position {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  padding-top: 3px;
   color: lightcoral;
+  text-align: left;
 }
 
 .jOrgChart .level1 a .name {
+  font-weight: 600;
   text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  color: #303030;
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .jOrgChart .level1 a .count {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 30px;
-  color: RGB(53, 157, 209);
+  color: #313994;
+  position: relative;
+}
+
+.jOrgChart .level1 a .count i.fa-user {
+  position: absolute;
+  top: 3px;
+  right: 5px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .jOrgChart .level1 {
-    background-color: #ececec;
+    background-color: #bddbf3;
   }
   .jOrgChart .level1 a {
     font-size: 12px;
   }
-  .jOrgChart .level1 a .dept {
+  .jOrgChart .level1 a .header {
     line-height: 30px;
-    height: 40px;
     color: #ffffff;
-    background-color: RGB(53, 157, 209);
+    background-color: #313994;
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level1 a .pic {
-    width: 150px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level1 a .pic img {
     max-width: 100%;
@@ -1651,49 +2007,40 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level1 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level1 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level1 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
-    color: RGB(53, 157, 209);
+    color: #313994;
     text-align: center;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .jOrgChart .level1 {
-    background-color: #ececec;
+    background-color: #bddbf3;
   }
   .jOrgChart .level1 a {
     font-size: 12px;
   }
-  .jOrgChart .level1 a .dept {
-    line-height: 18px;
-    height: 40px;
+  .jOrgChart .level1 a .header {
+    line-height: 40px;
     color: #ffffff;
-    background-color: RGB(53, 157, 209);
+    background-color: #313994;
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level1 a .pic {
     width: 100px;
     height: 100px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level1 a .pic img {
     max-width: 100%;
@@ -1702,27 +2049,17 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level1 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level1 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level1 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
-    color: RGB(53, 157, 209);
+    color: #313994;
     text-align: center;
   }
 }
@@ -1735,18 +2072,29 @@ img {
   font-size: 12px;
 }
 
-.jOrgChart .level2 a .dept {
+.jOrgChart .level2 a .header {
   line-height: 25px;
   color: #ffffff;
-  background-color: #44a1d0;
+  background-color: RGB(53, 157, 209);
   border-radius: 4px 4px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.jOrgChart .level2 a .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .jOrgChart .level2 a .pic {
-  float: left;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 5px;
 }
 
 .jOrgChart .level2 a .pic img {
@@ -1757,27 +2105,24 @@ img {
 }
 
 .jOrgChart .level2 a .position {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  padding-top: 3px;
   color: lightcoral;
+  text-align: left;
 }
 
 .jOrgChart .level2 a .name {
+  font-weight: 600;
   text-align: left;
-  padding-left: 75px;
-  line-height: 20px;
-  color: #303030;
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .jOrgChart .level2 a .count {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 30px;
-  color: #44a1d0;
+  color: RGB(53, 157, 209);
+  position: relative;
+}
+
+.jOrgChart .level2 a .count i.fa-user {
+  position: absolute;
+  top: 3px;
+  right: 5px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1787,17 +2132,18 @@ img {
   .jOrgChart .level2 a {
     font-size: 12px;
   }
-  .jOrgChart .level2 a .dept {
+  .jOrgChart .level2 a .header {
     line-height: 30px;
-    height: 40px;
     color: #ffffff;
-    background-color: #44a1d0;
+    background-color: RGB(53, 157, 209);
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level2 a .pic {
-    width: 150px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level2 a .pic img {
     max-width: 100%;
@@ -1806,27 +2152,17 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level2 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level2 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level2 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
-    color: #44a1d0;
+    color: RGB(53, 157, 209);
     text-align: center;
   }
 }
@@ -1838,17 +2174,18 @@ img {
   .jOrgChart .level2 a {
     font-size: 12px;
   }
-  .jOrgChart .level2 a .dept {
-    line-height: 40px;
-    height: 40px;
+  .jOrgChart .level2 a .header {
+    line-height: 18px;
     color: #ffffff;
-    background-color: #44a1d0;
+    background-color: RGB(53, 157, 209);
     border-radius: 4px 4px 0px 0px;
   }
   .jOrgChart .level2 a .pic {
     width: 100px;
     height: 100px;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .jOrgChart .level2 a .pic img {
     max-width: 100%;
@@ -1857,33 +2194,168 @@ img {
        object-fit: cover;
   }
   .jOrgChart .level2 a .position {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     padding-top: 3px;
     color: lightcoral;
     text-align: center;
   }
   .jOrgChart .level2 a .name {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
     color: #303030;
     font-weight: 500;
-    font-size: 14px;
     text-align: center;
   }
   .jOrgChart .level2 a .count {
-    text-align: left;
-    padding-left: 0px;
-    line-height: 20px;
+    color: RGB(53, 157, 209);
+    text-align: center;
+  }
+}
+
+.jOrgChart .level3 {
+  background-color: #ececec;
+}
+
+.jOrgChart .level3 a {
+  font-size: 12px;
+}
+
+.jOrgChart .level3 a .header {
+  line-height: 25px;
+  color: #ffffff;
+  background-color: #44a1d0;
+  border-radius: 4px 4px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.jOrgChart .level3 a .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.jOrgChart .level3 a .pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.jOrgChart .level3 a .pic img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.jOrgChart .level3 a .position {
+  color: lightcoral;
+  text-align: left;
+}
+
+.jOrgChart .level3 a .name {
+  font-weight: 600;
+  text-align: left;
+}
+
+.jOrgChart .level3 a .count {
+  color: #44a1d0;
+  position: relative;
+}
+
+.jOrgChart .level3 a .count i.fa-user {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .jOrgChart .level3 {
+    background-color: #ececec;
+  }
+  .jOrgChart .level3 a {
+    font-size: 12px;
+  }
+  .jOrgChart .level3 a .header {
+    line-height: 30px;
+    color: #ffffff;
+    background-color: #44a1d0;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .jOrgChart .level3 a .pic {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .jOrgChart .level3 a .pic img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .jOrgChart .level3 a .position {
+    padding-top: 3px;
+    color: lightcoral;
+    text-align: center;
+  }
+  .jOrgChart .level3 a .name {
+    color: #303030;
+    font-weight: 500;
+    text-align: center;
+  }
+  .jOrgChart .level3 a .count {
+    color: #44a1d0;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .jOrgChart .level3 {
+    background-color: #ececec;
+  }
+  .jOrgChart .level3 a {
+    font-size: 12px;
+  }
+  .jOrgChart .level3 a .header {
+    line-height: 40px;
+    color: #ffffff;
+    background-color: #44a1d0;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .jOrgChart .level3 a .pic {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .jOrgChart .level3 a .pic img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .jOrgChart .level3 a .position {
+    padding-top: 3px;
+    color: lightcoral;
+    text-align: center;
+  }
+  .jOrgChart .level3 a .name {
+    color: #303030;
+    font-weight: 500;
+    text-align: center;
+  }
+  .jOrgChart .level3 a .count {
     color: #44a1d0;
     text-align: center;
   }
 }
 
 .jOrgChart .level5 {
-  height: 60px;
+  height: 100px;
   border-left: 4px solid RGB(245, 199, 29);
   overflow: hidden;
 }
@@ -1893,9 +2365,11 @@ img {
 }
 
 .jOrgChart .level5 a .pic {
-  float: left;
   width: 60px;
+  height: 60px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 5px;
 }
 
 .jOrgChart .level5 a .pic img {
@@ -1918,36 +2392,13 @@ img {
 }
 
 .jOrgChart .level5 a .position {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 12px;
-  padding-top: 10px;
   color: lightcoral;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
-  .jOrgChart .level5 a .position {
-    text-align: left;
-    padding-left: 10px;
-    line-height: 12px;
-  }
+  text-align: left;
 }
 
 .jOrgChart .level5 a .name {
-  text-align: left;
-  padding-left: 75px;
-  line-height: 25px;
-  color: #5a5a5a;
   font-weight: 500;
-  font-size: 14px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
-  .jOrgChart .level5 a .name {
-    text-align: left;
-    padding-left: 10px;
-    line-height: 25px;
-  }
+  text-align: left;
 }
 
 .jOrgChart ul {
@@ -1987,40 +2438,29 @@ img {
 
 .logo {
   width: 200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 header .photoLink {
   height: 450px;
 }
 
-header .announcement .carousel-indicators {
-  bottom: 50px;
-}
-
-header .in_link {
-  position: relative;
-  top: -60px;
+header .carousel-caption {
+  margin-bottom: 30px;
 }
 
 .company {
   margin-top: -120px;
 }
 
-.link {
-  margin-top: 50px;
-}
-
-.link ul {
+.list {
   padding: 0px 20px;
 }
 
-.link ul li {
+.list li {
   padding: 5px;
 }
 
-.link ul li .btn-menu {
+.list li .btn-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2032,7 +2472,7 @@ header .in_link {
   transition: all 0.6s ease-in-out;
 }
 
-.link ul li .btn-menu .fas {
+.list li .btn-menu .fas {
   text-align: right;
   line-height: 40px;
   padding-right: 0px;
@@ -2040,13 +2480,41 @@ header .in_link {
   transition: all 0.8s ease-in-out;
 }
 
-.link ul li .btn-menu:hover {
+.list li .btn-menu:hover {
   padding-left: 20px;
 }
 
-.link ul li .btn-menu:hover .fas {
+.list li .btn-menu:hover .fas {
   padding-right: 20px;
   color: #ffffff;
+}
+
+.bottom_line::before {
+  content: '';
+  width: 100%;
+  height: 6px;
+  display: block;
+  background-color: white;
+  position: absolute;
+  bottom: -8px;
+  left: 0px;
+  -webkit-transform: scaleX(0.3);
+  transform: scaleX(0.3);
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.bottom_line:hover::before {
+  opacity: 1;
+  background-color: #5bbbeb;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transition: -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity 0.4s;
+  -webkit-transition: opacity, -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02);
+  transition: opacity, -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02);
+  transition: transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity;
+  transition: transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity, -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02);
 }
 
 .marqueeBox .marquee-wrapper {
@@ -2244,6 +2712,33 @@ header .in_link {
 .collapse-box-wrapper .collapse-box p {
   font-size: 14px;
   line-height: 22px;
+}
+
+mwt-title-btn {
+  bottom: 10px;
+}
+
+/標籤按鈕樣式與大小/
+.mwt-title-btn li {
+  width: 120px;
+  height: 60px;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  border: 0;
+  text-indent: 0;
+}
+
+/正在輪播樣式/
+.mwt-title-btn li.active {
+  width: 120px;
+  height: 60px;
+  border-bottom: solid 5px #ec2a45;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  margin-top: 3px;
 }
 
 .page_title {

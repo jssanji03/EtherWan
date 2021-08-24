@@ -1,23 +1,63 @@
-@mixin font ($line-height:20px,$padding-L:75px){
-  text-align: left;
-  padding-left: $padding-L;
-  line-height: $line-height;
+// @mixin font ($line-height:20px,$padding-L:75px){
+//   text-align: left;
+//   // padding-left: $padding-L;
+//   line-height: $line-height;
+// }
+.orgArea{
+  position: relative;
 }
-@mixin level($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:65px) {
+.topHeader{
+  // position: absolute;
+  // top: 0px;
+  // left: 475px;
+  // margin: 0 auto;
+}
+
+.jOrgChart .node {
+  min-width: 200px;
+  height: 120px;
+  line-height: 40px;
+  border-radius: 4px;
+  margin: 0 8px;
+  padding: 0px;
+  box-shadow: 1px 1px 3px #ccc;
+  @media #{$breakpoint-md}{
+    width: 150px;
+    height: 250px;
+  }
+  @media #{$breakpoint-xs}{
+    width: 100px;
+    height: 230px;
+  }
+}
+@mixin level($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary) {
   background-color: $background-color;
     a{
       font-size: 12px;
-        .dept{
+        .header{
           line-height: 25px;
           color: $white;
           background-color: $dept-background;
           border-radius: 4px 4px 0px 0px;
+          text-align: center;
+          position: relative;
+          .icon{
+            // background-color: transparent;
+            i.fa-id-card{
+              position: absolute;
+              right: 5px;
+              top: 6px;
+              cursor: pointer;
+              z-index: 999;
+            }
+          }
         }
         .pic{
-          float: left;
-          width: 65px;
-          height: $height;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
           overflow: hidden;
+          margin: 5px;
           img{
             max-width: 100%;
             height: auto;
@@ -25,29 +65,30 @@
           }
         }
         .position{
-          @include font;
-          padding-top: 3px;
           color: lightcoral;
+          text-align: left;
         }
         .name{
-          @include font;
-          color: $textColor;
-          font-weight: 500;
-          font-size: 14px
+          font-weight: 600;
+          text-align: left;
         }
         .count{
-          @include font($line-height:30px);
           color: $countColor;
+          position: relative;
+          i.fa-user{
+            position: absolute;
+            top: 3px;
+            right: 5px;
+          }
         }
       }
 }
-@mixin RWD-level ($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:110px,$deptHeight:30px,$picWidth:150px){
+@mixin RWD-level ($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:120px,$deptHeight:30px,$picWidth:120px){
   background-color: $background-color;
     a{
       font-size: 12px;
-        .dept{
+        .header{
           line-height: $deptHeight;
-          height: 40px;
           color: $white;
           background-color: $dept-background;
           border-radius: 4px 4px 0px 0px;
@@ -56,6 +97,8 @@
           width: $picWidth;
           height: $height;
           overflow: hidden;
+          margin: 0 auto;
+          margin-top: 10px;
           img{
             max-width: 100%;
             height: auto;
@@ -63,22 +106,22 @@
           }
         }
         .position{
-          @include font($line-height:20px,$padding-L:0px);
+          // @include font($line-height:20px,$padding-L:0px);
           padding-top: 3px;
           color: lightcoral;
-          text-align: center
+          text-align: center;
         }
         .name{
-          @include font($line-height:20px,$padding-L:0px);
+          // @include font($line-height:20px,$padding-L:0px);
           color: $textColor;
           font-weight: 500;
-          font-size: 14px;
-          text-align: center
+          text-align: center;
+          // font-size: 14px;
         }
         .count{
-          @include font($line-height:20px,$padding-L:0px);
+          // @include font($line-height:20px,$padding-L:0px);
           color: $countColor;
-          text-align: center
+          text-align: center;
         }
       }
 }
@@ -87,25 +130,32 @@
   border-collapse: separate;
   margin: 0 auto;
 }
-.jOrgChart .node {
-  width: 180px;
-  height: 90px;
-  line-height: 40px;
-  border-radius: 4px;
-  margin: 0 8px;
-  padding: 0px;
-  box-shadow: 1px 1px 3px #ccc;
-  @media #{$breakpoint-md}{
-    width: 150px;
-    height: 210px;
-  }
-  @media #{$breakpoint-xs}{
-    width: 100px;
-    height: 200px;
-  }
-}
+
 .jOrgChart{
+  position: relative;
+  .ext{
+    position: absolute;
+    right:30px;
+  }
+  .level{
+    @include level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+  }
   .level0{
+   @include level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+  }
+  .level1{
     @include level;
     @media #{$breakpoint-md}{
       @include RWD-level;
@@ -113,8 +163,8 @@
     @media #{$breakpoint-xs}{
       @include RWD-level($height:100px,$deptHeight:40px,$picWidth:100px);
     }
-  }
-  .level1{
+    }
+  .level2{
     @include level ($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
     @media #{$breakpoint-md}{
       @include RWD-level($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
@@ -122,8 +172,8 @@
     @media #{$breakpoint-xs}{
       @include RWD-level($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$height:100px,$deptHeight:18px,$picWidth:100px);
     }
-    }
-  .level2{
+  }
+  .level3{
     @include level ($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
     @media #{$breakpoint-md}{
       @include RWD-level($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
@@ -133,15 +183,17 @@
     }
   }
   .level5{
-    height: 60px;
+    height: 100px;
     border-left: 4px solid $yellow;
     overflow: hidden;
     a{
       font-size: 12px;
         .pic{
-          float: left;
           width: 60px;
+          height: 60px;
+          border-radius: 50%;
           overflow: hidden;
+          margin: 5px;
           img{
             max-width: 100%;
             height: auto;
@@ -155,20 +207,19 @@
           }
         }
         .position{
-          @include font($line-height:12px,$padding-L:75px);
-          padding-top: 10px;
+          // @include font($line-height:12px,$padding-L:75px);
           color: lightcoral;
+          text-align: left;
           @media #{$breakpoint-md},#{$breakpoint-xs}{
-            @include font($line-height:12px,$padding-L:10px)
+            // @include font($line-height:12px,$padding-L:10px)
           }
         }
         .name{
-          @include font($line-height:25px,$padding-L:75px);
-          color: $text;
+          // @include font($line-height:25px,$padding-L:75px);
           font-weight: 500;
-          font-size: 14px;
+          text-align: left;
           @media #{$breakpoint-md},#{$breakpoint-xs}{
-            @include font($line-height:25px,$padding-L:10px)
+            // @include font($line-height:25px,$padding-L:10px)
           }
         }
       }
@@ -204,50 +255,3 @@
 .jOrgChart .organization_text{
   position: relative;
 }
-
-
-// .jOrgChart .node {
-//     @media #{$breakpoint-md} {
-//     width: 150px;
-//     height: 200px;
-//     .level0{
-//     @include RWD-level;
-//     }
-//   .level1{
-//     @include RWD-level ($background-color:#ececec,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary)
-//     }
-//   .level2{
-//     @include RWD-level ($background-color:#ececec,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0)
-//   }
-//   .level5{
-//     height: 50px;
-//     border-left: 4px solid $yellow;
-//     overflow: hidden;
-//     a{
-//       font-size: 12px;
-//         .pic{
-//           float: left;
-//           width: 50px;
-//           height: 50px;
-//           overflow: hidden;
-//           img{
-//             max-width: 100%;
-//             height: auto;
-//             object-fit: cover;
-//           }
-//         }
-//         .position{
-//           @include font($line-height:12px);
-//           padding-top: 3px;
-//           color: lightcoral;
-//         }
-//         .name{
-//           @include font($line-height:25px);
-//           color: $text;
-//           font-weight: 500;
-//           font-size: 14px
-//         }
-//       }
-//   }
-//   }
-// }

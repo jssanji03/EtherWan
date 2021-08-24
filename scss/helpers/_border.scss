@@ -11,3 +11,10 @@
 .border-pink{
     border-color: $pink;
 }
+
+.border-right{
+    border-right: 1px white solid;
+    @media #{$breakpoint-md},#{$breakpoint-sm},#{$breakpoint-xs}{
+        border-right: 0px;
+    }
+}

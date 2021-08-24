@@ -115,17 +115,20 @@ const marqueeArr = document.querySelectorAll('#marquee')
         function month(year,month) {
             const select = document.querySelector('.ui-datepicker-month')
             const value = select.options[select.selectedIndex].text;
-            // console.log(month)
+            // const col = document.querySelector('#event')
+            console.log(month)
             const monthEvent = data.map(function (item, index) {
+                // console.log(item.month)
+                // console.log(month)
                 if (item.month === value) {
-                    return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
+                    return `<p class='third col-6'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }
             });
             $('#event').html(monthEvent)
         }
         function gotoDate(ev) {
             const event = data.map(function (item, index) {
-                console.log(ev);
+                // console.log(ev);
                 if (item.date === ev) {
                     return `<p class='third'>${item.date.substr(5)}  <span class='mx-2'>${item.event}</span><p>`
                 }
@@ -140,7 +143,40 @@ const marqueeArr = document.querySelectorAll('#marquee')
             onSelect: gotoDate,
             onChangeMonthYear: month,
             showMonthAfterYear: true,
-            dateFormat: "yy/mm/dd"
+            dateFormat: "yy/mm/dd",
+            stepMonths: 1,
         });
         window.onload = month;
     });
+
+$(function () {
+    //下方自動加入控制圓鈕
+    const total = document.querySelectorAll('.carousel-item').length
+    console.log(total);
+    append_li();
+    function append_li() {
+        let li = "";
+        // let get_ = document.querySelectorAll('.carousel-inner ')
+        // let get_ac = get_.getElementsByClassName('active')
+        var get_ac = $(".carousel-inner .active");
+        var ac = $(".carousel .carousel-inner div").index(get_ac);
+        console.log(get_ac);
+
+        for (var i = 0; i <= total - 1; i++) {
+            if (i == (ac) / 2) {
+                li += `<button type="button" data-bs-target="#carouselExampleIndicators" class="active" data-bs-slide-to="${i}" class="active"
+                            aria-current="true"></button>`;
+            } else {
+                li += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}"
+                            ></button>`;
+            }
+        }
+        $(".carousel-indicators").append(li);
+    }
+
+    //單則隱藏控制鈕
+    if (total.length < 2) {
+        $('.carousel-indicators').hide();
+    }
+}
+);

@@ -27,10 +27,10 @@
         <!-- Sidebar -->
         <div class="d-block" id="sidebar-wrapper">
             <div class="side_logo mt-3">
-                <a href="index.html"><img src="./public/img/logo_3.png"></img></a>
+                <a href="index.html"><img class="img-sm" src="./public/img/logo.png"></img></a>
             </div>
             <ul class="navbar-nav mt-4">
-                <li class="nav-item"><a href="https://www.etherwan.com/tw" class="nav-link">公司官網</a>
+                <li class="nav-item"><a href="#" class="nav-link">菲尼克斯集團介紹</a></li>
                 </li>
                 <li class="nav-item"><a href="homepage.html" class="nav-link">企業承諾</a></li>
                 </li>
@@ -38,19 +38,11 @@
                 </li>
                 <li class="nav-item"><a href="organization.html" class="nav-link">組織介紹</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">歷史沿革</a></li>
-                <li class="nav-item has-menu"><a href="#" class="nav-link">經營策略<i class="fas fa-angle-down"></i></a>
+                <li class="nav-item has-menu"><a href="#" class="nav-link">表單下載區<i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item"><a href="chart.html">Chart</a></li>
-                        <li class="dropdown-item"><a href="form.html">Form</a></li>
-                        <li class="dropdown-item"><a href="form2.html">Form2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-menu"><a href="#" class="nav-link">Custom<i class="fas fa-angle-down"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item"><a href="custom.html">Custom Html</a></li>
-                        <li class="dropdown-item"><a href="profile.html">Profile</a></li>
-                        <li class="dropdown-item"><a href="process.html">Process</a></li>
-                        <!-- <li class="dropdown-item"><a href="drag.html">Drag & Drop</a></li> -->
+                        <li class="dropdown-item"><a class="lh-50" href="#">公司管理辦法 / 表單</a></li>
+                        <li class="dropdown-item"><a href="#">員工手冊 /總部行為準則手冊</a></li>
+                        <li class="dropdown-item"><a href="#">CIS公司範本下載</a></li>
                     </ul>
                 </li>
             </ul>
@@ -65,13 +57,48 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav justify-content-start">
                         <li class="nav-item"><a href="#">phoenixcontact官網</a></li>
-                        <!-- <li class="nav-item active"><a href="organization.html">公司組織</a></li> -->
                     </ul>
                 </div>
                 <i id="fullScreen" class="d-none d-lg-block cursor fas fa-compress fz-25 pe-4"></i>
             </nav>
             <!-- Navbar End -->
-            <div id='jOrgChart'></div>
+            <section>
+                <div class="container jOrgChart py-3">
+                    <button class="btn btn-primary ext shadow ">全部展開 &nbsp; <i class="fas fa-sitemap"></i></button>
+                    <div class="row topHeader">
+                        <div class="col-10 node level mx-auto">
+                            <a class="organization_text">
+                                <div class="header d-flex">
+                                    <span class="col-10 dept">董事長</span>
+                                    <span class="col-2 icon"><i
+                                            class="far fa-id-card "></i></span>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 col-12">
+                                        <div class="pic">
+                                            <img src="./public/img/organization/user01.jpeg">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-12 px-3 py-1 text-left">
+                                        <p class="position lh-15">董事長</p>
+                                        <p class="name lh-20">王小明 &nbsp; <span class="name">Jack</span></p>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between px-1">
+                                    <div class="col">
+                                        <p>分機<span>000</span></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;</i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mt-5 orgArea" id='jOrgChart'></div>
+                </div>
+            </section>
         </div>
         <div id='modalArea'></div>
         <!-- /#page-content-wrapper -->
