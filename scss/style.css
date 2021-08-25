@@ -703,7 +703,8 @@ button {
   z-index: 999;
   top: 0;
   left: 0;
-  min-width: 15vw;
+  width: 16vw;
+  min-width: auto !important;
   height: 100%;
   margin-left: 0vw;
   -webkit-transition: margin .25s ease-out;
@@ -767,7 +768,8 @@ button {
 #sidebar-wrapper ul li ul li {
   padding: 0px;
   width: auto;
-  white-space: nowrap;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
 #sidebar-wrapper ul li ul li a {
@@ -794,9 +796,9 @@ button {
 }
 
 #page-content-wrapper {
-  margin-left: 15vw;
+  margin-left: 16vw;
   margin-top: 50px;
-  width: 85vw;
+  width: 84vw;
 }
 
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -812,8 +814,8 @@ button {
   position: fixed;
   right: 0;
   top: 0;
-  margin-left: 15vw;
-  width: 85vw;
+  margin-left: 20vw;
+  width: 84vw;
   height: 50px;
   z-index: 100;
   background-color: #ffffff;
