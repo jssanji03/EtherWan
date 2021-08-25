@@ -342,7 +342,7 @@
                                 },
                                 {
                                     "id": 6,
-                                    "level": 2,
+                                    "level": 3,
                                     "Dept":"Dept.",
                                     "position":"Manager",
                                     "name": "Gary",
@@ -372,7 +372,7 @@
                             },
                             {
                                 "id": 3,
-                                "level": 1,
+                                "level": 2,
                                 "Dept":"Dept.",
                                 "position":"Manager",
                                 "name": "SAP",
@@ -386,7 +386,7 @@
                                 "childrens": [
                                     {
                                         "id": 7,
-                                        "level": 2,
+                                        "level": 3,
                                         "Dept":"Dept.",
                                         "name": "OOO",
                                         "position":"Manager",
@@ -413,7 +413,7 @@
                                     },
                                     {
                                         "id": 8,
-                                        "level": 2,
+                                        "level": 3,
                                         "Dept":"Dept.",
                                         "position":"Manager",
                                         "name": "OOO",
@@ -441,7 +441,7 @@
                             },
                             {
                                 "id": 4,
-                                "level": 1,
+                                "level": 2,
                                 "Dept":"Dept.",
                                 "position":"Director",
                                 "name": "Collin",
@@ -454,7 +454,7 @@
                                 "teamDetail":"我是業務部 ",
                                 "childrens": [{
                                     "id": 9,
-                                    "level": 2,
+                                    "level": 3,
                                     "Dept":"業務部",
                                     "position":"Manager",
                                     "name": "OOO",
