@@ -309,6 +309,10 @@ table {
   border-bottom: 1px solid #000;
 }
 
+.border-t {
+  border-top: 3px solid #000;
+}
+
 .border-blue {
   border-color: #313994;
 }
@@ -1129,6 +1133,57 @@ button {
 
 .active {
   color: #313994;
+}
+
+.main-sidebar {
+  background-color: #546D92;
+}
+
+.main-sidebar .nav-sidebar .nav-item.menu-open .nav-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.main-sidebar .nav-sidebar .nav-item:hover .nav-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.main-sidebar .nav-sidebar .nav-item:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link .nav-icon, .main-sidebar .nav-sidebar .nav-item .nav-link p {
+  color: #ffffff;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link.active {
+  background-color: #5bbbeb;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link.active .nav-icon, .main-sidebar .nav-sidebar .nav-item .nav-link.active p {
+  color: #ffffff;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link {
+  background-color: #546D92;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link.active {
+  background-color: #E6EEF3;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link.active .nav-icon, .main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link.active p {
+  color: #5a5a5a;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link:hover .nav-icon, .main-sidebar .nav-sidebar .nav-item .nav-treeview .nav-item .nav-link:hover p {
+  color: #ffffff;
 }
 
 .card {

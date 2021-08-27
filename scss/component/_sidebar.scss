@@ -373,3 +373,64 @@
 .active{
   color: $hover;
 }
+
+
+
+
+///
+.main-sidebar{
+  background-color: #546D92;
+  .nav-sidebar{
+    .nav-item{
+      &.menu-open{
+        .nav-link{
+          background-color:rgba(255,255,255,.1) ;
+          color: $white;
+        }
+      }
+      &:hover{
+        .nav-link{
+          background-color:rgba(255,255,255,.1) ;
+          color: $white;
+        }
+      }
+      &:focus{
+        background-color:rgba(255,255,255,.1) ;
+        color: $white;
+      }
+      .nav-link{
+        .nav-icon,p{
+          color:$white
+        }
+        &.active{
+          background-color: $important;
+            .nav-icon,p{
+              color:$white;
+            }
+        }
+        
+      }
+      
+      .nav-treeview{
+        .nav-item{
+          .nav-link{
+            background-color: #546D92;
+            &.active{
+            background-color: #E6EEF3;
+              .nav-icon,p{
+                color:$text;
+              }
+            }
+            &:hover{
+              background-color:rgba(255,255,255,.1) ;
+              .nav-icon,p{
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    
+    }
+  }
+}
