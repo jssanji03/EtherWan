@@ -485,7 +485,7 @@
         }
         function showall(menu_list, parent) {
             $.each(menu_list, function (index, val) {
-                console.log(val);
+                // console.log(val);
                 if (val.id == 0) {
                     var li = $("<li></li>").addClass("level"+val.level);
                     li.append(
@@ -558,7 +558,8 @@
                                 </p>
                             </div>
                         </div>
-                         <div class="detail">${val.teamDetail}</div>
+                        <div class="more"><i class="fas fa-minus"></i></div>
+                        <div class="detail">${val.teamDetail}</div>
                     </a>`
                     ).append("<ul></ul>").appendTo(parent);
                     //递归显示

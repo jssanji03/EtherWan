@@ -52,7 +52,7 @@ $(function () {
             $(this).addClass("onPage");
             $(this).parents('.has-menu').children('.nav-link').addClass("activePage");
             $(this).filter('.nav-link').addClass("activePage");
-            $(this).parents().children(".activePage").find('.fas').toggleClass("fa-angle-up");;
+            $(this).parents().children(".activePage").find('.fas').toggleClass("fa-angle-up");
             $(this).parents('.dropdown-menu').addClass("open");
         }
     });

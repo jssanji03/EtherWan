@@ -151,6 +151,10 @@ table {
   color: #708ba5;
 }
 
+.bg_third {
+  background-color: #708ba5;
+}
+
 .important {
   color: #5bbbeb;
 }
@@ -202,6 +206,11 @@ table {
 .bg_gradient {
   background: -webkit-gradient(linear, right top, left top, from(#113E9A), to(#52B0DD));
   background: linear-gradient(to left, #113E9A, #52B0DD);
+}
+
+section {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .mt-15 {
@@ -295,6 +304,18 @@ table {
 
 .pt-30 {
   padding-top: 30px;
+}
+
+.pt-70 {
+  padding-top: 70px;
+}
+
+.pt-80 {
+  padding-top: 80px;
+}
+
+.pt-100 {
+  padding-top: 100px;
 }
 
 .pl-10 {
@@ -532,8 +553,9 @@ button {
   width: 100%;
   height: 100%;
   padding: 0px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-position: center center;
 }
 
 .img-sm {
@@ -1221,20 +1243,34 @@ button {
 
 .information_card {
   width: 100%;
-  height: 110px;
+  height: 100%;
   text-align: center;
   padding: 40px 0px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  border-radius: 5px;
   padding: 20px;
-  position: relative;
 }
 
-@media only screen and (max-width: 767px) {
+.information_card:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(138, 150, 170, 0.8);
+          box-shadow: 0px 0px 5px 1px rgba(138, 150, 170, 0.8);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .information_card {
-    width: 100%;
-    padding: 40px 0px;
+    width: 70%;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .information_card h3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .information_card {
+    width: 60%;
+    margin: 0 auto;
   }
   .information_card h3 {
     font-size: 20px;
@@ -1424,24 +1460,24 @@ table.dataTable .assignActive {
 }
 
 .ui-widget.ui-widget-content {
-  background-color: whitesmoke;
-  border-radius: 8px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
   width: 100%;
-  padding: 0px;
+  padding: 20px;
   -webkit-box-shadow: 1px 1px 5px 2px rgba(197, 197, 197, 0.486);
           box-shadow: 1px 1px 5px 2px rgba(197, 197, 197, 0.486);
   margin: 0 auto;
 }
 
 .ui-datepicker .ui-datepicker-header {
-  background: -webkit-gradient(linear, right top, left top, from(#113E9A), to(#52B0DD));
-  background: linear-gradient(to left, #113E9A, #52B0DD);
-  overflow: hidden;
-  color: #ffffff;
+  background: transparent;
+  color: #000;
+  font-size: 18px;
 }
 
 .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
   line-height: 40px;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .ui-datepicker-prev {
@@ -1523,14 +1559,28 @@ table.dataTable .assignActive {
   margin-top: 0px;
 }
 
+.ui-datepicker-month {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 2px;
+  border-color: lightgray;
+}
+
 .ui-datepicker table {
   padding: 2px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
 }
 
 .ui-datepicker table thead {
-  color: #000;
-  font-weight: 400;
+  color: #3d88dd;
+  font-weight: 600;
   line-height: 20px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.ui-datepicker table tbody td {
+  padding: 8px 0px;
 }
 
 .ui-datepicker table tbody .ui-datepicker td span, .ui-datepicker table tbody .ui-datepicker td a {
@@ -1547,13 +1597,9 @@ table.dataTable .assignActive {
   text-align: center;
 }
 
-.ui-datepicker table tbody .ui-datepicker-week-end a {
-  color: #f81190;
-}
-
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+.ui-datepicker-today .ui-state-highlight {
   color: #ffffff !important;
-  background-color: #5bbbeb !important;
+  background-color: #3d88dd !important;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -1561,7 +1607,16 @@ table.dataTable .assignActive {
   margin: 0 auto;
 }
 
-.ui-datepicker-current-day .ui-state-default.ui-state-active {
+.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  background-color: transparent;
+}
+
+.ui-widget-content .ui-state-default:hover, .ui-widget-header .ui-state-default:hover, .ui-button:hover, html .ui-button.ui-state-disabled:hover:hover, html .ui-button.ui-state-disabled:active:hover {
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active {
   background-color: #f1dcb4;
   border-radius: 50%;
   width: 30px;
@@ -1570,13 +1625,8 @@ table.dataTable .assignActive {
   text-align: center;
 }
 
-.ui-state-hover {
-  background-color: #f2ecf7 !important;
-  width: 30px;
-  height: 30px;
-  margin: 0 auto;
-  text-align: center;
-  color: #ffffff;
+.event li {
+  list-style: disc;
 }
 
 body {
@@ -1649,7 +1699,7 @@ img {
 
 .jOrgChart .node {
   min-width: 200px;
-  height: 120px;
+  height: 130px;
   line-height: 40px;
   border-radius: 4px;
   margin: 0 8px;
@@ -1831,153 +1881,8 @@ img {
   }
 }
 
-.jOrgChart .level0 {
-  background-color: #f0ebf1fa;
-}
-
-.jOrgChart .level0 a {
-  font-size: 12px;
-}
-
-.jOrgChart .level0 a .header {
-  line-height: 25px;
-  color: #ffffff;
-  background-color: #6d18a5;
-  border-radius: 4px 4px 0px 0px;
-  text-align: center;
-  position: relative;
-}
-
-.jOrgChart .level0 a .header .icon i.fa-id-card {
-  position: absolute;
-  right: 5px;
-  top: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.jOrgChart .level0 a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level0 a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.jOrgChart .level0 a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level0 a .name {
-  font-weight: 600;
-  text-align: left;
-}
-
-.jOrgChart .level0 a .count {
-  color: #313994;
-  position: relative;
-}
-
-.jOrgChart .level0 a .count i.fa-user {
-  position: absolute;
-  top: 3px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level0 {
-    background-color: #f0ebf1fa;
-  }
-  .jOrgChart .level0 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level0 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6d18a5;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level0 a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level0 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level0 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level0 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level0 a .count {
-    color: #313994;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level0 {
-    background-color: #f0ebf1fa;
-  }
-  .jOrgChart .level0 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level0 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6d18a5;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level0 a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level0 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level0 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level0 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level0 a .count {
-    color: #313994;
-    text-align: center;
-  }
-}
-
 .jOrgChart .level1 {
-  background-color: #bddbf3;
+  background-color: #f3f3f3;
 }
 
 .jOrgChart .level1 a {
@@ -1987,7 +1892,7 @@ img {
 .jOrgChart .level1 a .header {
   line-height: 25px;
   color: #ffffff;
-  background-color: #313994;
+  background-color: #44a1d0;
   border-radius: 4px 4px 0px 0px;
   text-align: center;
   position: relative;
@@ -2027,7 +1932,7 @@ img {
 }
 
 .jOrgChart .level1 a .count {
-  color: #313994;
+  color: #44a1d0;
   position: relative;
 }
 
@@ -2122,7 +2027,7 @@ img {
 }
 
 .jOrgChart .level2 {
-  background-color: #ececec;
+  background-color: #f3f3f3;
 }
 
 .jOrgChart .level2 a {
@@ -2184,7 +2089,7 @@ img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .jOrgChart .level2 {
-    background-color: #ececec;
+    background-color: #f3f3f3;
   }
   .jOrgChart .level2 a {
     font-size: 12px;
@@ -2226,7 +2131,7 @@ img {
 
 @media only screen and (max-width: 767px) {
   .jOrgChart .level2 {
-    background-color: #ececec;
+    background-color: #f3f3f3;
   }
   .jOrgChart .level2 a {
     font-size: 12px;
@@ -2267,7 +2172,7 @@ img {
 }
 
 .jOrgChart .level3 {
-  background-color: #ececec;
+  background-color: #f3f3f3;
 }
 
 .jOrgChart .level3 a {
@@ -2329,7 +2234,7 @@ img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .jOrgChart .level3 {
-    background-color: #ececec;
+    background-color: #f3f3f3;
   }
   .jOrgChart .level3 a {
     font-size: 12px;
@@ -2371,7 +2276,7 @@ img {
 
 @media only screen and (max-width: 767px) {
   .jOrgChart .level3 {
-    background-color: #ececec;
+    background-color: #f3f3f3;
   }
   .jOrgChart .level3 a {
     font-size: 12px;
@@ -2493,12 +2398,31 @@ img {
   position: relative;
 }
 
+.jOrgChart .organization_text .more {
+  width: 20px;
+  height: 20px;
+  background-color: #5a0592;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
+          box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -140px;
+  left: -10px;
+}
+
+.jOrgChart .organization_text .more i.fas {
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  color: #ffffff;
+}
+
 .logo {
   width: 200px;
 }
 
 header .photoLink {
-  height: 450px;
+  height: inherit;
 }
 
 header .carousel-caption {
@@ -2509,15 +2433,15 @@ header .carousel-caption {
   margin-top: -120px;
 }
 
-.list {
+.linkList {
   padding: 0px 20px;
 }
 
-.list li {
+.linkList li {
   padding: 5px;
 }
 
-.list li .btn-menu {
+.linkList li .btn-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2529,7 +2453,7 @@ header .carousel-caption {
   transition: all 0.6s ease-in-out;
 }
 
-.list li .btn-menu .fas {
+.linkList li .btn-menu .fas {
   text-align: right;
   line-height: 40px;
   padding-right: 0px;
@@ -2537,11 +2461,11 @@ header .carousel-caption {
   transition: all 0.8s ease-in-out;
 }
 
-.list li .btn-menu:hover {
+.linkList li .btn-menu:hover {
   padding-left: 20px;
 }
 
-.list li .btn-menu:hover .fas {
+.linkList li .btn-menu:hover .fas {
   padding-right: 20px;
   color: #ffffff;
 }
@@ -2574,37 +2498,40 @@ header .carousel-caption {
   transition: transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity, -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02);
 }
 
-.marqueeBox .marquee-wrapper {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-}
-
 .marqueeBox .marquee-wrapper ul {
-  position: absolute;
-  top: 0;
-  left: calc(40% - 120px);
-  opacity: 0;
-  -webkit-animation: display 8s ease-in-out  infinite;
-          animation: display 8s ease-in-out  infinite;
+  height: 30px;
+  position: relative;
   width: 100%;
 }
 
 .marqueeBox .marquee-wrapper ul li {
-  display: block;
-  padding: 0 40px;
+  position: absolute;
+  top: -10;
+  left: calc(40% - 100px);
+  opacity: 0;
+  -webkit-animation: display 12s ease-in-out  infinite;
+          animation: display 12s ease-in-out  infinite;
 }
 
-.marqueeBox .marquee-wrapper ul:nth-child(2) {
+@media only screen and (max-width: 767px) {
+  .marqueeBox .marquee-wrapper ul li {
+    left: calc(30% - 100px);
+  }
+}
+
+.marqueeBox .marquee-wrapper ul li:nth-child(2) {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
 
-.marqueeBox .marquee-wrapper ul:nth-child(3) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+.marqueeBox .marquee-wrapper ul li:nth-child(3) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+.marqueeBox .marquee-wrapper ul li:nth-child(4) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
 }
 
 @-webkit-keyframes display {

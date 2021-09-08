@@ -6,7 +6,8 @@
     }
 header {
     .photoLink{
-        height: 450px;
+        // height: 450px;
+        height: inherit;
     }
     .carousel-caption{
       margin-bottom: 30px;
@@ -16,7 +17,7 @@ header {
     margin-top: -120px;
     
 }
-.list{
+.linkList{
         padding: 0px 20px;
         li{
             padding: 5px;
@@ -41,7 +42,6 @@ header {
             }
         }
 }
-
 .bottom_line{
   &::before{
     content:'';
@@ -79,28 +79,29 @@ header {
 .marqueeBox{
     
     .marquee-wrapper {
+      ul{
+        height: 30px;
         position: relative;
-        display: flex;
-        height: 80px;
-        ul{
-            // overflow: hidden;
+        width: 100%;
+        li{
             position: absolute;
-            top: 0;
-            left: calc(40% - 120px);
+            top: -10;
+            left: calc(40% - 100px);
             opacity: 0;
-            animation: display 8s ease-in-out  infinite;
-            // animation-duration: 5s;
-            width: 100%;
-            li{
-                display: block;
-                padding: 0 40px;
+            animation: display 12s ease-in-out  infinite;
+            @media #{$breakpoint-xs}{
+              left: calc(30% - 100px);
             }
-        }
-        ul:nth-child(2) {
-            animation-delay: 4s;
-        }
-        ul:nth-child(3) {
-            animation-delay: 4s;
+          }
+          li:nth-child(2) {
+              animation-delay: 4s;
+          }
+          li:nth-child(3) {
+              animation-delay: 8s;
+          }
+          li:nth-child(4) {
+              animation-delay: 12s;
+          }
         }
     }
 }

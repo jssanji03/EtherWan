@@ -26,20 +26,25 @@
 
 .information_card {
     width: 100%;
-    height: 110px;
+    height: 100%;
     text-align: center;
     padding: 40px 0px;
     transition: 0.3s;
-    border-radius: 5px;
     padding: 20px;
-    position: relative;
-    // &:hover{
-    //     box-shadow: 0px 3px 5px 1px rgba(138, 150, 170, 0.527);
-    //     margin-top: 5px;
-    // }
-    @media #{$breakpoint-xs}{
-        width: 100%;
-        padding: 40px 0px;
+    &:hover{
+        box-shadow: 0px 0px 5px 1px rgba(138, 150, 170, 0.8);
+    }
+    @media #{$breakpoint-lg}{
+        width: 70%;
+        padding: 10px;
+        margin: 0 auto;
+        h3{
+            font-size: 20px;
+        }
+    }
+    @media #{$breakpoint-md},#{$breakpoint-xs}{
+        width: 60%;
+        margin: 0 auto;
         h3{
             font-size: 20px;
         }

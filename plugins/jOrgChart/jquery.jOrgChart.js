@@ -111,9 +111,6 @@
     // Construct the node container(s)
     var $nodeRow = $("<tr/>").addClass("node-cells");
     var $nodeCell = $("<td/>").addClass("node-cell").attr("colspan", 2);
-    // var $childNodes = $node.children("ul:first").children("li");
-    var $childLevel3 = $node.children("ul:first").children("li").find(".level3");
-    var $childLevel2 = $node.children("ul:first").children("li").find(".level2");
     var $childNodes = $node.children("ul:first").children("li").not(".level5");
     var $lastNodes = $node.children("ul:first").children("li").filter(".level5");
     var $nodeDiv;
@@ -140,19 +137,19 @@
                                   // console.log($nodeDiv.find('.dept'));
     // Expand and contract nodes
     if ($childNodes.length > 0) {
-      console.log($node);
-    //  $childNodes.addClass('contracted');
-      $childNodes.find('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+      // console.log($node);
+      $childNodes.find('.more').css({ 'cursor': 'n-resize', 'background-color': '#f79c00' });
+      $childNodes.find('.more').children('.fas').removeClass('fa-minus').addClass('fa-plus')
       // $('.level3').parent().parent('.node-cells').addClass('contracted')
       $childNodes.nextAll("tr").css('visibility', 'hidden');
       $childNodes.addClass('collapsed');
-      $nodeDiv.find('.dept').click(function (e) {
+      $nodeDiv.find('.more').click(function (e) {
         var $this = $(this);
         var $tr = $this.closest("tr");
         console.log(e.target);
-
           if($tr.hasClass('contracted')){
-            $this.parent('.header').css({'cursor':'n-resize','background-color':''});
+            $this.css({ 'cursor': 'n-resize', 'background-color': '' });
+            $this.children('.fas').removeClass('fa-plus').addClass('fa-minus')
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -160,7 +157,8 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.parent('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.css({ 'cursor': 'n-resize','background-color':'#f79c00' });
+            $this.children('.fas').removeClass('fa-minus').addClass('fa-plus')
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
@@ -170,29 +168,33 @@
       $('.ext').click((e) => {
         console.log(e.target);
         if ($('.node-cells').hasClass('contracted')) {
-          $('.node-cells').find('.header').css({'cursor':'n-resize','background-color':''});
+          $('.node-cells').find('.more').css({'cursor':'n-resize','background-color':''});
+          $('.node-cells').find('.more').children('.fas').removeClass('fa-plus').addClass('fa-minus');
           $('.node-cells').removeClass('contracted').addClass('expanded');
           $('.node-cells').nextAll("tr").css('visibility', '');
           $node.removeClass('collapsed');
         }
         else {
-          $('.level2').find('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+          $('.level2').find('.more').css({ 'cursor': 'n-resize', 'background-color': '#f79c00' });
+          $('.node-cells').find('.more').children('.fas').removeClass('fa-minus').addClass('fa-plus')
           $('.level2').parent().parent('.node-cells').removeClass('expanded').addClass('contracted');
           $('.level2').parent().parent('.node-cells').nextAll("tr").css('visibility', 'hidden');
+          $('.level1').find('.more').children('.fas').removeClass('fa-plus').addClass('fa-minus');
           $node.addClass('collapsed');
         }
         $(e).toggle()
       })
     }
     if ($lastNodes.length > 0) {
-      $nodeDiv.find('.dept').click(function (e) {
+      $nodeDiv.find('.more').click(function (e) {
         console.log(e.target);
           var $this = $(this);
           var $tr = $this.closest("tr");
           var $ul = $this.closest("ul");
 
           if($tr.hasClass('contracted')){
-            $this.parent('.header').css({'cursor':'n-resize','background-color':''});
+            $this.css({ 'cursor': 'n-resize', 'background-color': '' });
+            $this.children('.fas').removeClass('fa-plus').addClass('fa-minus')
             $tr.removeClass('contracted').addClass('expanded');
             $tr.nextAll("tr").css('visibility', '');
 
@@ -200,7 +202,8 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.parent('.header').css({'cursor':'n-resize','background-color':'#f79c00'});
+            $this.css({ 'cursor': 'n-resize', 'background-color': '#f79c00' });
+            $this.children('.fas').removeClass('fa-minus').addClass('fa-plus')
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
