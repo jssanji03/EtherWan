@@ -16,29 +16,27 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $fontsNoto;
+    font-family: $fontEn,$font-family-sans-serif;
     font-weight: 400;
     margin: 0px;
 }
 h3{
     font-size: 25px;
 }
-h4{
-    font-size: 22px;
-}
 p {
-    font-family: $font-family-sans-serif;
+    font-family: $fontEn,$font-family-sans-serif;
     color: $text;
     line-height: 1.5;
     font-weight: 400;
     margin: 0px;
+    // margin-bottom: 10px;
 }
 
 a,
 a:focus {
     text-decoration: none;
     outline: 0 solid transparent;
-    font-family: $fonts;
+    font-family: $fontEn,$font-family-sans-serif;
     color: $secondary;
     &:hover{
         color: $primary;
@@ -57,4 +55,28 @@ img {
     max-width: 100%;
 }
 
-
+section{
+    padding: 10px 20px;
+}
+section.page_title{
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    h2{
+        line-height: 30px;
+    }
+    .breadcrumb{
+        line-height: 30px;
+        height: 30px;
+        margin: 0px;
+        a{
+            color: $dark;
+        }
+    }
+    .active{
+        color: $secondary;
+    }
+    @media #{$breakpoint-md},#{$breakpoint-sm},#{$breakpoint-xs}{
+        padding-top:50px ;
+    }
+}

@@ -243,21 +243,6 @@
         // }
         var data = {
             "data": [
-                // {
-                //     "id": 0,
-                //     "level": 0,
-                //     "Dept": "董事長",
-                //     "position":"董事長",
-                //     "name": "Jack",
-                //     "ChName": "王小明",
-                //     "Num": "",
-                //     "Ext": "000",
-                //     "area": "",
-                //     "pic": "user00.jpeg",
-                //     "count": "10",
-                //     "teamDetail": "",
-                //     "childrens": []
-                // },
                 {
                         "id": 1,
                         "level": 1,
@@ -498,7 +483,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-4 col-12">
                                 <div class="pic">
-                                    <img src="public/img/organization/${val.pic}">
+                                    <img src="../public/img/organization/${val.pic}">
                                 </div>
                             </div>
                             <div class="col-lg-8 col-12 px-3 py-1 text-left">
@@ -537,7 +522,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-4 col-12">
                                 <div class="pic">
-                                    <img src="public/img/organization/${val.pic}">
+                                    <img src="../public/img/organization/${val.pic}">
                                 </div>
                             </div>
                             <div class="col-lg-8 col-12 px-3 py-1 text-left">
@@ -572,7 +557,7 @@
                         <div class="row align-items-center p-1">
                             <div class="col-4">
                                 <div class="pic">
-                                    <img src="public/img/organization/${val.pic}">
+                                    <img src="../public/img/organization/${val.pic}">
                                 </div>
                             </div>
                             <div class="col-8">

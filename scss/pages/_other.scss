@@ -1,24 +1,3 @@
-//--- Title and BreadCrumb---//
-.page_title{
-    align-items: center;
-    padding:  20px 30px;
-    h2{
-        line-height: 30px;
-    }
-    .breadcrumb{
-        line-height: 30px;
-        height: 30px;
-        margin: 0px;
-        a{
-            color: $dark;
-        }
-    }
-    .active{
-        color: $secondary;
-    }
-}
-//--- Title and BreadCrumb End ---//
-
 
 //HomePage
 .info{

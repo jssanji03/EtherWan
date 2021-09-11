@@ -12,11 +12,11 @@
     <title>EtherWan Template </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./public/img/core-img/favicon.png">
+    <link rel="icon" href="../public/img/core-img/favicon.png">
 
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./scss/style.min.css">
+    <link rel="stylesheet" href="../scss/style.min.css">
 
 </head>
 
@@ -27,18 +27,18 @@
 
         <!-- Sidebar -->
         <div class="d-block" id="sidebar-wrapper">
-            <div class="side_logo mt-3">
-                <a class="mx-auto" href="index.html"><img class="img-fluid" src="./public/img/logo.png"></img></a>
+            <div class=" mt-3">
+                <a class="mx-auto side_logo" href="../index.html"><img class="img-fluid" src="../public/img/logo.png"></img></a>
             </div>
             <ul class="navbar-nav mt-4">
-                <li class="nav-item"><a href="#" class="nav-link">菲尼克斯集團介紹</a></li>
+                <li class="nav-item"><a href="phoenix.html" class="nav-link">菲尼克斯集團介紹</a></li>
                 </li>
                 <li class="nav-item"><a href="homepage.html" class="nav-link">企業承諾</a></li>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link"></i>企業政策</a>
+                <li class="nav-item"><a href="corePolicy.html" class="nav-link"></i>企業政策</a>
                 </li>
                 <li class="nav-item"><a href="organization.html" class="nav-link">組織介紹</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">歷史沿革</a></li>
+                <li class="nav-item"><a href="history.html" class="nav-link">歷史沿革</a></li>
                 <li class="nav-item has-menu"><a href="#" class="nav-link">表單連結<i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li class="dropdown-item"><a href="companyForm.html">公司管理辦法 / 表單</a></li>
@@ -48,6 +48,7 @@
                         <li class="dropdown-item"><a href="sysForm.html">系統連結</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a href="backEnd.html" class="nav-link">後台</a></li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -55,31 +56,20 @@
         <!-- Main Content -->
         <div id="page-content-wrapper">
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand-lg border-bottom" id="topNav">
-                <div class="logo"></div>
-                <button class="navbar-toggler d-lg-block d-none " id="menu-lg-toggle"><i
-                        class="fas fa-bars"></i></button>
-                <button class="navbar-toggler d-lg-none d-block" id="menu-laptop-toggle"><i
-                        class="fas fa-bars"></i></button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav justify-content-start">
-                        <li class="nav-item"><a href="#">phoenixcontact官網</a></li>
-                    </ul>
-                </div>
-                <i id="fullScreen" class="d-none d-lg-block cursor fas fa-compress fz-25 pe-4"></i>
+            <nav class="navbar d-lg-none d-block navbar-expand-lg border-bottom" id="topNav">
+                <button class="navbar-toggler d-lg-none d-block" id="menu-laptop-toggle"><i class="fas fa-bars"></i></button>
             </nav>
             <!-- Navbar End -->
 
             <!-- ##### Section Start ##### -->
             <section class="page_title">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <h2 class="col-6">公司管理辦法 / 表單</h2>
+                        <h2 class="col-6">系統連結</h2>
                         <nav class="breadcrumb col-6 justify-content-end">
                             <ol class="d-flex">
-                                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
-                                <li class="breadcrumb-item active">公司管理辦法表單</li>
+                                <li class="breadcrumb-item"><a href="../index.html">首頁</a></li>
+                                <li class="breadcrumb-item active">系統連結</li>
                             </ol>
                         </nav>
                     </div>
@@ -89,44 +79,44 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-3 col-6">
-                            <ul class="list">
+                            <ul class="linkList">
                                 <li>
-                                    <button class="btn btn-menu">HR人資 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">員工園地 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">SA業務 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">文件檔案區 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">PR採購 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">網頁信箱 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">AC會計 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">SalesForce <i class="fas fa-angle-right"></i></button>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-6">
-                            <ul class="list">
+                            <ul class="linkList">
                                 <li>
-                                    <button class="btn btn-menu">FI財務 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">線上學習平台 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">MS資訊 <i
+                                    <button class="btn btn-menu">Redmine追蹤管理系統 <i
                                             class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">GA總務 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">匯率查詢系統 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-menu">HS勞安 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">退貨維護查詢 <i class="fas fa-angle-right"></i></button>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-6">
-                            <ul class="list">
+                            <ul class="linkList">
                                 <li>
-                                    <button class="btn btn-menu">ADM行政管理 <i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-menu">電子簽核系統 <i class="fas fa-angle-right"></i></button>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <button class="btn btn-menu">團購小工具 <i class="fas fa-angle-right"></i></button>
                                 </li>
                                 <li>
@@ -134,7 +124,23 @@
                                 </li>
                                 <li>
                                     <button class="btn btn-menu">電子考核系統 <i class="fas fa-angle-right"></i></button>
-                                </li> -->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <ul class="linkList">
+                                <li>
+                                    <button class="btn btn-menu">人力資源管理系統 <i class="fas fa-angle-right"></i></button>
+                                </li>
+                                <li>
+                                    <button class="btn btn-menu">會議室預約 <i class="fas fa-angle-right"></i></button>
+                                </li>
+                                <li>
+                                    <button class="btn btn-menu">綠色產品管理系統<i class="fas fa-angle-right"></i></button>
+                                </li>
+                                <li>
+                                    <button class="btn btn-menu">製程管理系統 <i class="fas fa-angle-right"></i></button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -149,17 +155,21 @@
 
 
 
-
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-3.5.1 js -->
-    <script src="./plugins/jquery/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="./plugins/bootstrap-5.0.0-dist/js/bootstrap.min.js"></script>
-    <!-- Active js -->
-    <script src="js/sidebar.js"></script>
-    <script src="js/component.js"></script>
-
-
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-3.5.1 js -->
+<script src="../plugins/jquery/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap js -->
+<script src="../plugins/bootstrap-5.0.0-dist/js/bootstrap.min.js"></script>
+<script src="../plugins/Magicsuggest/js/magicsuggest-min.js"></script>
+<script src="../plugins/select2-4.0.13/js/select2.full.min.js"></script>
+<!-- DataTables -->
+<script src="../plugins/DataTables-1.10.25/datatables.min.js"></script>
+<!-- datepicker -->
+<script src="../plugins/daterangepicker-3.0.5/moment.min.js"></script>
+<script src="../plugins/daterangepicker-3.0.5/daterangepicker.js"></script>
+<!-- Active js -->
+<script src="../js/sidebar.js"></script>
+<script src="../js/component.js"></script>
 
 </body>
 
