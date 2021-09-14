@@ -82,30 +82,22 @@ header {
       ul{
         height: 30px;
         position: relative;
-        width: 100%;
         li{
             position: absolute;
             top: -10;
             left: calc(40% - 100px);
             opacity: 0;
-            animation: display 12s ease-in-out  infinite;
+            // animation-name: display;
+            // animation-duration:25s;
+            // animation-iteration-count:infinite;
+            margin-left: 20px;
             @media #{$breakpoint-xs}{
               left: calc(30% - 100px);
             }
           }
-          li:nth-child(2) {
-              animation-delay: 4s;
-          }
-          li:nth-child(3) {
-              animation-delay: 8s;
-          }
-          li:nth-child(4) {
-              animation-delay: 12s;
-          }
         }
     }
 }
-
 @keyframes display {
   0% {
     transform: translateX(200px);
@@ -115,12 +107,12 @@ header {
     transform: translateX(0);
     opacity: 1;
   }
-  20% {
+  15% {
     transform: translateX(0);
     opacity: 1;
   }
-  30% {
-    transform: translateX(-200px);
+  20% {
+    transform: translateX(-100px);
     opacity: 0;
   }
   100% {
@@ -128,46 +120,6 @@ header {
     opacity: 0;
   }
 }
-// .marquee-vertical{
-// 	transform-origin: left;
-// 	transform: rotate(90deg) translateY(-50px);
-// }
-// .marqueeBox{
-//     height: 80px;
-//     .marquee-wrapper {
-//         position: relative;
-//         display: flex;
-//         animation-name: marquee;
-//         animation-duration: 15s;
-//         animation-timing-function: linear;
-//         animation-delay: 0s;
-//         animation-iteration-count: infinite;
-//         will-change: transform;
-//         ul{
-//             // overflow: hidden;
-            
-//             li{
-//                 display: block;
-//                 padding: 0 40px;
-//             }
-            
-//             // &:last-child {
-//             // 	position: absolute;
-//             // 	top: 0;
-//             // 	left: 0px;
-//             // }
-//         }
-//     }
-// }
-// @keyframes marquee{
-//   0%{
-// 		transform:translateY(30%)
-//   }
-//   to{
-// 		transform:translateY(-100%)
-// 		// transform:translate3d(0,-120%,0)
-// 	}
-// }
 
 
 .ui-datepicker-week-end a {

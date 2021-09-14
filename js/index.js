@@ -1,33 +1,89 @@
-const marqueeArr = document.querySelectorAll('#marquee')
-    marqueeArr.forEach((marquee) =>{
-        let heightMarqueeList = 0
-        const marqueeLi = marquee.querySelectorAll('ul:first-of-type li')
-        marqueeLi.forEach((item) =>{
-            heightMarqueeList += item.offsetHeight
-            // console.log(item.offsetHeight);
-        })
-        const marqueeUl = marquee.querySelectorAll('ul')
-        // console.log(marqueeUl);
-        marqueeUl.forEach((list) => {
-            list.style.Height = heightMarqueeList + 'px';
-            // console.log(list.style.Height);
-        })
-        // marquee.style.height = heightMarqueeList + 'px';
-    }) 
+$(function () {
+    const marqueeData =[
+        "1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "10. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "20. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "30. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+    ]
+    function marqueeArr(marqueeData) {
+        const marquee = document.querySelector("#marquee ul")
+        const marqueeLi = marquee.childNodes;
+        // const marquees = document.querySelectorAll('.marqueeBox');
+        // const marquee = document.querySelector(".marquee-canvas")
+        const items = marquee.querySelectorAll('.marquee-item');
+        const itemsToClone = Array.from(items).slice(0,3);
+        var html = "";
+        for (let i = 0; i < marqueeData.length; i++) { 
+            html += `<li class="marquee-item">${marqueeData[i]}</li>`;
+        }
+        marquee.innerHTML = html
+        
+        // $("#marquee").html(html); //印出html
+        for (let i = 0; i < marqueeLi.length; i++) {
+            const Li = marqueeLi[i];
+            Li.style.animationDelay = `${4+i * 4}s`;
+            Li.style.animation = `display ${marqueeLi.length * 4}ss ease-in-out infinite`;
+        //     // const childNode = $(`#marquee li:nth-child(${i})`)
+        //     // $(`#marquee li:nth-child(${i})`).css("animation-delay",`${i * 4}s`)
+        }
+        // itemsToClone.forEach(function (item) {
 
+		// 	var clone = item.cloneNode(true);
+
+		// 	canvas.appendChild(clone);
+
+		// });
+
+
+
+    }
+    marqueeArr(marqueeData)
+})
 
 $(function () {
+    const data =[
+        [
+            "https://fakeimg.pl/1000x350/",
+            "http://www.google.com.tw"
+        ],
+        [
+            "https://fakeimg.pl/1000x350/",
+            "http://www.yahoo.com.tw"
+        ],
+        [
+            "https://fakeimg.pl/1000x350/",
+            "http://www.facebook.com.tw"
+        ],
+        [
+            "https://fakeimg.pl/1000x350/",
+            "http://www.msn.com.tw"
+        ],
+    ]
+    function carousal (data) {
+        // console.log(data);
+        var html = "";
+        //開始跑迴圈將json資料跑出來放在html變數裡
+        for (var i = 0; i < data.length; i++) {
+            html += `<div class="carousel-item photoLink">`;
+            html += `<a href=${data[i][1]} target=_blank><img src="${data[i][0]}" class="img-fluid" alt="..."></a>`;
+            html += "</div>";
+            if (i == 9) {
+                break;
+            }
+        }
+        $(".carousel-inner").html(html); //印出html
+        $(".carousel-inner>div").first().addClass("active"); 
+    }
+    carousal(data)
     //下方自動加入控制圓鈕
     const total = document.querySelectorAll('.carousel-item').length
-    console.log(total);
     append_li();
     function append_li() {
         let li = "";
-        // let get_ = document.querySelectorAll('.carousel-inner ')
-        // let get_ac = get_.getElementsByClassName('active')
         var get_ac = $(".carousel-inner .active");
         var ac = $(".carousel .carousel-inner div").index(get_ac);
-        console.log(get_ac);
 
         for (var i = 0; i <= total - 1; i++) {
             if (i == (ac) / 2) {
