@@ -1,3 +1,5 @@
+
+// 即時宣導 跑馬燈
 $(function () {
     const marqueeData =[
         "1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
@@ -8,12 +10,8 @@ $(function () {
         "30. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
     ]
     function marqueeArr(marqueeData) {
-        const marquee = document.querySelector("#marquee ul")
+        const marquee = document.querySelector(".marquee ul")
         const marqueeLi = marquee.childNodes;
-        // const marquees = document.querySelectorAll('.marqueeBox');
-        // const marquee = document.querySelector(".marquee-canvas")
-        const items = marquee.querySelectorAll('.marquee-item');
-        const itemsToClone = Array.from(items).slice(0,3);
         var html = "";
         for (let i = 0; i < marqueeData.length; i++) { 
             html += `<li class="marquee-item">${marqueeData[i]}</li>`;
@@ -24,17 +22,9 @@ $(function () {
         for (let i = 0; i < marqueeLi.length; i++) {
             const Li = marqueeLi[i];
             Li.style.animationDelay = `${4+i * 4}s`;
-            Li.style.animation = `display ${marqueeLi.length * 4}ss ease-in-out infinite`;
-        //     // const childNode = $(`#marquee li:nth-child(${i})`)
-        //     // $(`#marquee li:nth-child(${i})`).css("animation-delay",`${i * 4}s`)
+            Li.style.animationDuration = `${marqueeLi.length * 4}s`;
+            // Li.style.animation = `display ${marqueeLi.length * 4}s ease-in-out infinite`;
         }
-        // itemsToClone.forEach(function (item) {
-
-		// 	var clone = item.cloneNode(true);
-
-		// 	canvas.appendChild(clone);
-
-		// });
 
 
 
@@ -42,14 +32,15 @@ $(function () {
     marqueeArr(marqueeData)
 })
 
+// HomeBanner 輪播
 $(function () {
     const data =[
         [
-            "https://fakeimg.pl/1000x350/",
+            "../public/img/Banner/Banner1.png",
             "http://www.google.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x350/",
+            "../public/img/Banner/Banner2.png",
             "http://www.yahoo.com.tw"
         ],
         [
@@ -64,7 +55,6 @@ $(function () {
     function carousal (data) {
         // console.log(data);
         var html = "";
-        //開始跑迴圈將json資料跑出來放在html變數裡
         for (var i = 0; i < data.length; i++) {
             html += `<div class="carousel-item photoLink">`;
             html += `<a href=${data[i][1]} target=_blank><img src="${data[i][0]}" class="img-fluid" alt="..."></a>`;

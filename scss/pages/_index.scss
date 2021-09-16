@@ -87,9 +87,8 @@ header {
             top: -10;
             left: calc(40% - 100px);
             opacity: 0;
-            // animation-name: display;
-            // animation-duration:25s;
-            // animation-iteration-count:infinite;
+            animation-name: display;
+            animation-iteration-count:infinite;
             margin-left: 20px;
             @media #{$breakpoint-xs}{
               left: calc(30% - 100px);

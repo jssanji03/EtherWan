@@ -2536,6 +2536,10 @@ header .carousel-caption {
   top: -10;
   left: calc(40% - 100px);
   opacity: 0;
+  -webkit-animation-name: display;
+          animation-name: display;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   margin-left: 20px;
 }
 
