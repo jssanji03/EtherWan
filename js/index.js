@@ -2,7 +2,8 @@
 // 即時宣導 跑馬燈
 $(function () {
     const marqueeData =[
-        "1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        `1.景園高小，線房傳上地都懷……還大和一展早能像再統為毒來關上……後這的。少在不。有發毛成、車後位合孩百隊了心總毒上告施病來出，但他果造都意？要研化反員一母總再南，理來新西廣家得去農節；去時然金著不可型本家種最他任朋分沒的。和他體影克物作。
+眼至後心為比會少有面也應顯為者在影，所跑舉沒天於人東、分推就這他友出，識機如知地、相身時共光時片要整以速了成我依父於照一可其應團女看父士廠期男斯城照客治歡想子斯`,
         "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
         "3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
         "10. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
@@ -21,8 +22,8 @@ $(function () {
         // $("#marquee").html(html); //印出html
         for (let i = 0; i < marqueeLi.length; i++) {
             const Li = marqueeLi[i];
-            Li.style.animationDelay = `${4+i * 4}s`;
-            Li.style.animationDuration = `${marqueeLi.length * 4}s`;
+            Li.style.animationDelay = `${4+i * 5}s`;
+            Li.style.animationDuration = `${marqueeLi.length * 5}s`;
             // Li.style.animation = `display ${marqueeLi.length * 4}s ease-in-out infinite`;
         }
 
@@ -36,19 +37,19 @@ $(function () {
 $(function () {
     const data =[
         [
-            "../public/img/Banner/Banner1.png",
+            "https://fakeimg.pl/1000x450/",
             "http://www.google.com.tw"
         ],
         [
-            "../public/img/Banner/Banner2.png",
+            "https://fakeimg.pl/1000x450/",
             "http://www.yahoo.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x350/",
+            "https://fakeimg.pl/1000x450/",
             "http://www.facebook.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x350/",
+            "https://fakeimg.pl/1000x450/",
             "http://www.msn.com.tw"
         ],
     ]

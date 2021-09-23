@@ -4,6 +4,7 @@
         // margin: 0 auto;
         // padding:20px 50px;
     }
+
 header {
     .photoLink{
         // height: 450px;
@@ -77,154 +78,92 @@ header {
 // 	transform: rotate(90deg) translateY(-50px);
 // }
 .marqueeBox{
-    
     .marquee-wrapper {
       ul{
-        height: 30px;
+        min-height:55px;
+        height:auto;
         position: relative;
+        @media #{$breakpoint-lg}{
+          height: 80px;
+        }
+        @media #{$breakpoint-md}{
+          height: 95px;
+        }
+        @media #{$breakpoint-sm}{
+          height: 120px;
+        }
+        @media #{$breakpoint-xs}{
+          height: 210px;
+        }
         li{
             position: absolute;
+            width: 100%;
+            height:20px;
             top: -10;
-            left: calc(40% - 100px);
             opacity: 0;
-            animation-name: display;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0px 100px;
+            line-height: 20px;
+            animation-name: marquee;
             animation-iteration-count:infinite;
-            margin-left: 20px;
-            @media #{$breakpoint-xs}{
-              left: calc(30% - 100px);
+            @media #{$breakpoint-lg,$breakpoint-md,$breakpoint-sm,$breakpoint-xs}{
+              padding: 0px 10px;
             }
           }
         }
     }
 }
-@keyframes display {
-  0% {
-    transform: translateX(200px);
-    opacity: 0;
+
+
+@keyframes marquee {
+  0% { 
+    left: 0%;
+    opacity: 1; 
   }
-  10% {
-    transform: translateX(0);
-    opacity: 1;
+  10% { 
+    left: 0%;
   }
-  15% {
-    transform: translateX(0);
-    opacity: 1;
+  30% { 
+    left: -100%;
   }
-  20% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
+  100% { left: -200%; }
 }
+
+.marquee {
+  animation-name: marquee;
+}
+
+
+
+// @keyframes display {
+//   0% {
+//     transform: translateX(200px);
+//     opacity: 0;
+//   }
+//   10% {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+//   15% {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+//   20% {
+//     transform: translateX(-100px);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(-200px);
+//     opacity: 0;
+//   }
+// }
 
 
 .ui-datepicker-week-end a {
     color: rgb(170, 12, 12) !important;
 }
 
-.collapse-box-wrapper {
-  width:100%;
-  padding-left:30px;
-  position: relative;
-  margin-bottom:40px;
-
-  label.collapse-box-label{
-    width:100%;
-    display:inline-block;
-    cursor:pointer;
-
-    h3 {
-      display:inline;
-      float:left;
-      margin:0;
-    }
-    span{
-      display:block;
-      position:absolute;
-      top:10px;
-      left:0;
-      margin: 0;
-      width: 0; height: 0;
-      background:#FF5656;
-      transition: 0.2s;
-      -webkit-transition: 0.2s;
-      cursor: pointer;
-      
-
-      &:before {
-        content:'';
-        position:absolute;
-
-        width: 13px;
-        height: 1px;
-        background: inherit;
-        transition: inherit;
-        -webkit-transition: inherit;
-        transform: rotate(50deg);
-        -ms-transform: rotate(50deg);
-        -moz-transform: rotate(50deg);
-        -webkit-transform: rotate(50deg);
-      }
-      &:after {
-        content:'';
-        position:absolute;
-        width: 13px;
-        height: 1px;
-        left: 8px;
-        background: inherit;
-        transition: inherit;
-        -webkit-transition: inherit;
-        transform: rotate(-50deg);
-        -ms-transform: rotate(-50deg);
-        -moz-transform: rotate(-50deg);
-        -webkit-transform: rotate(-50deg);
-      }
-    }
-  }
-  .collapse-box-check {
-    position: fixed;
-    left:-9999px;
-    opacity: 0;
-
-    // Animate arrow on check
-    &:checked + label.collapse-box-label span:before{
-      transform: rotate(-50deg);
-      -ms-transform: rotate(-50deg);
-      -moz-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-    }
-    &:checked + label.collapse-box-label span:after {
-      transform: rotate(50deg);
-      -ms-transform: rotate(50deg);
-      -moz-transform: rotate(50deg);
-      -webkit-transform: rotate(50deg);
-    }
-
-    // Show collapsed element on check
-    &:checked + label.collapse-box-label + .collapse-box {
-      height:auto;
-      opacity:1;
-      margin-top:0px;
-    }
-  }
-  .collapse-box {
-    padding-top:10px;
-    height:0;
-    overflow:hidden;
-    opacity:0;
-    transition: all 0.2s ease-in-out;
-    margin-top:-50px;
-    padding-right: 1px;
-    p {
-      font-size:14px;
-      line-height: 22px;
-    }
-  }
-
-}
 
 mwt-title-btn{
     bottom: 10px;

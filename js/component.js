@@ -162,12 +162,13 @@ $(".listDataTable").DataTable({
 //## Datatable Responsive 套件 - Start ##//
  $('.datatable-RWD').DataTable({
         searching: false,
-        "paging": true,
+        "paging": false,
         "ordering": false,
-        "info": true,
+        "info": false,
         "autoWidth": false,
         scroller: true,
         responsive: true,
+        "lengthChange": false,
         "language": {
             "info": "顯示 _PAGE_ 至 _PAGES_",
             "search": "搜尋 :",
@@ -180,7 +181,7 @@ $(".listDataTable").DataTable({
         dom: "<'row'<'col-xl-12'fr>>" +
             "<'row'<'col-sm-12'tlp>>",
     }
- );
+);
 //## Datatable Responsive 套件 - End ##//   
 
 //## Datatable CSS客製 RWD card - Start ##//
