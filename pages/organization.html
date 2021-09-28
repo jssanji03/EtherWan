@@ -59,35 +59,58 @@
             <section>
                 <div class="container jOrgChart py-3">
                     <button class="btn btn-primary ext shadow ">全部展開 &nbsp; <i class="fas fa-sitemap"></i></button>
-                    <div class="row topHeader">
-                        <div class="col-10 node level mx-auto">
-                            <a class="organization_text">
-                                <div class="header d-flex">
-                                    <span class="col-10 dept">董事長</span>
-                                    <span class="col-2 icon"><i
-                                            class="far fa-id-card "></i></span>
+                    <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        人員搜尋
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">人員搜尋</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-12">
-                                        <div class="pic">
-                                            <img src="../public/img/organization/user01.jpeg">
+                                <div class="modal-body">
+                                    <!-- Main content -->
+                                    <section class="content">
+                                        <div class="container-fluid">
+                                            <h3 class="text-center primary">Search</h3>
+                                            <div class="row justify-content-center">
+                                                <div class="col-6">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control form-control-sm" placeholder="請輸入名字..." >
+                                                        <button class="btn btn-search" type="button">搜尋</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-8 col-12 px-3 py-1 text-left">
-                                        <p class="position lh-15">董事長</p>
-                                        <p class="name lh-20">王小明 &nbsp; <span class="name">Jack</span></p>
-                                    </div>
+                                    </section>
+                                    <table class="display responsive nowrap datatable-RWD" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>申請單編碼</th>
+                                                <th>申請作業名稱</th>
+                                                <th>申請作業連結</th>
+                                                <th>申請者</th>
+                                                <th>申請日期</th>
+                                                <th>發布起始日</th>
+                                                <th>發布結束日</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>0001</td>
+                                                <td>行事曆</td>
+                                                <td><a href="#">申請內容</a></td>
+                                                <td>Mark</td>
+                                                <td>2021/08/25</td>
+                                                <td>2021/10/01</td>
+                                                <td>2021/10/05</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="row justify-content-between px-1">
-                                    <div class="col">
-                                        <p>分機<span>000</span></p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;</i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-5 orgArea" id='jOrgChart'></div>
@@ -108,11 +131,13 @@
     <script src="../plugins/jOrgChart/jquery.jOrgChart.js"></script>
     <!-- Bootstrap js -->
     <script src="../plugins/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
-   
+    <!-- DataTable -->
+    <script src="../plugins/DataTables-1.10.25/datatables.min.js"></script>
     
 
-    <script src="../js/organization.js"></script>
+    <script src="../js/organization2.js"></script>
     <script src="../js/sidebar.js"></script>
+    <script src="../js/component.js"></script>
 
 
 

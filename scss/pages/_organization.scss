@@ -6,12 +6,6 @@
 .orgArea{
   position: relative;
 }
-.topHeader{
-  // position: absolute;
-  // top: 0px;
-  // left: 475px;
-  // margin: 0 auto;
-}
 
 .jOrgChart .node {
   min-width: 200px;
@@ -130,13 +124,11 @@
   border-collapse: separate;
   margin: 0 auto;
 }
+// .jOrgChart td[colspan] {
+//   // display: none;
+// }
 
 .jOrgChart{
-  position: relative;
-  .ext{
-    position: absolute;
-    right:30px;
-  }
   .level{
     @include level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
     @media #{$breakpoint-md}{
@@ -148,20 +140,21 @@
   }
   .level1{
     @include level;
+    margin-top: 50px;
     @media #{$breakpoint-md}{
       @include RWD-level;
     }
     @media #{$breakpoint-xs}{
-      @include RWD-level($height:100px,$deptHeight:40px,$picWidth:100px);
+      @include RWD-level($height:100px,$deptHeight:30px,$picWidth:100px);
     }
     }
   .level2{
     @include level ($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
     @media #{$breakpoint-md}{
-      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
+      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$deptHeight:30px);
     }
     @media #{$breakpoint-xs}{
-      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$height:100px,$deptHeight:18px,$picWidth:100px);
+      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$height:100px,$deptHeight:30px,$picWidth:100px);
     }
   }
   .level3{
@@ -259,6 +252,16 @@
       bottom: 3px;
       left: 5px;
       color: $white;
+    }
+    @media #{$breakpoint-md}{
+      position: absolute;
+      bottom: -260px;
+      left: -10px;
+    }
+    @media #{$breakpoint-xs}{
+      position: absolute;
+      bottom: -240px;
+      left: -10px;
     }
   }
 }

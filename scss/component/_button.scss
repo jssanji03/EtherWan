@@ -20,7 +20,9 @@
     font-weight: 400;
     }
 }
-
+.btn-search {
+    @include button($background-color:#7C8AA1,$fontColor: $white,$hover-color:#525e70,$hover-fontColor:$white);
+}
 .btn-edit {
     @include button($background-color:$secondary,$fontColor: $white,$hover-color:$hover,$hover-fontColor:$white);
 }

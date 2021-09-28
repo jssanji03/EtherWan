@@ -361,6 +361,29 @@ table {
   }
 }
 
+.btn-search {
+  height: 35px;
+  min-width: auto;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0px 5px;
+  background-color: #7C8AA1;
+  color: #ffffff;
+}
+
+.btn-search:hover {
+  background-color: #525e70;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn-search:focus {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .btn-edit {
   height: 35px;
   min-width: auto;
@@ -1336,7 +1359,7 @@ table.dataTable tbody tr td {
 }
 
 table.dataTable tbody tr:nth-child(odd) {
-  background-color: #eaf5fc;
+  background-color: #eaf5fc !important;
 }
 
 table.dataTable tfoot tr {
@@ -1358,108 +1381,6 @@ table.dataTable .assignActive {
 
 .dataTables_wrapper {
   margin-top: 10px;
-}
-
-@media (max-width: 992px) {
-  .datatable-card {
-    border: none !important;
-    background-color: transparent !important;
-    min-width: 100%;
-    /*針對tr去做隱藏*/
-  }
-  .datatable-card thead .tr-only-hide {
-    display: none !important;
-  }
-  .datatable-card tbody {
-    background-color: transparent;
-    /*讓tr變成區塊主要讓他有個區塊*/
-  }
-  .datatable-card tbody tr {
-    width: 100%;
-    display: block;
-    font-size: 15px;
-    line-height: 15px;
-    -webkit-box-shadow: 2px 2px 5px #ccc;
-            box-shadow: 2px 2px 5px #ccc;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: none !important;
-  }
-  .datatable-card tbody tr:nth-child(odd) {
-    border-left: 10px solid #5a5a5a;
-    border-radius: 20px;
-  }
-  .datatable-card tbody tr:nth-child(even) {
-    border-left: 10px solid RGB(245, 199, 29);
-    border-radius: 20px;
-  }
-  .datatable-card tbody tr .vcheckbox:before {
-    display: none;
-  }
-  .datatable-card tbody tr td {
-    text-align: left;
-    overflow: hidden;
-    width: 100%;
-    display: block;
-    padding: 5px 0px;
-    border: none !important;
-  }
-  .datatable-card tbody tr td:before {
-    /*最重要的就是這串*/
-    content: attr(data-th) " : ";
-    /*最重要的就是這串*/
-    display: inline-block;
-    text-transform: uppercase;
-    width: 50%;
-    font-weight: 400;
-    margin-right: 10px;
-    text-align: end;
-    color: #313994;
-  }
-  .datatable-card tfoot {
-    display: none !important;
-  }
-}
-
-.TableArea .card {
-  padding: 0px;
-}
-
-.TableArea .card-header {
-  background-color: #4f1296;
-  color: #ffffff;
-}
-
-.TableArea .card-body {
-  min-height: 200px;
-}
-
-.TableArea .table-Hover td, .TableArea .table-Hover th {
-  border-top: 1px solid #9bb1db;
-}
-
-.TableArea .table-Hover tbody tr {
-  line-height: 30px;
-}
-
-.TableArea .table-Hover tbody tr:hover {
-  background-color: #fdd830 !important;
-}
-
-.TableArea .table-Hover tbody tr:nth-child(odd) {
-  background-color: #eaf5fc;
-}
-
-.TableArea .datatable-RWD {
-  text-align: left;
-}
-
-.TableArea .datatable-RWD tbody .dtr-title {
-  text-align: left;
-}
-
-.TableArea .datatable-RWD tbody tr:nth-child(odd) {
-  background-color: #eaf5fc !important;
 }
 
 .ui-widget.ui-widget-content {
@@ -1775,15 +1696,6 @@ section.page_title .active {
   margin: 0 auto;
 }
 
-.jOrgChart {
-  position: relative;
-}
-
-.jOrgChart .ext {
-  position: absolute;
-  right: 30px;
-}
-
 .jOrgChart .level {
   background-color: #f0ebf1fa;
 }
@@ -1931,6 +1843,7 @@ section.page_title .active {
 
 .jOrgChart .level1 {
   background-color: #f3f3f3;
+  margin-top: 50px;
 }
 
 .jOrgChart .level1 a {
@@ -2040,7 +1953,7 @@ section.page_title .active {
     font-size: 12px;
   }
   .jOrgChart .level1 a .header {
-    line-height: 40px;
+    line-height: 30px;
     color: #ffffff;
     background-color: #313994;
     border-radius: 4px 4px 0px 0px;
@@ -2185,7 +2098,7 @@ section.page_title .active {
     font-size: 12px;
   }
   .jOrgChart .level2 a .header {
-    line-height: 18px;
+    line-height: 30px;
     color: #ffffff;
     background-color: RGB(53, 157, 209);
     border-radius: 4px 4px 0px 0px;
@@ -2463,6 +2376,22 @@ section.page_title .active {
   bottom: 3px;
   left: 5px;
   color: #ffffff;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .jOrgChart .organization_text .more {
+    position: absolute;
+    bottom: -260px;
+    left: -10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .jOrgChart .organization_text .more {
+    position: absolute;
+    bottom: -240px;
+    left: -10px;
+  }
 }
 
 .logo {

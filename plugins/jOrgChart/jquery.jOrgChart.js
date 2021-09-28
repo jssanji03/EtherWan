@@ -137,12 +137,14 @@
                                   // console.log($nodeDiv.find('.dept'));
     // Expand and contract nodes
     if ($childNodes.length > 0) {
-      // console.log($node);
       $childNodes.find('.more').css({ 'cursor': 'n-resize', 'background-color': '#f79c00' });
-      $childNodes.find('.more').children('.fas').removeClass('fa-minus').addClass('fa-plus')
-      // $('.level3').parent().parent('.node-cells').addClass('contracted')
+      $childNodes.find('.more').children('.fas').removeClass('fa-minus').addClass('fa-plus');
+
+      $node.children("ul:first").children("li.level1").find('.more').children('.fas').removeClass('fa-plus').addClass('fa-minus');
+      $node.children("ul:first").children("li.level1").find('.more').css({ 'cursor': 'n-resize', 'background-color': '' });
+
       $childNodes.nextAll("tr").css('visibility', 'hidden');
-      $childNodes.addClass('collapsed');
+      $node.children("ul:first").children("li.level2").addClass('collapsed');
       $nodeDiv.find('.more').click(function (e) {
         var $this = $(this);
         var $tr = $this.closest("tr");
@@ -187,7 +189,6 @@
     }
     if ($lastNodes.length > 0) {
       $nodeDiv.find('.more').click(function (e) {
-        console.log(e.target);
           var $this = $(this);
           var $tr = $this.closest("tr");
           var $ul = $this.closest("ul");
@@ -219,13 +220,12 @@
       
       // if it can be expanded then change the cursor
       $nodeDiv.css('cursor','n-resize');
-    
+      
       // recurse until leaves found (-1) or to the level specified
-      if(opts.depth == -1 || (level+1 < opts.depth)) { 
+      if (opts.depth == -1 || (level + 1 < opts.depth)) {
         var $downLineRow = $("<tr/>");
         var $downLineCell = $("<td/>").attr("colspan", $childNodes.length*2);
         $downLineRow.append($downLineCell);
-        
         // draw the connecting line from the parent node to the horizontal line 
         $downLine = $("<div></div>").addClass("line down");
         $downLineCell.append($downLine);
@@ -238,14 +238,11 @@
           var $right = $("<td>&nbsp;</td>").addClass("line right top");
           $linesRow.append($left).append($right);
         });
-
-        // horizontal line shouldn't extend beyond the first and last child branches
         $linesRow.find("td:first")
                     .removeClass("top")
                  .end()
                  .find("td:last")
                     .removeClass("top");
-
         $tbody.append($linesRow);
         var $childNodesRow = $("<tr/>");
         $childNodes.each(function() {

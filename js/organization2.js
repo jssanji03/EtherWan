@@ -1,249 +1,21 @@
 
-        // var data = {
-        //     "data": [
-        //         {
-        //             "id": 0,
-        //             "level": 0,
-        //             "Dept": "董事長",
-        //             "position":"董事長",
-        //             "name": "Jack",
-        //             "ChName": "王小明",
-        //             "Num": "",
-        //             "Ext": "000",
-        //             "area": "",
-        //             "pic": "user00.jpeg",
-        //             "count": "10",
-        //             "teamDetail":"",
-        //             "childrens": [
-        //                 {
-        //                 "id": 1,
-        //                 "level": 1,
-        //                 "Dept": "總管理室",
-        //                 "position":"General Manager",
-        //                 "name": "Tony",
-        //                 "ChName": "王小明",
-        //                 "Num": "",
-        //                 "Ext": "000",
-        //                 "area": "新店9樓",
-        //                 "pic": "user00.jpeg",
-        //                 "count": "10",
-        //                 "teamDetail":"我是總管理室",
-        //                 "childrens": [
-        //                     {
-        //                         "id": 2,
-        //                         "level": 2,
-        //                         "Dept": "Dept.",
-        //                         "position":"Director",
-        //                         "name": "Charlie",
-        //                         "ChName": "王小明",
-        //                         "Num": "",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "Num": "1091201",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "20",
-        //                         "teamDetail":"我是 BA dept.",
-        //                         "childrens": [
-        //                         {
-        //                             "id": 5,
-        //                             "level": 3,
-        //                             "Dept": ".Net",
-        //                             "position":"Manager",
-        //                             "name": "Kerry",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是 .Net",
-        //                             "childrens": [
-        //                                 {
-        //                                     "id": 10,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "Person1",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": [
-                                                
-        //                                         ]
-        //                                 },
-        //                                 {
-        //                                     "id": 11,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person2",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 },
-        //                                 {
-        //                                     "id": 12,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person3",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                         },
-        //                         {
-        //                             "id": 6,
-        //                             "level": 3,
-        //                             "Dept":"Dept.",
-        //                             "position":"Manager",
-        //                             "name": "Gary",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是 ",
-        //                             "childrens": [
-        //                                 {
-        //                                     "id": 13,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person4",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 },
-        //                             ]
-        //                             },
-        //                         ]
-        //                     },
-        //                     {
-        //                         "id": 3,
-        //                         "level": 2,
-        //                         "Dept":"Dept.",
-        //                         "position":"Manager",
-        //                         "name": "SAP",
-        //                         "ChName": "王小明",
-        //                         "Num": "1092021",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "",
-        //                         "teamDetail":"我是 ",
-        //                         "childrens": [
-        //                             {
-        //                                 "id": 7,
-        //                                 "level": 3,
-        //                                 "Dept":"Dept.",
-        //                                 "name": "OOO",
-        //                                 "position":"Manager",
-        //                                 "name": "OOO",
-        //                                 "ChName": "王小明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店9樓",
-        //                                 "pic": "user02.jpeg",
-        //                                 "count": "10",
-        //                                 "teamDetail":"我是 ",
-        //                                 "childrens": [{
-        //                                     "id": 14,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person5",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                             },
-        //                             {
-        //                                 "id": 8,
-        //                                 "level": 3,
-        //                                 "Dept":"Dept.",
-        //                                 "position":"Manager",
-        //                                 "name": "OOO",
-        //                                 "ChName": "王小明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店9樓",
-        //                                 "pic": "user02.jpeg",
-        //                                 "count": "10",
-        //                                 "teamDetail":"我是 ",
-        //                                 "childrens": [{
-        //                                     "id": 15,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person6",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                             }
-        //                         ]
-        //                     },
-        //                     {
-        //                         "id": 4,
-        //                         "level": 2,
-        //                         "Dept":"Dept.",
-        //                         "position":"Director",
-        //                         "name": "Collin",
-        //                         "ChName": "王小明",
-        //                         "Num": "1092021",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "20",
-        //                         "teamDetail":"我是業務部 ",
-        //                         "childrens": [{
-        //                             "id": 9,
-        //                             "level": 3,
-        //                             "Dept":"業務部",
-        //                             "position":"Manager",
-        //                             "name": "OOO",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是業務部A",
-        //                             "childrens": [{
-        //                                 "id": 16,
-        //                                 "level": 5,
-        //                                 "pic": "user03.jpeg",
-        //                                 "position":"Development Engineer",
-        //                                 "name": "person7",
-        //                                 "ChName": "張大明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店10樓",
-        //                                 "childrens": []
-        //                             }]
-        //                         }]
-        //                     }
-        //                 ]
-        //                 }
-        //             ]
-        //     }]
-        // }
         var data = {
             "data": [
                 {
+                    "id": 0,
+                    "level":0,
+                    "Dept": "董事長",
+                    "position":"董事長",
+                    "name": "Jack",
+                    "ChName": "王小明",
+                    "Num": "",
+                    "Ext": "000",
+                    "area": "",
+                    "pic": "user00.jpeg",
+                    "count": "10",
+                    "teamDetail":"",
+                    "childrens": [
+                        {
                         "id": 1,
                         "level": 1,
                         "Dept": "總管理室",
@@ -259,6 +31,7 @@
                         "childrens": [
                             {
                                 "id": 2,
+                                'collapsed': true, // 默認初始化時，當前節點處于折疊狀態，其子節點不顯示
                                 "level": 2,
                                 "Dept": "Dept.",
                                 "position":"Director",
@@ -272,7 +45,7 @@
                                 "count": "20",
                                 "teamDetail":"我是 BA dept.",
                                 "childrens": [
-                                    {
+                                {
                                     "id": 5,
                                     "level": 3,
                                     "Dept": ".Net",
@@ -466,14 +239,241 @@
                             }
                         ]
                         }
-            ]
+                    ]
+            }]
         }
+        // var data = {
+        //     "data": [
+                
+        //         {
+        //                 "id": 1,
+        //                 "level": 1,
+        //                 "Dept": "總管理室",
+        //                 "position":"General Manager",
+        //                 "name": "Tony",
+        //                 "ChName": "王小明",
+        //                 "Num": "",
+        //                 "Ext": "000",
+        //                 "area": "新店9樓",
+        //                 "pic": "user00.jpeg",
+        //                 "count": "10",
+        //                 "teamDetail":"我是總管理室",
+        //                 "childrens": [
+        //                     {
+        //                         "id": 2,
+        //                         "level": 2,
+        //                         "Dept": "Dept.",
+        //                         "position":"Director",
+        //                         "name": "Charlie",
+        //                         "ChName": "王小明",
+        //                         "Num": "",
+        //                         "Ext": "000",
+        //                         "area": "新店9樓",
+        //                         "Num": "1091201",
+        //                         "pic": "user01.jpeg",
+        //                         "count": "20",
+        //                         "teamDetail":"我是 BA dept.",
+        //                         "childrens": [
+        //                             {
+        //                             "id": 5,
+        //                             "level": 3,
+        //                             "Dept": ".Net",
+        //                             "position":"Manager",
+        //                             "name": "Kerry",
+        //                             "ChName": "王小明",
+        //                             "Num": "1092021",
+        //                             "Ext": "000",
+        //                             "area": "新店9樓",
+        //                             "pic": "user02.jpeg",
+        //                             "count": "10",
+        //                             "teamDetail":"我是 .Net",
+        //                             "childrens": [
+        //                                 {
+        //                                     "id": 10,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "Person1",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": [
+                                                
+        //                                         ]
+        //                                 },
+        //                                 {
+        //                                     "id": 11,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "person2",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": []
+        //                                 },
+        //                                 {
+        //                                     "id": 12,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "person3",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": []
+        //                                 }]
+        //                         },
+        //                         {
+        //                             "id": 6,
+        //                             "level": 3,
+        //                             "Dept":"Dept.",
+        //                             "position":"Manager",
+        //                             "name": "Gary",
+        //                             "ChName": "王小明",
+        //                             "Num": "1092021",
+        //                             "Ext": "000",
+        //                             "area": "新店9樓",
+        //                             "pic": "user02.jpeg",
+        //                             "count": "10",
+        //                             "teamDetail":"我是 ",
+        //                             "childrens": [
+        //                                 {
+        //                                     "id": 13,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "person4",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": []
+        //                                 },
+        //                             ]
+        //                             },
+        //                         ]
+        //                     },
+        //                     {
+        //                         "id": 3,
+        //                         "level": 2,
+        //                         "Dept":"Dept.",
+        //                         "position":"Manager",
+        //                         "name": "SAP",
+        //                         "ChName": "王小明",
+        //                         "Num": "1092021",
+        //                         "Ext": "000",
+        //                         "area": "新店9樓",
+        //                         "pic": "user01.jpeg",
+        //                         "count": "",
+        //                         "teamDetail":"我是 ",
+        //                         "childrens": [
+        //                             {
+        //                                 "id": 7,
+        //                                 "level": 3,
+        //                                 "Dept":"Dept.",
+        //                                 "name": "OOO",
+        //                                 "position":"Manager",
+        //                                 "name": "OOO",
+        //                                 "ChName": "王小明",
+        //                                 "Num": "1092021",
+        //                                 "Ext": "000",
+        //                                 "area": "新店9樓",
+        //                                 "pic": "user02.jpeg",
+        //                                 "count": "10",
+        //                                 "teamDetail":"我是 ",
+        //                                 "childrens": [{
+        //                                     "id": 14,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "person5",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": []
+        //                                 }]
+        //                             },
+        //                             {
+        //                                 "id": 8,
+        //                                 "level": 3,
+        //                                 "Dept":"Dept.",
+        //                                 "position":"Manager",
+        //                                 "name": "OOO",
+        //                                 "ChName": "王小明",
+        //                                 "Num": "1092021",
+        //                                 "Ext": "000",
+        //                                 "area": "新店9樓",
+        //                                 "pic": "user02.jpeg",
+        //                                 "count": "10",
+        //                                 "teamDetail":"我是 ",
+        //                                 "childrens": [{
+        //                                     "id": 15,
+        //                                     "level": 5,
+        //                                     "pic": "user03.jpeg",
+        //                                     "position":"Development Engineer",
+        //                                     "name": "person6",
+        //                                     "ChName": "張大明",
+        //                                     "Num": "1092021",
+        //                                     "Ext": "000",
+        //                                     "area": "新店10樓",
+        //                                     "childrens": []
+        //                                 }]
+        //                             }
+        //                         ]
+        //                     },
+        //                     {
+        //                         "id": 4,
+        //                         "level": 2,
+        //                         "Dept":"Dept.",
+        //                         "position":"Director",
+        //                         "name": "Collin",
+        //                         "ChName": "王小明",
+        //                         "Num": "1092021",
+        //                         "Ext": "000",
+        //                         "area": "新店9樓",
+        //                         "pic": "user01.jpeg",
+        //                         "count": "20",
+        //                         "teamDetail":"我是業務部 ",
+        //                         "childrens": [{
+        //                             "id": 9,
+        //                             "level": 3,
+        //                             "Dept":"業務部",
+        //                             "position":"Manager",
+        //                             "name": "OOO",
+        //                             "ChName": "王小明",
+        //                             "Num": "1092021",
+        //                             "Ext": "000",
+        //                             "area": "新店9樓",
+        //                             "pic": "user02.jpeg",
+        //                             "count": "10",
+        //                             "teamDetail":"我是業務部A",
+        //                             "childrens": [{
+        //                                 "id": 16,
+        //                                 "level": 5,
+        //                                 "pic": "user03.jpeg",
+        //                                 "position":"Development Engineer",
+        //                                 "name": "person7",
+        //                                 "ChName": "張大明",
+        //                                 "Num": "1092021",
+        //                                 "Ext": "000",
+        //                                 "area": "新店10樓",
+        //                                 "childrens": []
+        //                             }]
+        //                         }]
+        //                     }
+        //                 ]
+        //                 }
+        //     ]
+        // }
         function showall(menu_list, parent) {
             $.each(menu_list, function (index, val) {
-                console.log(menu_list);
                 if (val.id == 0) {
-                    console.log("hi");
-                    var li = $("<li></li>").addClass("level"+val.level);
+                    var li = $("<li></li>").addClass("level");
                     li.append(
                     `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
                         <div class="header d-flex">
@@ -610,7 +610,8 @@
         $("#jOrgChart").append(showlist);
         $("#org").jOrgChart({
             chartElement: '#jOrgChart', //指定在某个dom生成jorgchart
-            dragAndDrop: false //设置是否可拖动
+            dragAndDrop: false, //设置是否可拖动
+            expandToLevel: 3,
         });
 
         function getOrgId(val) {

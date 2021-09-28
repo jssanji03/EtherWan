@@ -43,7 +43,7 @@ table.dataTable{
               text-align: center;
           }
           &:nth-child(odd){
-              background-color: rgb(234, 245, 252);
+              background-color: rgb(234, 245, 252) !important;
           }
         }
     }
@@ -76,111 +76,4 @@ table.dataTable{
 // DataTable 基本樣式 End //
 
 
-// DataTable Card樣式 Start //
-.datatable-card{
-    @media (max-width: 992px) {
-  border:none !important;
-  background-color: transparent !important;
-  min-width: 100%;
-  /*針對tr去做隱藏*/
-  thead{
-      .tr-only-hide {
-      display: none !important;
-      }
-      
-  }
-  tbody{
-    background-color: transparent;
-    /*讓tr變成區塊主要讓他有個區塊*/
-      tr{
-        width: 100%;
-        display: block;
-        font-size: 15px;
-        line-height: 15px;
-        box-shadow: 2px 2px 5px #ccc;
-        margin-top: 20px;
-        border-radius: 10px;
-        border: none !important;
-        &:nth-child(odd){
-          border-left: 10px solid $text;
-          border-radius: 20px;
-        }
-        &:nth-child(even){
-          border-left: 10px solid $yellow;
-          border-radius: 20px;
-        }
-        .vcheckbox{
-          &:before{display: none;}
-        }
-        td {
-          text-align: left;
-          overflow: hidden;
-          width: 100%;
-          display: block;
-          padding: 5px 0px ;
-          border: none !important;
-        &:before {
-        /*最重要的就是這串*/
-        content: attr(data-th) " : ";
-        /*最重要的就是這串*/
-        display: inline-block;
-        text-transform: uppercase;
-        width: 50%;
-        font-weight: 400;
-        margin-right: 10px;
-        text-align:end;
-        color: $primary;
-        }
-  	  }
-    }
-  }
-  tfoot{
-    display: none !important;
-  }
-  }
-}
-// DataTable Card樣式 End //
-
-
-// #TableArea
-.TableArea{
-  .card{
-    padding: 0px;
-  }
-    .card-header{
-        background-color: rgb(79, 18, 150);
-        color: $white;
-    }
-    .card-body{
-      min-height: 200px;
-    }
-    
-    .table-Hover{
-        td,th{
-            border-top: 1px solid rgb(155, 177, 219);
-        }
-        tbody tr{
-            line-height: 30px;
-            &:hover{
-                background-color: rgb(253, 216, 48) !important; 
-            }
-            &:nth-child(odd){
-                background-color: rgb(234, 245, 252);
-            }
-        }
-    }
-    .datatable-RWD{
-        text-align: left;
-        tbody{
-            .dtr-title{
-                text-align: left;
-            }
-            tr{
-              &:nth-child(odd){
-                background-color: rgb(234, 245, 252) !important;
-              }
-            }
-        }
-    }
-}
 
