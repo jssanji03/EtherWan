@@ -25,8 +25,8 @@
 
         <!-- Sidebar -->
         <div class="d-block" id="sidebar-wrapper">
-            <div class=" mt-3">
-                <a class="mx-auto side_logo" href="../index.html"><img class="img-fluid" src="../public/img/logo.png"></img></a>
+            <div class=" mt-3 side_logo">
+                <a class="mx-auto" href="../index.html"><img class="img-fluid" src="../public/img/logo.png"></img></a>
             </div>
             <ul class="navbar-nav mt-4">
                 <li class="nav-item"><a href="phoenix.html" class="nav-link">菲尼克斯集團介紹</a></li>
@@ -52,8 +52,8 @@
         <!-- /#sidebar-wrapper -->
         <div id="page-content-wrapper">
             <!-- Navbar Start -->
-            <nav class="navbar d-lg-none d-block navbar-expand-lg border-bottom" id="topNav">
-                <button class="navbar-toggler d-lg-none d-block" id="menu-laptop-toggle"><i class="fas fa-bars"></i></button>
+            <nav class="navbar d-xl-none d-block navbar-expand-lg border-bottom" id="topNav">
+                <button class="navbar-toggler d-xl-none d-block" id="menu-laptop-toggle"><i class="fas fa-bars pe-4"></i></button>
             </nav>
             <!-- Navbar End -->
             <section>
@@ -62,62 +62,62 @@
                     <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         人員搜尋
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">人員搜尋</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Main content -->
-                                    <section class="content">
-                                        <div class="container-fluid">
-                                            <h3 class="text-center primary">Search</h3>
-                                            <div class="row justify-content-center">
-                                                <div class="col-6">
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" class="form-control form-control-sm" placeholder="請輸入名字..." >
-                                                        <button class="btn btn-search" type="button">搜尋</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <table class="display responsive nowrap datatable-RWD" style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>申請單編碼</th>
-                                                <th>申請作業名稱</th>
-                                                <th>申請作業連結</th>
-                                                <th>申請者</th>
-                                                <th>申請日期</th>
-                                                <th>發布起始日</th>
-                                                <th>發布結束日</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>0001</td>
-                                                <td>行事曆</td>
-                                                <td><a href="#">申請內容</a></td>
-                                                <td>Mark</td>
-                                                <td>2021/08/25</td>
-                                                <td>2021/10/01</td>
-                                                <td>2021/10/05</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row mt-5 orgArea" id='jOrgChart'></div>
                 </div>
             </section>
         </div>
         <div id='modalArea'></div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">人員搜尋</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Main content -->
+                        <section class="content">
+                            <div class="container-fluid">
+                                <h3 class="text-center primary">Search</h3>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control form-control-sm" placeholder="請輸入名字...">
+                                            <button class="btn btn-search" type="button">搜尋</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <table class="display responsive nowrap datatable-RWD" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>申請單編碼</th>
+                                    <th>申請作業名稱</th>
+                                    <th>申請作業連結</th>
+                                    <th>申請者</th>
+                                    <th>申請日期</th>
+                                    <th>發布起始日</th>
+                                    <th>發布結束日</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0001</td>
+                                    <td>行事曆</td>
+                                    <td><a href="#">申請內容</a></td>
+                                    <td>Mark</td>
+                                    <td>2021/08/25</td>
+                                    <td>2021/10/01</td>
+                                    <td>2021/10/05</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- /#page-content-wrapper -->
     </div>
     <!-- ##### Header Area End ##### -->
@@ -135,7 +135,7 @@
     <script src="../plugins/DataTables-1.10.25/datatables.min.js"></script>
     
 
-    <script src="../js/organization2.js"></script>
+    <script src="../js/organization.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/component.js"></script>
 

@@ -8,8 +8,8 @@
 }
 
 .jOrgChart .node {
-  min-width: 200px;
-  height: 130px;
+  min-width: 230px;
+  height: 150px;
   line-height: 40px;
   border-radius: 4px;
   margin: 0 8px;
@@ -17,11 +17,11 @@
   box-shadow: 1px 1px 3px #ccc;
   @media #{$breakpoint-md}{
     width: 150px;
-    height: 250px;
+    height: 280px;
   }
   @media #{$breakpoint-xs}{
     width: 100px;
-    height: 230px;
+    height: 250px;
   }
 }
 @mixin level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0) {
@@ -70,14 +70,14 @@
           position: relative;
           i.fa-user{
             position: absolute;
-            top: 3px;
+            top: -6px;
             right: 5px;
           }
           
         }
       }
 }
-@mixin RWD-level ($background-color:#bddbf3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:120px,$deptHeight:30px,$picWidth:120px){
+@mixin RWD-level ($background-color:#f3f3f3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:120px,$deptHeight:30px,$picWidth:120px){
   background-color: $background-color;
     a{
       font-size: 12px;
@@ -245,7 +245,7 @@
     box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
     border-radius: 50%;
     position: absolute;
-    bottom: -140px;
+    bottom: -160px;
     left: -10px;
     i.fas{
       position: absolute;
@@ -255,12 +255,12 @@
     }
     @media #{$breakpoint-md}{
       position: absolute;
-      bottom: -260px;
+      bottom: -290px;
       left: -10px;
     }
     @media #{$breakpoint-xs}{
       position: absolute;
-      bottom: -240px;
+      bottom: -260px;
       left: -10px;
     }
   }

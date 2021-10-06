@@ -1,14 +1,14 @@
 // Primary Color
-$primary: #313994;
+$primary: #6DAFFE;
 .primary{
     color: $primary;
 }
 .bg_primary{
     background-color: $primary;
 }
+
 // Secondary Color
-// $secondary: #708ba5;
-$secondary:  RGB(53 ,157 ,209);
+$secondary:  #437FC7;
 .secondary{
     color: $secondary;
 }
@@ -25,34 +25,47 @@ $third: #708ba5;
     background-color: $third;
 }
 
+$subtitle:#A7A7A7;
+.subtitle{
+    color:$subtitle
+}
+
 // important Color
-// $important: #708ba5;
-$important: #5bbbeb;
+$important: #B9732F;
 .important{
     color: $important;
 }
 .bg_important{
     background-color: $important;
 }
+
 // Text Color
-$text: #5a5a5a;
+$text: #505c62;
 .text{
     color: $text;
 }
 
+$gray:#A7A7A7;
+.gray{
+    color:$gray;
+}
+
 // Body Background
-$bg-body: #ecf5ff;
+$bg-body: #edf6ff;
 .bg{
     background-color: $bg-body;
 }
+.lightBlue{
+    color: $bg-body;
+}
 .bg-blue30{
-    background-color: #ebf8ff;
+    background-color: #edf6ff;
 }
 .bg-blue40{
-    background-color: #c7deeb;
+    background-color: #6DAFFE;
 }
 .bg-blue50{
-    background-color: #a5c7db;
+    background-color: #437FC7;
 }
 // White Color
 $white: #ffffff;

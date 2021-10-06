@@ -61,7 +61,7 @@ header {
   &:hover{
     &::before{
     opacity: 1;
-    background-color: $important;
+    background-color: $primary;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
@@ -80,17 +80,17 @@ header {
 .marqueeBox{
     .marquee-wrapper {
       ul{
-        min-height:55px;
+        min-height:60px;
         height:auto;
         position: relative;
         @media #{$breakpoint-lg}{
           height: 80px;
         }
         @media #{$breakpoint-md}{
-          height: 95px;
+          height: 110px;
         }
         @media #{$breakpoint-sm}{
-          height: 120px;
+          height: 110px;
         }
         @media #{$breakpoint-xs}{
           height: 210px;
@@ -107,6 +107,7 @@ header {
             line-height: 20px;
             animation-name: marquee;
             animation-iteration-count:infinite;
+            animation-timing-function:linear;
             @media #{$breakpoint-lg,$breakpoint-md,$breakpoint-sm,$breakpoint-xs}{
               padding: 0px 10px;
             }
@@ -116,23 +117,35 @@ header {
 }
 
 
+// @keyframes marquee {
+//   0% { 
+//     left: 0%;
+//     opacity: 1; 
+//   }
+//   10% { 
+//     left: 0%;
+//   }
+//   30% { 
+//     left: -100%;
+//   }
+//   100% { left: -200%; }
+// }
 @keyframes marquee {
   0% { 
-    left: 0%;
+    bottom: 2%;
     opacity: 1; 
   }
   10% { 
-    left: 0%;
+    bottom: 70%;
   }
   30% { 
-    left: -100%;
+    top: -300%;
+    // opacity: 0;
   }
-  100% { left: -200%; }
+  100% { top: -500%;
+   }
 }
 
-.marquee {
-  animation-name: marquee;
-}
 
 
 
@@ -160,9 +173,7 @@ header {
 // }
 
 
-.ui-datepicker-week-end a {
-    color: rgb(170, 12, 12) !important;
-}
+
 
 
 mwt-title-btn{

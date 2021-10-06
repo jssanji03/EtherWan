@@ -126,11 +126,11 @@
             margin: 0 auto;
             text-align: center;
         }
-        // .ui-datepicker-week-end {
-        //     a{
-        //         color: rgb(248, 17, 144) ;
-        //     }
-        // }
+        .ui-datepicker-week-end {
+            a{
+                color: $important ;
+            }
+        }
     }
 }
 

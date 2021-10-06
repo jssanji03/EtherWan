@@ -114,7 +114,7 @@
 //Top Nav
 #page-content-wrapper {
   margin-left: 16vw;
-  margin-top: 20px;
+  margin-top: 50px;
   width: 84vw;
   // padding: 20px;
    @media #{$breakpoint-xs},#{$breakpoint-md},#{$breakpoint-lg}{
@@ -206,17 +206,14 @@
      width: 50vw;
      margin-left: 0vw;
   .side_logo {
-      margin-top: 2px;
-      width: 300px;
-     height: 70px;
-     margin: 0 auto;
+      width: 100%;
     }
     .navbar-nav{
       li{
         position: relative;
         width: 100%;
         margin-left: 0px;
-        line-height: 50px;
+        // line-height: 50px;
         .fa-icon{
           position: absolute;
           left: 15px;
@@ -229,7 +226,7 @@
           top: 20px;
         }
         a{
-          color: $primary;
+          color: $text;
           font-size: 15px;
           width: 100%;
           padding: 5px;
@@ -237,11 +234,8 @@
           display: inline-block;
           padding-left: 40px;
         }
-        // &:hover{
-        // background-color: rgba(204, 204, 204, 0.315);
-        //  }
         i{
-          color: $primary;
+          // color: $primary;
           position: absolute;
           right: 15px;
           top: 10px;
@@ -260,9 +254,7 @@
               color: $text;
               line-height: 35px;
               margin-left: 0px;
-              // margin-right: 20px;
               &:hover{
-                // background-color: #d3d3d3;  
                 color: $white;
              }
             }
@@ -284,77 +276,77 @@
   from  {margin-left: 40px;}
   to  {margin-left: 10px;}
 }
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0vw;
-  width: 0vw;
-  @media #{$breakpoint-xs},#{$breakpoint-md}{
-        width: 15vw;
-        height: 100%;
-        overflow: scroll;
-        margin-left: -15vw;
-  } 
-  .side_logo{
-    margin-top: 0px;
-    margin-left: 3px;
-    width: 100%;
-    background-size: cover;
-    background: url("../public/img/logo.png") center top no-repeat;
-    img{
-      display: none;
-    }
-  }
+// #wrapper.toggled #sidebar-wrapper {
+//   margin-left: 0vw;
+//   width: 0vw;
+//   @media #{$breakpoint-xs},#{$breakpoint-md},#{$breakpoint-lg}{
+//         width: 15vw;
+//         height: 100%;
+//         overflow: scroll;
+//         margin-left: -15vw;
+//   } 
+//   .side_logo{
+//     margin-top: 0px;
+//     margin-left: 3px;
+//     width: 50%;
+//     background-size: cover;
+//     background: url("../public/img/logo.png") center top no-repeat;
+//     img{
+//       display: none;
+//     }
+//   }
   
-  li{
-      height: 50px;
-      // line-height: 50px;
-      &:hover{
-          background-color: rgba(34, 34, 34, 0.8);
-        }
-        a{
-          margin-left: 0px;
-          animation-name: fadeIn;
-          animation-duration: 1s;
-          animation-delay: 1s;
-          animation-fill-mode: both;
-          visibility: hidden;
-          width: 0;
-        }
-      .fa-icon{
-        animation-name: fadeIn2;
-        animation-duration: 0s;
-        animation-delay: -1s;
-        visibility: visible;
-        margin-left: 0px;
-        top: 20px;
-        @media #{$breakpoint-xs},#{$breakpoint-md}{
-        margin-left: 20px;
-        top: 20px;
-        }
-      }
-      .fa-angle-down{
-        display: none;
-      }
-  }
-}
-#wrapper.toggled #page-content-wrapper {
-  margin-left: 0vw;
-  width: 100vw;
-  @media #{$breakpoint-xs},#{$breakpoint-md}{
-    width: 100vw;
-    margin-left: 0vw;
-  } 
-  .navbar{
-  margin-left: 0vw;
-  width: 100vw;
-  .logo{
-    display: none;
-  }
-  @media #{$breakpoint-xs},#{$breakpoint-md}{
-      width: 100vw;
-      margin-left: 0vw;
-     }
-  }
-}
+//   li{
+//       // height: 50px;
+//       // line-height: 50px;
+//       &:hover{
+//           background-color: rgba(34, 34, 34, 0.8);
+//         }
+//         a{
+//           margin-left: 0px;
+//           animation-name: fadeIn;
+//           animation-duration: 1s;
+//           animation-delay: 1s;
+//           animation-fill-mode: both;
+//           visibility: hidden;
+//           width: 0;
+//         }
+//       .fa-icon{
+//         animation-name: fadeIn2;
+//         animation-duration: 0s;
+//         animation-delay: -1s;
+//         visibility: visible;
+//         margin-left: 0px;
+//         top: 20px;
+//         @media #{$breakpoint-xs},#{$breakpoint-md}{
+//         margin-left: 20px;
+//         top: 20px;
+//         }
+//       }
+//       .fa-angle-down{
+//         display: none;
+//       }
+//   }
+// }
+// #wrapper.toggled #page-content-wrapper {
+//   margin-left: 0vw;
+//   width: 100vw;
+//   @media #{$breakpoint-xs},#{$breakpoint-md}{
+//     width: 100vw;
+//     margin-left: 0vw;
+//   } 
+//   .navbar{
+//   margin-left: 0vw;
+//   width: 100vw;
+//   .logo{
+//     display: none;
+//   }
+//   @media #{$breakpoint-xs},#{$breakpoint-md}{
+//       width: 100vw;
+//       margin-left: 0vw;
+//      }
+//   }
+// }
 
 .changColor{
   background-color: $secondary;

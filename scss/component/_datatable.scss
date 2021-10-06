@@ -12,7 +12,7 @@ table.dataTable{
     thead{
       width: 100%;
       tr{
-        color: $primary;
+        color: $secondary;
         font-size: 16px;
         th{
           border-bottom: 2px solid rgb(56, 56, 56);
@@ -69,10 +69,6 @@ table.dataTable{
 .dataTables_wrapper{
   margin-top: 10px;
 }
-  // .dataTables_length,.dataTables_paginate{
-  //   margin-top: 10px;
-  //   padding: 0px;
-  // }
 // DataTable 基本樣式 End //
 
 
