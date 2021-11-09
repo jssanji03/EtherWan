@@ -899,6 +899,7 @@ button {
   margin-left: 16vw;
   margin-top: 50px;
   width: 84vw;
+  height: 100vh;
 }
 
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
