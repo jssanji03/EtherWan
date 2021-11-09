@@ -10,9 +10,8 @@
 @import url("../plugins/DataTables-1.10.25/Responsive-2.2.9/css/responsive.bootstrap.min.css");
 @import url("../plugins/daterangepicker-3.0.5/daterangepicker.css");
 @import url("../plugins/jquery/jquery-ui.min.css");
-@import url("../plugins/jOrgChart/jquery.jOrgChart.css");
-@import url("../plugins/chart.js/Chart.min.css");
 @import url("../plugins/Magicsuggest/css/magicsuggest.css");
+@import url("../plugins/OrgChart-master/src/css/jquery.orgchart.css");
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
@@ -121,18 +120,6 @@ table {
   color: #edf6ff;
 }
 
-.bg-blue30 {
-  background-color: #edf6ff;
-}
-
-.bg-blue40 {
-  background-color: #6DAFFE;
-}
-
-.bg-blue50 {
-  background-color: #437FC7;
-}
-
 .white {
   color: #ffffff;
 }
@@ -155,6 +142,10 @@ table {
 
 .purple {
   color: #88157b;
+}
+
+.bg_purple {
+  background-color: #88157b;
 }
 
 .pink {
@@ -388,6 +379,7 @@ table {
 
 .btn-search {
   height: 35px;
+  line-height: 30px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -411,6 +403,7 @@ table {
 
 .btn-edit {
   height: 35px;
+  line-height: 30px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -434,6 +427,7 @@ table {
 
 .btn-delete {
   height: 35px;
+  line-height: 30px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -457,6 +451,7 @@ table {
 
 .btn-padding {
   height: 35px;
+  line-height: 30px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -480,6 +475,7 @@ table {
 
 .btn-cal {
   height: 35px;
+  line-height: 30px;
   min-width: auto;
   font-size: 16px;
   font-weight: 400;
@@ -513,6 +509,8 @@ table {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .btn-more:hover {
@@ -521,8 +519,8 @@ table {
   color: #B9732F;
   -webkit-box-shadow: 0px 3px 8px 0px rgba(197, 197, 197, 0.5);
           box-shadow: 0px 3px 8px 0px rgba(197, 197, 197, 0.5);
-  -webkit-transform: translateY(-6px);
-          transform: translateY(-6px);
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .btn-more2 {
@@ -561,31 +559,9 @@ table {
   overflow: hidden;
 }
 
-.btn-menu::before {
-  content: '';
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  -webkit-box-shadow: inset 0px 0px 0px #6DAFFE;
-          box-shadow: inset 0px 0px 0px #6DAFFE;
-  display: inline-block;
-  -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-
 .btn-menu:hover {
   color: #ffffff;
-}
-
-.btn-menu:hover::before {
-  -webkit-box-shadow: inset 300px 0px 0px #6DAFFE;
-          box-shadow: inset 300px 0px 0px #6DAFFE;
-  color: #ffffff;
+  background-color: #6DAFFE;
 }
 
 .btn-link {
@@ -1209,6 +1185,12 @@ button {
   padding: 20px;
 }
 
+.card:hover {
+  border: 0px;
+  -webkit-box-shadow: 1px 1px 20px 7px rgba(197, 197, 197, 0.336);
+          box-shadow: 1px 1px 20px 7px rgba(197, 197, 197, 0.336);
+}
+
 .card-noShadow {
   border-radius: 10px;
   padding: 20px;
@@ -1218,6 +1200,7 @@ button {
   border-radius: 5px;
   padding: 5px;
   height: 100%;
+  background-color: #fff;
 }
 
 .card-radius .footer {
@@ -1235,10 +1218,8 @@ button {
 .card-border {
   border-radius: 2px;
   padding: 5px;
-  height: 100%;
+  height: inherit;
   border: 1px solid #cecece;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .card-border:hover {
@@ -1259,27 +1240,64 @@ button {
           align-items: flex-end;
 }
 
+/* effect #2 */
 .information_card {
   width: 100%;
   height: 100%;
   text-align: center;
   padding: 33px 0px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  position: relative;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 
-.information_card:hover {
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(138, 150, 170, 0.8);
-          box-shadow: 0px 0px 5px 1px rgba(138, 150, 170, 0.8);
-  background-color: #B9732F;
+.information_card:before {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  content: '';
+  z-index: -1;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  background-color: #1797ff77;
+}
+
+.information_card:before h3 {
+  border-bottom: 0px solid #fff;
+  display: inline-block;
+}
+
+.information_card:after {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 50%;
+  content: '';
+  background-color: #1797ff77;
+  z-index: -1;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
 }
 
 .information_card:hover h3 {
-  color: #ffffff;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
 }
 
 .information_card:hover p {
-  color: #edf6ff;
+  color: #fff;
+}
+
+.information_card:hover:before {
+  width: 50%;
+}
+
+.information_card:hover:after {
+  width: 50%;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1300,6 +1318,54 @@ button {
   .information_card h3 {
     font-size: 20px;
   }
+}
+
+.bg-blue30 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 33px 0px;
+  position: relative;
+  background-color: #edf6ff;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+.bg-blue30 h3 {
+  color: #505c62;
+}
+
+.bg-blue40 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 33px 0px;
+  position: relative;
+  background-color: #6DAFFE;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+.bg-blue40 h3 {
+  color: #ffffff;
+}
+
+.bg-blue50 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 33px 0px;
+  position: relative;
+  background-color: #437FC7;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+.bg-blue50 h3 {
+  color: #ffffff;
 }
 
 .circle-sm {
@@ -1489,7 +1555,7 @@ table.dataTable .assignActive {
   margin-top: 0px;
 }
 
-.ui-datepicker-month {
+.ui-datepicker-month, .ui-datepicker-year {
   border-radius: 5px;
   margin: 5px;
   padding: 2px;
@@ -1565,8 +1631,14 @@ table.dataTable .assignActive {
   text-align: center;
 }
 
-.event li {
+.calendar .eventList {
   list-style: disc;
+  width: 50%;
+  padding: 5px;
+}
+
+.calendar .eventList p {
+  margin: 0px;
 }
 
 body {
@@ -1671,732 +1743,524 @@ section.page_title .active {
   position: relative;
 }
 
-.jOrgChart .node {
-  min-width: 230px;
-  height: 150px;
-  line-height: 40px;
-  border-radius: 4px;
-  margin: 0 8px;
-  padding: 0px;
-  -webkit-box-shadow: 1px 1px 3px #ccc;
-          box-shadow: 1px 1px 3px #ccc;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .node {
-    width: 150px;
-    height: 280px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .node {
-    width: 100px;
-    height: 250px;
-  }
-}
-
-.organization_table {
-  border-collapse: separate;
-  margin: 0 auto;
-}
-
-.jOrgChart .level {
-  background-color: #f0ebf1fa;
-}
-
-.jOrgChart .level a {
-  font-size: 12px;
-}
-
-.jOrgChart .level a .header {
-  line-height: 25px;
-  color: #ffffff;
-  background-color: #6d18a5;
-  border-radius: 4px 4px 0px 0px;
+#chart-container {
+  font-family: Arial;
+  border-radius: 5px;
   text-align: center;
-  position: relative;
 }
 
-.jOrgChart .level a .header .icon i.fa-id-card {
-  position: absolute;
-  right: 5px;
-  top: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.jOrgChart .level a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.jOrgChart .level a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level a .name {
-  font-weight: 600;
-  text-align: left;
-}
-
-.jOrgChart .level a .count {
-  color: #6DAFFE;
-  position: relative;
-}
-
-.jOrgChart .level a .count i.fa-user {
-  position: absolute;
-  top: -6px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level {
-    background-color: #f0ebf1fa;
-  }
-  .jOrgChart .level a {
-    font-size: 12px;
-  }
-  .jOrgChart .level a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6d18a5;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level a .count {
-    color: #6DAFFE;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level {
-    background-color: #f0ebf1fa;
-  }
-  .jOrgChart .level a {
-    font-size: 12px;
-  }
-  .jOrgChart .level a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6d18a5;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level a .count {
-    color: #6DAFFE;
-    text-align: center;
-  }
-}
-
-.jOrgChart .level1 {
-  background-color: #f3f3f3;
-  margin-top: 50px;
-}
-
-.jOrgChart .level1 a {
-  font-size: 12px;
-}
-
-.jOrgChart .level1 a .header {
-  line-height: 25px;
-  color: #ffffff;
-  background-color: #44a1d0;
-  border-radius: 4px 4px 0px 0px;
-  text-align: center;
-  position: relative;
-}
-
-.jOrgChart .level1 a .header .icon i.fa-id-card {
-  position: absolute;
-  right: 5px;
-  top: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.jOrgChart .level1 a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level1 a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.jOrgChart .level1 a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level1 a .name {
-  font-weight: 600;
-  text-align: left;
-}
-
-.jOrgChart .level1 a .count {
-  color: #44a1d0;
-  position: relative;
-}
-
-.jOrgChart .level1 a .count i.fa-user {
-  position: absolute;
-  top: -6px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level1 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level1 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level1 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6DAFFE;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level1 a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level1 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level1 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level1 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level1 a .count {
-    color: #6DAFFE;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level1 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level1 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level1 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #6DAFFE;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level1 a .pic {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level1 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level1 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level1 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level1 a .count {
-    color: #6DAFFE;
-    text-align: center;
-  }
-}
-
-.jOrgChart .level2 {
-  background-color: #f3f3f3;
-}
-
-.jOrgChart .level2 a {
-  font-size: 12px;
-}
-
-.jOrgChart .level2 a .header {
-  line-height: 25px;
-  color: #ffffff;
-  background-color: #437FC7;
-  border-radius: 4px 4px 0px 0px;
-  text-align: center;
-  position: relative;
-}
-
-.jOrgChart .level2 a .header .icon i.fa-id-card {
-  position: absolute;
-  right: 5px;
-  top: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.jOrgChart .level2 a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level2 a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.jOrgChart .level2 a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level2 a .name {
-  font-weight: 600;
-  text-align: left;
-}
-
-.jOrgChart .level2 a .count {
-  color: #437FC7;
-  position: relative;
-}
-
-.jOrgChart .level2 a .count i.fa-user {
-  position: absolute;
-  top: -6px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level2 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level2 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level2 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #437FC7;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level2 a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level2 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level2 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level2 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level2 a .count {
-    color: #437FC7;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level2 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level2 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level2 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #437FC7;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level2 a .pic {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level2 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level2 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level2 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level2 a .count {
-    color: #437FC7;
-    text-align: center;
-  }
-}
-
-.jOrgChart .level3 {
-  background-color: #f3f3f3;
-}
-
-.jOrgChart .level3 a {
-  font-size: 12px;
-}
-
-.jOrgChart .level3 a .header {
-  line-height: 25px;
-  color: #ffffff;
-  background-color: #44a1d0;
-  border-radius: 4px 4px 0px 0px;
-  text-align: center;
-  position: relative;
-}
-
-.jOrgChart .level3 a .header .icon i.fa-id-card {
-  position: absolute;
-  right: 5px;
-  top: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.jOrgChart .level3 a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level3 a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.jOrgChart .level3 a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level3 a .name {
-  font-weight: 600;
-  text-align: left;
-}
-
-.jOrgChart .level3 a .count {
-  color: #44a1d0;
-  position: relative;
-}
-
-.jOrgChart .level3 a .count i.fa-user {
-  position: absolute;
-  top: -6px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level3 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level3 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level3 a .header {
-    line-height: 30px;
-    color: #ffffff;
-    background-color: #44a1d0;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level3 a .pic {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level3 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level3 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level3 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level3 a .count {
-    color: #44a1d0;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level3 {
-    background-color: #f3f3f3;
-  }
-  .jOrgChart .level3 a {
-    font-size: 12px;
-  }
-  .jOrgChart .level3 a .header {
-    line-height: 40px;
-    color: #ffffff;
-    background-color: #44a1d0;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .jOrgChart .level3 a .pic {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-  .jOrgChart .level3 a .pic img {
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jOrgChart .level3 a .position {
-    padding-top: 3px;
-    color: lightcoral;
-    text-align: center;
-  }
-  .jOrgChart .level3 a .name {
-    color: #303030;
-    font-weight: 500;
-    text-align: center;
-  }
-  .jOrgChart .level3 a .count {
-    color: #44a1d0;
-    text-align: center;
-  }
-}
-
-.jOrgChart .level5 {
-  height: 100px;
-  border-left: 4px solid RGB(245, 199, 29);
-  overflow: hidden;
-}
-
-.jOrgChart .level5 a {
-  font-size: 12px;
-}
-
-.jOrgChart .level5 a .pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 5px;
-}
-
-.jOrgChart .level5 a .pic img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .level5 a .pic {
-    width: 60px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .jOrgChart .level5 a .pic {
-    display: none;
-  }
-}
-
-.jOrgChart .level5 a .position {
-  color: lightcoral;
-  text-align: left;
-}
-
-.jOrgChart .level5 a .name {
-  font-weight: 500;
-  text-align: left;
-}
-
-.jOrgChart ul {
-  display: inherit;
-}
-
-.jOrgChart ul li:first-child {
-  margin-top: 0px;
-}
-
-.jOrgChart ul li {
-  margin-top: 5px;
-}
-
-.jOrgChart .detail {
-  width: 150px;
-  height: 90px;
-  border-radius: 3px;
-  background-color: #bdd8ee;
-  color: #303030;
-  position: absolute;
-  left: 95px;
-  top: 0px;
-  z-index: 9;
-  text-align: left;
-  padding: 5px;
+.orgchart .node .topEdge {
   display: none;
 }
 
-.jOrgChart .detail.open {
-  display: block;
+.orgchart {
+  background: #fff;
+  margin: 0 auto;
 }
 
-.jOrgChart .organization_text {
+.orgchart .nodes {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.orgchart ul .nodes {
+  padding: 0px 8px;
+}
+
+.orgchart ul .nodes li .hybrid {
+  padding: 0px 8px;
+}
+
+.orgchart ul .nodes li .hybrid .hierarchy {
+  padding: 2px;
+}
+
+.oci {
+  background-color: transparent;
+  color: transparent;
+}
+
+.orgchart .node .toggleBtn::before {
+  background-color: transparent;
+}
+
+.orgchart .node .toggleBtn:hover::before {
+  background-color: transparent;
+}
+
+.oci-minus-square::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f146";
+  font-weight: 900;
+  color: #449d44;
+  font-size: 18px;
+  position: absolute;
+  left: -5px;
+  bottom: 0px;
+}
+
+.oci-plus-square::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0fe";
+  font-weight: 900;
+  color: #449d44;
+  font-size: 18px;
+  position: absolute;
+  left: -5px;
+  bottom: 11px;
+}
+
+.orgchart .node::before {
+  background-color: #ccc;
+}
+
+.orgchart .node:not(:only-child)::after {
+  background-color: #8d8d8d;
+}
+
+.orgchart > ul > li > ul li > .node::before {
+  background-color: #8d8d8d;
+}
+
+.orgchart .hierarchy::before {
+  border-top: 2px solid #8d8d8d;
+}
+
+.orgchart .nodes.vertical .hierarchy::before, .orgchart .nodes.vertical .hierarchy::after {
+  border-color: #8d8d8d;
+}
+
+.orgchart .nodes.vertical::before {
+  background-color: #8d8d8d;
+}
+
+#chart-container .level {
+  width: 350px;
+  height: 200px;
+  line-height: 40px;
+  border-radius: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  background-color: #e6e1e9;
+  font-size: 12px;
   position: relative;
 }
 
-.jOrgChart .organization_text .more {
-  width: 20px;
-  height: 20px;
-  background-color: #5a0592;
-  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
-          box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
-  border-radius: 50%;
-  position: absolute;
-  bottom: -160px;
-  left: -10px;
-}
-
-.jOrgChart .organization_text .more i.fas {
-  position: absolute;
-  bottom: 3px;
-  left: 5px;
+#chart-container .level .header {
+  line-height: 30px;
   color: #ffffff;
+  background-color: #6d18a5;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  position: relative;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .jOrgChart .organization_text .more {
-    position: absolute;
-    bottom: -290px;
-    left: -10px;
+#chart-container .level .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#chart-container .level .pic {
+  width: 120px;
+  height: 160px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 99;
+}
+
+#chart-container .level .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#chart-container .level .titleHeader {
+  border-bottom: 1px solid #6d18a5;
+  padding: 10px;
+  text-align: start;
+}
+
+#chart-container .level .titleHeader .position {
+  color: lightcoral;
+}
+
+#chart-container .level .titleHeader .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chart-container .level .count {
+  color: #6DAFFE;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
+  #chart-container .level {
+    width: 300px;
+    height: 300px;
+  }
+  #chart-container .level .titleHeader {
+    text-align: center;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .jOrgChart .organization_text .more {
-    position: absolute;
-    bottom: -260px;
-    left: -10px;
+  #chart-container .level {
+    width: 300px;
+    height: 350px;
   }
+}
+
+#chart-container .level1 {
+  width: 350px;
+  height: 200px;
+  line-height: 40px;
+  border-radius: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  background-color: #e1ecf8;
+  font-size: 12px;
+  position: relative;
+}
+
+#chart-container .level1 .header {
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #6DAFFE;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+#chart-container .level1 .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#chart-container .level1 .pic {
+  width: 120px;
+  height: 160px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 99;
+}
+
+#chart-container .level1 .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#chart-container .level1 .titleHeader {
+  border-bottom: 1px solid #6DAFFE;
+  padding: 10px;
+  text-align: start;
+}
+
+#chart-container .level1 .titleHeader .position {
+  color: lightcoral;
+}
+
+#chart-container .level1 .titleHeader .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chart-container .level1 .count {
+  color: #437FC7;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
+  #chart-container .level1 {
+    width: 300px;
+    height: 300px;
+  }
+  #chart-container .level1 .titleHeader {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #chart-container .level1 {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+#chart-container .level2 {
+  width: 180px;
+  height: 280px;
+  line-height: 40px;
+  border-radius: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  background-color: #f3f3f3;
+  font-size: 12px;
+  position: relative;
+}
+
+#chart-container .level2 .header {
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #437FC7;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+#chart-container .level2 .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#chart-container .level2 .pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 99;
+}
+
+#chart-container .level2 .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#chart-container .level2 .titleHeader {
+  border-bottom: 1px solid #437FC7;
+  padding: 10px;
+  text-align: start;
+}
+
+#chart-container .level2 .titleHeader .position {
+  color: lightcoral;
+}
+
+#chart-container .level2 .titleHeader .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chart-container .level2 .count {
+  color: #437FC7;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
+  #chart-container .level2 {
+    width: 300px;
+    height: 300px;
+  }
+  #chart-container .level2 .titleHeader {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #chart-container .level2 {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+#chart-container .level3 {
+  width: 180px;
+  height: 130px;
+  line-height: 40px;
+  border-radius: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  background-color: #f3f3f3;
+  font-size: 12px;
+  position: relative;
+}
+
+#chart-container .level3 .header {
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #44c0d0;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+#chart-container .level3 .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#chart-container .level3 .pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 99;
+}
+
+#chart-container .level3 .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#chart-container .level3 .titleHeader {
+  border-bottom: 1px solid #44c0d0;
+  padding: 10px;
+  text-align: start;
+}
+
+#chart-container .level3 .titleHeader .position {
+  color: lightcoral;
+}
+
+#chart-container .level3 .titleHeader .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chart-container .level3 .count {
+  color: #44a1d0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
+  #chart-container .level3 {
+    width: 300px;
+    height: 300px;
+  }
+  #chart-container .level3 .titleHeader {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #chart-container .level3 {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+#chart-container .isLast {
+  padding: 0px;
+  border-left: 4px solid RGB(245, 199, 29);
+  width: 180px;
+  height: 130px;
+  line-height: 40px;
+  border-radius: 15px;
+  padding: 0px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  background-color: #ffffff;
+  font-size: 12px;
+  position: relative;
+}
+
+#chart-container .isLast .header {
+  line-height: 30px;
+  color: #ffffff;
+  background-color: transparent;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  position: relative;
+}
+
+#chart-container .isLast .header .icon i.fa-id-card {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#chart-container .isLast .pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 99;
+}
+
+#chart-container .isLast .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#chart-container .isLast .titleHeader {
+  border-bottom: 1px solid RGB(245, 199, 29);
+  padding: 10px;
+  text-align: start;
+}
+
+#chart-container .isLast .titleHeader .position {
+  color: lightcoral;
+}
+
+#chart-container .isLast .titleHeader .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chart-container .isLast .count {
+  color: #437FC7;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
+  #chart-container .isLast {
+    width: 300px;
+    height: 300px;
+  }
+  #chart-container .isLast .titleHeader {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #chart-container .isLast {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+#chart-container .isLast .header {
+  color: #437FC7;
+}
+
+.orgchart {
+  position: relative;
+}
+
+.orgchart .btn_toggle {
+  position: absolute;
+  top: -30px;
+  left: 44%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .logo {
@@ -2405,14 +2269,6 @@ section.page_title .active {
 
 header .photoLink {
   height: inherit;
-}
-
-header .carousel-caption {
-  margin-bottom: 30px;
-}
-
-.company {
-  margin-top: -120px;
 }
 
 .linkList {
@@ -2480,9 +2336,49 @@ header .carousel-caption {
   transition: transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity, -webkit-transform 0.6s cubic-bezier(0.08, 0.35, 0.13, 1.02);
 }
 
+.marqueeBox {
+  padding: 0px;
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid #FAA929;
+}
+
+.marqueeBox .newsTitle {
+  display: inline-block;
+  position: relative;
+  background-color: #FAA929;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.marqueeBox .newsTitle p {
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #FFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.marqueeBox .newsTitle span {
+  width: 0;
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #FAA929;
+}
+
+.marqueeBox .marquee-wrapper {
+  margin: 0;
+}
+
 .marqueeBox .marquee-wrapper ul {
-  min-height: 60px;
-  height: auto;
+  min-height: 40px;
+  padding: 10px;
+  line-height: 40px;
   position: relative;
 }
 
@@ -2513,19 +2409,19 @@ header .carousel-caption {
 .marqueeBox .marquee-wrapper ul li {
   position: absolute;
   width: 100%;
-  height: 20px;
-  top: -10;
   opacity: 0;
-  text-align: center;
-  vertical-align: middle;
-  padding: 0px 100px;
-  line-height: 20px;
+  bottom: -20px;
+  padding: 5px;
+  color: #505c62;
+  text-align: left;
+  line-height: 40px;
   -webkit-animation-name: marquee;
           animation-name: marquee;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  font-size: 18px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (max-width: 767px) {
@@ -2534,43 +2430,52 @@ header .carousel-caption {
   }
 }
 
+.marqueeBox .marquee-wrapper ul li a {
+  color: #505c62;
+}
+
+.marqueeBox .marquee-wrapper ul li a:hover {
+  color: #6DAFFE;
+}
+
 @-webkit-keyframes marquee {
   0% {
-    bottom: 2%;
+    bottom: -50%;
     opacity: 1;
   }
   10% {
-    bottom: 70%;
+    bottom: -15%;
   }
   30% {
-    top: -300%;
+    bottom: -15%;
+  }
+  60% {
+    top: -200%;
   }
   100% {
-    top: -500%;
+    top: -200%;
   }
 }
 
 @keyframes marquee {
   0% {
-    bottom: 2%;
+    bottom: -50%;
     opacity: 1;
   }
   10% {
-    bottom: 70%;
+    bottom: -15%;
   }
   30% {
-    top: -300%;
+    bottom: -15%;
+  }
+  60% {
+    top: -200%;
   }
   100% {
-    top: -500%;
+    top: -200%;
   }
 }
 
-mwt-title-btn {
-  bottom: 10px;
-}
-
-/標籤按鈕樣式與大小/
 .mwt-title-btn li {
   width: 120px;
   height: 60px;
@@ -2583,7 +2488,6 @@ mwt-title-btn {
   text-indent: 0;
 }
 
-/正在輪播樣式/
 .mwt-title-btn li.active {
   width: 120px;
   height: 60px;

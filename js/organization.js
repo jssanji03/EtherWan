@@ -1,5 +1,5 @@
 
-        var data = {
+        const data = {
             "data": [
                 {
                     "id": 0,
@@ -73,9 +73,8 @@
                                             "tel": "02-87736636",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": [
-                                                
-                                                ]
+                                            "childrens": [],
+                                            "isLast": true
                                         },
                                         {
                                             "id": 11,
@@ -88,7 +87,9 @@
                                             "Num": "1092021",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": []
+                                            "childrens": [],
+                                            "isLast": true,
+                                            
                                         },
                                         {
                                             "id": 12,
@@ -101,7 +102,8 @@
                                             "tel": "02-87736636",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": []
+                                            "childrens": [],
+                                            "isLast": true
                                         }]
                                 },
                                 {
@@ -117,7 +119,7 @@
                                     "area": "新店9樓",
                                     "pic": "user02.jpeg",
                                     "count": "10",
-                                    "teamDetail":"我是 ",
+                                    "teamDetail":"我是",
                                     "childrens": [
                                         {
                                             "id": 13,
@@ -130,7 +132,8 @@
                                             "tel": "02-87736636",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": []
+                                            "childrens": [],
+                                            "isLast": true
                                         },
                                     ]
                                     },
@@ -177,7 +180,8 @@
                                             "tel": "02-87736636",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": []
+                                            "childrens": [],
+                                            "isLast": true
                                         }]
                                     },
                                     {
@@ -205,7 +209,8 @@
                                             "tel": "02-87736636",
                                             "Ext": "000",
                                             "area": "新店10樓",
-                                            "childrens": []
+                                            "childrens": [],
+                                            "isLast": true
                                         }]
                                     }
                                 ]
@@ -223,36 +228,27 @@
                                 "area": "新店9樓",
                                 "pic": "user01.jpeg",
                                 "count": "20",
-                                "teamDetail":"我是業務部 ",
-                                "childrens": [{
-                                    "id": 9,
-                                    "level": 3,
-                                    "Dept":"業務部",
-                                    "position":"Manager",
-                                    "name": "OOO",
-                                    "ChName": "王小明",
-                                    "Num": "1092021",
-                                    "tel": "02-87736636",
-                                    "Ext": "000",
-                                    "area": "新店9樓",
-                                    "pic": "user02.jpeg",
-                                    "count": "10",
-                                    "teamDetail":"我是業務部A",
-                                    "childrens": [{
-                                        "id": 16,
-                                        "level": 5,
-                                        "pic": "user03.jpeg",
-                                        "position":"Development Engineer",
-                                        "name": "person7",
-                                        "ChName": "張大明",
-                                        "Num": "1092021",
-                                        "tel": "02-87736636",
-                                        "Ext": "000",
-                                        "area": "新店10樓",
-                                        "childrens": []
-                                    }]
-                                }]
-                            }
+                                "teamDetail": "我是業務部 ",
+                                "isLast": true,
+                                "childrens": [],
+                            },
+                            {
+                                "id": 4,
+                                "level": 2,
+                                "Dept":"Dept.",
+                                "position":"Director",
+                                "name": "Collin2",
+                                "ChName": "王小明",
+                                "Num": "1092021",
+                                "tel": "02-87736636",
+                                "Ext": "000",
+                                "area": "新店9樓",
+                                "pic": "user01.jpeg",
+                                "count": "20",
+                                "teamDetail": "我是業務部 ",
+                                "isLast": true,
+                                "childrens": [],
+                            },
                         ]
                         }
                     ]
@@ -569,33 +565,69 @@
                     //递归显示
                     showall(val.childrens, $(li).children().eq(1));
                 }
-                else {
-                   var li = $("<li></li>").addClass("level"+val.level);
+                else if (val.isLast) {
+                    var li = $("<li></li>").addClass("isLast");
                     li.append(
-                        `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
-                        <div class="row align-items-center p-1">
-                            <div class="col-4">
+                    `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
+                        <div class="header d-flex">
+                            <span class="col-10 dept">${val.Dept}</span>
+                        </div>
+                    
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-12">
                                 <div class="pic">
                                     <img src="../public/img/organization/${val.pic}">
                                 </div>
                             </div>
-                            <div class="col-8">
-                                <p class="position lh-15">${val.position}</p>
-                                <p class="name lh-20">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
+                            <div class="col-lg-8 col-12 px-3 py-1 text-left">
+                                <p class="position">${val.position}</p>
+                                <p class="name">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
                                 <p class="name text-black-50">${val.Num}</p>
                             </div>
                         </div>
-                        <div class="row justify-content-between">
-                            <div class="col">
+                        <div class="row justify-content-between align-items-center px-1">
+                            <div class="col-5">
+                                <p>${val.tel}</p>
                                 <p>分機<span>${val.Ext}</span></p>
                             </div>
                             <div class="col">
                                 <p><span>${val.area}</span></p>
                             </div>
+                            
                         </div>
-                        </a>
-                        `).append("<ul class='grid'></ul>").appendTo(parent);
+                    </a>`
+                    ).append("<ul></ul>").appendTo(parent);
+                    //递归显示
+                    showall(val.childrens, $(li).children().eq(1));
                 }
+                // else {
+                //    var li = $("<li></li>").addClass("level"+val.level);
+                //     li.append(
+                //         `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
+                //         <div class="row align-items-center p-1">
+                //             <div class="col-4">
+                //                 <div class="pic">
+                //                     <img src="../public/img/organization/${val.pic}">
+                //                 </div>
+                //             </div>
+                //             <div class="col-8">
+                //                 <p class="position lh-15">${val.position}</p>
+                //                 <p class="name lh-20">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
+                //                 <p class="name text-black-50">${val.Num}</p>
+                //             </div>
+                //         </div>
+                //         <div class="row justify-content-between">
+                //             <div class="col">
+                //                 <p>分機<span>${val.Ext}</span></p>
+                //             </div>
+                //             <div class="col">
+                //                 <p><span>${val.area}</span></p>
+                //             </div>
+                //         </div>
+                //         </a>
+                //         `
+                //     ).append("<ul class='grid'></ul>").appendTo(parent);
+                // }
             });
             $.each(menu_list, function (index, val) {
                 // console.log(val);

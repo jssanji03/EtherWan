@@ -9,9 +9,9 @@
 @import url("../plugins/DataTables-1.10.25/Responsive-2.2.9/css/responsive.bootstrap.min.css");
 @import url('../plugins/daterangepicker-3.0.5/daterangepicker.css');
 @import url('../plugins/jquery/jquery-ui.min.css');
-@import url('../plugins/jOrgChart/jquery.jOrgChart.css');
-@import url('../plugins/chart.js/Chart.min.css');
+// @import url('../plugins/jOrgChart/jquery.jOrgChart.css');
 @import url('../plugins/Magicsuggest/css/magicsuggest.css');
+@import url('../plugins/OrgChart-master/src/css/jquery.orgchart.css');
 
 
 /* :: 1.0 Import Fonts */
@@ -41,7 +41,6 @@
 @import "component/card";
 @import "component/datatable";
 @import "component/datepicker";
-// @import "component/header";
 
 // *******************
 //     base
@@ -51,7 +50,8 @@
 // *******************
 //     pages
 // // *******************
-@import "pages/organization";
+// @import "pages/organization";
+@import "pages/organization2";
 @import "pages/index";
 @import "pages/other";
 

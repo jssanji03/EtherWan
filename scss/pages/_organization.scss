@@ -166,8 +166,8 @@
       @include RWD-level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0,$height:100px,$deptHeight:40px,$picWidth:100px);
     }
   }
-  .level5{
-    height: 100px;
+  .isLast{
+    height: 150px;
     border-left: 4px solid $yellow;
     overflow: hidden;
     a{

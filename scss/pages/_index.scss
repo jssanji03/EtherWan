@@ -1,8 +1,7 @@
 
 .logo {
         width: 200px;
-        // margin: 0 auto;
-        // padding:20px 50px;
+        // margin: 0 auto;;
     }
 
 header {
@@ -10,13 +9,6 @@ header {
         // height: 450px;
         height: inherit;
     }
-    .carousel-caption{
-      margin-bottom: 30px;
-    }
-}
-.company {
-    margin-top: -120px;
-    
 }
 .linkList{
         padding: 0px 20px;
@@ -70,18 +62,42 @@ header {
   }
 }
 
-// #event{
-//   text-align: center;
-// }
-// .marquee-vertical{
-// 	transform-origin: left;
-// 	transform: rotate(90deg) translateY(-50px);
-// }
 .marqueeBox{
-    .marquee-wrapper {
+  padding: 0px;
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 8px 0px 0px 8px;
+  // box-shadow: 1px 1px 3px 0.5px rgba(197, 197, 197, 0.432);
+  border: 1px solid #FAA929 ;
+  .newsTitle{
+    display: inline-block;
+    position: relative;
+    background-color: #FAA929;
+    border-radius: 8px 0px 0px 8px;
+    p{
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      color: #FFF;
+      box-sizing: border-box;
+    }
+    span{
+      width: 0;
+      position: absolute;
+      right: -10px;
+      top: 10px;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #FAA929;
+    }
+  }
+  .marquee-wrapper {
+      margin: 0;
       ul{
-        min-height:60px;
-        height:auto;
+        min-height:40px;
+        padding: 10px;
+        line-height: 40px;
         position: relative;
         @media #{$breakpoint-lg}{
           height: 80px;
@@ -98,57 +114,51 @@ header {
         li{
             position: absolute;
             width: 100%;
-            height:20px;
-            top: -10;
             opacity: 0;
-            text-align: center;
-            vertical-align: middle;
-            padding: 0px 100px;
-            line-height: 20px;
+            bottom: -20px;
+            padding: 5px;
+            color: $text;
+            text-align: left;
+            line-height: 40px;
             animation-name: marquee;
             animation-iteration-count:infinite;
             animation-timing-function:linear;
+            font-size: 18px;
             @media #{$breakpoint-lg,$breakpoint-md,$breakpoint-sm,$breakpoint-xs}{
               padding: 0px 10px;
+            }
+            a{
+              color:$text;
+              &:hover{
+                color: $primary;
+              }
             }
           }
         }
     }
 }
 
-
-// @keyframes marquee {
-//   0% { 
-//     left: 0%;
-//     opacity: 1; 
-//   }
-//   10% { 
-//     left: 0%;
-//   }
-//   30% { 
-//     left: -100%;
-//   }
-//   100% { left: -200%; }
-// }
 @keyframes marquee {
   0% { 
-    bottom: 2%;
-    opacity: 1; 
+    bottom: -50%;
+    opacity: 1;
   }
   10% { 
-    bottom: 70%;
+    bottom: -15%;
   }
   30% { 
-    top: -300%;
-    // opacity: 0;
+    bottom: -15%;
   }
-  100% { top: -500%;
-   }
+  60% { 
+    top: -200%;
+  }
+  100% { top: -200%;
+  }
 }
 
 
 
-
+//橫向滾動
 // @keyframes display {
 //   0% {
 //     transform: translateX(200px);
@@ -176,13 +186,10 @@ header {
 
 
 
-mwt-title-btn{
-    bottom: 10px;
-}
 
 
 
-/標籤按鈕樣式與大小/
+// /標籤按鈕樣式與大小/
 .mwt-title-btn li{
     width: 120px;
     height: 60px;
@@ -197,7 +204,7 @@ mwt-title-btn{
 
 
 
-/正在輪播樣式/
+// /正在輪播樣式/
 .mwt-title-btn li.active{
     width: 120px;
     height: 60px;

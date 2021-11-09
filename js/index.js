@@ -2,13 +2,10 @@
 // 即時宣導 跑馬燈
 $(function () {
     const marqueeData =[
-        `1.景園高小，線房傳上地都懷……還大和一展早能像再統為毒來關上……後這的。少在不。有發毛成、車後位合孩百隊了心總毒上告施病來出，但他果造都意？要研化反員一母總再南，理來新西廣家得去農節；去時然金著不可型本家種最他任朋分沒的。和他體影克物作。
-眼至後心為比會少有面也應顯為者在影，所跑舉沒天於人東、分推就這他友出，識機如知地、相身時共光時片要整以速了成我依父於照一可其應團女看父士廠期男斯城照客治歡想子斯`,
-        "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
-        "3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
-        "10. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
-        "20. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
-        "30. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia.",
+        "<a herf='http://www.google.com'>請注意於11/1將有火警警鈴修繕作業，請各位同仁聽到響鈴，不要驚慌，謝謝。請注意請注意請注意請注意請</a>",
+        "test22",
+        // "test333",
+        // "test4444",
     ]
     function marqueeArr(marqueeData) {
         const marquee = document.querySelector(".marquee ul")
@@ -19,16 +16,11 @@ $(function () {
         }
         marquee.innerHTML = html
         
-        // $("#marquee").html(html); //印出html
         for (let i = 0; i < marqueeLi.length; i++) {
             const Li = marqueeLi[i];
-            Li.style.animationDelay = `${4+i * 5}s`;
-            Li.style.animationDuration = `${marqueeLi.length * 5}s`;
-            // Li.style.animation = `display ${marqueeLi.length * 4}s ease-in-out infinite`;
+            Li.style.animationDelay = `${i * 10}s`;
+            Li.style.animationDuration = `${marqueeLi.length + 20}s`;
         }
-
-
-
     }
     marqueeArr(marqueeData)
 })
@@ -102,7 +94,12 @@ $(function () {
                 {
                     month: 'August',
                     date: '2021/08/19',
-                    event: '公益路跑'
+                    event: '公益路跑公益路跑公益路跑公益路跑公益路跑公益路跑'
+                },
+                {
+                    month: 'August',
+                    date: '2021/08/19',
+                    event: '公益路跑222'
                 },
                 {
                     month: 'August',
@@ -165,16 +162,12 @@ $(function () {
             });
         }
 
-        function month(year,month) {
+        function month() {
             const select = document.querySelector('.ui-datepicker-month')
             const value = select.options[select.selectedIndex].text;
-            // const col = document.querySelector('#event')
-            // console.log(month)
             const monthEvent = data.map(function (item, index) {
-                // console.log(item.month)
-                // console.log(month)
                 if (item.month === value) {
-                    return `<li class='third'>${item.date.substr(5)}  <span class='lh-30 mx-3 text'>${item.event}</span></li>`
+                    return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
                 }
             });
             $('#event').html(monthEvent)
@@ -183,7 +176,7 @@ $(function () {
             const event = data.map(function (item, index) {
                 // console.log(ev);
                 if (item.date === ev) {
-                    return `<li class='third'>${item.date.substr(5)}  <p class='lh-30'>${item.event}</p></li>`
+                    return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
                 }
                 else {
                     return ``
@@ -193,6 +186,7 @@ $(function () {
         }
         $(".datepicker").datepicker({
             changeMonth: true,
+            changeYear: true,
             onSelect: gotoDate,
             onChangeMonthYear: month,
             showMonthAfterYear: true,

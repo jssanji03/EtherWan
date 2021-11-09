@@ -58,15 +58,15 @@ $bg-body: #edf6ff;
 .lightBlue{
     color: $bg-body;
 }
-.bg-blue30{
-    background-color: #edf6ff;
-}
-.bg-blue40{
-    background-color: #6DAFFE;
-}
-.bg-blue50{
-    background-color: #437FC7;
-}
+// .bg-blue30{
+//     background-color: #edf6ff;
+// }
+// .bg-blue40{
+//     background-color: #6DAFFE;
+// }
+// .bg-blue50{
+//     background-color: #437FC7;
+// }
 // White Color
 $white: #ffffff;
 .white{
@@ -99,7 +99,9 @@ $purple:#88157b;
 .purple{
     color: $purple;
 }
-
+.bg_purple{
+    background-color: $purple;
+}
 $pink:#d31577;
 .pink{
     color: $pink;

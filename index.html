@@ -17,20 +17,22 @@
 
 <body>
     <header class="container-fluid">
-        <div class="row bg-white fixed-top shadow-sm p-3">
-            <div class="logo">
-                <img class="img-fluid" src="./public/img/logo.png">
+        <div class="bg-white fixed-top shadow-sm p-2">
+            <div class="container">
+                <div class="logo">
+                    <img class="img-fluid" src="./public/img/logo.png">
+                </div>
             </div>
         </div>
     </header>
-    <section class="HomeBanner col-12">
+    <section class="HomeBanner col-12 py-2">
         <div class="container">
             <div class="row pt-70 align-items-center">
                 <div class="col-lg-3 col-12 order-lg-first order-last mt-lg-0 mt-3">
                     <div class="row pe-lg-4 pe-0">
                         <div class="information_card bg-blue30">
                             <a class="" href="./pages/homepage.html">
-                                <h3 class="text">關於益網</h3>
+                                <h3>關於益網</h3>
                                 <p class="gray fontsEn fz-12 lh-30">About EtherWan</p>
                             </a>
                         </div>
@@ -53,15 +55,6 @@
                         <div class="carousel-indicators ">
                         </div>
                         <div class="carousel-inner">
-                            <!-- <div class="carousel-item active photoLink">
-                                <img src="https://fakeimg.pl/1000x350/" class="img-fluid" alt="...">
-                            </div>
-                            <div class="carousel-item photoLink">
-                                <img src="https://fakeimg.pl/1000x350/" class="img-fluid" alt="...">
-                            </div>
-                            <div class="carousel-item photoLink">
-                                <img src="https://fakeimg.pl/1000x350/" class="img-fluid" alt="...">
-                            </div> -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="prev">
@@ -80,13 +73,15 @@
     </section>
 
     <!-- 即時宣導 -->
-    <section class="Propaganda col-12 pt-70">
+    <section class="Propaganda col-12 py-2">
         <div class="container">
-            <div class="row">
-                <div class="col-12 bg_third marqueeBox overflow-hidden p-2">
-                    <p class="white text-center f-500 fz-25"><i class="fas fa-bell"></i> 即時宣導</p>
-                    <div class="col-12 mt-1 marquee-wrapper marquee" id="marquee">
-                        <ul class="white mx-auto marquee-canvas">
+            <div class="row justify-content-center">
+                <div class="col-10 marqueeBox overflow-hidden d-flex">
+                    <div class="col-2 newsTitle">
+                        <p class="white fz-20"><i class="fas fa-bell"></i> 即時宣導</p><span></span>
+                    </div>
+                    <div class="col-10 marquee-wrapper marquee" id="marquee">
+                        <ul class="mx-auto marquee-canvas">
                         </ul>
                     </div>
                 </div>
@@ -94,95 +89,277 @@
         </div>
     </section>
     <!-- 即時宣導 End -->
-    <section class="py-5">
+    <section class="py-3">
         <div class="container">
             <div class="row">
                 <section class="col-lg-6 col-12 announcement">
-                    <div class="container" style="height: 100%;">
-                        <div class="p-3 card-border row">
-                            <div class="col-12">
-                                <p class="fz-20 lh-40 border-bottom primary text-center">公告</p>
-                            </div>
-                            <div class="col-12 my-2">
-                                <ul class="lh-30">
-                                    <li class="row">
-                                        <div class="col-sm-9 col-12">
-                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
-                                                益公字第07003號_企業識別系統</a>
-                                        </div>
-                                        <div class="col-sm-3 col-12 text-sm-end text-center">
-                                            <span class="third">2021/08/19</span>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="col-sm-9 col-12">
-                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
-                                                益公字第07003號_企業識別系統</a>
-                                        </div>
-                                        <div class="col-sm-3 col-12 text-sm-end text-center">
-                                            <span class="third">2021/08/18</span>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="col-sm-9 col-12">
-                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
-                                                益公字第07003號_企業識別系統</a>
-                                        </div>
-                                        <div class="col-sm-3 col-12 text-sm-end text-center">
-                                            <span class="third">2021/08/18</span>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="col-sm-9 col-12">
-                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
-                                                益公字第07003號_企業識別系統</a>
-                                        </div>
-                                        <div class="col-sm-3 col-12 text-sm-end text-center">
-                                            <span class="third">2021/08/18</span>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="col-sm-9 col-12">
-                                            <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
-                                                益公字第07003號_企業識別系統</a>
-                                        </div>
-                                        <div class="col-sm-3 col-12 text-sm-end text-center">
-                                            <span class="third">2021/08/18</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-12 text-center footer">
-                                <a class="important btn-more" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i class="fas fa-angle-right"></i></a>
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">公告</h5>
+                            <ul class="lh-30">
+                                <li class="row">
+                                    <div class="col-sm-9 col-12">
+                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                            益公字第07003號_企業識別系統</a>
+                                    </div>
+                                    <div class="col-sm-3 col-12 text-sm-end text-center">
+                                        <span class="third">2021/08/19</span>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-sm-9 col-12">
+                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                            益公字第07003號_企業識別系統</a>
+                                    </div>
+                                    <div class="col-sm-3 col-12 text-sm-end text-center">
+                                        <span class="third">2021/08/18</span>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-sm-9 col-12">
+                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                            益公字第07003號_企業識別系統</a>
+                                    </div>
+                                    <div class="col-sm-3 col-12 text-sm-end text-center">
+                                        <span class="third">2021/08/18</span>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-sm-9 col-12">
+                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                            益公字第07003號_企業識別系統</a>
+                                    </div>
+                                    <div class="col-sm-3 col-12 text-sm-end text-center">
+                                        <span class="third">2021/08/18</span>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-sm-9 col-12">
+                                        <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                            益公字第07003號_企業識別系統</a>
+                                    </div>
+                                    <div class="col-sm-3 col-12 text-sm-end text-center">
+                                        <span class="third">2021/08/18</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 text-center bg-white">
+                            <a class="important btn-more" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i
+                                    class="fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-lg-6 col-12 calendar">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">行事曆</h5>
+                            <p class="important lh-40 text-center">＊點選可查看當日行程</p>
+                            <div class="datepicker"></div>
+                            <div id="event" class="m-3 d-flex flex-wrap">
+                
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="calendar col-lg-6 col-12">
+
+                <!-- 前一版
+                <section class="col-lg-6 col-12 announcement">
                     <div class="container">
-                        <div class="row">
-                            <div class="p-3 card-border d-flex flex-wrap justify-content-center">
+                        <div class="row p-3 card-radius shadow-sm justify-content-center">
                                 <div class="col-12">
-                                    <p class="fz-20 lh-40 border-bottom text-center primary">行事曆</p>
+                                    <p class="fz-20 lh-40 border-bottom primary text-center">公告</p>
                                 </div>
-                                <div class="col-lg-9 col-12">
-                                    <p class="important lh-40 text-center">＊點選可查看當日行程</p>
-                                    <div class="datepicker"></div>
-                                    <div id="event" class="m-3 d-flex flex-wrap">
-                
+                                <div class="col-12 my-2">
+                                    <ul class="lh-30">
+                                        <li class="row">
+                                            <div class="col-sm-9 col-12">
+                                                <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                                    益公字第07003號_企業識別系統</a>
+                                            </div>
+                                            <div class="col-sm-3 col-12 text-sm-end text-center">
+                                                <span class="third">2021/08/19</span>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-9 col-12">
+                                                <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                                    益公字第07003號_企業識別系統</a>
+                                            </div>
+                                            <div class="col-sm-3 col-12 text-sm-end text-center">
+                                                <span class="third">2021/08/18</span>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-9 col-12">
+                                                <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                                    益公字第07003號_企業識別系統</a>
+                                            </div>
+                                            <div class="col-sm-3 col-12 text-sm-end text-center">
+                                                <span class="third">2021/08/18</span>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-9 col-12">
+                                                <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                                    益公字第07003號_企業識別系統</a>
+                                            </div>
+                                            <div class="col-sm-3 col-12 text-sm-end text-center">
+                                                <span class="third">2021/08/18</span>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-sm-9 col-12">
+                                                <a href="./public/pdf/Corporate Brand Guidelines_CH.pdf" target="_blank">(110)
+                                                    益公字第07003號_企業識別系統</a>
+                                            </div>
+                                            <div class="col-sm-3 col-12 text-sm-end text-center">
+                                                <span class="third">2021/08/18</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 text-center footer">
+                                    <a class="important btn-more" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">過往資訊 <i class="fas fa-angle-right"></i></a>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+                <section class=" col-lg-6 col-12 calendar">
+                    <div class="container">
+                        <div class="row p-3 card-radius shadow-sm justify-content-center">
+                            <div class="col-12">
+                                <p class="fz-20 lh-40 border-bottom text-center primary">行事曆</p>
+                            </div>
+                            <div class="col-lg-9 col-12">
+                                <p class="important lh-40 text-center">＊點選可查看當日行程</p>
+                                <div class="datepicker"></div>
+                                <div id="event" class="m-3 d-flex flex-wrap">
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+            </div>
+        </div>
+    </section>
+    <section class="py-3 bg-lightGray">
+        <div class="container">
+            <div class="row">
+                <section class="col-lg-6 col-12 leaveApplication">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">請假資訊</h5>
+                            <table class="display responsive nowrap datatable-RWD">
+                                <thead>
+                                    <tr class="fz-15">
+                                        <th scope="col">人員</th>
+                                        <th scope="col">部門</th>
+                                        <th scope="col">代理人</th>
+                                        <th scope="col">假別</th>
+                                        <th scope="col">開始時間</th>
+                                        <th scope="col">結束時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fz-13">
+                                        <td>Mark</td>
+                                        <td>TD</td>
+                                        <td>John Lin</td>
+                                        <td>特休</td>
+                                        <td>2021/09/02</td>
+                                        <td>2021/09/03</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td>Mark</td>
+                                        <td>TD</td>
+                                        <td>John Lin</td>
+                                        <td>特休</td>
+                                        <td>2021/09/02</td>
+                                        <td>2021/09/03</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td>Mark</td>
+                                        <td>TD</td>
+                                        <td>John Lin</td>
+                                        <td>特休</td>
+                                        <td>2021/09/02</td>
+                                        <td>2021/09/03</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td>Mark</td>
+                                        <td>TD</td>
+                                        <td>John Lin</td>
+                                        <td>特休</td>
+                                        <td>2021/09/02</td>
+                                        <td>2021/09/03</td>
+                                    </tr>
+                                    <tr class="fz-13">
+                                        <td>Mark</td>
+                                        <td>TD</td>
+                                        <td>John Lin</td>
+                                        <td>特休</td>
+                                        <td>2021/09/02</td>
+                                        <td>2021/09/03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer  border-0 text-center bg-white">
+                            <a class="btn-more" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">查看更多 <i
+                                    class="fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-lg-6 col-12 LinkURL">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">系統連結</h5>
+                            <div class="col-12">
+                                <div class="row p-3">
+                                    <div class="col-md-6 col-12">
+                                        <ul class="linkList">
+                                            <li>
+                                                <button class="btn btn-menu">員工園地 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">文件檔案區 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">網頁信箱 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">SalesForce <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <ul class="linkList">
+                                            <li>
+                                                <button class="btn btn-menu">線上學習平台 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">Redmine追蹤管理系統 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">匯率查詢系統 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                            <li>
+                                                <button class="btn btn-menu">退貨維護查詢 <i class="fas fa-angle-right"></i></button>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer border-0 text-center bg-white">
+                            <a class="btn-more" href="./pages/sysForm.html">快速連結 <i class="fas fa-angle-right"></i></a>
+                        </div>
                     </div>
                 </section>
-                
-            </div>
-        </div>
-    </section>
-    <section class="py-5 bg-lightGray">
-        <div class="container">
-            <div class="row">
+
+                <!-- 前一版
                 <section class="leaveApplication col-lg-6 col-12">
                     <div class="container" style="height: 100%;">
                         <div class="row p-3 card-radius bg-white shadow-sm">
@@ -297,7 +474,7 @@
                                 <a class="btn-more" href="./pages/sysForm.html">快速連結 <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>
-                </section>
+                </section> -->
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
