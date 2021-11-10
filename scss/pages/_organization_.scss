@@ -1,0 +1,267 @@
+// @mixin font ($line-height:20px,$padding-L:75px){
+//   text-align: left;
+//   // padding-left: $padding-L;
+//   line-height: $line-height;
+// }
+.orgArea{
+  position: relative;
+}
+
+.jOrgChart .node {
+  min-width: 230px;
+  height: 150px;
+  line-height: 40px;
+  border-radius: 4px;
+  margin: 0 8px;
+  padding: 0px;
+  box-shadow: 1px 1px 3px #ccc;
+  @media #{$breakpoint-md}{
+    width: 150px;
+    height: 280px;
+  }
+  @media #{$breakpoint-xs}{
+    width: 100px;
+    height: 250px;
+  }
+}
+@mixin level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0) {
+  background-color: $background-color;
+    a{
+      font-size: 12px;
+        .header{
+          line-height: 25px;
+          color: $white;
+          background-color: $dept-background;
+          border-radius: 4px 4px 0px 0px;
+          text-align: center;
+          position: relative;
+          .icon{
+            i.fa-id-card{
+              position: absolute;
+              right: 5px;
+              top: 6px;
+              cursor: pointer;
+              z-index: 999;
+            }
+          }
+        }
+        .pic{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 5px;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .position{
+          color: lightcoral;
+          text-align: left;
+        }
+        .name{
+          font-weight: 600;
+          text-align: left;
+        }
+        .count{
+          color: $countColor;
+          position: relative;
+          i.fa-user{
+            position: absolute;
+            top: -6px;
+            right: 5px;
+          }
+          
+        }
+      }
+}
+@mixin RWD-level ($background-color:#f3f3f3,$dept-background:$primary,$textColor:$dark,$countColor:$primary,$height:120px,$deptHeight:30px,$picWidth:120px){
+  background-color: $background-color;
+    a{
+      font-size: 12px;
+        .header{
+          line-height: $deptHeight;
+          color: $white;
+          background-color: $dept-background;
+          border-radius: 4px 4px 0px 0px;
+        }
+        .pic{
+          width: $picWidth;
+          height: $height;
+          overflow: hidden;
+          margin: 0 auto;
+          margin-top: 10px;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .position{
+          // @include font($line-height:20px,$padding-L:0px);
+          padding-top: 3px;
+          color: lightcoral;
+          text-align: center;
+        }
+        .name{
+          // @include font($line-height:20px,$padding-L:0px);
+          color: $textColor;
+          font-weight: 500;
+          text-align: center;
+          // font-size: 14px;
+        }
+        .count{
+          // @include font($line-height:20px,$padding-L:0px);
+          color: $countColor;
+          text-align: center;
+        }
+      }
+}
+
+.organization_table {
+  border-collapse: separate;
+  margin: 0 auto;
+}
+// .jOrgChart td[colspan] {
+//   // display: none;
+// }
+
+.jOrgChart{
+  .level{
+    @include level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
+    }
+  }
+  .level1{
+    @include level;
+    margin-top: 50px;
+    @media #{$breakpoint-md}{
+      @include RWD-level;
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($height:100px,$deptHeight:30px,$picWidth:100px);
+    }
+    }
+  .level2{
+    @include level ($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$deptHeight:30px);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$height:100px,$deptHeight:30px,$picWidth:100px);
+    }
+  }
+  .level3{
+    @include level ($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
+    @media #{$breakpoint-md}{
+      @include RWD-level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0);
+    }
+    @media #{$breakpoint-xs}{
+      @include RWD-level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0,$height:100px,$deptHeight:40px,$picWidth:100px);
+    }
+  }
+  .isLast{
+    height: 150px;
+    border-left: 4px solid $yellow;
+    overflow: hidden;
+    a{
+      font-size: 12px;
+        .pic{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 5px;
+          img{
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+          @media #{$breakpoint-md}{
+            width: 60px;
+          }
+          @media #{$breakpoint-xs}{
+            display: none;
+          }
+        }
+        .position{
+          // @include font($line-height:12px,$padding-L:75px);
+          color: lightcoral;
+          text-align: left;
+          @media #{$breakpoint-md},#{$breakpoint-xs}{
+            // @include font($line-height:12px,$padding-L:10px)
+          }
+        }
+        .name{
+          // @include font($line-height:25px,$padding-L:75px);
+          font-weight: 500;
+          text-align: left;
+          @media #{$breakpoint-md},#{$breakpoint-xs}{
+            // @include font($line-height:25px,$padding-L:10px)
+          }
+        }
+      }
+  }
+}
+.jOrgChart ul{
+  display: inherit;
+  li:first-child{
+    margin-top: 0px;
+  }
+  li{
+    margin-top: 5px;
+  }
+}
+
+.jOrgChart .detail{
+  width: 150px;
+  height: 90px;
+  border-radius: 3px;
+  background-color: rgb(189, 216, 238);
+  color: $dark;
+  position: absolute;
+  left: 95px;
+  top: 0px;
+  z-index: 9;
+  text-align: left;
+  padding: 5px;
+  display: none;
+}
+.jOrgChart .detail.open{
+  display: block;
+}
+.jOrgChart .organization_text{
+  position: relative;
+  .more{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(90, 5, 146);
+    box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, 0.486);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -160px;
+    left: -10px;
+    i.fas{
+      position: absolute;
+      bottom: 3px;
+      left: 5px;
+      color: $white;
+    }
+    @media #{$breakpoint-md}{
+      position: absolute;
+      bottom: -290px;
+      left: -10px;
+    }
+    @media #{$breakpoint-xs}{
+      position: absolute;
+      bottom: -260px;
+      left: -10px;
+    }
+  }
+}

@@ -1,674 +1,1042 @@
 
-        const data = {
-            "data": [
-                {
-                    "id": 0,
-                    "level":0,
-                    "Dept": "董事長",
-                    "position":"董事長",
-                    "name": "Jack",
-                    "ChName": "王小明",
-                    "Num": "",
-                    "tel": "",
-                    "Ext": "000",
-                    "area": "",
-                    "pic": "user00.jpeg",
-                    "count": "10",
-                    "teamDetail":"",
-                    "childrens": [
-                        {
-                        "id": 1,
-                        "level": 1,
-                        "Dept": "總管理室",
-                        "position":"General Manager",
-                        "name": "Tony",
-                        "ChName": "王小明",
-                        "Num": "",
-                        "tel": "02-87736636",
-                        "Ext": "000",
-                        "area": "新店9樓",
-                        "pic": "user00.jpeg",
-                        "count": "10",
-                        "teamDetail":"我是總管理室",
-                        "childrens": [
-                            {
-                                "id": 2,
-                                'collapsed': true, // 默認初始化時，當前節點處于折疊狀態，其子節點不顯示
-                                "level": 2,
-                                "Dept": "Dept.",
-                                "position":"Director",
-                                "name": "Charlie",
-                                "ChName": "王小明",
-                                "tel": "02-87736636",
-                                "Ext": "000",
-                                "area": "新店9樓",
-                                "Num": "1091201",
-                                "pic": "user01.jpeg",
-                                "count": "20",
-                                "teamDetail":"我是 BA dept.",
-                                "childrens": [
-                                {
-                                    "id": 5,
-                                    "level": 3,
-                                    "Dept": ".Net",
-                                    "position":"Manager",
-                                    "name": "Kerry",
-                                    "ChName": "王小明",
-                                    "Num": "1092021",
-                                    "tel": "02-87736636",
-                                    "Ext": "000",
-                                    "area": "新店9樓",
-                                    "pic": "user02.jpeg",
-                                    "count": "10",
-                                    "teamDetail":"我是 .Net",
-                                    "childrens": [
-                                        {
-                                            "id": 10,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "Person1",
-                                            "ChName": "張大明",
-                                            "Num": "1092021",
-                                            "tel": "02-87736636",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true
-                                        },
-                                        {
-                                            "id": 11,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "person2",
-                                            "ChName": "張大明",
-                                            "tel": "02-87736636",
-                                            "Num": "1092021",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true,
+// const options = {
+//                     "id": 0,
+//                     "className":"level",
+//                     "dept": "董事長",
+//                     "position":"董事長",
+//                     "name": "Jack",
+//                     "chName": "王小明",
+//                     "num": "",
+//                     "tel": "",
+//                     "ext": "000",
+//                     "area": "",
+//                     "pic": "user00.jpeg",
+//                     "count": "10",
+//                     "teamDetail":"",
+//                     "children": [
+//                         {
+//                         "id": 1,
+//                         "className": "level1",
+//                         "dept": "總管理室",
+//                         "position":"General Manager",
+//                         "name": "Tony",
+//                         "chName": "王小明",
+//                         "num": "",
+//                         "tel": "02-87736636",
+//                         "ext": "000",
+//                         "area": "新店9樓",
+//                         "pic": "user00.jpeg",
+//                         "count": "10",
+//                         "teamDetail":"我是總管理室",
+//                         "children": [
+//                             {
+//                                 "id": 2,
+//                                 "className": "level2",
+//                                 "dept": "dept.",
+//                                 "position":"Director",
+//                                 "name": "Charlie",
+//                                 "chName": "王小明",
+//                                 "tel": "02-87736636",
+//                                 "ext": "000",
+//                                 "area": "新店9樓",
+//                                 "num": "1091201",
+//                                 "pic": "user01.jpeg",
+//                                 "count": "20",
+//                                 "teamDetail":"我是 BA dept.",
+//                                 "children": [
+//                                 {
+//                                     "id": 5,
+//                                     "className": "level3",
+//                                     "dept": ".Net",
+//                                     "position":"Manager",
+//                                     "name": "Kerry",
+//                                     "chName": "王小明",
+//                                     "num": "1092021",
+//                                     "tel": "02-87736636",
+//                                     "ext": "000",
+//                                     "area": "新店9樓",
+//                                     "pic": "user02.jpeg",
+//                                     "count": "10",
+//                                     "teamDetail":"我是 .Net",
+//                                     "children": [
+//                                         {
+//                                             "id": 10,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "Person1",
+//                                             "chName": "張大明",
+//                                             "num": "1092021",
+//                                             "tel": "02-87736636",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true
+//                                         },
+//                                         {
+//                                             "id": 11,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "person2",
+//                                             "chName": "張大明",
+//                                             "tel": "02-87736636",
+//                                             "num": "1092021",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true,
                                             
-                                        },
-                                        {
-                                            "id": 12,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "person3",
-                                            "ChName": "張大明",
-                                            "Num": "1092021",
-                                            "tel": "02-87736636",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true
-                                        }]
-                                },
-                                {
-                                    "id": 6,
-                                    "level": 3,
-                                    "Dept":"Dept.",
-                                    "position":"Manager",
-                                    "name": "Gary",
-                                    "ChName": "王小明",
-                                    "Num": "1092021",
-                                    "tel": "02-87736636",
-                                    "Ext": "000",
-                                    "area": "新店9樓",
-                                    "pic": "user02.jpeg",
-                                    "count": "10",
-                                    "teamDetail":"我是",
-                                    "childrens": [
-                                        {
-                                            "id": 13,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "person4",
-                                            "ChName": "張大明",
-                                            "Num": "1092021",
-                                            "tel": "02-87736636",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true
-                                        },
-                                    ]
-                                    },
-                                ]
+//                                         },
+//                                         {
+//                                             "id": 12,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "person3",
+//                                             "chName": "張大明",
+//                                             "num": "1092021",
+//                                             "tel": "02-87736636",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true
+//                                         }]
+//                                 },
+//                                 {
+//                                     "id": 6,
+//                                     "className": "level3",
+//                                     "dept":"dept.",
+//                                     "position":"Manager",
+//                                     "name": "Gary",
+//                                     "chName": "王小明",
+//                                     "num": "1092021",
+//                                     "tel": "02-87736636",
+//                                     "ext": "000",
+//                                     "area": "新店9樓",
+//                                     "pic": "user02.jpeg",
+//                                     "count": "10",
+//                                     "teamDetail":"我是",
+//                                     "children": [
+//                                         {
+//                                             "id": 13,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "person4",
+//                                             "chName": "張大明",
+//                                             "num": "1092021",
+//                                             "tel": "02-87736636",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true
+//                                         },
+//                                     ]
+//                                     },
+//                                 ]
+//                             },
+//                             {
+//                                 "id": 3,
+//                                 "className": "level2",
+//                                 "dept":"dept.",
+//                                 "position":"Manager",
+//                                 "name": "SAP",
+//                                 "chName": "王小明",
+//                                 "num": "1092021",
+//                                 "tel": "02-87736636",
+//                                 "ext": "000",
+//                                 "area": "新店9樓",
+//                                 "pic": "user01.jpeg",
+//                                 "count": "",
+//                                 "teamDetail":"我是 ",
+//                                 "children": [
+//                                     {
+//                                         "id": 7,
+//                                         "className": "level3",
+//                                         "dept":"dept.",
+//                                         "name": "OOO",
+//                                         "position":"Manager",
+//                                         "name": "OOO",
+//                                         "chName": "王小明",
+//                                         "num": "1092021",
+//                                         "tel": "02-87736636",
+//                                         "ext": "000",
+//                                         "area": "新店9樓",
+//                                         "pic": "user02.jpeg",
+//                                         "count": "10",
+//                                         "teamDetail":"我是 ",
+//                                         "children": [{
+//                                             "id": 14,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "person5",
+//                                             "chName": "張大明",
+//                                             "num": "1092021",
+//                                             "tel": "02-87736636",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true
+//                                         }]
+//                                     },
+//                                     {
+//                                         "id": 8,
+//                                         "className": "level3",
+//                                         "dept":"dept.",
+//                                         "position":"Manager",
+//                                         "name": "OOO",
+//                                         "chName": "王小明",
+//                                         "num": "1092021",
+//                                         "tel": "02-87736636",
+//                                         "ext": "000",
+//                                         "area": "新店9樓",
+//                                         "pic": "user02.jpeg",
+//                                         "count": "10",
+//                                         "teamDetail":"我是 ",
+//                                         "children": [{
+//                                             "id": 15,
+//                                             "className": "isLast",
+//                                             "pic": "user03.jpeg",
+//                                             "position":"Development Engineer",
+//                                             "name": "person6",
+//                                             "chName": "張大明",
+//                                             "num": "1092021",
+//                                             "tel": "02-87736636",
+//                                             "ext": "000",
+//                                             "area": "新店10樓",
+//                                             "children": [],
+//                                             "isLast": true
+//                                         }]
+//                                     }
+//                                 ]
+//                             },
+//                             {
+//                                 "id": 4,
+//                                 "className": "isLast",
+//                                 "dept":"dept.",
+//                                 "position":"Director",
+//                                 "name": "Collin",
+//                                 "chName": "王小明",
+//                                 "num": "1092021",
+//                                 "tel": "02-87736636",
+//                                 "ext": "000",
+//                                 "area": "新店9樓",
+//                                 "pic": "user01.jpeg",
+//                                 "count": "20",
+//                                 "teamDetail": "我是業務部 ",
+//                                 "isLast": true,
+//                                 "children": [],
+//                             },
+//                             {
+//                                 "id": 4,
+//                                 "className": "isLast",
+//                                 "dept":"dept.",
+//                                 "position":"Director",
+//                                 "name": "Collin2",
+//                                 "chName": "王小明",
+//                                 "num": "1092021",
+//                                 "tel": "02-87736636",
+//                                 "ext": "000",
+//                                 "area": "新店9樓",
+//                                 "pic": "user01.jpeg",
+//                                 "count": "20",
+//                                 "teamDetail": "我是業務部 ",
+//                                 "isLast": true,
+//                                 "children": [],
+//                             },
+//                         ]
+//                         }
+//                     ]
+// }
+const options = 
+{
+      "id":10910203,
+      "level":0,
+      "className":"level",
+      "dept":"董事長室",
+      "position":"董事長",
+      "name":"Martin Mueller",
+      "chName":"穆馬汀",
+      "ext":5011,
+      "area":"新店9樓",
+      "areaUrl":"02-22221234",
+      "pic":"test001.png",
+      "count":100,
+      "teamDetail":"",
+      "isLast":false,
+      "children":[
+        {
+            "id":"200066",
+            "level":1,
+            "className":"level1",
+            "dept":"總經理室",
+            "position":"總經理",
+            "name":"maggie.chao",
+            "chName":"趙筱琪",
+            "ext":"5011",
+            "area":"新店9樓",
+            "areaUrl":"新店9樓",
+            "pic":"test002.png",
+            "count":null,
+            "teamDetail":"",
+            "isLast":false,
+            "children":[
+               {
+                  "id":"200066",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"市場行銷處",
+                  "position":"總經理",
+                  "name":"maggie.chao",
+                  "chName":"趙筱琪",
+                  "ext":"5011",
+                  "area":"新店9樓",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"跟隨公司擬定之經營策略，爭取外部市場發展之最大可能：\r\n​- 負責業務策略及相關業務系統之整合及推動\r\n- 驅動並持續發展公司定義之聚焦市場\r\n- 依據公司業務發展及獲利目標，訂定產品及技術提升之策略方向​\r\n- 透過市場調查及客戶研究，瞭解客戶需求，以發展公司年度行銷策略\r\n- 維護客戶關係管理、客戶資料分析，規劃與執行行銷活動",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200071",
+                        "level":3,
+                        "className":"level3",
+                        "dept":"通路事業部",
+                        "position":"經理",
+                        "name":"david.hsiao",
+                        "chName":"蕭旭峰",
+                        "ext":"5012",
+                        "area":"新店9樓",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提高益網品牌在該目標市場的市佔率。",
+                        "isLast":false,
+                          "children": [
+                            {
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
                             },
                             {
-                                "id": 3,
-                                "level": 2,
-                                "Dept":"Dept.",
-                                "position":"Manager",
-                                "name": "SAP",
-                                "ChName": "王小明",
-                                "Num": "1092021",
-                                "tel": "02-87736636",
-                                "Ext": "000",
-                                "area": "新店9樓",
-                                "pic": "user01.jpeg",
-                                "count": "",
-                                "teamDetail":"我是 ",
-                                "childrens": [
-                                    {
-                                        "id": 7,
-                                        "level": 3,
-                                        "Dept":"Dept.",
-                                        "name": "OOO",
-                                        "position":"Manager",
-                                        "name": "OOO",
-                                        "ChName": "王小明",
-                                        "Num": "1092021",
-                                        "tel": "02-87736636",
-                                        "Ext": "000",
-                                        "area": "新店9樓",
-                                        "pic": "user02.jpeg",
-                                        "count": "10",
-                                        "teamDetail":"我是 ",
-                                        "childrens": [{
-                                            "id": 14,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "person5",
-                                            "ChName": "張大明",
-                                            "Num": "1092021",
-                                            "tel": "02-87736636",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true
-                                        }]
-                                    },
-                                    {
-                                        "id": 8,
-                                        "level": 3,
-                                        "Dept":"Dept.",
-                                        "position":"Manager",
-                                        "name": "OOO",
-                                        "ChName": "王小明",
-                                        "Num": "1092021",
-                                        "tel": "02-87736636",
-                                        "Ext": "000",
-                                        "area": "新店9樓",
-                                        "pic": "user02.jpeg",
-                                        "count": "10",
-                                        "teamDetail":"我是 ",
-                                        "childrens": [{
-                                            "id": 15,
-                                            "level": 5,
-                                            "pic": "user03.jpeg",
-                                            "position":"Development Engineer",
-                                            "name": "person6",
-                                            "ChName": "張大明",
-                                            "Num": "1092021",
-                                            "tel": "02-87736636",
-                                            "Ext": "000",
-                                            "area": "新店10樓",
-                                            "childrens": [],
-                                            "isLast": true
-                                        }]
-                                    }
-                                ]
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
                             },
-                            {
-                                "id": 4,
-                                "level": 2,
-                                "Dept":"Dept.",
-                                "position":"Director",
-                                "name": "Collin",
-                                "ChName": "王小明",
-                                "Num": "1092021",
-                                "tel": "02-87736636",
-                                "Ext": "000",
-                                "area": "新店9樓",
-                                "pic": "user01.jpeg",
-                                "count": "20",
-                                "teamDetail": "我是業務部 ",
-                                "isLast": true,
-                                "childrens": [],
-                            },
-                            {
-                                "id": 4,
-                                "level": 2,
-                                "Dept":"Dept.",
-                                "position":"Director",
-                                "name": "Collin2",
-                                "ChName": "王小明",
-                                "Num": "1092021",
-                                "tel": "02-87736636",
-                                "Ext": "000",
-                                "area": "新店9樓",
-                                "pic": "user01.jpeg",
-                                "count": "20",
-                                "teamDetail": "我是業務部 ",
-                                "isLast": true,
-                                "childrens": [],
-                            },
+                           
                         ]
-                        }
-                    ]
-            }]
-        }
-        // var data = {
-        //     "data": [
-                
-        //         {
-        //                 "id": 1,
-        //                 "level": 1,
-        //                 "Dept": "總管理室",
-        //                 "position":"General Manager",
-        //                 "name": "Tony",
-        //                 "ChName": "王小明",
-        //                 "Num": "",
-        //                 "Ext": "000",
-        //                 "area": "新店9樓",
-        //                 "pic": "user00.jpeg",
-        //                 "count": "10",
-        //                 "teamDetail":"我是總管理室",
-        //                 "childrens": [
-        //                     {
-        //                         "id": 2,
-        //                         "level": 2,
-        //                         "Dept": "Dept.",
-        //                         "position":"Director",
-        //                         "name": "Charlie",
-        //                         "ChName": "王小明",
-        //                         "Num": "",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "Num": "1091201",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "20",
-        //                         "teamDetail":"我是 BA dept.",
-        //                         "childrens": [
-        //                             {
-        //                             "id": 5,
-        //                             "level": 3,
-        //                             "Dept": ".Net",
-        //                             "position":"Manager",
-        //                             "name": "Kerry",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是 .Net",
-        //                             "childrens": [
-        //                                 {
-        //                                     "id": 10,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "Person1",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": [
-                                                
-        //                                         ]
-        //                                 },
-        //                                 {
-        //                                     "id": 11,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person2",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 },
-        //                                 {
-        //                                     "id": 12,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person3",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                         },
-        //                         {
-        //                             "id": 6,
-        //                             "level": 3,
-        //                             "Dept":"Dept.",
-        //                             "position":"Manager",
-        //                             "name": "Gary",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是 ",
-        //                             "childrens": [
-        //                                 {
-        //                                     "id": 13,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person4",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 },
-        //                             ]
-        //                             },
-        //                         ]
-        //                     },
-        //                     {
-        //                         "id": 3,
-        //                         "level": 2,
-        //                         "Dept":"Dept.",
-        //                         "position":"Manager",
-        //                         "name": "SAP",
-        //                         "ChName": "王小明",
-        //                         "Num": "1092021",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "",
-        //                         "teamDetail":"我是 ",
-        //                         "childrens": [
-        //                             {
-        //                                 "id": 7,
-        //                                 "level": 3,
-        //                                 "Dept":"Dept.",
-        //                                 "name": "OOO",
-        //                                 "position":"Manager",
-        //                                 "name": "OOO",
-        //                                 "ChName": "王小明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店9樓",
-        //                                 "pic": "user02.jpeg",
-        //                                 "count": "10",
-        //                                 "teamDetail":"我是 ",
-        //                                 "childrens": [{
-        //                                     "id": 14,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person5",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                             },
-        //                             {
-        //                                 "id": 8,
-        //                                 "level": 3,
-        //                                 "Dept":"Dept.",
-        //                                 "position":"Manager",
-        //                                 "name": "OOO",
-        //                                 "ChName": "王小明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店9樓",
-        //                                 "pic": "user02.jpeg",
-        //                                 "count": "10",
-        //                                 "teamDetail":"我是 ",
-        //                                 "childrens": [{
-        //                                     "id": 15,
-        //                                     "level": 5,
-        //                                     "pic": "user03.jpeg",
-        //                                     "position":"Development Engineer",
-        //                                     "name": "person6",
-        //                                     "ChName": "張大明",
-        //                                     "Num": "1092021",
-        //                                     "Ext": "000",
-        //                                     "area": "新店10樓",
-        //                                     "childrens": []
-        //                                 }]
-        //                             }
-        //                         ]
-        //                     },
-        //                     {
-        //                         "id": 4,
-        //                         "level": 2,
-        //                         "Dept":"Dept.",
-        //                         "position":"Director",
-        //                         "name": "Collin",
-        //                         "ChName": "王小明",
-        //                         "Num": "1092021",
-        //                         "Ext": "000",
-        //                         "area": "新店9樓",
-        //                         "pic": "user01.jpeg",
-        //                         "count": "20",
-        //                         "teamDetail":"我是業務部 ",
-        //                         "childrens": [{
-        //                             "id": 9,
-        //                             "level": 3,
-        //                             "Dept":"業務部",
-        //                             "position":"Manager",
-        //                             "name": "OOO",
-        //                             "ChName": "王小明",
-        //                             "Num": "1092021",
-        //                             "Ext": "000",
-        //                             "area": "新店9樓",
-        //                             "pic": "user02.jpeg",
-        //                             "count": "10",
-        //                             "teamDetail":"我是業務部A",
-        //                             "childrens": [{
-        //                                 "id": 16,
-        //                                 "level": 5,
-        //                                 "pic": "user03.jpeg",
-        //                                 "position":"Development Engineer",
-        //                                 "name": "person7",
-        //                                 "ChName": "張大明",
-        //                                 "Num": "1092021",
-        //                                 "Ext": "000",
-        //                                 "area": "新店10樓",
-        //                                 "childrens": []
-        //                             }]
-        //                         }]
-        //                     }
-        //                 ]
-        //                 }
-        //     ]
-        // }
-        function showall(menu_list, parent) {
-            $.each(menu_list, function (index, val) {
-                if (val.id == 0) {
-                    var li = $("<li></li>").addClass("level");
-                    li.append(
-                    `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
-                        <div class="header d-flex">
-                            <span class="col-10 dept">${val.Dept}</span>
-                            <span class="col-2 icon" data-bs-toggle="modal" data-bs-target="#exampleModal${val.id}"><i class="far fa-id-card "></i></span>
+                     },
+                     {
+                        "id":"200073",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"業務管理部",
+                        "position":"副理",
+                        "name":"annie.fan",
+                        "chName":"范詩玉",
+                        "ext":"5024",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"業務營運基礎建設推手：\r\n- 集團業務支援及維護客戶關係管理。\r\n- 提供完善的後勤支援管理系統，有效縮短公司內部作業流程並提高執行效率。\r\n- 依照各項業務經營目的協助有效的規範、調整管理活動，及協助推動決策執行。 \r\n- 依照營運績效追蹤分析提供例行性管理性分析報表。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200072",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"行銷企劃部",
+                        "position":"副理",
+                        "name":"sunny.cheng",
+                        "chName":"程勤硯",
+                        "ext":"5084",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"以多元活動形式，傳遞益網自有品牌之產品與服務價值於聚焦市場之中：\r\n- 針對公司的企業形象與品牌價值，規劃並執行各類行銷推廣活動/策略。\r\n- 跨部門合作，完成專案計畫，由內而外完善企業識別/品牌價值。\r\n- 經營暨維護網路數位平台。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200222",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"產品應用暨技術諮詢部",
+                        "position":"副理",
+                        "name":"louis.chen",
+                        "chName":"陳品隆",
+                        "ext":"5118",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"以售前諮詢及售後服務，橋接合作產品、客戶與內部技術團隊：\r\n- 協助專案客戶進行網路拓譜建置諮詢及產品應用規劃\r\n- 提供設備異常原因判斷及故障排除服務\r\n- 以客戶經驗回饋，協作強化產品價值",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200342",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"工業乙太網路產品行銷部",
+                        "position":"資深經理",
+                        "name":"ben.chiang",
+                        "chName":"江健豪",
+                        "ext":"5208",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"益網自有品牌有線產品及聚焦市場發展之先驅：\r\n- 於核心發展之聚焦市場中，強化內部資源整合，經營品牌發展策略。\r\n- 擬定工業乙太網路設備之應用及技術發展的中長期策略方向，含有關技術授權、技術外購和策略聯盟的評估。\r\n- 統籌新產品之行銷策略，並對新產品營收及獲利負責。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200111",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"策略市場部",
+                        "position":"經理",
+                        "name":"david.fan",
+                        "chName":"方志新",
+                        "ext":"5202",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"深耕於特定應用，實現業務開發：\r\n依公司定義聚焦之特定垂直市場及產品組合,  觀察及了解該市場應用及專業需求, 發掘潛在的商業機會. 選定最有機會且具成長動能的關鍵客戶, 擬定最適宜的開發策略. 以關鍵客戶需求為出發點, 發掘其JTBD (Jobs to Be Done), 同時連結益網技術諮詢團隊, 快速提出完整解決方案。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200241",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"無線物聯網創新部",
+                        "position":"經理",
+                        "name":"joseph.cheng",
+                        "chName":"鄭家鋐",
+                        "ext":"5127",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"無線產品線之規劃與管理",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200318",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"人力暨資訊資源服務部",
+                  "position":"資深經理",
+                  "name":"vicky.huang",
+                  "chName":"黃靖茹",
+                  "ext":"5166",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"人力資源：以功能面區分：人事行政、人力資源管理、人力資源發展、人力資本管理\r\n- 研究如何找到「對」的人加入團隊、如何提升員工的學習成效、如何確保員工對團隊力的承諾，\r\n- 員工為企業最重要的投資標的，認知到每個人的獨特性。所以著重在組織跟個人的價值觀契合度。\r\n\r\n資訊服務：以功能面區分：管理監控分析、軟硬維護執行、有效整合設計\r\n- 在IT服務上維持可靠、安全、高效且具成本效益的基本營運。\r\n- 了解企業管理階層與董事會目標，科學方法分析可行的科技解決方案。\r\n- 重新衡量IT支出的分配，逐漸轉向符合未來目標的發展項目。",
+                  "isLast":false,
+                  "children":[
+                     
+                  ]
+               },
+               {
+                  "id":"200207",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"行政處",
+                  "position":"經理",
+                  "name":"charles.liu",
+                  "chName":"劉建君",
+                  "ext":"5081",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"以「維持公司營運順暢，保障同仁安全及健康」為使命，並以「團隊相互合作，創造共享價值」為願景。",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200207",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"總務部",
+                        "position":"經理",
+                        "name":"charles.liu",
+                        "chName":"劉建君",
+                        "ext":"5081",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 總務事務與環境維護之管理\r\n- 辦公室租賃及修繕管理\r\n- 安衛環管理系統之協辦與執行",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200207",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"財會部",
+                        "position":"經理",
+                        "name":"charles.liu",
+                        "chName":"劉建君",
+                        "ext":"5081",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 統籌公司帳務處理、執行成本資料蒐集與分析。\r\n- 規畫暨執行公司財務管理及資金調度業務。\r\n- 財務報表之編制及管理性財務資料之建立與分析。\r\n- 綜合管理公司稅務之規劃、執行及各項稅務法令之遵循。\r\n- 預算規劃及控管每月預算執行狀況及差異分析。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200186",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"研發處",
+                  "position":"副總經理",
+                  "name":"ted.lee",
+                  "chName":"李泰安",
+                  "ext":"5020",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"從事技術研究、產品開發、與產品維護，依公司產品開發策略，落實研發策略規畫與擬定，執行技術研發規畫、擬定與評估，暨培育研發人才。",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200186",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"硬體研發部",
+                        "position":"副總經理",
+                        "name":"ted.lee",
+                        "chName":"李泰安",
+                        "ext":"5020",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 研發策略之管控、維護、評估與執行\r\n- 電子電氣相關技術研發之督導、規劃、擬定、管控、維護、評估與執行\r\n- 產品開發之之督導、規劃、擬定、管控、維護、評估與協助\r\n- 研發人才培育之督導、規劃、擬定、管控、維護、評估與執行\r\n- 部門年度預算規劃、管控、評估與執行",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200401",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"軟體研發部",
+                        "position":"資深經理",
+                        "name":"henry.sun",
+                        "chName":"孫孝文",
+                        "ext":"5205",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 研發策略之管控、維護、評估與執行\r\n- 軟體相關技術研發之督導、規劃、擬定、管控、維護、評估與協助\r\n- 程式開發之督導、規劃、擬定、管控、維護、評估與執行\r\n- 研發人才培育之規劃、擬定、管控、維護、評估與執行\r\n- 部門年度預算之規劃、擬定、管控、評估與執行",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200186",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"硬體驗證部",
+                        "position":"副總經理",
+                        "name":"ted.lee",
+                        "chName":"李泰安",
+                        "ext":"5020",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 設計品管之規劃與擬定\r\n- 測試驗證計畫之規劃與擬定\r\n- 產品驗證規範之規劃與擬定\r\n- 研發人才培育之督導、規劃、擬定、管控、維護、評估與執行\r\n- 部門年度預算之規劃、擬定、管控、評估與執行",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200279",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"產品處",
+                  "position":"副總經理",
+                  "name":"michael.yao",
+                  "chName":"姚毅昇",
+                  "ext":"5206",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"產品生命週期管理以及產品開發專案管理",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200279",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"乙太網產品管理部",
+                        "position":"副總經理",
+                        "name":"michael.yao",
+                        "chName":"姚毅昇",
+                        "ext":"5206",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"有線產品線之產品生命週期管理、軟體更新之計劃與管理。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200129",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"計畫控管部",
+                        "position":"副理",
+                        "name":"monica.huang",
+                        "chName":"黃怡華",
+                        "ext":"5027",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"產品開發專案管理",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200279",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"產品驗證處",
+                  "position":"副總經理",
+                  "name":"michael.yao",
+                  "chName":"姚毅昇",
+                  "ext":"5206",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"負責驗證公司正在開發中產品的軟體功能，作為產品上市前的品質參考依據。",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200326",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"軟體驗證部",
+                        "position":"經理",
+                        "name":"jackie.chen",
+                        "chName":"陳培超",
+                        "ext":"5201",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 系統驗證: 規劃與執行系統測試\r\n- 功能驗證:規劃與執行軟體的功能測試\r\n- 測試自動化：規劃與開發軟體自動測試系統與工具",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200022",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"供應鏈管理處",
+                  "position":"經理",
+                  "name":"christina.chen",
+                  "chName":"陳美君",
+                  "ext":"6300",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"整合供應商、客戶與市場供需資訊，規劃生產與安排出貨交期。",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200022",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"製造部",
+                        "position":"經理",
+                        "name":"christina.chen",
+                        "chName":"陳美君",
+                        "ext":"6300",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 綜理產品之生產執行並準時完成工單以符合預定交期。\r\n- 處理量產後的產品生產過程品質異常問題。\r\n- 協調研發人員進行產品開發時期試產事宜。\r\n- 持續進行提高良率與降低成本，改善製程之精進事項。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200022",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"資材部",
+                        "position":"經理",
+                        "name":"christina.chen",
+                        "chName":"陳美君",
+                        "ext":"6300",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 依據接單需求，規劃最佳化生產計劃與排程後，安排工單生產製令。  \r\n- 確認物料狀況，確保如期生產，以符合客戶交期。  \r\n- 擬定量產條件之修正與最適化策略，跟催物料協調產線作業，以達到生產作業順暢。  \r\n- 協調外包廠完成SMT代工與部分全製程生產項目，包含協調料件調度相關事宜。\r\n- 協助開發團隊處理新料件與替代料件之選用事宜。\r\n- 規畫選商策略與負責新供應商承認與廠驗檢核事宜\r\n- 評析原物料市場供應資訊及成本控制，根據需求執行採購作業以及料況追蹤處理，直至驗收入庫請款流程完畢 。\r\n- 物料收發、半成品、成品之入庫、保管、盤存以及出貨運輸安排。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"200084",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"品質保證處",
+                  "position":"資深經理",
+                  "name":"wayne.chen",
+                  "chName":"陳文淵",
+                  "ext":"6200",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"推行品質管理系統及推動持續改善，確保生產高品質的產品，並提供客戶優良且快速的服務。配合各單位需求，提供品質相關事項的服務，以推動公司持續成長。",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200084",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"品質系統部",
+                        "position":"資深經理",
+                        "name":"wayne.chen",
+                        "chName":"陳文淵",
+                        "ext":"6200",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 管理系統的運作與監督: 建立並推行公司整體國際管理系統之運作，公司內外稽核計劃之擬定與執行，作業流程改善專案溝通協調與執行。\r\n- 文管中心: 產品BOM資訊維護與管理，產品設計(NPDP)資料維護與管理。\r\n- 綠色產品: 產品符合有害物質規範的推行。 ",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                     {
+                        "id":"200084",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"品質保證部",
+                        "position":"資深經理",
+                        "name":"wayne.chen",
+                        "chName":"陳文淵",
+                        "ext":"6200",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"- 品質保證: 產品品質管理與監督。\r\n- 持續改善: 品質持續改善的推動。\r\n- 售後服務: 快速且完善的售後服務與客訴回應。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+
+function nodeTemplate(options) {
+   let areaControl = '';
+   let departmentIcon = '';
+   let bottomPanel = '';
+   let level3 = '';
+   let level2 = '';
+   let level1 = '';
+   let isLast = '';
+
+    if (options.areaUrl !== null) {
+        areaControl = `<div class="areaUrl" data-url="${options.areaUrl}" data-bs-toggle="modal" data-bs-target="#floorPlan">${options.area}</div>`;
+    } else {
+        areaControl = options.area;
+    }
+    if (!options.isLast) {
+        departmentIcon = `<span class="col-2 icon" data-bs-toggle="modal" data-bs-target="#exampleModal${options.id}"><i class="far fa-id-card"></i></span>`;
+    }
+   if (!options.isLast) {
+        bottomPanel += `
+        <div class="col-4">
+            <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;${options.count} </i>
+            </p>
+        </div>
+        `;
+   }
+   
+   if (options.className == "level1" || options.className == "level") {
+      level1 = `
+            <div class="col-lg-4 col-12">
+                <div class="pic">
+                    <img src="../public/img/organization/${options.pic}">
+                </div>
+            </div>
+            <div class="col-lg-8 col-12">
+               <div class="row m-1 align-items-center">
+                  <div class="col-12 titleHeader">
+                     <p class="position">${options.position}</p>
+                     <p class="name">${options.chName} &nbsp; <span class="name">${options.name}</span></p>
+                     <p class="text-black-50">${options.id}</p>
+                  </div>
+                  <div class="col-12">
+                     <div class="row align-items-center">
+                        <div class="col-4">
+                           <p>分機<span>${options.ext}</span></p>
                         </div>
-                    
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-12">
-                                <div class="pic">
-                                    <img src="../public/img/organization/${val.pic}">
-                                </div>
-                            </div>
-                            <div class="col-lg-8 col-12 px-3 py-1 text-left">
-                                <p class="position">${val.position}</p>
-                                <p class="name">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
-                                <p class="name text-black-50">${val.Num}</p>
-                            </div>
+                     <div class="col-4 ">
+                         <p>${areaControl}</p>
+                     </div>
+                     ${bottomPanel}
+                     </div>
+                  </div>
+               </div>
+            </div>
+      `
+   }
+   else if (options.className == "level2") {
+      level2 = `
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="pic">
+                    <img src="../public/img/organization/${options.pic}">
+                </div>
+            </div>
+            <div class="col-lg-12 col-12">
+               <div class="row m-1">
+                  <div class="col-12 titleHeader text-center">
+                     <p class="position">${options.position}</p>
+                     <p class="name">${options.chName}</p> 
+                     <p class="name">${options.name}</p>
+                     <p class="text-black-50">${options.id}</p>
+                  </div>
+                  <div class="col-12">
+                     <div class="row py-2 align-items-center">
+                        <div class="col-4 p-0">
+                           <p>分機<span>${options.ext}</span></p>
                         </div>
-                        <div class="row justify-content-between align-items-center px-1">
-                            <div class="col-5">
-                                <p>${val.tel}</p>
-                                <p>分機<span>${val.Ext}</span></p>
-                            </div>
-                            <div class="col">
-                                <p><span>${val.area}</span></p>
-                            </div>
-                            <div class="col">
-                                <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;${val.count} </i>
-                                </p>
-                            </div>
+                     <div class="col-4 p-0">
+                         <p>${areaControl}</p>
+                     </div>
+                     ${bottomPanel}
+                     </div>
+                  </div>
+               </div>
+            </div>
+      `
+   }
+   else if (options.className == "level3") {
+      level3 = `
+            <div class="col-lg-12">
+               <div class="row m-1">
+                  <div class="col-12 titleHeader p-0">
+                     <p class="position">${options.position}</p>
+                     <p class="name">${options.chName} &nbsp;  <span class="name">${options.name}</span></p> 
+                     
+                     <p class="text-black-50">${options.id}</p>
+                  </div>
+                  <div class="col-12">
+                     <div class="row py-1">
+                        <div class="col-4 p-0">
+                           <p>分機<span>${options.ext}</span></p>
                         </div>
-                         <div class="detail">${val.teamDetail}</div>
-                    </a>`
-                    ).append("<ul></ul>").appendTo(parent);
-                    //递归显示
-                    showall(val.childrens, $(li).children().eq(1));
-                } 
-                else if (val.childrens.length > 0) {
-                    var li = $("<li></li>").addClass("level"+val.level);
-                    li.append(
-                    `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
-                        <div class="header d-flex">
-                            <span class="col-10 dept">${val.Dept}</span>
-                            <span class="col-2 icon" data-bs-toggle="modal" data-bs-target="#exampleModal${val.id}"><i class="far fa-id-card "></i></span>
+                        <div class="col-4 p-0">
+                           <p>${areaControl}</p>
                         </div>
-                    
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-12">
-                                <div class="pic">
-                                    <img src="../public/img/organization/${val.pic}">
-                                </div>
-                            </div>
-                            <div class="col-lg-8 col-12 px-3 py-1 text-left">
-                                <p class="position">${val.position}</p>
-                                <p class="name">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
-                                <p class="name text-black-50">${val.Num}</p>
-                            </div>
+                        ${bottomPanel}
+                     </div>
+                  </div>
+               </div>
+            </div>
+      `
+   }
+   else if (options.isLast) {
+      isLast = `
+            <div class="col-12">
+               <div class="row m-1">
+                  <div class="col-12 titleHeader p-0">
+                     <p class="position">${options.position}</p>
+                     <p class="name">${options.chName} &nbsp; <span class="name">${options.name}</span></p>
+                     <p class="text-black-50">${options.id}</p>
+                  </div>
+                  <div class="col-12 p-0">
+                     <div class="row text-start">
+                        <div class="col-6">
+                           <p>分機<span>${options.ext}</span></p>
                         </div>
-                        <div class="row justify-content-between align-items-center px-1">
-                            <div class="col-5">
-                                <p>${val.tel}</p>
-                                <p>分機<span>${val.Ext}</span></p>
-                            </div>
-                            <div class="col">
-                                <p><span>${val.area}</span></p>
-                            </div>
-                            <div class="col">
-                                <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;${val.count} </i>
-                                </p>
-                            </div>
+                        <div class="col-6">
+                           <p>${areaControl}</p>
                         </div>
-                        <div class="more"><i class="fas fa-minus"></i></div>
-                        <div class="detail">${val.teamDetail}</div>
-                    </a>`
-                    ).append("<ul></ul>").appendTo(parent);
-                    //递归显示
-                    showall(val.childrens, $(li).children().eq(1));
-                }
-                else if (val.isLast) {
-                    var li = $("<li></li>").addClass("isLast");
-                    li.append(
-                    `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
-                        <div class="header d-flex">
-                            <span class="col-10 dept">${val.Dept}</span>
-                        </div>
-                    
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-12">
-                                <div class="pic">
-                                    <img src="../public/img/organization/${val.pic}">
-                                </div>
-                            </div>
-                            <div class="col-lg-8 col-12 px-3 py-1 text-left">
-                                <p class="position">${val.position}</p>
-                                <p class="name">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
-                                <p class="name text-black-50">${val.Num}</p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-between align-items-center px-1">
-                            <div class="col-5">
-                                <p>${val.tel}</p>
-                                <p>分機<span>${val.Ext}</span></p>
-                            </div>
-                            <div class="col">
-                                <p><span>${val.area}</span></p>
-                            </div>
-                            
-                        </div>
-                    </a>`
-                    ).append("<ul></ul>").appendTo(parent);
-                    //递归显示
-                    showall(val.childrens, $(li).children().eq(1));
-                }
-                // else {
-                //    var li = $("<li></li>").addClass("level"+val.level);
-                //     li.append(
-                //         `<a class="organization_text" href='javascript:void(0)' onclick=getOrgId(${val.id});>
-                //         <div class="row align-items-center p-1">
-                //             <div class="col-4">
-                //                 <div class="pic">
-                //                     <img src="../public/img/organization/${val.pic}">
-                //                 </div>
-                //             </div>
-                //             <div class="col-8">
-                //                 <p class="position lh-15">${val.position}</p>
-                //                 <p class="name lh-20">${val.ChName} &nbsp; <span class="name">${val.name}</span></p>
-                //                 <p class="name text-black-50">${val.Num}</p>
-                //             </div>
-                //         </div>
-                //         <div class="row justify-content-between">
-                //             <div class="col">
-                //                 <p>分機<span>${val.Ext}</span></p>
-                //             </div>
-                //             <div class="col">
-                //                 <p><span>${val.area}</span></p>
-                //             </div>
-                //         </div>
-                //         </a>
-                //         `
-                //     ).append("<ul class='grid'></ul>").appendTo(parent);
-                // }
-            });
-            $.each(menu_list, function (index, val) {
-                // console.log(val);
-                const Area = document.querySelector('#modalArea')
-                if (val.childrens.length > 0) {
-                    $(`<div class="modal fade" id="exampleModal${val.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     </div>
+                  </div>
+               </div>
+            </div>
+      `
+   }
+    return `
+        <div class="header d-flex">
+            <span class="col-10 dept">${options.dept}</span>
+            ${departmentIcon}
+        </div>
+        <div class="row align-items-center text-center p-1">
+            ${level1}
+            ${level2}
+            ${level3}
+            ${isLast}
+        </div>
+        
+        `;
+}
+const orgRender = $("#chart-container").orgchart({
+   data: options,
+   nodeTemplate: nodeTemplate,
+   nodeContent: "name",
+   verticalLevel: 4,
+   visibleLevel: 3,
+   'depth': 2,
+   //  direction: 'l2r',
+    toggleSiblingsResp: false,
+   initCompleted: scrollbarOffset,
+   'createNode': function($node, options) {
+      const Area = $('.modalArea')
+      const detailContent = `
+      <div class="modal fade" id="exampleModal${options.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">${val.Dept}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">${options.dept}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ${val.teamDetail}
+                            ${options.teamDetail}
                         </div>
-                        
                         </div>
                     </div>
-                    </div>`).appendTo(Area);
-                    
-                    //递归显示
-                    // showall(val.childrens, $(li).children().eq(1));
-                } 
-            });
-            // menu_list.appendTo('.jOrgChart')
-        }
+         </div>  
+      `;
+        $(detailContent).appendTo(Area);
+      }
+});
 
-        var showlist = $("<ul id='org' style='display:none'></ul>");
-        showall(data.data, showlist);
-        $("#jOrgChart").append(showlist);
-        $("#org").jOrgChart({
-            chartElement: '#jOrgChart', //指定在某个dom生成jorgchart
-            dragAndDrop: false, //设置是否可拖动
-            expandToLevel: 3,
-        });
+function buttonAdd() {
+    const Area = $('.orgchart')
+    const button = `
+    <div class="btn_toggle text-center">
+        <button class="btn btn-primary shadow " onclick="showAll()">全部展開 &nbsp; <i class="fas fa-sitemap"></i></button>
+        <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            人員搜尋
+                        </button>
+    </div>
+    `
+    Area.append(button)
+}
+buttonAdd()
+function showAll() {
+    let $temp = orgRender.$chart.find('.nodes');
+    if ($temp.hasClass('hidden')) {
+        $temp[0].offsetWidth;
+        $temp.removeClass('hidden');
+        $temp.find('.isCollapsedDescendant').removeClass('isCollapsedDescendant');
+        $temp.find('.slide-up').removeClass('slide-up');
+        scrollbarOffset()
+    } else {
+        orgRender.hideChildren(orgRender.$chart.find('.level2'));
+        scrollbarOffset()
+    }
+}
 
-        function getOrgId(val) {
-            // console.log(val);
-        }
-// $(document).ready(function () {
-//     $('.fa-id-card').click(function () {
-//         $(this).parent().next('div.modal').toggleClass('open');
-//     })
-// })
+function scrollbarOffset() {
+   const dom = document.querySelector(".level")
+   const scrollbarOffset = dom.getBoundingClientRect().left
+    $(window).scrollLeft(scrollbarOffset)
+}
