@@ -2320,21 +2320,35 @@ section.page_title .active {
   }
 }
 
-.mainArea .btnArea .btn_toggle {
-  width: 70px;
-  height: 70px;
+.mainArea .btnArea {
   position: fixed;
   top: 20px;
-  z-index: 99;
-  right: 20px;
-  border-radius: 50%;
-  text-align: center;
+  z-index: 999;
+  right: 30px;
+  display: block;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
-  .mainArea .btnArea .btn_toggle {
-    left: 30%;
-  }
+.mainArea .btnArea i {
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.mainArea .btnArea .btn_toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 15px;
+  font-size: 14px;
+  padding: 3px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 10px;
 }
 
 .logo {

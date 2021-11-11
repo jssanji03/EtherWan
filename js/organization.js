@@ -1006,14 +1006,14 @@ const orgRender = $("#chart-container").orgchart({
       `;
         $(detailContent).appendTo(Area);
    },
-   function($node, options) {
-        $node.on('click', function(event) {
-          if (!$(event.target).is('.edge, .toggleBtn')) {
-            scrollbarOffset()
-         }
-         scrollbarOffset()
-        });
-      }
+   // function($node, options) {
+   //      $node.on('click', function(event) {
+   //        if (!$(event.target).is('.edge, .toggleBtn')) {
+   //          scrollbarOffset()
+   //       }
+   //       scrollbarOffset()
+   //      });
+   //    }
 });
 
 // function buttonAdd() {
@@ -1043,20 +1043,12 @@ function showAll() {
 }
 
 function scrollbarOffset($node, options) {
-   // const dom = document.querySelector(".level")
-   // const dom2 = document.querySelector(".sidebar-wrapper")
-   // const scrollbarOffset = dom.getBoundingClientRect().left
-   // console.log(dom2.clientWidth);
-   // console.log($(window).scrollLeft());
-   //  $(window).scrollLeft(308)
    const screenWidth = $(window).width();
    const obj = $(".orgchart").width()
-   // var scrollleft = $(document).scrollLeft();
    const objLeft = obj-screenWidth;
    console.log($(window).width());
    console.log($(".orgchart").width());
    console.log(($(".orgchart").width())-($(window).width()));
    console.log($(document).scrollLeft());
-   // $(".level").css({left: objLeft + 'px'});
    $(window).scrollLeft(objLeft)
 }

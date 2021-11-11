@@ -205,19 +205,28 @@
 .mainArea{
   // position: relative; 
   .btnArea{
+    position: fixed;
+    top: 20px;
+    z-index: 999;
+    right:30px;
+    display: block;
+    flex-wrap: wrap;
+    i{
+      line-height: 18px;
+      font-size: 12px;
+    }
     .btn_toggle{
-      width: 70px;
-      height: 70px;
-      position: fixed;
-      top: 20px;
-      z-index: 99;
-      right:20px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      // margin: 0 auto;
+      color: #fff;
+      display: block;
       text-align: center;
-      @media #{$breakpoint-md,$breakpoint-xs}{
-       left: 30%;
-      }
+      line-height: 15px;
+      font-size: 14px;
+      padding: 3px;
+      align-items: flex-start;
+      margin-top: 10px;
     }
   }
 }
