@@ -100,13 +100,13 @@
     }
 }
 .bg-blue30{
-    @include buttonEffect($background-color:#edf6ff,$fontColor:#505c62,$EnFontColor:#505c62);
+    @include buttonEffect($background-color:#edf6ff);
 }
 .bg-blue40{
-    @include buttonEffect($background-color:#6DAFFE,$fontColor:#41494e,$EnFontColor:#41494e);
+    @include buttonEffect($background-color:#6DAFFE);
 }
 .bg-blue50{
-    @include buttonEffect($background-color:#437FC7,$fontColor:#000,$EnFontColor:#000);
+    @include buttonEffect($background-color:#437FC7);
 }
 .circle-sm{
     width: 40px;
