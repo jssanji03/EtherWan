@@ -25,32 +25,43 @@
             </div>
         </div>
     </header>
-    <section class="HomeBanner col-12 py-2">
+    <!-- 即時宣導 -->
+    <section class="Propaganda col-12 pt-70">
         <div class="container">
-            <div class="row pt-70 align-items-center">
-                <div class="col-lg-3 col-12 order-lg-first order-last mt-lg-0 mt-3">
-                    <div class="row pe-lg-4 pe-0">
-                        <div class="information_card bg-blue30">
-                            <a class="" href="./pages/homepage.html">
-                                <h3>關於益網</h3>
-                                <p class="gray fontsEn fz-12 lh-30">About EtherWan</p>
-                            </a>
-                        </div>
-                        <div class="information_card bg-blue40">
-                            <a class="" href="./pages/companyForm.html">
-                                <h3 class="white">公司管理辦法/表單</h3>
-                                <p class="lightBlue fontsEn fz-12 lh-30 ">Policy / Form</p>
-                            </a>
-                        </div>
-                        <div class="information_card bg-blue50">
-                            <a class="" href="./pages/useForm.html">
-                                <h3 class="white">常用資訊</h3>
-                                <p class="lightBlue fontsEn fz-12 lh-30">Useful Information</p>
-                            </a>
-                        </div>
+            <div class="row justify-content-center px-2">
+                <div class="col-12 marqueeBox overflow-hidden d-flex">
+                    <div class="col-lg-2 col-3 newsTitle">
+                        <p class="white fz-20"><i class="fas fa-bell"></i> 即時宣導</p><span></span>
+                    </div>
+                    <div class="col-lg-10 col-9 marquee-wrapper marquee" id="marquee">
+                        <ul class="mx-auto marquee-canvas">
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-9 col-12 p-0 order-lg-last order-first">
+            </div>
+        </div>
+    </section>
+    <!-- 即時宣導 End -->
+    <section class="HomeBanner col-12 py-2">
+        <div class="container">
+            <div class="row px-2">
+                <div class="col-lg-2 col-12">
+                    <div class="row pe-0 mt-lg-0 mt-3">
+                        <a class="information_card bg-blue30" href="./pages/homepage.html">
+                            <h5>關於益網</h5>
+                            <p class="gray fontsEn fz-12 lh-30">About EtherWan</p>
+                        </a>
+                        <a class="information_card bg-blue40" href="./pages/companyForm.html">
+                            <h5>辦法/表單</h5>
+                            <p class="lightBlue fontsEn fz-12 lh-30 ">Policy / Form</p>
+                        </a>
+                        <a class="information_card bg-blue50" href="./pages/useForm.html">
+                            <h5>常用資訊</h5>
+                            <p class="lightBlue fontsEn fz-12 lh-30">Useful Information</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-12 order-lg-last order-first carouselArea">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators ">
                         </div>
@@ -72,30 +83,14 @@
         </div>
     </section>
 
-    <!-- 即時宣導 -->
-    <section class="Propaganda col-12 py-2">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 marqueeBox overflow-hidden d-flex">
-                    <div class="col-lg-2 col-3 newsTitle">
-                        <p class="white fz-20"><i class="fas fa-bell"></i> 即時宣導</p><span></span>
-                    </div>
-                    <div class="col-lg-10 col-9 marquee-wrapper marquee" id="marquee">
-                        <ul class="mx-auto marquee-canvas">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- 即時宣導 End -->
+    
     <section class="py-3">
         <div class="container">
             <div class="row">
                 <section class="col-lg-6 col-12 announcement">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">公告</h5>
+                            <h5 class="card-title lh-40 border-bottom primary text-center">公告</h5>
                             <ul class="lh-30">
                                 <li class="row">
                                     <div class="col-sm-9 col-12">
@@ -317,7 +312,7 @@
                         <div class="card-body">
                             <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">系統連結</h5>
                             <div class="col-12">
-                                <div class="row p-3">
+                                <div class="row">
                                     <div class="col-md-6 col-12">
                                         <ul class="linkList">
                                             <li>
@@ -340,7 +335,7 @@
                                                 <button class="btn btn-menu">線上學習平台 <i class="fas fa-angle-right"></i></button>
                                             </li>
                                             <li>
-                                                <button class="btn btn-menu">Redmine追蹤管理系統 <i class="fas fa-angle-right"></i></button>
+                                                <button class="btn btn-menu">追蹤管理系統 Redminenormal <i class="fas fa-angle-right"></i></button>
                                             </li>
                                             <li>
                                                 <button class="btn btn-menu">匯率查詢系統 <i class="fas fa-angle-right"></i></button>

@@ -985,8 +985,8 @@ const orgRender = $("#chart-container").orgchart({
    visibleLevel: 3,
    'depth': 2,
    //  direction: 'l2r',
-    toggleSiblingsResp: false,
-   initCompleted: scrollbarOffset,
+   toggleSiblingsResp: false,
+   initCompleted: scrollbarOffset,     
    'createNode': function($node, options) {
       const Area = $('.modalArea')
       const detailContent = `
@@ -1005,38 +1005,58 @@ const orgRender = $("#chart-container").orgchart({
          </div>  
       `;
         $(detailContent).appendTo(Area);
+   },
+   function($node, options) {
+        $node.on('click', function(event) {
+          if (!$(event.target).is('.edge, .toggleBtn')) {
+            scrollbarOffset()
+         }
+         scrollbarOffset()
+        });
       }
 });
 
-function buttonAdd() {
-    const Area = $('.orgchart')
-    const button = `
-    <div class="btn_toggle text-center">
-        <button class="btn btn-primary shadow " onclick="showAll()">全部展開 &nbsp; <i class="fas fa-sitemap"></i></button>
-        <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            人員搜尋
-                        </button>
-    </div>
-    `
-    Area.append(button)
-}
-buttonAdd()
+// function buttonAdd() {
+//     const Area = $('.orgchart')
+//     const button = `
+//     <div class="btn_toggle text-center">
+//         <button class="btn btn-primary shadow " onclick="showAll()">全部展開 &nbsp; <i class="fas fa-sitemap"></i></button>
+//         <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+//                             人員搜尋
+//                         </button>
+//     </div>
+//     `
+//     Area.append(button)
+// }
 function showAll() {
     let $temp = orgRender.$chart.find('.nodes');
     if ($temp.hasClass('hidden')) {
-        $temp[0].offsetWidth;
-        $temp.removeClass('hidden');
-        $temp.find('.isCollapsedDescendant').removeClass('isCollapsedDescendant');
-        $temp.find('.slide-up').removeClass('slide-up');
-        scrollbarOffset()
+      $temp[0].offsetWidth;
+      $temp.removeClass('hidden');
+      $temp.find('.isCollapsedDescendant').removeClass('isCollapsedDescendant');
+      $temp.find('.slide-up').removeClass('slide-up');
+      scrollbarOffset()
     } else {
-        orgRender.hideChildren(orgRender.$chart.find('.level2'));
-        scrollbarOffset()
-    }
+      orgRender.hideChildren(orgRender.$chart.find('.level2'));
+      scrollbarOffset()
+   }
 }
 
-function scrollbarOffset() {
-   const dom = document.querySelector(".level")
-   const scrollbarOffset = dom.getBoundingClientRect().left
-    $(window).scrollLeft(scrollbarOffset)
+function scrollbarOffset($node, options) {
+   // const dom = document.querySelector(".level")
+   // const dom2 = document.querySelector(".sidebar-wrapper")
+   // const scrollbarOffset = dom.getBoundingClientRect().left
+   // console.log(dom2.clientWidth);
+   // console.log($(window).scrollLeft());
+   //  $(window).scrollLeft(308)
+   const screenWidth = $(window).width();
+   const obj = $(".orgchart").width()
+   // var scrollleft = $(document).scrollLeft();
+   const objLeft = obj-screenWidth;
+   console.log($(window).width());
+   console.log($(".orgchart").width());
+   console.log(($(".orgchart").width())-($(window).width()));
+   console.log($(document).scrollLeft());
+   // $(".level").css({left: objLeft + 'px'});
+   $(window).scrollLeft(objLeft)
 }

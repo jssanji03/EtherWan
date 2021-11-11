@@ -29,19 +29,19 @@ $(function () {
 $(function () {
     const data =[
         [
-            "https://fakeimg.pl/1000x450/",
+            "https://fakeimg.pl/1100x350/",
             "http://www.google.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x450/",
+            "https://fakeimg.pl/1100x350/",
             "http://www.yahoo.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x450/",
+            "https://fakeimg.pl/1100x350/",
             "http://www.facebook.com.tw"
         ],
         [
-            "https://fakeimg.pl/1000x450/",
+            "https://fakeimg.pl/1100x350/",
             "http://www.msn.com.tw"
         ],
     ]
@@ -49,8 +49,8 @@ $(function () {
         // console.log(data);
         var html = "";
         for (var i = 0; i < data.length; i++) {
-            html += `<div class="carousel-item photoLink">`;
-            html += `<a href=${data[i][1]} target=_blank><img src="${data[i][0]}" class="img-fluid" alt="..."></a>`;
+            html += `<div class="carousel-item">`;
+            html += `<a class="photoLink" href=${data[i][1]} target=_blank><img src="${data[i][0]}" class="img-fluid" alt="..."></a>`;
             html += "</div>";
             if (i == 9) {
                 break;
