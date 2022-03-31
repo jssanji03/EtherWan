@@ -12,6 +12,7 @@
 // @import url('../plugins/jOrgChart/jquery.jOrgChart.css');
 @import url('../plugins/Magicsuggest/css/magicsuggest.css');
 @import url('../plugins/OrgChart-master/src/css/jquery.orgchart.css');
+@import url('../plugins/jquery-monthpicker/MonthPicker.min.css');
 
 
 /* :: 1.0 Import Fonts */
@@ -40,7 +41,8 @@
 @import "component/sidebar";
 @import "component/card";
 @import "component/datatable";
-@import "component/datepicker";
+// @import "component/datepicker";
+@import "component/monthpicker";
 
 // *******************
 //     base

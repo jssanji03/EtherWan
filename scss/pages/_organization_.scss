@@ -129,15 +129,6 @@
 // }
 
 .jOrgChart{
-  .level{
-    @include level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
-    @media #{$breakpoint-md}{
-      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
-    }
-    @media #{$breakpoint-xs}{
-      @include RWD-level($background-color:#f0ebf1fa,$dept-background:#6d18a5,$textColor:$dark,$countColor:$primary);
-    }
-  }
   .level1{
     @include level;
     margin-top: 50px;

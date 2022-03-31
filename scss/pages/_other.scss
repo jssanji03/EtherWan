@@ -79,3 +79,17 @@
   -ms-user-select: none;
 }
 
+.none-link{
+    cursor: default;
+}
+
+.tooltip-inner {
+    opacity: 1 !important;
+    
+}
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    opacity: 1 !important;
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    opacity: 1 !important;
+}

@@ -267,7 +267,23 @@ const options =
       "teamDetail":"",
       "isLast":false,
       "children":[
-        {
+         {
+            "id": "200066",
+            "level": 1,
+            "className": "level1 level1-spec",
+            "dept": "總經理室",
+            "position": "總經理",
+            "name": "Vicky",
+            "chName": "趙筱琪",
+            "ext": "5011",
+            "area": "新店9樓",
+            "areaUrl": "新店9樓",
+            "pic": "test002.png",
+            "count": null,
+            "teamDetail": "",
+            "isLast": false,
+         },
+         {
             "id":"200066",
             "level":1,
             "className":"level1",
@@ -473,7 +489,7 @@ const options =
                {
                   "id":"200318",
                   "level":2,
-                  "className":"level2",
+                  "className":"level2 level-spec",
                   "dept":"人力暨資訊資源服務部",
                   "position":"資深經理",
                   "name":"vicky.huang",
@@ -492,7 +508,7 @@ const options =
                {
                   "id":"200207",
                   "level":2,
-                  "className":"level2",
+                  "className":"level2 level-spec",
                   "dept":"行政處",
                   "position":"經理",
                   "name":"charles.liu",
@@ -826,37 +842,45 @@ const options =
                   ]
                }
             ]
-         }
+         },
+         {
+            "id":"200066",
+            "level":1,
+            "className":"level1 level1-spec",
+            "dept":"總經理室",
+            "position":"總經理",
+            "name":"Charles",
+            "chName":"查爾斯",
+            "ext":"5011",
+            "area":"新店9樓",
+            "areaUrl":"新店9樓",
+            "pic":"test002.png",
+            "count":null,
+            "teamDetail":"",
+            "isLast":false,
+         },
       ]
    }
 
 function nodeTemplate(options) {
    let areaControl = '';
    let departmentIcon = '';
-   let bottomPanel = '';
+   // let bottomPanel = '';
    let level3 = '';
    let level2 = '';
    let level1 = '';
    let isLast = '';
 
     if (options.areaUrl !== null) {
-        areaControl = `<div class="areaUrl" data-url="${options.areaUrl}" data-bs-toggle="modal" data-bs-target="#floorPlan">${options.area}</div>`;
+        areaControl = `<div class="areaUrl" data-url="${options.areaUrl}" data-bs-toggle="modal" data-bs-target="#floorPlan">${options.area}<i class="fas fa-angle-right"></i></div>`;
     } else {
         areaControl = options.area;
     }
     if (!options.isLast) {
         departmentIcon = `<span class="col-2 icon" data-bs-toggle="modal" data-bs-target="#exampleModal${options.id}"><i class="far fa-id-card"></i></span>`;
     }
-   if (!options.isLast) {
-        bottomPanel += `
-        <div class="col-4">
-            <p class="count d-flex justify-content-between"><i class="fas fa-user">&nbsp;${options.count} </i>
-            </p>
-        </div>
-        `;
-   }
    
-   if (options.className == "level1" || options.className == "level") {
+   if (options.className == "level1" || options.className == "level" || options.className == "level1 level1-spec") {
       level1 = `
             <div class="col-lg-4 col-12">
                 <div class="pic">
@@ -868,24 +892,24 @@ function nodeTemplate(options) {
                   <div class="col-12 titleHeader">
                      <p class="position">${options.position}</p>
                      <p class="name">${options.chName} &nbsp; <span class="name">${options.name}</span></p>
-                     <p class="text-black-50">${options.id}</p>
+                      
                   </div>
                   <div class="col-12">
-                     <div class="row align-items-center">
-                        <div class="col-4">
+                     <div class="row py-2 align-items-center">
+                        <div class="col-6 text-start">
                            <p>分機<span>${options.ext}</span></p>
                         </div>
-                     <div class="col-4 ">
+                     <div class="col-6 ">
                          <p>${areaControl}</p>
                      </div>
-                     ${bottomPanel}
+                      
                      </div>
                   </div>
                </div>
             </div>
       `
    }
-   else if (options.className == "level2") {
+   else if (options.className == "level2" || options.className == "level2 level-spec") {
       level2 = `
             <div class="col-lg-12 d-flex justify-content-center">
                 <div class="pic">
@@ -898,17 +922,17 @@ function nodeTemplate(options) {
                      <p class="position">${options.position}</p>
                      <p class="name">${options.chName}</p> 
                      <p class="name">${options.name}</p>
-                     <p class="text-black-50">${options.id}</p>
+                      
                   </div>
                   <div class="col-12">
                      <div class="row py-2 align-items-center">
-                        <div class="col-4 p-0">
+                        <div class="col-6 p-0 text-start">
                            <p>分機<span>${options.ext}</span></p>
                         </div>
-                     <div class="col-4 p-0">
+                     <div class="col-6 p-0">
                          <p>${areaControl}</p>
                      </div>
-                     ${bottomPanel}
+                      
                      </div>
                   </div>
                </div>
@@ -922,18 +946,15 @@ function nodeTemplate(options) {
                   <div class="col-12 titleHeader p-0">
                      <p class="position">${options.position}</p>
                      <p class="name">${options.chName} &nbsp;  <span class="name">${options.name}</span></p> 
-                     
-                     <p class="text-black-50">${options.id}</p>
                   </div>
                   <div class="col-12">
-                     <div class="row py-1">
-                        <div class="col-4 p-0">
+                     <div class="row justify-content-between py-1">
+                        <div class="col-6 p-0 text-start">
                            <p>分機<span>${options.ext}</span></p>
                         </div>
-                        <div class="col-4 p-0">
+                        <div class="col-6 p-0">
                            <p>${areaControl}</p>
                         </div>
-                        ${bottomPanel}
                      </div>
                   </div>
                </div>
@@ -947,14 +968,14 @@ function nodeTemplate(options) {
                   <div class="col-12 titleHeader p-0">
                      <p class="position">${options.position}</p>
                      <p class="name">${options.chName} &nbsp; <span class="name">${options.name}</span></p>
-                     <p class="text-black-50">${options.id}</p>
+                      
                   </div>
-                  <div class="col-12 p-0">
+                  <div class="col-12">
                      <div class="row text-start">
-                        <div class="col-6">
+                        <div class="col-6 p-0">
                            <p>分機<span>${options.ext}</span></p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 p-0">
                            <p>${areaControl}</p>
                         </div>
                      </div>
@@ -984,9 +1005,8 @@ const orgRender = $("#chart-container").orgchart({
    verticalLevel: 4,
    visibleLevel: 3,
    'depth': 2,
-   //  direction: 'l2r',
    toggleSiblingsResp: false,
-   initCompleted: scrollbarOffset,     
+   initCompleted: scrollbarOffset,   
    'createNode': function($node, options) {
       const Area = $('.modalArea')
       const detailContent = `
@@ -1006,15 +1026,9 @@ const orgRender = $("#chart-container").orgchart({
       `;
         $(detailContent).appendTo(Area);
    },
-   // function($node, options) {
-   //      $node.on('click', function(event) {
-   //        if (!$(event.target).is('.edge, .toggleBtn')) {
-   //          scrollbarOffset()
-   //       }
-   //       scrollbarOffset()
-   //      });
-   //    }
 });
+
+console.log($(".level1").parent(".hierarchy").addClass("fadeOut"));
 
 // function buttonAdd() {
 //     const Area = $('.orgchart')
@@ -1028,15 +1042,26 @@ const orgRender = $("#chart-container").orgchart({
 //     `
 //     Area.append(button)
 // }
+
+
+
 function showAll() {
     let $temp = orgRender.$chart.find('.nodes');
-    if ($temp.hasClass('hidden')) {
-      $temp[0].offsetWidth;
-      $temp.removeClass('hidden');
-      $temp.find('.isCollapsedDescendant').removeClass('isCollapsedDescendant');
-      $temp.find('.slide-up').removeClass('slide-up');
-      scrollbarOffset()
-    } else {
+    if ($temp.hasClass('hidden') || $temp.children("li").hasClass('hidden')) {
+         $temp[0].offsetWidth;
+         $temp.removeClass('hidden');
+         $temp.find('.isCollapsedDescendant').removeClass('isCollapsedDescendant');
+         $temp.find('.isCollapsedSibling').removeClass('isCollapsedSibling');
+         $temp.find('.slide-up').removeClass('slide-up');
+         $temp.find('.slide-right').removeClass('slide-right');
+         $temp.children("li").removeClass('hidden');
+         $temp.children("li").find('.isCollapsedSibling').removeClass('isCollapsedSibling');
+         $temp.children("li").find('.slide-up').removeClass('slide-up');
+         $temp.children("li").find('.slide-right').removeClass('slide-right');
+         $temp.children("li").find('.slide-left').removeClass('slide-left');
+         scrollbarOffset()
+   } 
+     else {
       orgRender.hideChildren(orgRender.$chart.find('.level2'));
       scrollbarOffset()
    }
@@ -1046,9 +1071,22 @@ function scrollbarOffset($node, options) {
    const screenWidth = $(window).width();
    const obj = $(".orgchart").width()
    const objLeft = obj-screenWidth;
-   console.log($(window).width());
-   console.log($(".orgchart").width());
-   console.log(($(".orgchart").width())-($(window).width()));
-   console.log($(document).scrollLeft());
    $(window).scrollLeft(objLeft)
 }
+
+
+function scaleRender () {
+      const $container = orgRender.$chartContainer;
+      const $chart = orgRender.$chart;
+      const scale = $container.width() / $chart.outerWidth(true);
+   // var x = ($container.width() - $chart.outerWidth(true))/2*(1+scale);
+      var y = ($container.height() - $chart.outerHeight(true))/2*(1/scale);
+      const x = document.querySelector(".orgchart").getBoundingClientRect();
+   orgRender.setChartScale($chart, scale);
+   // console.log(document.querySelector("#chart-container").ogetBoundingClientRect());
+      let val = $chart.css('transform');
+   // $chart.css('transform', val + ' translate(-200px, -100px)');
+    $chart.css('transform', val + ' translate(' + x + 'px,' + y + 'px)');
+ }
+scaleRender()
+

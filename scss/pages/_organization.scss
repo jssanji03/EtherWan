@@ -1,32 +1,58 @@
-.orgArea{
-  position: relative;
+// .orgArea{
+//   position: relative;
+// }
+
+
+.orgchart .node.level::after{
+  height: 20px;
+  bottom: -20px;
 }
+.orgchart .node.level{
+  margin-bottom: 15px;
+}
+.orgchart > ul > li > ul li > .node.level1:first-child::before{
+  background-color: rgb(126, 54, 54) !important;
+  display: none;
+}
+.orgchart > ul > li > ul li > .node.level1::before{
+  background-color: rgb(165, 165, 165);
+}
+.orgchart .hierarchy.fadeOut::before{
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  width: 100%;
+  border-top: 2px solid rgb(218, 218, 218);
+  box-sizing: border-box;
+}
+
+// .level{
+//   .hierarchy{
+//     &.orgchart .hierarchy:first-child::before, .orgchart .hierarchy.isSiblingsCollapsed.left-sibs::before{
+//       display: none;
+//     }
+//   }
+// }
 #chart-container {
   font-family: Arial;
   border-radius: 5px;
   text-align: center;
+  // overflow: auto;
 }
-// .orgchart .node .horizontalEdge{
-//   display: none;
-// }
+.orgchart .node .horizontalEdge{
+  display: none;
+}
 .orgchart .node .topEdge{
   display: none;
 }
 .orgchart {
-  background: #fff;
-  margin: 0 auto;
+  background: transparent;
+  // margin: 0 auto;
   .nodes{
     justify-content: center;
   }
-  ul .nodes{
-    padding: 0px 8px;
-    li .hybrid{
-      padding: 0px 8px;
-      .hierarchy{
-        padding: 2px;
-      }
-    }
-  }
+  
 }
 .oci{
   background-color: transparent;
@@ -63,28 +89,28 @@
   background-color: #ccc;
 }
 .orgchart .node:not(:only-child)::after{
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(218, 218, 218);
 }
 .orgchart > ul > li > ul li > .node::before{
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(218, 218, 218);
 }
 .orgchart .hierarchy::before{
-  border-top: 2px solid rgb(141, 141, 141);
+  border-top: 2px solid rgb(218, 218, 218);
 }
 .orgchart .nodes.vertical .hierarchy::before, .orgchart .nodes.vertical .hierarchy::after{
-  border-color:rgb(141, 141, 141) ;
+  border-color:rgb(218, 218, 218) ;
 }
 .orgchart .nodes.vertical::before{
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(218, 218, 218);
 }
 
-@mixin level($background-color:#f3f3f3,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0,$margin-top:18px,$min-width:230px,$height:150px,$imgHeight:120px,$imgWidth:120px,$titleHeader:#f3f3f3,$border-radius:30px) {
+@mixin level($background-color:#ffffff,$dept-background:#44a1d0,$textColor:$dark,$countColor:#44a1d0,$margin-top:18px,$min-width:230px,$height:150px,$imgHeight:120px,$imgWidth:120px,$titleHeader:#f3f3f3,$border-radius:0px) {
   width: $min-width;
   height: $height;
   line-height: 40px;
-  border-radius: 15px;
+  // border-radius: 15px;
   padding: 0px;
-  box-shadow: 1px 1px 3px #ccc;
+  // box-shadow: 1px 1px 3px #ccc;
   background-color: $background-color;
   font-size: 12px;
   position: relative;
@@ -92,7 +118,7 @@
       line-height: 30px;
       color: $white;
       background-color: $dept-background;
-      border-radius: 15px 15px 0px 0px;
+      // border-radius: 15px 15px 0px 0px;
       text-align: center;
       position: relative;
       .icon{
@@ -110,11 +136,11 @@
       height: $imgHeight;
       border-radius: $border-radius;
       overflow: hidden;
-      border: 2px solid #fff;
+      border: 1px solid #fff;
       z-index: 99;
       img{
         width: 100%;
-        height: 100%;
+        height: 98%;
         object-fit:cover;
       }
     }
@@ -123,7 +149,7 @@
       padding: 10px;
       text-align: start;
       .position{
-        color: lightcoral;
+        color: rgb(102, 102, 102);
       }
       .name{
         font-weight: 600;
@@ -163,29 +189,39 @@
     } 
 }
 
-
 #chart-container{
   .level{
-    @include level($background-color:#f3f3f3,$dept-background:#18a5a5,$textColor:$dark,$countColor:#18a5a5,$min-width:350px,$height:200px,$imgHeight:160px,$titleHeader:#18a5a5);
+    @include level($dept-background:#18a5a5,$textColor:$dark,$countColor:#18a5a5,$min-width:350px,$height:200px,$imgHeight:160px,$titleHeader:#18a5a5);
     @media #{$breakpoint-md,$breakpoint-xs}{
       @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
     }
   }
   .level1{
-    @include level ($background-color:#f3f3f3,$dept-background:#244583,$textColor:$dark,$countColor:$secondary,$min-width:350px,$height:200px,$imgHeight:160px,$titleHeader:#244283);
+    @include level ($dept-background:#244583,$textColor:$dark,$countColor:$secondary,$min-width:350px,$height:200px,$imgHeight:160px,$titleHeader:#244283);
     @media #{$breakpoint-md,$breakpoint-xs}{
       @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
     }
-    
+  }
+  .level1-spec {
+    @include level ($dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:300px,$height:170px,$imgHeight:130px,$imgWidth:100px,$titleHeader:#244283);
+    @media #{$breakpoint-md,$breakpoint-xs}{
+      @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
     }
+  }
   .level2{
-    @include level ($background-color:#f3f3f3,$dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:180px,$height:280px,$imgHeight:100px,$imgWidth:100px,$titleHeader:$secondary,$border-radius:50%);
+    @include level ($dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:180px,$height:260px,$imgHeight:100px,$imgWidth:100px,$titleHeader:$secondary,$border-radius:50%);
+    @media #{$breakpoint-md,$breakpoint-xs}{
+      @include RWD-level ($width:300px,$height:380px,$imgHeight:200px,$imgWidth:200px)
+    }
+  }
+  .level-spec{
+    @include level ($dept-background:rgb(119, 109, 177),$textColor:$dark,$min-width:180px,$height:260px,$imgHeight:100px,$imgWidth:100px,$titleHeader:rgb(119, 109, 177),$border-radius:50%);
     @media #{$breakpoint-md,$breakpoint-xs}{
       @include RWD-level ($width:300px,$height:380px,$imgHeight:200px,$imgWidth:200px)
     }
   }
   .level3{
-    @include level ($background-color:#f3f3f3,$dept-background:#f39223,$textColor:$dark,$countColor:#f39223,$min-width:180px,$height:130px,$imgHeight:60px,$imgWidth:60px,$border-radius:50%,$titleHeader:#f39223);
+    @include level ($dept-background:#f39223,$textColor:$dark,$countColor:#f39223,$min-width:180px,$height:110px,$imgHeight:60px,$imgWidth:60px,$border-radius:50%,$titleHeader:#f39223);
     @media #{$breakpoint-md,$breakpoint-xs}{
       @include RWD-level ($width:300px,$height:130px,$imgHeight:200px,$imgWidth:200px)
     }
@@ -193,7 +229,7 @@
   .isLast{
     padding: 0px;
     border-left: 4px solid $yellow;
-    @include level ($background-color:#ffffff,$dept-background:transparent,$textColor:$dark,$countColor:$secondary,$margin-top:18px,$min-width:180px,$height:130px,$titleHeader:$yellow,);
+    @include level ($dept-background:transparent,$textColor:$dark,$countColor:$secondary,$margin-top:18px,$min-width:180px,$height:100px,$titleHeader:$yellow,);
     .header{
       color: $secondary;
     }
@@ -202,43 +238,58 @@
     }
   }
 }
-.mainArea{
-  // position: relative; 
-  .btnArea{
-    position: fixed;
-    top: 20px;
-    z-index: 999;
-    right:30px;
+.btnArea{
+  position: fixed;
+  top: 20px;
+  z-index: 999;
+  right:30px;
+  display: block;
+  flex-wrap: wrap;
+  i{
+    line-height: 18px;
+    font-size: 12px;
+  }
+  .btn_toggle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
     display: block;
-    flex-wrap: wrap;
-    i{
-      line-height: 18px;
-      font-size: 12px;
-    }
-    .btn_toggle{
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      color: #fff;
-      display: block;
-      text-align: center;
-      line-height: 15px;
-      font-size: 14px;
-      padding: 3px;
-      align-items: flex-start;
-      margin-top: 10px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 14px;
+    padding: 3px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+}
+
+.modalArea{
+  .modal-body{
+      line-height: 22px;
+      font-size: 18px;
+  }
+}
+
+
+.areaUrl{
+  line-height:20px;
+  cursor: pointer;
+  .fas{
+    text-align: right;
+    padding-right: 0px;
+    transition: all 0.8s ease-in-out;
+    color: #fff;
+  }
+  &:hover{
+    .fas{
+      padding-left: 8px;
+      display: inline-block;
+      color: #000;
     }
   }
 }
-  // .orgchart{
-  //   position: relative;
-  //   // .level{
-  //   // }
-  //   .btn_toggle{
-  //     position: absolute;
-  //     top: -30px;
-  //     left: 44%;
-  //     margin: 0 auto;
-  //     text-align: center;
-  //   }
-  // }
+
+
+  
+  

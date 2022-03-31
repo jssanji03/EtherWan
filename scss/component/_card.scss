@@ -59,46 +59,7 @@
         font-size: 14px;
     }
 }
-.information_card {
-    width: 100%;
-    height: calc(350px / 3);
-    padding: 50px 10px 5px 10px;
-    position: relative;
-    transition: background 0.3s; 
-    @media #{$breakpoint-md},#{$breakpoint-xs}{
-      width:50%
-    }
-    &:before { 
-        position: absolute;
-        width: 0; height: 100%; top: 0; left: 50%;
-        content: ''; 
-        z-index: -1; 
-        transition: width 0.3s; 
-        background-color: #1797ff77;
-        h5{
-            border-bottom: 0px solid #fff;
-            display:inline-block;
-        }
-    }
-    &:after { position: absolute; width: 0; height: 100%; top: 0; right: 50%; content: ''; background-color: #1797ff77; z-index: -1; transition: width 0.3s; 
-    }
-    &:hover{
-        h5{
-            color: #fff;
-            border-bottom: 1px solid #fff;
-            display:inline-block;
-        }
-        p{
-            color: #fff;
-        }
-        &:before{ 
-            width: 50%;
-        }
-        &:after { 
-            width: 50%;
-        }
-    }
-}
+
 .bg-blue30{
     @include buttonEffect($background-color:#edf6ff);
 }

@@ -1,0 +1,135 @@
+.InlineMenu{
+    margin: 0 auto;
+    text-align: center;
+}
+.ui-widget.ui-widget-content{
+    background-color: rgb(238, 238, 238);
+    border-radius: 20px;
+    width: 60%;
+    // padding: 0px;
+    box-shadow: 1px 1px 5px 2px rgba(197, 197, 197, 0.486);
+    // margin: 0 auto;
+}
+.month-picker-header{
+    border-radius: 20px 20px 0px 0px;
+    background-color: transparent;
+    .month-picker-year-table{
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        tr{
+            display: flex;
+            justify-content: space-around;
+        }
+        .ui-button{
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            background-color: transparent;
+        }
+        .month-picker-previous{
+            position: relative;
+            .ui-button{
+                &:hover{
+                    color: $primary;
+                    background-color: white;
+                    border: none !important;
+                    cursor: pointer;
+                }
+            }
+            .ui-icon{
+                position: absolute;
+                right: 30%;
+                top: 40%;
+            }
+        }
+        .month-picker-next{
+            position: relative;
+            .ui-button{
+                &:hover{
+                    color: $primary;
+                    background-color: white;
+                    border: none !important;
+                    cursor: pointer;
+                }
+            }
+            .ui-icon{
+                position: absolute;
+                left: 30%;
+                top: 40%;
+            }
+        }
+        .month-picker-title{
+            height: 30px;
+            .ui-button{
+                padding: 0px 50px;
+                line-height: 30px;
+                color: $secondary;
+                &:hover{
+                    color: $primary;
+                    // background-color: white;
+                    border: none !important;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.month-picker-month-table{
+    padding: 10px 5px;
+    margin: 0 auto;
+    td{
+        padding: 0px 8px;
+        .ui-button{
+            padding: 10px;
+            line-height: 35px;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 16px;
+            // background-color: rgb(238, 238, 238);
+            background-color: #FFF;
+            border: none;
+            color: #000;
+            &:hover{
+                background-color: $primary;
+                color: white;
+                border: none;
+            }
+        }
+    }
+}
+
+.ui-corner-all{
+    border: none;
+    &:active{
+        border: none;
+    }
+}
+// today
+.ui-state-highlight{
+    color: $white !important;
+    background-color: #505c62   !important;
+    width: 30px;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+.ui-state-active{
+     background-color:$primary!important;
+     color: $white !important;
+     border: none;
+}
+.calendar{
+    .eventList {
+        list-style: disc;
+        width: 50%;
+        padding: 5px;
+        p{
+            margin: 0px;
+        }
+    }
+}
+

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EtherWan</title>
+    <title>EtherWAN</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./public/img/core-img/favicon.png">
+    <link rel="icon" href="./public/img/core-img/1637660223.ico">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./scss/style.min.css">
@@ -44,42 +44,58 @@
     <!-- 即時宣導 End -->
     <section class="HomeBanner col-12 py-2">
         <div class="container">
-            <div class="row px-2">
-                <div class="col-lg-2 col-12">
-                    <div class="row pe-0 mt-lg-0 mt-3">
-                        <a class="information_card bg-blue30" href="./pages/homepage.html">
-                            <h5>關於益網</h5>
-                            <p class="gray fontsEn fz-12 lh-30">About EtherWan</p>
-                        </a>
-                        <a class="information_card bg-blue40" href="./pages/companyForm.html">
-                            <h5>辦法/表單</h5>
-                            <p class="lightBlue fontsEn fz-12 lh-30 ">Policy / Form</p>
-                        </a>
-                        <a class="information_card bg-blue50" href="./pages/useForm.html">
-                            <h5>常用資訊</h5>
-                            <p class="lightBlue fontsEn fz-12 lh-30">Useful Information</p>
-                        </a>
-                    </div>
+            <div class="row no-gutters">
+                <div class="col-12 col-md-3 col-lg-2 pe-lg-0 pe-2 mt-lg-0 mt-3">
+                    <ul class="nav vizew-nav-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link " href="./pages/homepage.html">
+                                <div class="information_card bg-blue30">
+                                    <h5 class="post-title">關於益網</h5>
+                                    <p class="gray fontsEn fz-12 lh-30">About EtherWan</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./pages/homepage.html">
+                                <div class="information_card bg-blue40">
+                                    <h5>辦法/表單</h5>
+                                    <p class="lightBlue fontsEn fz-12 lh-30 ">Policy / Form</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./pages/homepage.html">
+                                <div class="information_card bg-blue50">
+                                    <h5>常用資訊</h5>
+                                    <p class="lightBlue fontsEn fz-12 lh-30">Useful Information</p>
+                                </div>
+                            </a>
+                        </li>
+                    
+                    </ul>
                 </div>
-                <div class="col-lg-10 col-12 order-lg-last order-first carouselArea">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators ">
+                <div class="col-12 col-md-9 col-lg-10 order-md-last order-first">
+                    <div class="carouselArea">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators ">
+                            </div>
+                            <div class="carousel-inner">
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <div class="carousel-inner">
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </div>
+           
         </div>
     </section>
 
@@ -149,8 +165,12 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title fz-20 lh-40 border-bottom primary text-center">行事曆</h5>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                                Tooltip on bottom
+                            </button>
                             <p class="third lh-40 text-center">＊點選可查看當日行程</p>
-                            <div class="datepicker"></div>
+                            <div class="InlineMenu"></div>
+                            <div id='InlineMenu'></div>
                             <div id="event" class="m-3 d-flex flex-wrap">
                 
                             </div>
@@ -515,12 +535,23 @@
 <script src="./plugins/jquery/jquery-ui.min.js"></script>
 <!-- DataTable -->
 <script src="./plugins/DataTables-1.10.25/datatables.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+    integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script> -->
+<!-- <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
+    integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script> -->
+<script src="./plugins/jquery-monthpicker/MonthPicker.min.js"></script>
 
 <script src="./js/index.js"></script>
 <script src="./js/component.js"></script>
 <script src="./js/dateformat.js"></script>
 <script>
-    
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
 </script>
 
 </html>

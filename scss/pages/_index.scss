@@ -4,23 +4,168 @@
     }
 // 輪播圖
 .HomeBanner{
-  .carouselArea{
-    padding: 0px 0px 0px 10px;
-    @media #{$breakpoint-md},#{$breakpoint-xs}{
-      padding: 0px;
+  max-width: 1440px;
+  margin: 0 auto;
+   .vizew-nav-tab {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display:inline-block;
+
+    @media #{$breakpoint-xl} {
+        height: 300px;
     }
-    .carousel-item{
-      height: 350px;
-      .photoLink{
-        img{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-          }
+    @media #{$breakpoint-lg} {
+        height: 280px;
+    }
+
+    @media #{$breakpoint-md} {
+        height: 250px;
+    }
+    
+    @media #{$breakpoint-xs} {
+        height: 80px;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    li.nav-item{
+      @media #{$breakpoint-xs} {
+        width: calc(100%/3);
       }
     }
+    .nav-link {
+        padding: 0;
+        width: 100%;
+        .information_card {
+          width: 100%;
+          padding: 50px 10px 5px 10px;
+          height: calc(350px/3);
+          z-index: 1;
+          position: relative;
+          transition: background 0.3s;
+          @media #{$breakpoint-xl} {
+              height: calc(300px/3);
+              padding: 40px 10px 5px 10px;
+          }
+          @media #{$breakpoint-lg} {
+              height: calc(280px/3);
+              padding: 40px 10px 5px 10px;
+          }
+          @media #{$breakpoint-md} {
+              height: calc(250px/3);
+              padding: 30px 10px 5px 10px;
+          }
+          
+          @media #{$breakpoint-xs} {
+            width: 100%;
+            height: 80px;
+            padding: 15px 10px 5px 10px;
+          } 
+          &:before { 
+                  position: absolute;
+                  width: 0; height: 100%; top: 0; left: 50%;
+                  content: ''; 
+                  z-index: -1; 
+                  transition: width 0.3s; 
+                  background-color: #1797ff77;
+                  h5{
+                      border-bottom: 0px solid #fff;
+                      display: block;
+                      font-size: 16px;
+                      font-weight: 700;
+                      @media #{$breakpoint-lg} {
+                          font-size: 14px;
+                      }
+    
+                      @media #{$breakpoint-md} {
+                          font-size: 13px;
+                      }
+    
+                      @media #{$breakpoint-xs} {
+                          font-size: 13px;
+                      }
+                  }
+          }
+          &:after { position: absolute; width: 0; height: 100%; top: 0; right: 50%;content: ''; background-color: #1797ff77; z-index: -1; transition: width 0.3s; 
+          }
+          &:hover{
+                  h5{
+                      color: #fff;
+                      border-bottom: 1px solid #fff;
+                      display:inline-block;
+                  }
+                  p{
+                      color: #fff;
+                  }
+                  &:before{ 
+                      width: 50%;
+                  }
+                  &:after { 
+                      width: 50%;
+                  }
+          }
+        }
+    }
+  
   }
+  .carouselArea{
+        // padding: 0px 0px 0px 10px;
+        // width: 100%;
+        @media #{$breakpoint-md},#{$breakpoint-xs}{
+          padding: 0px;
+        }
+        .carousel-item{
+          .photoLink{
+            .resImg{
+              background-size: contain;
+              -webkit-background-size: contain;
+               background: center center no-repeat;
+              //  object-fit: contain;
+              // padding-top:45.10%;
+              position: relative;
+              z-index: 1;
+              width: 100%;
+              height: 350px;
+              @media #{$breakpoint-xl} {
+                // width: 100%;
+                // object-fit: contain;
+                height: 300px;
+                  background: center center no-repeat;
+                  background-size: 100% 300px;
+                  -webkit-background-size: 100% 300px;
+              }
+              @media #{$breakpoint-lg} {
+                // object-fit: fill;
+                // width: 100%;
+                height: 280px;
+                  background: center center no-repeat;
+                  background-size: 100% 280px;
+                  -webkit-background-size: 100% 280px;
+              }
+
+              @media #{$breakpoint-md} {
+                // width: 100%;
+                // object-fit: fill;
+                  height: 250px;
+                  background-size:100% 250px;
+                  -webkit-background-size: 100% 250px;
+              }
+
+              @media #{$breakpoint-xs} {
+                  height: 200px;
+                  background-size:100% 200px;
+                  -webkit-background-size: 100% 200px;
+              }
+            }
+          }
+        }
+    }
 }
+
 .linkList{
   padding: 0px 5px;
   li{
@@ -34,11 +179,11 @@
   height: 40px;
   border-radius: 8px 0px 0px 8px;
   // box-shadow: 1px 1px 3px 0.5px rgba(197, 197, 197, 0.432);
-  border: 1px solid #FAA929 ;
+  border: 1px solid #18a5a5 ;
   .newsTitle{
     display: inline-block;
     position: relative;
-    background-color: #FAA929;
+    background-color: #18a5a5;
     border-radius: 8px 0px 0px 8px;
     p{
       text-align: center;
@@ -55,13 +200,13 @@
       height: 0;
       border-style: solid;
       border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent #FAA929;
+      border-color: transparent transparent transparent #18a5a5;
     }
   }
   .marquee-wrapper {
       margin: 0;
       ul{
-        min-height:40px;
+        height:40px;
         padding: 10px;
         line-height: 40px;
         position: relative;
@@ -81,9 +226,9 @@
             position: absolute;
             width: 100%;
             opacity: 0;
-            bottom: -20px;
+            bottom: 50px;
             padding: 5px;
-            color: $text;
+            // color: $text;
             text-align: left;
             line-height: 40px;
             animation-name: marquee;
@@ -112,7 +257,7 @@
   10% { 
     bottom: -15%;
   }
-  30% { 
+  40% { 
     bottom: -15%;
   }
   60% { 
@@ -121,4 +266,21 @@
   100% { top: -200%;
   }
 }
+// @keyframes marquee {
+//   0% { 
+//     bottom: -50%;
+//     opacity: 1;
+//   }
+//   10% { 
+//     bottom: -15%;
+//   }
+//   30% { 
+//     bottom: -15%;
+//   }
+//   60% { 
+//     top: -200%;
+//   }
+//   100% { top: -200%;
+//   }
+// }
 
