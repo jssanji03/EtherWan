@@ -46,6 +46,7 @@
     transition-duration: .5s;
     transition-property: transform;
     transform: translateY(0px);
+    border-radius: 8px;
     &:hover{
         background-color: $white;
         border:1px solid $text;

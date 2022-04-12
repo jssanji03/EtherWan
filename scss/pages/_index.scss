@@ -2,6 +2,13 @@
 .logo {
         width: 200px;
     }
+.vizew-nav-tab li:first-of-type .information_card {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.vizew-nav-tab li:last-child .information_card{
+  border-radius: 0px 0px 10px 10px;
+}
 // 輪播圖
 .HomeBanner{
   max-width: 1440px;
@@ -110,7 +117,7 @@
           }
         }
     }
-  
+    
   }
   .carouselArea{
         // padding: 0px 0px 0px 10px;
@@ -118,47 +125,51 @@
         @media #{$breakpoint-md},#{$breakpoint-xs}{
           padding: 0px;
         }
-        .carousel-item{
-          .photoLink{
-            .resImg{
-              background-size: contain;
-              -webkit-background-size: contain;
-               background: center center no-repeat;
-              //  object-fit: contain;
-              // padding-top:45.10%;
-              position: relative;
-              z-index: 1;
-              width: 100%;
-              height: 350px;
-              @media #{$breakpoint-xl} {
-                // width: 100%;
-                // object-fit: contain;
-                height: 300px;
-                  background: center center no-repeat;
-                  background-size: 100% 300px;
-                  -webkit-background-size: 100% 300px;
-              }
-              @media #{$breakpoint-lg} {
-                // object-fit: fill;
-                // width: 100%;
-                height: 280px;
-                  background: center center no-repeat;
-                  background-size: 100% 280px;
-                  -webkit-background-size: 100% 280px;
-              }
-
-              @media #{$breakpoint-md} {
-                // width: 100%;
-                // object-fit: fill;
-                  height: 250px;
-                  background-size:100% 250px;
-                  -webkit-background-size: 100% 250px;
-              }
-
-              @media #{$breakpoint-xs} {
-                  height: 200px;
-                  background-size:100% 200px;
-                  -webkit-background-size: 100% 200px;
+        .carousel-inner{
+          border-radius: 10px;
+          .carousel-item{
+            .photoLink{
+              .resImg{
+                
+                background-size: contain;
+                -webkit-background-size: contain;
+                 background: center center no-repeat;
+                //  object-fit: contain;
+                // padding-top:45.10%;
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 350px;
+                @media #{$breakpoint-xl} {
+                  // width: 100%;
+                  // object-fit: contain;
+                  height: 300px;
+                    background: center center no-repeat;
+                    background-size: 100% 300px;
+                    -webkit-background-size: 100% 300px;
+                }
+                @media #{$breakpoint-lg} {
+                  // object-fit: fill;
+                  // width: 100%;
+                  height: 280px;
+                    background: center center no-repeat;
+                    background-size: 100% 280px;
+                    -webkit-background-size: 100% 280px;
+                }
+  
+                @media #{$breakpoint-md} {
+                  // width: 100%;
+                  // object-fit: fill;
+                    height: 250px;
+                    background-size:100% 250px;
+                    -webkit-background-size: 100% 250px;
+                }
+  
+                @media #{$breakpoint-xs} {
+                    height: 200px;
+                    background-size:100% 200px;
+                    -webkit-background-size: 100% 200px;
+                }
               }
             }
           }
@@ -177,8 +188,7 @@
   padding: 0px;
   background-color: #ffffff;
   height: 40px;
-  border-radius: 8px 0px 0px 8px;
-  // box-shadow: 1px 1px 3px 0.5px rgba(197, 197, 197, 0.432);
+  border-radius: 10px;
   border: 1px solid #18a5a5 ;
   .newsTitle{
     display: inline-block;

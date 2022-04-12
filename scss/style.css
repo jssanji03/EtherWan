@@ -517,6 +517,7 @@ table {
   transition-property: transform, -webkit-transform;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
+  border-radius: 8px;
 }
 
 .btn-more:hover {
@@ -2440,6 +2441,14 @@ section.page_title .active {
   width: 200px;
 }
 
+.vizew-nav-tab li:first-of-type .information_card {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.vizew-nav-tab li:last-child .information_card {
+  border-radius: 0px 0px 10px 10px;
+}
+
 .HomeBanner {
   max-width: 1440px;
   margin: 0 auto;
@@ -2612,7 +2621,11 @@ section.page_title .active {
   }
 }
 
-.HomeBanner .carouselArea .carousel-item .photoLink .resImg {
+.HomeBanner .carouselArea .carousel-inner {
+  border-radius: 10px;
+}
+
+.HomeBanner .carouselArea .carousel-inner .carousel-item .photoLink .resImg {
   background-size: contain;
   -webkit-background-size: contain;
   background: center center no-repeat;
@@ -2623,7 +2636,7 @@ section.page_title .active {
 }
 
 @media only screen and (min-width: 1200px) {
-  .HomeBanner .carouselArea .carousel-item .photoLink .resImg {
+  .HomeBanner .carouselArea .carousel-inner .carousel-item .photoLink .resImg {
     height: 300px;
     background: center center no-repeat;
     background-size: 100% 300px;
@@ -2632,7 +2645,7 @@ section.page_title .active {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .HomeBanner .carouselArea .carousel-item .photoLink .resImg {
+  .HomeBanner .carouselArea .carousel-inner .carousel-item .photoLink .resImg {
     height: 280px;
     background: center center no-repeat;
     background-size: 100% 280px;
@@ -2641,7 +2654,7 @@ section.page_title .active {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .HomeBanner .carouselArea .carousel-item .photoLink .resImg {
+  .HomeBanner .carouselArea .carousel-inner .carousel-item .photoLink .resImg {
     height: 250px;
     background-size: 100% 250px;
     -webkit-background-size: 100% 250px;
@@ -2649,7 +2662,7 @@ section.page_title .active {
 }
 
 @media only screen and (max-width: 767px) {
-  .HomeBanner .carouselArea .carousel-item .photoLink .resImg {
+  .HomeBanner .carouselArea .carousel-inner .carousel-item .photoLink .resImg {
     height: 200px;
     background-size: 100% 200px;
     -webkit-background-size: 100% 200px;
@@ -2668,7 +2681,7 @@ section.page_title .active {
   padding: 0px;
   background-color: #ffffff;
   height: 40px;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 10px;
   border: 1px solid #18a5a5;
 }
 
