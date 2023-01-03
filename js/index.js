@@ -1,21 +1,12 @@
 
 // 即時宣導 跑馬燈
 $(function () {
-    const break_line = document.getElementById("text_desc_p");
-    const content = break_line.innerHTML;
-    // break_line.innerHTML = content.replace(/：|。/g, "。<br>");
-    console.log(break_line);
-    if (/：|。/g) {
-        console.log("hi");
-        break_line.innerHTML = content.replace(/：/g, "：<br>")
-        break_line.innerHTML = content.replace(/。/g, "。<br>")
-    }
     // else if (/。/g) {
     //     break_line.innerHTML = content.replace(/。/g, "。<br>");
     // }
     const marqueeData =[
         "<a target='_blank' href='http://www.google.com'>請注意於11/1將有火警警鈴修繕作業，請各位同仁聽到響鈴，不要驚慌，謝謝。請注意請注意請注意請注意請</a>",
-        "<a target='_blank' href='http://www.yahoo.com.tw'>testㄉ2222222</a>",
+        "<a target='_blank' href='http://www.yahoo.com.tw'>test</a>",
         // "test333",
         // "test4444",
     ]
@@ -41,15 +32,15 @@ $(function () {
 $(function () {
     const data =[
         [
-            "../public/img/003.jpg",
+            "https://fakeimg.pl/1100x350/",
             "http://www.google.com.tw"
         ],
         [
-            "../public/img/003.jpg",
+            "https://fakeimg.pl/1100x350/",
             "http://www.yahoo.com.tw"
         ],
         [
-            "../public/img/1100x350_2.png",
+            "https://fakeimg.pl/1100x350/",
             "http://www.facebook.com.tw"
         ],
         [
@@ -58,8 +49,8 @@ $(function () {
         ],
     ]
     function carousal (data) {
-        var html = "";
-        for (var i = 0; i < data.length; i++) {
+        let html = "";
+        for (let i = 0; i < data.length; i++) {
             html += `<div class="carousel-item">`;
             html += `<a class="photoLink" href=${data[i][1]} target=_blank><div class="resImg" style=" background-image:url('${data[i][0]}')"></div></a>`;
             // html += `<a class="photoLink" href=${data[i][1]} target=_blank><img src="${data[i][0]}" class=" resImg" alt="..."></a>`;
@@ -104,83 +95,82 @@ $(function () {
 $(function () {
         const data = [
                 {
-                    month: 'August',
-                    date: '2021/08/19',
-                    event: '公益路跑公益路跑公益路跑公益路跑公益路跑公益路跑'
+                    month: 'January',
+                    date: '2023/01/19',
+                    event: '公益路跑'
                 },
                 {
-                    month: 'August',
-                    date: '2021/08/19',
-                    event: '公益路跑222'
+                    month: 'January',
+                    date: '2023/01/19',
+                    event: '慶生會'
                 },
                 {
-                    month: 'August',
-                    date: '2021/08/20',
+                    month: 'January',
+                    date: '2023/01/20',
                     event: '會議20'
                 },
                 {
-                    month: 'August',
-                    date: '2021/08/23',
+                    month: 'January',
+                    date: '2023/01/23',
                     event: '會議23'
                 },
                 {
-                    month: 'August',
-                    date: '2021/08/24',
+                    month: 'January',
+                    date: '2023/01/24',
                     event: '會議24'
                 },
                 {
-                    month: 'August',
-                    date: '2021/08/31',
+                    month: 'January',
+                    date: '2023/01/31',
                     event: '會議31'
                 },
                 {
-                    month: 'September',
-                    date: '2021/09/01',
+                    month: 'February',
+                    date: '2023/02/01',
                     event: '慶生會'
                 }]
 //DatePicker
-        function month() {
-            const select = document.querySelector('.ui-datepicker-month')
-            const value = select.options[select.selectedIndex].text;
-            const monthEvent = data.map(function (item, index) {
-                if (item.month === value) {
-                    return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
-                }
-            });
-            $('#event').html(monthEvent)
-        }
-        function gotoDate(ev) {
-            const event = data.map(function (item, index) {
-                // console.log(ev);
-                if (item.date === ev) {
-                    return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
-                }
-                else {
-                    return ``
-                }
-            })
-            $('#event').html(event)
-        }
+        // function month() {
+        //     const select = document.querySelector('.ui-datepicker-month')
+        //     const value = select.options[select.selectedIndex].text;
+        //     const monthEvent = data.map(function (item, index) {
+        //         if (item.month === value) {
+        //             return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
+        //         }
+        //     });
+        //     $('#event').html(monthEvent)
+        // }
+        // function gotoDate(ev) {
+        //     const event = data.map(function (item, index) {
+        //         // console.log(ev);
+        //         if (item.date === ev) {
+        //             return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
+        //         }
+        //         else {
+        //             return ``
+        //         }
+        //     })
+        //     $('#event').html(event)
+        // }
     
 //MonthPicker
         $(".InlineMenu").MonthPicker({
             // SelectedMonth: '04/' + new Date().getFullYear(),
             OnAfterChooseMonth: function (selectedDate) {
-                console.log(selectedDate);
-                console.log(selectedDate.toDateString());
-            //     const select = document.querySelector('.ui-datepicker-month')
-            // const value = select.options[select.selectedIndex].text;
+                const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                const value = month[selectedDate.getMonth()]
                 const monthEvent = data.map(function (item, index) {
-                console.log(item.month);
-                // if (item.month === value) {
-                //     return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
-                // }
-            });
+                    console.log(item.month);
+                    if (item.month === value) {
+                            return `<li class='third eventList lh-30'>${item.date.substr(5)}<p class='lh-20 text'>${item.event}</p></li>`
+                        }
+                    });
+                    console.log(monthEvent);
             $('#event').html(monthEvent)
             }
         });
         
-        window.onload = month;
+        // window.onload = month;
 });
 
 //行事曆

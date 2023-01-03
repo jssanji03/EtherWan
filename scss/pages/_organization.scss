@@ -202,11 +202,18 @@
       @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
     }
   }
+  // .level1-spec {
+  //   @include level ($dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:300px,$height:170px,$imgHeight:130px,$imgWidth:100px,$titleHeader:#244283);
+  //   @media #{$breakpoint-md,$breakpoint-xs}{
+  //     @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
+  //   }
+  // }
   .level1-spec {
-    @include level ($dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:300px,$height:170px,$imgHeight:130px,$imgWidth:100px,$titleHeader:#244283);
-    @media #{$breakpoint-md,$breakpoint-xs}{
-      @include RWD-level ($width:300px,$height:400px,$imgHeight:240px,$imgWidth:90%)
-    }
+    @include level ($dept-background: $secondary, $textColor: $dark, $countColor: $secondary, $min-width: 180px, $height: 260px, $imgHeight: 100px, $imgWidth: 100px, $titleHeader: $secondary, $border-radius: 50%);
+    
+      @media #{$breakpoint-md,$breakpoint-xs} {
+        @include RWD-level ($width: 300px, $height: 380px, $imgHeight: 200px, $imgWidth: 200px)
+      }
   }
   .level2{
     @include level ($dept-background:$secondary,$textColor:$dark,$countColor:$secondary,$min-width:180px,$height:260px,$imgHeight:100px,$imgWidth:100px,$titleHeader:$secondary,$border-radius:50%);

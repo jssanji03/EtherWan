@@ -857,7 +857,269 @@ const options =
             "pic":"test002.png",
             "count":null,
             "teamDetail":"",
-            "isLast":false,
+            "isLast": false,
+            "children":[
+               {
+                  "id":"200066",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"市場行銷處",
+                  "position":"總經理",
+                  "name":"maggie.chao",
+                  "chName":"趙筱琪",
+                  "ext":"5011",
+                  "area":"新店9樓",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"跟隨公司擬定之經營策略，爭取外部市場發展之最大可能：\r\n​- 負責業務策略及相關業務系統之整合及推動\r\n- 驅動並持續發展公司定義之聚焦市場\r\n- 依據公司業務發展及獲利目標，訂定產品及技術提升之策略方向​\r\n- 透過市場調查及客戶研究，瞭解客戶需求，以發展公司年度行銷策略\r\n- 維護客戶關係管理、客戶資料分析，規劃與執行行銷活動",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200071",
+                        "level":3,
+                        "className":"level3",
+                        "dept":"通路事業部",
+                        "position":"經理",
+                        "name":"david.hsiao",
+                        "chName":"蕭旭峰",
+                        "ext":"5012",
+                        "area":"新店9樓",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提高益網品牌在該目標市場的市佔率。",
+                        "isLast":false,
+                          "children": [
+                            {
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
+                            },
+                            {
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
+                            },
+                           
+                        ]
+                     },
+                     {
+                        "id":"200073",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"業務管理部",
+                        "position":"副理",
+                        "name":"annie.fan",
+                        "chName":"范詩玉",
+                        "ext":"5024",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"業務營運基礎建設推手：\r\n- 集團業務支援及維護客戶關係管理。\r\n- 提供完善的後勤支援管理系統，有效縮短公司內部作業流程並提高執行效率。\r\n- 依照各項業務經營目的協助有效的規範、調整管理活動，及協助推動決策執行。 \r\n- 依照營運績效追蹤分析提供例行性管理性分析報表。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                    
+                  ]
+               },
+               {
+                  "id":"200318",
+                  "level":2,
+                  "className":"level2 level-spec",
+                  "dept":"人力暨資訊資源服務部",
+                  "position":"資深經理",
+                  "name":"vicky.huang",
+                  "chName":"黃靖茹",
+                  "ext":"5166",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"人力資源：以功能面區分：人事行政、人力資源管理、人力資源發展、人力資本管理\r\n- 研究如何找到「對」的人加入團隊、如何提升員工的學習成效、如何確保員工對團隊力的承諾，\r\n- 員工為企業最重要的投資標的，認知到每個人的獨特性。所以著重在組織跟個人的價值觀契合度。\r\n\r\n資訊服務：以功能面區分：管理監控分析、軟硬維護執行、有效整合設計\r\n- 在IT服務上維持可靠、安全、高效且具成本效益的基本營運。\r\n- 了解企業管理階層與董事會目標，科學方法分析可行的科技解決方案。\r\n- 重新衡量IT支出的分配，逐漸轉向符合未來目標的發展項目。",
+                  "isLast":false,
+                  "children":[
+                     
+                  ]
+               },
+              
+            ]
+         },
+         {
+            "id":"200066",
+            "level":1,
+            "className":"level1 level1-spec",
+            "dept":"總經理室",
+            "position":"總經理",
+            "name":"Charles",
+            "chName":"查爾斯",
+            "ext":"5011",
+            "area":"新店9樓",
+            "areaUrl":"新店9樓",
+            "pic":"test002.png",
+            "count":null,
+            "teamDetail":"",
+            "isLast": false,
+            "children":[
+               {
+                  "id":"200066",
+                  "level":2,
+                  "className":"level2",
+                  "dept":"市場行銷處",
+                  "position":"總經理",
+                  "name":"maggie.chao",
+                  "chName":"趙筱琪",
+                  "ext":"5011",
+                  "area":"新店9樓",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"跟隨公司擬定之經營策略，爭取外部市場發展之最大可能：\r\n​- 負責業務策略及相關業務系統之整合及推動\r\n- 驅動並持續發展公司定義之聚焦市場\r\n- 依據公司業務發展及獲利目標，訂定產品及技術提升之策略方向​\r\n- 透過市場調查及客戶研究，瞭解客戶需求，以發展公司年度行銷策略\r\n- 維護客戶關係管理、客戶資料分析，規劃與執行行銷活動",
+                  "isLast":false,
+                  "children":[
+                     {
+                        "id":"200071",
+                        "level":3,
+                        "className":"level3",
+                        "dept":"通路事業部",
+                        "position":"經理",
+                        "name":"david.hsiao",
+                        "chName":"蕭旭峰",
+                        "ext":"5012",
+                        "area":"新店9樓",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提高益網品牌在該目標市場的市佔率。",
+                        "isLast":false,
+                          "children": [
+                            {
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
+                            },
+                            {
+                            "id":"200071",
+                            "level":3,
+                            "className":"isLast",
+                            "dept":"課務一",
+                            "position":"經理",
+                            "name":"david.hsiao",
+                            "chName":"蕭旭峰",
+                            "ext":"5012",
+                            "area":"nullnull",
+                            "areaUrl":null,
+                            "pic":null,
+                            "count":null,
+                            "teamDetail":"強化通路價值，實現業務開發：\r\n依公司定義聚焦之應用市場及產品組  合，研擬轄下各地區銷售策略，穩固既有通路夥伴 (Customer Intimacy)，持續開發    Solution Provider，培養關鍵客戶Key Account。持續發掘目標客戶的JTBD (Jobs to     Be Done)，提供我們最佳的產品及服務以創造營收。同時，藉由不斷累積及厚實的客戶群，提  高益網品牌在該目標市場的市佔率。",
+                            "isLast":true,
+                            "children":[
+                            ]
+                            },
+                           
+                        ]
+                     },
+                     {
+                        "id":"200073",
+                        "level":3,
+                        "className":"isLast",
+                        "dept":"業務管理部",
+                        "position":"副理",
+                        "name":"annie.fan",
+                        "chName":"范詩玉",
+                        "ext":"5024",
+                        "area":"nullnull",
+                        "areaUrl":null,
+                        "pic":null,
+                        "count":null,
+                        "teamDetail":"業務營運基礎建設推手：\r\n- 集團業務支援及維護客戶關係管理。\r\n- 提供完善的後勤支援管理系統，有效縮短公司內部作業流程並提高執行效率。\r\n- 依照各項業務經營目的協助有效的規範、調整管理活動，及協助推動決策執行。 \r\n- 依照營運績效追蹤分析提供例行性管理性分析報表。",
+                        "isLast":true,
+                        "children":[
+                           
+                        ]
+                     },
+                    
+                  ]
+               },
+               {
+                  "id":"200318",
+                  "level":2,
+                  "className":"level2 level-spec",
+                  "dept":"人力暨資訊資源服務部",
+                  "position":"資深經理",
+                  "name":"vicky.huang",
+                  "chName":"黃靖茹",
+                  "ext":"5166",
+                  "area":"nullnull",
+                  "areaUrl":null,
+                  "pic":null,
+                  "count":null,
+                  "teamDetail":"人力資源：以功能面區分：人事行政、人力資源管理、人力資源發展、人力資本管理\r\n- 研究如何找到「對」的人加入團隊、如何提升員工的學習成效、如何確保員工對團隊力的承諾，\r\n- 員工為企業最重要的投資標的，認知到每個人的獨特性。所以著重在組織跟個人的價值觀契合度。\r\n\r\n資訊服務：以功能面區分：管理監控分析、軟硬維護執行、有效整合設計\r\n- 在IT服務上維持可靠、安全、高效且具成本效益的基本營運。\r\n- 了解企業管理階層與董事會目標，科學方法分析可行的科技解決方案。\r\n- 重新衡量IT支出的分配，逐漸轉向符合未來目標的發展項目。",
+                  "isLast":false,
+                  "children":[
+                     
+                  ]
+               },
+              
+            ]
+         },
+         {
+            "id": "200066",
+            "level": 1,
+            "className": "level1 level1-spec",
+            "dept": "總經理室",
+            "position": "總經理",
+            "name": "Vicky",
+            "chName": "趙筱琪",
+            "ext": "5011",
+            "area": "新店9樓",
+            "areaUrl": "新店9樓",
+            "pic": "test002.png",
+            "count": null,
+            "teamDetail": "",
+            "isLast": false,
          },
       ]
    }
@@ -880,7 +1142,7 @@ function nodeTemplate(options) {
         departmentIcon = `<span class="col-2 icon" data-bs-toggle="modal" data-bs-target="#exampleModal${options.id}"><i class="far fa-id-card"></i></span>`;
     }
    
-   if (options.className == "level1" || options.className == "level" || options.className == "level1 level1-spec") {
+   if (options.className == "level1" || options.className == "level" ) {
       level1 = `
             <div class="col-lg-4 col-12">
                 <div class="pic">
@@ -900,6 +1162,36 @@ function nodeTemplate(options) {
                            <p>分機<span>${options.ext}</span></p>
                         </div>
                      <div class="col-6 ">
+                         <p>${areaControl}</p>
+                     </div>
+                      
+                     </div>
+                  </div>
+               </div>
+            </div>
+      `
+   }
+   if (options.className == "level1 level1-spec") {
+      level1 = `
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="pic">
+                    <img src="../public/img/organization/${options.pic}">
+                </div>
+            </div>
+            <div class="col-lg-12 col-12">
+               <div class="row m-1">
+                  <div class="col-12 titleHeader text-center">
+                     <p class="position">${options.position}</p>
+                     <p class="name">${options.chName}</p> 
+                     <p class="name">${options.name}</p>
+                      
+                  </div>
+                  <div class="col-12">
+                     <div class="row py-2 align-items-center">
+                        <div class="col-6 p-0 text-start">
+                           <p>分機<span>${options.ext}</span></p>
+                        </div>
+                     <div class="col-6 p-0">
                          <p>${areaControl}</p>
                      </div>
                       

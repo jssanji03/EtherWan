@@ -1947,8 +1947,8 @@ section.page_title .active {
 }
 
 #chart-container .level1-spec {
-  width: 300px;
-  height: 170px;
+  width: 180px;
+  height: 260px;
   line-height: 40px;
   padding: 0px;
   background-color: #ffffff;
@@ -1974,8 +1974,8 @@ section.page_title .active {
 
 #chart-container .level1-spec .pic {
   width: 100px;
-  height: 130px;
-  border-radius: 0px;
+  height: 100px;
+  border-radius: 50%;
   overflow: hidden;
   border: 1px solid #fff;
   z-index: 99;
@@ -1989,7 +1989,7 @@ section.page_title .active {
 }
 
 #chart-container .level1-spec .titleHeader {
-  border-bottom: 1px solid #244283;
+  border-bottom: 1px solid #437FC7;
   padding: 10px;
   text-align: start;
 }
@@ -2010,11 +2010,11 @@ section.page_title .active {
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
   #chart-container .level1-spec {
     width: 300px;
-    height: 400px;
+    height: 380px;
   }
   #chart-container .level1-spec .pic {
-    width: 90%;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #fff;
